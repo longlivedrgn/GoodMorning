@@ -16,6 +16,10 @@
 		80773A9E2A57E6230020F1DD /* GoodMorningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773A9D2A57E6230020F1DD /* GoodMorningTests.swift */; };
 		80773AA82A57E6230020F1DD /* GoodMorningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */; };
 		80773AAA2A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */; };
+		87600B1E2A57E89D0047CDFA /* SwiftLintFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 87600B1D2A57E89D0047CDFA /* SwiftLintFramework */; };
+		87600B202A57E89D0047CDFA /* swiftlint in Frameworks */ = {isa = PBXBuildFile; productRef = 87600B1F2A57E89D0047CDFA /* swiftlint */; };
+		87600B232A57E8D80047CDFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 87600B222A57E8D80047CDFA /* SnapKit */; };
+		87600B252A57E8D80047CDFA /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 87600B242A57E8D80047CDFA /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87600B232A57E8D80047CDFA /* SnapKit in Frameworks */,
+				87600B1E2A57E89D0047CDFA /* SwiftLintFramework in Frameworks */,
+				87600B202A57E89D0047CDFA /* swiftlint in Frameworks */,
+				87600B252A57E8D80047CDFA /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +151,12 @@
 			dependencies = (
 			);
 			name = GoodMorning;
+			packageProductDependencies = (
+				87600B1D2A57E89D0047CDFA /* SwiftLintFramework */,
+				87600B1F2A57E89D0047CDFA /* swiftlint */,
+				87600B222A57E8D80047CDFA /* SnapKit */,
+				87600B242A57E8D80047CDFA /* SnapKit-Dynamic */,
+			);
 			productName = GoodMorning;
 			productReference = 80773A802A57E6210020F1DD /* GoodMorning.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +229,10 @@
 				Base,
 			);
 			mainGroup = 80773A772A57E6210020F1DD;
+			packageReferences = (
+				87600B1C2A57E89D0047CDFA /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				87600B212A57E8D80047CDFA /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 80773A812A57E6210020F1DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -594,6 +612,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		87600B1C2A57E89D0047CDFA /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.52.4;
+			};
+		};
+		87600B212A57E8D80047CDFA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		87600B1D2A57E89D0047CDFA /* SwiftLintFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87600B1C2A57E89D0047CDFA /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = SwiftLintFramework;
+		};
+		87600B1F2A57E89D0047CDFA /* swiftlint */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87600B1C2A57E89D0047CDFA /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = swiftlint;
+		};
+		87600B222A57E8D80047CDFA /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87600B212A57E8D80047CDFA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		87600B242A57E8D80047CDFA /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87600B212A57E8D80047CDFA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		80773A8C2A57E6210020F1DD /* GoodMorning.xcdatamodeld */ = {
