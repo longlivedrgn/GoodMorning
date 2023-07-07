@@ -16,8 +16,6 @@
 		80773A9E2A57E6230020F1DD /* GoodMorningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773A9D2A57E6230020F1DD /* GoodMorningTests.swift */; };
 		80773AA82A57E6230020F1DD /* GoodMorningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */; };
 		80773AAA2A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */; };
-		87600B1E2A57E89D0047CDFA /* SwiftLintFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 87600B1D2A57E89D0047CDFA /* SwiftLintFramework */; };
-		87600B202A57E89D0047CDFA /* swiftlint in Frameworks */ = {isa = PBXBuildFile; productRef = 87600B1F2A57E89D0047CDFA /* swiftlint */; };
 		87600B232A57E8D80047CDFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 87600B222A57E8D80047CDFA /* SnapKit */; };
 		87600B252A57E8D80047CDFA /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 87600B242A57E8D80047CDFA /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
@@ -61,8 +59,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				87600B232A57E8D80047CDFA /* SnapKit in Frameworks */,
-				87600B1E2A57E89D0047CDFA /* SwiftLintFramework in Frameworks */,
-				87600B202A57E89D0047CDFA /* swiftlint in Frameworks */,
 				87600B252A57E8D80047CDFA /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +138,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80773AAD2A57E6230020F1DD /* Build configuration list for PBXNativeTarget "GoodMorning" */;
 			buildPhases = (
+				80773AB62A57EA300020F1DD /* SwiftLint Script */,
 				80773A7C2A57E6210020F1DD /* Sources */,
 				80773A7D2A57E6210020F1DD /* Frameworks */,
 				80773A7E2A57E6210020F1DD /* Resources */,
@@ -152,8 +149,6 @@
 			);
 			name = GoodMorning;
 			packageProductDependencies = (
-				87600B1D2A57E89D0047CDFA /* SwiftLintFramework */,
-				87600B1F2A57E89D0047CDFA /* swiftlint */,
 				87600B222A57E8D80047CDFA /* SnapKit */,
 				87600B242A57E8D80047CDFA /* SnapKit-Dynamic */,
 			);
@@ -230,7 +225,6 @@
 			);
 			mainGroup = 80773A772A57E6210020F1DD;
 			packageReferences = (
-				87600B1C2A57E89D0047CDFA /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				87600B212A57E8D80047CDFA /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 80773A812A57E6210020F1DD /* Products */;
@@ -269,6 +263,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		80773AB62A57EA300020F1DD /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		80773A7C2A57E6210020F1DD /* Sources */ = {
@@ -614,14 +629,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		87600B1C2A57E89D0047CDFA /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/SwiftLint.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.52.4;
-			};
-		};
 		87600B212A57E8D80047CDFA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -633,16 +640,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		87600B1D2A57E89D0047CDFA /* SwiftLintFramework */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 87600B1C2A57E89D0047CDFA /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = SwiftLintFramework;
-		};
-		87600B1F2A57E89D0047CDFA /* swiftlint */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 87600B1C2A57E89D0047CDFA /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = swiftlint;
-		};
 		87600B222A57E8D80047CDFA /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 87600B212A57E8D80047CDFA /* XCRemoteSwiftPackageReference "SnapKit" */;
