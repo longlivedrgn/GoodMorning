@@ -4,4 +4,13 @@ excluded:
     - GoodMorningUITests
     - GoodMorning/AppDelegate.swift
     - GoodMorning/SceneDelegate.swift
-
+opt_in_rules:
+    - force_unwrapping
+    - function_body_length
+    - line_length
+    - weak_delegate
+    - trailing_newline
+function_body_length:
+    error: 20
+line_length:
+    error: 100
