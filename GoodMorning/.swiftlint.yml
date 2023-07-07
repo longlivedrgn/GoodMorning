@@ -1,0 +1,7 @@
+excluded:
+    - Pods
+    - GoodMorningTests
+    - GoodMorningUITests
+    - GoodMorning/AppDelegate.swift
+    - GoodMorning/SceneDelegate.swift
+

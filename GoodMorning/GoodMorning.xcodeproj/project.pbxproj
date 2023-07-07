@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		644B00336BD53B3797ACC3CB /* Pods_GoodMorningTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10574D4C9B32A31D10D1877C /* Pods_GoodMorningTests.framework */; };
 		80773A842A57E6210020F1DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773A832A57E6210020F1DD /* AppDelegate.swift */; };
 		80773A862A57E6210020F1DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773A852A57E6210020F1DD /* SceneDelegate.swift */; };
 		80773A882A57E6210020F1DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773A872A57E6210020F1DD /* ViewController.swift */; };
@@ -16,8 +17,9 @@
 		80773A9E2A57E6230020F1DD /* GoodMorningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773A9D2A57E6230020F1DD /* GoodMorningTests.swift */; };
 		80773AA82A57E6230020F1DD /* GoodMorningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */; };
 		80773AAA2A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */; };
-		87600B232A57E8D80047CDFA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 87600B222A57E8D80047CDFA /* SnapKit */; };
-		87600B252A57E8D80047CDFA /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 87600B242A57E8D80047CDFA /* SnapKit-Dynamic */; };
+		8728F3C82A57F3280064A655 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8728F3C72A57F3280064A655 /* .swiftlint.yml */; };
+		BEF9FEDAE639412DC9A64210 /* Pods_GoodMorning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED89AB0FC30D84B1F7101507 /* Pods_GoodMorning.framework */; };
+		FC19BA7D453F5058344E81D3 /* Pods_GoodMorning_GoodMorningUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3A2770BBC9EDD831B8B217 /* Pods_GoodMorning_GoodMorningUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10574D4C9B32A31D10D1877C /* Pods_GoodMorningTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodMorningTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3065518004BE5CC3830E9072 /* Pods-GoodMorning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorning.release.xcconfig"; path = "Target Support Files/Pods-GoodMorning/Pods-GoodMorning.release.xcconfig"; sourceTree = "<group>"; };
+		401627FC16FEC7EC2C57770B /* Pods-GoodMorningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.release.xcconfig"; sourceTree = "<group>"; };
+		5E91D84F75973762F2BF9648 /* Pods-GoodMorning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorning.debug.xcconfig"; path = "Target Support Files/Pods-GoodMorning/Pods-GoodMorning.debug.xcconfig"; sourceTree = "<group>"; };
+		7BA3ADDA44E471601109F523 /* Pods-GoodMorning-GoodMorningUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorning-GoodMorningUITests.debug.xcconfig"; path = "Target Support Files/Pods-GoodMorning-GoodMorningUITests/Pods-GoodMorning-GoodMorningUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		80773A802A57E6210020F1DD /* GoodMorning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodMorning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80773A832A57E6210020F1DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80773A852A57E6210020F1DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +58,11 @@
 		80773AA32A57E6230020F1DD /* GoodMorningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodMorningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningUITests.swift; sourceTree = "<group>"; };
 		80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8728F3C72A57F3280064A655 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		8E3A2770BBC9EDD831B8B217 /* Pods_GoodMorning_GoodMorningUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodMorning_GoodMorningUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A44F883FD49649CDDC6E07DE /* Pods-GoodMorning-GoodMorningUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorning-GoodMorningUITests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorning-GoodMorningUITests/Pods-GoodMorning-GoodMorningUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A883135CEBE3618D806692E7 /* Pods-GoodMorningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.debug.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED89AB0FC30D84B1F7101507 /* Pods_GoodMorning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodMorning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87600B232A57E8D80047CDFA /* SnapKit in Frameworks */,
-				87600B252A57E8D80047CDFA /* SnapKit-Dynamic in Frameworks */,
+				BEF9FEDAE639412DC9A64210 /* Pods_GoodMorning.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				644B00336BD53B3797ACC3CB /* Pods_GoodMorningTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC19BA7D453F5058344E81D3 /* Pods_GoodMorning_GoodMorningUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,10 +96,13 @@
 		80773A772A57E6210020F1DD = {
 			isa = PBXGroup;
 			children = (
+				8728F3C72A57F3280064A655 /* .swiftlint.yml */,
 				80773A822A57E6210020F1DD /* GoodMorning */,
 				80773A9C2A57E6230020F1DD /* GoodMorningTests */,
 				80773AA62A57E6230020F1DD /* GoodMorningUITests */,
 				80773A812A57E6210020F1DD /* Products */,
+				F317094B738C7339B328A52B /* Pods */,
+				AA9AFF43ECD13EF98FBE233E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +147,29 @@
 			path = GoodMorningUITests;
 			sourceTree = "<group>";
 		};
+		AA9AFF43ECD13EF98FBE233E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED89AB0FC30D84B1F7101507 /* Pods_GoodMorning.framework */,
+				8E3A2770BBC9EDD831B8B217 /* Pods_GoodMorning_GoodMorningUITests.framework */,
+				10574D4C9B32A31D10D1877C /* Pods_GoodMorningTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F317094B738C7339B328A52B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E91D84F75973762F2BF9648 /* Pods-GoodMorning.debug.xcconfig */,
+				3065518004BE5CC3830E9072 /* Pods-GoodMorning.release.xcconfig */,
+				7BA3ADDA44E471601109F523 /* Pods-GoodMorning-GoodMorningUITests.debug.xcconfig */,
+				A44F883FD49649CDDC6E07DE /* Pods-GoodMorning-GoodMorningUITests.release.xcconfig */,
+				A883135CEBE3618D806692E7 /* Pods-GoodMorningTests.debug.xcconfig */,
+				401627FC16FEC7EC2C57770B /* Pods-GoodMorningTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,20 +177,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80773AAD2A57E6230020F1DD /* Build configuration list for PBXNativeTarget "GoodMorning" */;
 			buildPhases = (
+				83FE605E3B9A0DB19442B957 /* [CP] Check Pods Manifest.lock */,
 				80773AB62A57EA300020F1DD /* SwiftLint Script */,
 				80773A7C2A57E6210020F1DD /* Sources */,
 				80773A7D2A57E6210020F1DD /* Frameworks */,
 				80773A7E2A57E6210020F1DD /* Resources */,
+				28E705A33B00C985AC0343E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = GoodMorning;
-			packageProductDependencies = (
-				87600B222A57E8D80047CDFA /* SnapKit */,
-				87600B242A57E8D80047CDFA /* SnapKit-Dynamic */,
-			);
 			productName = GoodMorning;
 			productReference = 80773A802A57E6210020F1DD /* GoodMorning.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80773AB02A57E6230020F1DD /* Build configuration list for PBXNativeTarget "GoodMorningTests" */;
 			buildPhases = (
+				2EEF9FFECA55FFD0B64CB738 /* [CP] Check Pods Manifest.lock */,
 				80773A952A57E6230020F1DD /* Sources */,
 				80773A962A57E6230020F1DD /* Frameworks */,
 				80773A972A57E6230020F1DD /* Resources */,
@@ -178,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80773AB32A57E6230020F1DD /* Build configuration list for PBXNativeTarget "GoodMorningUITests" */;
 			buildPhases = (
+				B62059C348DF897B958BB711 /* [CP] Check Pods Manifest.lock */,
 				80773A9F2A57E6230020F1DD /* Sources */,
 				80773AA02A57E6230020F1DD /* Frameworks */,
 				80773AA12A57E6230020F1DD /* Resources */,
+				ECC3016898AB1CE451DA504B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,7 +256,7 @@
 				};
 			};
 			buildConfigurationList = 80773A7B2A57E6210020F1DD /* Build configuration list for PBXProject "GoodMorning" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -225,7 +265,6 @@
 			);
 			mainGroup = 80773A772A57E6210020F1DD;
 			packageReferences = (
-				87600B212A57E8D80047CDFA /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 80773A812A57E6210020F1DD /* Products */;
 			projectDirPath = "";
@@ -243,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8728F3C82A57F3280064A655 /* .swiftlint.yml in Resources */,
 				80773A932A57E6230020F1DD /* LaunchScreen.storyboard in Resources */,
 				80773A902A57E6230020F1DD /* Assets.xcassets in Resources */,
 			);
@@ -265,8 +305,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		28E705A33B00C985AC0343E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoodMorning/Pods-GoodMorning-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoodMorning/Pods-GoodMorning-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoodMorning/Pods-GoodMorning-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EEF9FFECA55FFD0B64CB738 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoodMorningTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		80773AB62A57EA300020F1DD /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -281,7 +361,68 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		83FE605E3B9A0DB19442B957 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoodMorning-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B62059C348DF897B958BB711 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoodMorning-GoodMorningUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECC3016898AB1CE451DA504B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoodMorning-GoodMorningUITests/Pods-GoodMorning-GoodMorningUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoodMorning-GoodMorningUITests/Pods-GoodMorning-GoodMorningUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoodMorning-GoodMorningUITests/Pods-GoodMorning-GoodMorningUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -457,12 +598,13 @@
 		};
 		80773AAE2A57E6230020F1DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E91D84F75973762F2BF9648 /* Pods-GoodMorning.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F2W258F5P6;
+				DEVELOPMENT_TEAM = 9XR48RYD63;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoodMorning/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -475,7 +617,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.GoodMorning;
+				PRODUCT_BUNDLE_IDENTIFIER = com.longlivedrgn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -485,12 +627,13 @@
 		};
 		80773AAF2A57E6230020F1DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3065518004BE5CC3830E9072 /* Pods-GoodMorning.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F2W258F5P6;
+				DEVELOPMENT_TEAM = 9XR48RYD63;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoodMorning/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -503,7 +646,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.GoodMorning;
+				PRODUCT_BUNDLE_IDENTIFIER = com.longlivedrgn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -513,6 +656,7 @@
 		};
 		80773AB12A57E6230020F1DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A883135CEBE3618D806692E7 /* Pods-GoodMorningTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -533,6 +677,7 @@
 		};
 		80773AB22A57E6230020F1DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 401627FC16FEC7EC2C57770B /* Pods-GoodMorningTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -553,6 +698,7 @@
 		};
 		80773AB42A57E6230020F1DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BA3ADDA44E471601109F523 /* Pods-GoodMorning-GoodMorningUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -571,6 +717,7 @@
 		};
 		80773AB52A57E6230020F1DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A44F883FD49649CDDC6E07DE /* Pods-GoodMorning-GoodMorningUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -627,30 +774,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		87600B212A57E8D80047CDFA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		87600B222A57E8D80047CDFA /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 87600B212A57E8D80047CDFA /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		87600B242A57E8D80047CDFA /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 87600B212A57E8D80047CDFA /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		80773A8C2A57E6210020F1DD /* GoodMorning.xcdatamodeld */ = {
