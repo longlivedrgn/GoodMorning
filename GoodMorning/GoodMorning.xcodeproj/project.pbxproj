@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80773A842A57E6210020F1DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773A832A57E6210020F1DD /* AppDelegate.swift */; };
+		80773A862A57E6210020F1DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773A852A57E6210020F1DD /* SceneDelegate.swift */; };
+		80773A882A57E6210020F1DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773A872A57E6210020F1DD /* ViewController.swift */; };
+		80773A8B2A57E6210020F1DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80773A892A57E6210020F1DD /* Main.storyboard */; };
+		80773A8E2A57E6210020F1DD /* GoodMorning.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80773A8C2A57E6210020F1DD /* GoodMorning.xcdatamodeld */; };
+		80773A902A57E6230020F1DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80773A8F2A57E6230020F1DD /* Assets.xcassets */; };
+		80773A932A57E6230020F1DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80773A912A57E6230020F1DD /* LaunchScreen.storyboard */; };
+		80773A9E2A57E6230020F1DD /* GoodMorningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773A9D2A57E6230020F1DD /* GoodMorningTests.swift */; };
+		80773AA82A57E6230020F1DD /* GoodMorningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */; };
+		80773AAA2A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80773A9A2A57E6230020F1DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80773A782A57E6210020F1DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80773A7F2A57E6210020F1DD;
+			remoteInfo = GoodMorning;
+		};
+		80773AA42A57E6230020F1DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80773A782A57E6210020F1DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80773A7F2A57E6210020F1DD;
+			remoteInfo = GoodMorning;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		80773A802A57E6210020F1DD /* GoodMorning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodMorning.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80773A832A57E6210020F1DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		80773A852A57E6210020F1DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		80773A872A57E6210020F1DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80773A8A2A57E6210020F1DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		80773A8D2A57E6210020F1DD /* GoodMorning.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoodMorning.xcdatamodel; sourceTree = "<group>"; };
+		80773A8F2A57E6230020F1DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80773A922A57E6230020F1DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		80773A942A57E6230020F1DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80773A992A57E6230020F1DD /* GoodMorningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodMorningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80773A9D2A57E6230020F1DD /* GoodMorningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningTests.swift; sourceTree = "<group>"; };
+		80773AA32A57E6230020F1DD /* GoodMorningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodMorningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningUITests.swift; sourceTree = "<group>"; };
+		80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80773A7D2A57E6210020F1DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80773A962A57E6230020F1DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80773AA02A57E6230020F1DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80773A772A57E6210020F1DD = {
+			isa = PBXGroup;
+			children = (
+				80773A822A57E6210020F1DD /* GoodMorning */,
+				80773A9C2A57E6230020F1DD /* GoodMorningTests */,
+				80773AA62A57E6230020F1DD /* GoodMorningUITests */,
+				80773A812A57E6210020F1DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80773A812A57E6210020F1DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80773A802A57E6210020F1DD /* GoodMorning.app */,
+				80773A992A57E6230020F1DD /* GoodMorningTests.xctest */,
+				80773AA32A57E6230020F1DD /* GoodMorningUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80773A822A57E6210020F1DD /* GoodMorning */ = {
+			isa = PBXGroup;
+			children = (
+				80773A832A57E6210020F1DD /* AppDelegate.swift */,
+				80773A852A57E6210020F1DD /* SceneDelegate.swift */,
+				80773A872A57E6210020F1DD /* ViewController.swift */,
+				80773A892A57E6210020F1DD /* Main.storyboard */,
+				80773A8F2A57E6230020F1DD /* Assets.xcassets */,
+				80773A912A57E6230020F1DD /* LaunchScreen.storyboard */,
+				80773A942A57E6230020F1DD /* Info.plist */,
+				80773A8C2A57E6210020F1DD /* GoodMorning.xcdatamodeld */,
+			);
+			path = GoodMorning;
+			sourceTree = "<group>";
+		};
+		80773A9C2A57E6230020F1DD /* GoodMorningTests */ = {
+			isa = PBXGroup;
+			children = (
+				80773A9D2A57E6230020F1DD /* GoodMorningTests.swift */,
+			);
+			path = GoodMorningTests;
+			sourceTree = "<group>";
+		};
+		80773AA62A57E6230020F1DD /* GoodMorningUITests */ = {
+			isa = PBXGroup;
+			children = (
+				80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */,
+				80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */,
+			);
+			path = GoodMorningUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80773A7F2A57E6210020F1DD /* GoodMorning */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80773AAD2A57E6230020F1DD /* Build configuration list for PBXNativeTarget "GoodMorning" */;
+			buildPhases = (
+				80773A7C2A57E6210020F1DD /* Sources */,
+				80773A7D2A57E6210020F1DD /* Frameworks */,
+				80773A7E2A57E6210020F1DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoodMorning;
+			productName = GoodMorning;
+			productReference = 80773A802A57E6210020F1DD /* GoodMorning.app */;
+			productType = "com.apple.product-type.application";
+		};
+		80773A982A57E6230020F1DD /* GoodMorningTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80773AB02A57E6230020F1DD /* Build configuration list for PBXNativeTarget "GoodMorningTests" */;
+			buildPhases = (
+				80773A952A57E6230020F1DD /* Sources */,
+				80773A962A57E6230020F1DD /* Frameworks */,
+				80773A972A57E6230020F1DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80773A9B2A57E6230020F1DD /* PBXTargetDependency */,
+			);
+			name = GoodMorningTests;
+			productName = GoodMorningTests;
+			productReference = 80773A992A57E6230020F1DD /* GoodMorningTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		80773AA22A57E6230020F1DD /* GoodMorningUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80773AB32A57E6230020F1DD /* Build configuration list for PBXNativeTarget "GoodMorningUITests" */;
+			buildPhases = (
+				80773A9F2A57E6230020F1DD /* Sources */,
+				80773AA02A57E6230020F1DD /* Frameworks */,
+				80773AA12A57E6230020F1DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80773AA52A57E6230020F1DD /* PBXTargetDependency */,
+			);
+			name = GoodMorningUITests;
+			productName = GoodMorningUITests;
+			productReference = 80773AA32A57E6230020F1DD /* GoodMorningUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80773A782A57E6210020F1DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					80773A7F2A57E6210020F1DD = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					80773A982A57E6230020F1DD = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 80773A7F2A57E6210020F1DD;
+					};
+					80773AA22A57E6230020F1DD = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 80773A7F2A57E6210020F1DD;
+					};
+				};
+			};
+			buildConfigurationList = 80773A7B2A57E6210020F1DD /* Build configuration list for PBXProject "GoodMorning" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80773A772A57E6210020F1DD;
+			productRefGroup = 80773A812A57E6210020F1DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80773A7F2A57E6210020F1DD /* GoodMorning */,
+				80773A982A57E6230020F1DD /* GoodMorningTests */,
+				80773AA22A57E6230020F1DD /* GoodMorningUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80773A7E2A57E6210020F1DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80773A932A57E6230020F1DD /* LaunchScreen.storyboard in Resources */,
+				80773A902A57E6230020F1DD /* Assets.xcassets in Resources */,
+				80773A8B2A57E6210020F1DD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80773A972A57E6230020F1DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80773AA12A57E6230020F1DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80773A7C2A57E6210020F1DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80773A882A57E6210020F1DD /* ViewController.swift in Sources */,
+				80773A842A57E6210020F1DD /* AppDelegate.swift in Sources */,
+				80773A862A57E6210020F1DD /* SceneDelegate.swift in Sources */,
+				80773A8E2A57E6210020F1DD /* GoodMorning.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80773A952A57E6230020F1DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80773A9E2A57E6230020F1DD /* GoodMorningTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80773A9F2A57E6230020F1DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80773AAA2A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift in Sources */,
+				80773AA82A57E6230020F1DD /* GoodMorningUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80773A9B2A57E6230020F1DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80773A7F2A57E6210020F1DD /* GoodMorning */;
+			targetProxy = 80773A9A2A57E6230020F1DD /* PBXContainerItemProxy */;
+		};
+		80773AA52A57E6230020F1DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80773A7F2A57E6210020F1DD /* GoodMorning */;
+			targetProxy = 80773AA42A57E6230020F1DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		80773A892A57E6210020F1DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80773A8A2A57E6210020F1DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		80773A912A57E6230020F1DD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80773A922A57E6230020F1DD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		80773AAB2A57E6230020F1DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		80773AAC2A57E6230020F1DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80773AAE2A57E6230020F1DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F2W258F5P6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoodMorning/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.GoodMorning;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80773AAF2A57E6230020F1DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F2W258F5P6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoodMorning/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.GoodMorning;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		80773AB12A57E6230020F1DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F2W258F5P6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.GoodMorningTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoodMorning.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GoodMorning";
+			};
+			name = Debug;
+		};
+		80773AB22A57E6230020F1DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F2W258F5P6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.GoodMorningTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoodMorning.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GoodMorning";
+			};
+			name = Release;
+		};
+		80773AB42A57E6230020F1DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F2W258F5P6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.GoodMorningUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GoodMorning;
+			};
+			name = Debug;
+		};
+		80773AB52A57E6230020F1DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F2W258F5P6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.GoodMorningUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GoodMorning;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80773A7B2A57E6210020F1DD /* Build configuration list for PBXProject "GoodMorning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80773AAB2A57E6230020F1DD /* Debug */,
+				80773AAC2A57E6230020F1DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80773AAD2A57E6230020F1DD /* Build configuration list for PBXNativeTarget "GoodMorning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80773AAE2A57E6230020F1DD /* Debug */,
+				80773AAF2A57E6230020F1DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80773AB02A57E6230020F1DD /* Build configuration list for PBXNativeTarget "GoodMorningTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80773AB12A57E6230020F1DD /* Debug */,
+				80773AB22A57E6230020F1DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80773AB32A57E6230020F1DD /* Build configuration list for PBXNativeTarget "GoodMorningUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80773AB42A57E6230020F1DD /* Debug */,
+				80773AB52A57E6230020F1DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		80773A8C2A57E6210020F1DD /* GoodMorning.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				80773A8D2A57E6210020F1DD /* GoodMorning.xcdatamodel */,
+			);
+			currentVersion = 80773A8D2A57E6210020F1DD /* GoodMorning.xcdatamodel */;
+			path = GoodMorning.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 80773A782A57E6210020F1DD /* Project object */;
+}
