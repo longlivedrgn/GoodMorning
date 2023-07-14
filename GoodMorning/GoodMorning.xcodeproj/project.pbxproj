@@ -21,6 +21,8 @@
 		80773AA82A57E6230020F1DD /* GoodMorningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */; };
 		80773AAA2A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */; };
 		8728F3C82A57F3280064A655 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8728F3C72A57F3280064A655 /* .swiftlint.yml */; };
+		87880F832A612C6400FF1B4D /* JSONDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87880F822A612C6400FF1B4D /* JSONDeserializable.swift */; };
+		87880F882A612C8B00FF1B4D /* JSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87880F872A612C8B00FF1B4D /* JSONDeserializer.swift */; };
 		BEF9FEDAE639412DC9A64210 /* Pods_GoodMorning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED89AB0FC30D84B1F7101507 /* Pods_GoodMorning.framework */; };
 		FC19BA7D453F5058344E81D3 /* Pods_GoodMorning_GoodMorningUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3A2770BBC9EDD831B8B217 /* Pods_GoodMorning_GoodMorningUITests.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +67,8 @@
 		80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningUITests.swift; sourceTree = "<group>"; };
 		80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8728F3C72A57F3280064A655 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		87880F822A612C6400FF1B4D /* JSONDeserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
+		87880F872A612C8B00FF1B4D /* JSONDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDeserializer.swift; sourceTree = "<group>"; };
 		8E3A2770BBC9EDD831B8B217 /* Pods_GoodMorning_GoodMorningUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodMorning_GoodMorningUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A44F883FD49649CDDC6E07DE /* Pods-GoodMorning-GoodMorningUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorning-GoodMorningUITests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorning-GoodMorningUITests/Pods-GoodMorning-GoodMorningUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A883135CEBE3618D806692E7 /* Pods-GoodMorningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.debug.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 		8060B40A2A61287D00726C83 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				87880F812A612C4500FF1B4D /* Serialization */,
 				8060B40E2A61299800726C83 /* Error */,
 				8060B40B2A6128EC00726C83 /* Session */,
 			);
@@ -186,6 +191,23 @@
 				80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */,
 			);
 			path = GoodMorningUITests;
+			sourceTree = "<group>";
+		};
+		87880F812A612C4500FF1B4D /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				87880F852A612C7700FF1B4D /* Interface */,
+				87880F872A612C8B00FF1B4D /* JSONDeserializer.swift */,
+			);
+			path = Serialization;
+			sourceTree = "<group>";
+		};
+		87880F852A612C7700FF1B4D /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				87880F822A612C6400FF1B4D /* JSONDeserializable.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		AA9AFF43ECD13EF98FBE233E /* Frameworks */ = {
@@ -475,9 +497,11 @@
 				80773A882A57E6210020F1DD /* ViewController.swift in Sources */,
 				8060B40D2A6128FC00726C83 /* NetworkSession.swift in Sources */,
 				80773A842A57E6210020F1DD /* AppDelegate.swift in Sources */,
+				87880F832A612C6400FF1B4D /* JSONDeserializable.swift in Sources */,
 				8060B4102A6129A400726C83 /* NetworkError.swift in Sources */,
 				80773A862A57E6210020F1DD /* SceneDelegate.swift in Sources */,
 				8060B4142A612A5C00726C83 /* URLResponse+.swift in Sources */,
+				87880F882A612C8B00FF1B4D /* JSONDeserializer.swift in Sources */,
 				80773A8E2A57E6210020F1DD /* GoodMorning.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
