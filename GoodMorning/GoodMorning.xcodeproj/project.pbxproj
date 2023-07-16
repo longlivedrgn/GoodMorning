@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		644B00336BD53B3797ACC3CB /* Pods_GoodMorningTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10574D4C9B32A31D10D1877C /* Pods_GoodMorningTests.framework */; };
+		800986122A645FAE00F4E010 /* MorningRoutine+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800986102A645FAE00F4E010 /* MorningRoutine+CoreDataClass.swift */; };
+		800986132A645FAE00F4E010 /* MorningRoutine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800986112A645FAE00F4E010 /* MorningRoutine+CoreDataProperties.swift */; };
 		801B3B5E2A63D6C100B57D19 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 801B3B552A63D6C100B57D19 /* Pretendard-Bold.otf */; };
 		801B3B602A63D6C100B57D19 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 801B3B572A63D6C100B57D19 /* Pretendard-Medium.otf */; };
 		801B3B612A63D6C100B57D19 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 801B3B582A63D6C100B57D19 /* Pretendard-ExtraBold.otf */; };
@@ -18,6 +20,9 @@
 		801B3B6E2A63D87C00B57D19 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 801B3B6D2A63D87C00B57D19 /* Color.xcassets */; };
 		801B3B702A63D92500B57D19 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B3B6F2A63D92500B57D19 /* Palette.swift */; };
 		801B3B722A63D94E00B57D19 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B3B712A63D94E00B57D19 /* UIColor+.swift */; };
+		801B3B752A63DEAC00B57D19 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B3B742A63DEAC00B57D19 /* CoreDataStack.swift */; };
+		801B3B772A64467F00B57D19 /* PersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B3B762A64467F00B57D19 /* PersistenceTests.swift */; };
+		801B3B7A2A6447E300B57D19 /* ManagedEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B3B792A6447E300B57D19 /* ManagedEntity.swift */; };
 		80773A842A57E6210020F1DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773A832A57E6210020F1DD /* AppDelegate.swift */; };
 		80773A862A57E6210020F1DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773A852A57E6210020F1DD /* SceneDelegate.swift */; };
 		80773A882A57E6210020F1DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773A872A57E6210020F1DD /* ViewController.swift */; };
@@ -55,6 +60,8 @@
 		401627FC16FEC7EC2C57770B /* Pods-GoodMorningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.release.xcconfig"; sourceTree = "<group>"; };
 		5E91D84F75973762F2BF9648 /* Pods-GoodMorning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorning.debug.xcconfig"; path = "Target Support Files/Pods-GoodMorning/Pods-GoodMorning.debug.xcconfig"; sourceTree = "<group>"; };
 		7BA3ADDA44E471601109F523 /* Pods-GoodMorning-GoodMorningUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorning-GoodMorningUITests.debug.xcconfig"; path = "Target Support Files/Pods-GoodMorning-GoodMorningUITests/Pods-GoodMorning-GoodMorningUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		800986102A645FAE00F4E010 /* MorningRoutine+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MorningRoutine+CoreDataClass.swift"; sourceTree = "<group>"; };
+		800986112A645FAE00F4E010 /* MorningRoutine+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MorningRoutine+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		801B3B552A63D6C100B57D19 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		801B3B572A63D6C100B57D19 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		801B3B582A63D6C100B57D19 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -65,6 +72,9 @@
 		801B3B6D2A63D87C00B57D19 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		801B3B6F2A63D92500B57D19 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		801B3B712A63D94E00B57D19 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		801B3B742A63DEAC00B57D19 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		801B3B762A64467F00B57D19 /* PersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceTests.swift; sourceTree = "<group>"; };
+		801B3B792A6447E300B57D19 /* ManagedEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedEntity.swift; sourceTree = "<group>"; };
 		80773A802A57E6210020F1DD /* GoodMorning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodMorning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80773A832A57E6210020F1DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80773A852A57E6210020F1DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +173,42 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
+		801B3B732A63DB0C00B57D19 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				801B3B7E2A6455CF00B57D19 /* Models */,
+				801B3B782A6447C400B57D19 /* Interface */,
+				801B3B742A63DEAC00B57D19 /* CoreDataStack.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		801B3B782A6447C400B57D19 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				801B3B792A6447E300B57D19 /* ManagedEntity.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		801B3B7B2A6449EB00B57D19 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				801B3B762A64467F00B57D19 /* PersistenceTests.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		801B3B7E2A6455CF00B57D19 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				800986102A645FAE00F4E010 /* MorningRoutine+CoreDataClass.swift */,
+				800986112A645FAE00F4E010 /* MorningRoutine+CoreDataProperties.swift */,
+				80773A8C2A57E6210020F1DD /* GoodMorning.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		80773A772A57E6210020F1DD = {
 			isa = PBXGroup;
 			children = (
@@ -189,13 +235,13 @@
 		80773A822A57E6210020F1DD /* GoodMorning */ = {
 			isa = PBXGroup;
 			children = (
+				801B3B732A63DB0C00B57D19 /* Persistence */,
 				801B3B682A63D79900B57D19 /* Extensions */,
 				801B3B532A63D67D00B57D19 /* Resources */,
 				80773A832A57E6210020F1DD /* AppDelegate.swift */,
 				80773A852A57E6210020F1DD /* SceneDelegate.swift */,
 				80773A872A57E6210020F1DD /* ViewController.swift */,
 				80773A942A57E6230020F1DD /* Info.plist */,
-				80773A8C2A57E6210020F1DD /* GoodMorning.xcdatamodeld */,
 			);
 			path = GoodMorning;
 			sourceTree = "<group>";
@@ -203,6 +249,7 @@
 		80773A9C2A57E6230020F1DD /* GoodMorningTests */ = {
 			isa = PBXGroup;
 			children = (
+				801B3B7B2A6449EB00B57D19 /* Persistence */,
 				80773A9D2A57E6230020F1DD /* GoodMorningTests.swift */,
 			);
 			path = GoodMorningTests;
@@ -513,8 +560,12 @@
 				801B3B6A2A63D7A100B57D19 /* UIFont+.swift in Sources */,
 				801B3B702A63D92500B57D19 /* Palette.swift in Sources */,
 				80773A862A57E6210020F1DD /* SceneDelegate.swift in Sources */,
+				800986132A645FAE00F4E010 /* MorningRoutine+CoreDataProperties.swift in Sources */,
 				80773A8E2A57E6210020F1DD /* GoodMorning.xcdatamodeld in Sources */,
 				801B3B722A63D94E00B57D19 /* UIColor+.swift in Sources */,
+				801B3B752A63DEAC00B57D19 /* CoreDataStack.swift in Sources */,
+				800986122A645FAE00F4E010 /* MorningRoutine+CoreDataClass.swift in Sources */,
+				801B3B7A2A6447E300B57D19 /* ManagedEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +574,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80773A9E2A57E6230020F1DD /* GoodMorningTests.swift in Sources */,
+				801B3B772A64467F00B57D19 /* PersistenceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
