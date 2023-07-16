@@ -21,3 +21,5 @@ extension MorningRoutine {
 }
 
 extension MorningRoutine: Identifiable { }
+
+extension MorningRoutine: ManagedEntity { }
