@@ -19,6 +19,9 @@
 		80773AAA2A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */; };
 		8728F3C82A57F3280064A655 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8728F3C72A57F3280064A655 /* .swiftlint.yml */; };
 		874569812A63C8D80092FAE5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874569802A63C8D80092FAE5 /* LocationManager.swift */; };
+		87978FA42A653E68009FE7FD /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FA32A653E68009FE7FD /* LocationFetcher.swift */; };
+		87978FA62A653E7F009FE7FD /* LocationFetcherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */; };
+		87978FAB2A653EF4009FE7FD /* CLLocationManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */; };
 		BEF9FEDAE639412DC9A64210 /* Pods_GoodMorning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED89AB0FC30D84B1F7101507 /* Pods_GoodMorning.framework */; };
 		FC19BA7D453F5058344E81D3 /* Pods_GoodMorning_GoodMorningUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3A2770BBC9EDD831B8B217 /* Pods_GoodMorning_GoodMorningUITests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +64,9 @@
 		80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8728F3C72A57F3280064A655 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		874569802A63C8D80092FAE5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		87978FA32A653E68009FE7FD /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcherDelegate.swift; sourceTree = "<group>"; };
+		87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+.swift"; sourceTree = "<group>"; };
 		8E3A2770BBC9EDD831B8B217 /* Pods_GoodMorning_GoodMorningUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodMorning_GoodMorningUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A44F883FD49649CDDC6E07DE /* Pods-GoodMorning-GoodMorningUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorning-GoodMorningUITests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorning-GoodMorningUITests/Pods-GoodMorning-GoodMorningUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A883135CEBE3618D806692E7 /* Pods-GoodMorningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.debug.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,9 +159,28 @@
 		8745697F2A63C8C40092FAE5 /* CoreLocation */ = {
 			isa = PBXGroup;
 			children = (
+				87978FA72A653EBF009FE7FD /* Extensions */,
 				874569802A63C8D80092FAE5 /* LocationManager.swift */,
+				87978FA22A653E5D009FE7FD /* Interface */,
 			);
 			path = CoreLocation;
+			sourceTree = "<group>";
+		};
+		87978FA22A653E5D009FE7FD /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				87978FA32A653E68009FE7FD /* LocationFetcher.swift */,
+				87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		87978FA72A653EBF009FE7FD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AA9AFF43ECD13EF98FBE233E /* Frameworks */ = {
@@ -442,11 +467,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87978FAB2A653EF4009FE7FD /* CLLocationManager+.swift in Sources */,
 				80773A882A57E6210020F1DD /* ViewController.swift in Sources */,
 				80773A842A57E6210020F1DD /* AppDelegate.swift in Sources */,
+				87978FA42A653E68009FE7FD /* LocationFetcher.swift in Sources */,
 				874569812A63C8D80092FAE5 /* LocationManager.swift in Sources */,
 				80773A862A57E6210020F1DD /* SceneDelegate.swift in Sources */,
 				80773A8E2A57E6210020F1DD /* GoodMorning.xcdatamodeld in Sources */,
+				87978FA62A653E7F009FE7FD /* LocationFetcherDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
