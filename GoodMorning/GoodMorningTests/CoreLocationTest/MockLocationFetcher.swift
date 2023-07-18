@@ -23,5 +23,4 @@ class MockLocationFetcher: LocationFetcher {
 
     func requestAlwaysAuthorization() {}
 
-
 }

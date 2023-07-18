@@ -149,8 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				80773A9D2A57E6230020F1DD /* GoodMorningTests.swift */,
-				876B04E02A6689070077486C /* MockLocationFetcher.swift */,
-				876B04DC2A6688A30077486C /* CoreLocationTest.swift */,
+				876B04E22A668CEF0077486C /* CoreLocationTest */,
 			);
 			path = GoodMorningTests;
 			sourceTree = "<group>";
@@ -173,6 +172,15 @@
 				87978FA22A653E5D009FE7FD /* Interface */,
 			);
 			path = CoreLocation;
+			sourceTree = "<group>";
+		};
+		876B04E22A668CEF0077486C /* CoreLocationTest */ = {
+			isa = PBXGroup;
+			children = (
+				876B04E02A6689070077486C /* MockLocationFetcher.swift */,
+				876B04DC2A6688A30077486C /* CoreLocationTest.swift */,
+			);
+			path = CoreLocationTest;
 			sourceTree = "<group>";
 		};
 		87978FA22A653E5D009FE7FD /* Interface */ = {
