@@ -14,5 +14,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        requestCurrentLocation()
     }
+
+    func requestCurrentLocation() {
+        locationManger.fetchCurrentLocation { location, error in
+            guard error == nil else { return }
+            print(location)
+        }
+    }
+
 }
