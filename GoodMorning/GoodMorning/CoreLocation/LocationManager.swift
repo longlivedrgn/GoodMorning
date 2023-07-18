@@ -24,6 +24,10 @@ final class LocationManager: NSObject {
         self.locationCallBack = completion
     }
 
+    func updateLocation() {
+        locationFetcher.startUpdatingLocation()
+    }
+
 }
 
 extension LocationManager: LocationFetcherDelegate {
