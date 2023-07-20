@@ -9,7 +9,7 @@ import CoreLocation
 
 protocol LocationFetcher {
 
-    var locationFetcherDelegate: LocationFetcherDelegate? {get set}
+    var locationFetcherDelegate: LocationFetcherDelegate? { get set }
 
     func startUpdatingLocation()
     func requestWhenInUseAuthorization()

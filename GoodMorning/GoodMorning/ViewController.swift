@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
 
@@ -19,8 +20,11 @@ class ViewController: UIViewController {
 
     func requestCurrentLocation() {
         locationManger.fetchCurrentLocation { location, error in
-            guard error == nil else { return }
-            print(location)
+            if let error {
+                print(error)
+            } else {
+                print(location)
+            }
         }
     }
 

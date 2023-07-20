@@ -9,7 +9,7 @@ import CoreLocation
 
 final class LocationManager: NSObject {
 
-    typealias LocationCallBack = ((CLLocation?, LocationError?) -> Void)
+    typealias LocationCallBack = ((CLLocation?, Error?) -> Void)
 
     private var locationFetcher: LocationFetcher
     var locationCallBack: LocationCallBack?
@@ -36,13 +36,12 @@ extension LocationManager: LocationFetcherDelegate {
         if let location = locations.first {
             locationCallBack?(location, nil)
         } else {
-            locationCallBack?(nil, .canNotBeLocated)
+            locationCallBack?(nil, LocationError.canNotBeLocated)
         }
-
     }
 
     func locationFetcher(_ fetcher: LocationFetcher, didFailWithError error: Error) {
-        locationCallBack?(nil, .canNotBeLocated)
+        locationCallBack?(nil, error)
     }
 
     func locationFetcher(
