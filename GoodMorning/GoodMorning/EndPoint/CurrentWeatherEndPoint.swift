@@ -14,7 +14,7 @@ struct CurrentWeatherEndPoint: RequestResponsable {
     var baseURL: String
     var path: String
     var query: [URLQueryItem]?
-    var headers: [String : String]?
+    var headers: [String: String]?
 
     init(coordinate: Coordinate) {
         let api = OpenWeatherAPI.currentWeather(coordinate)

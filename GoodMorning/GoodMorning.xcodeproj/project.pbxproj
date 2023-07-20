@@ -35,6 +35,7 @@
 		8735552D2A6951180027A847 /* OpenWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8735552C2A6951180027A847 /* OpenWeatherAPI.swift */; };
 		873555322A6954700027A847 /* CurrentWeatherDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873555312A6954700027A847 /* CurrentWeatherDTO.swift */; };
 		873555342A6954D10027A847 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873555332A6954D10027A847 /* Coordinate.swift */; };
+		873555382A6959DC0027A847 /* OpenWeatherAPIEndPointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873555372A6959DC0027A847 /* OpenWeatherAPIEndPointTest.swift */; };
 		BEF9FEDAE639412DC9A64210 /* Pods_GoodMorning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED89AB0FC30D84B1F7101507 /* Pods_GoodMorning.framework */; };
 		FC19BA7D453F5058344E81D3 /* Pods_GoodMorning_GoodMorningUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3A2770BBC9EDD831B8B217 /* Pods_GoodMorning_GoodMorningUITests.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,7 @@
 		8735552C2A6951180027A847 /* OpenWeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAPI.swift; sourceTree = "<group>"; };
 		873555312A6954700027A847 /* CurrentWeatherDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherDTO.swift; sourceTree = "<group>"; };
 		873555332A6954D10027A847 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		873555372A6959DC0027A847 /* OpenWeatherAPIEndPointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAPIEndPointTest.swift; sourceTree = "<group>"; };
 		8E3A2770BBC9EDD831B8B217 /* Pods_GoodMorning_GoodMorningUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodMorning_GoodMorningUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A44F883FD49649CDDC6E07DE /* Pods-GoodMorning-GoodMorningUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorning-GoodMorningUITests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorning-GoodMorningUITests/Pods-GoodMorning-GoodMorningUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A883135CEBE3618D806692E7 /* Pods-GoodMorningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.debug.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				80773A9D2A57E6230020F1DD /* GoodMorningTests.swift */,
+				873555392A695B750027A847 /* APIEndPointTest */,
 			);
 			path = GoodMorningTests;
 			sourceTree = "<group>";
@@ -276,6 +279,14 @@
 				873555312A6954700027A847 /* CurrentWeatherDTO.swift */,
 			);
 			path = OpenWeather;
+			sourceTree = "<group>";
+		};
+		873555392A695B750027A847 /* APIEndPointTest */ = {
+			isa = PBXGroup;
+			children = (
+				873555372A6959DC0027A847 /* OpenWeatherAPIEndPointTest.swift */,
+			);
+			path = APIEndPointTest;
 			sourceTree = "<group>";
 		};
 		AA9AFF43ECD13EF98FBE233E /* Frameworks */ = {
@@ -591,6 +602,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80773A9E2A57E6230020F1DD /* GoodMorningTests.swift in Sources */,
+				873555382A6959DC0027A847 /* OpenWeatherAPIEndPointTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
