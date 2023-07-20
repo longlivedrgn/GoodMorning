@@ -5,4 +5,10 @@
 //  Created by Miro on 2023/07/20.
 //
 
-import Foundation
+//import Foundation
+
+protocol Responsable {
+
+    associatedtype Response: Decodable
+
+}
