@@ -28,6 +28,8 @@
 		80773AA82A57E6230020F1DD /* GoodMorningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */; };
 		80773AAA2A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */; };
 		8728F3C82A57F3280064A655 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8728F3C72A57F3280064A655 /* .swiftlint.yml */; };
+		873555242A694AB40027A847 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873555232A694AB40027A847 /* Requestable.swift */; };
+		873555262A694ABA0027A847 /* Responsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873555252A694ABA0027A847 /* Responsable.swift */; };
 		BEF9FEDAE639412DC9A64210 /* Pods_GoodMorning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED89AB0FC30D84B1F7101507 /* Pods_GoodMorning.framework */; };
 		FC19BA7D453F5058344E81D3 /* Pods_GoodMorning_GoodMorningUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3A2770BBC9EDD831B8B217 /* Pods_GoodMorning_GoodMorningUITests.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +81,8 @@
 		80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningUITests.swift; sourceTree = "<group>"; };
 		80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8728F3C72A57F3280064A655 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		873555232A694AB40027A847 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		873555252A694ABA0027A847 /* Responsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responsable.swift; sourceTree = "<group>"; };
 		8E3A2770BBC9EDD831B8B217 /* Pods_GoodMorning_GoodMorningUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodMorning_GoodMorningUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A44F883FD49649CDDC6E07DE /* Pods-GoodMorning-GoodMorningUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorning-GoodMorningUITests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorning-GoodMorningUITests/Pods-GoodMorning-GoodMorningUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A883135CEBE3618D806692E7 /* Pods-GoodMorningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.debug.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				801B3B682A63D79900B57D19 /* Extensions */,
 				801B3B532A63D67D00B57D19 /* Resources */,
 				80773A832A57E6210020F1DD /* AppDelegate.swift */,
+				873555202A694A810027A847 /* EndPoint */,
 				80773A852A57E6210020F1DD /* SceneDelegate.swift */,
 				80773A872A57E6210020F1DD /* ViewController.swift */,
 				80773A942A57E6230020F1DD /* Info.plist */,
@@ -215,6 +220,23 @@
 				80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */,
 			);
 			path = GoodMorningUITests;
+			sourceTree = "<group>";
+		};
+		873555202A694A810027A847 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				873555212A694AA50027A847 /* Interface */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		873555212A694AA50027A847 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				873555232A694AB40027A847 /* Requestable.swift */,
+				873555252A694ABA0027A847 /* Responsable.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		AA9AFF43ECD13EF98FBE233E /* Frameworks */ = {
@@ -509,6 +531,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				80773A882A57E6210020F1DD /* ViewController.swift in Sources */,
+				873555242A694AB40027A847 /* Requestable.swift in Sources */,
+				873555262A694ABA0027A847 /* Responsable.swift in Sources */,
 				80773A842A57E6210020F1DD /* AppDelegate.swift in Sources */,
 				801B3B6A2A63D7A100B57D19 /* UIFont+.swift in Sources */,
 				801B3B702A63D92500B57D19 /* Palette.swift in Sources */,
