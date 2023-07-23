@@ -10,9 +10,6 @@ import CoreData
 struct CoreDataStack {
 
     private var container: NSPersistentContainer
-    private var context: NSManagedObjectContext {
-        return container.viewContext
-    }
     private let containerName = "GoodMorning"
 
     init() {
@@ -29,14 +26,14 @@ struct CoreDataStack {
     }
 
     func create<T: ManagedEntity>() -> T? {
-        let object = T.makeNewObject(in: context)
+        let object = T.makeNewObject(in: container.viewContext)
         return object
     }
 
     func fetch<T: ManagedEntity>() -> [T] {
         do {
             let request = T.makeNewFetchRequest()
-            let fetchResult = try context.fetch(request)
+            let fetchResult = try container.viewContext.fetch(request)
             return fetchResult
         } catch {
             print(error.localizedDescription)
@@ -45,9 +42,9 @@ struct CoreDataStack {
     }
 
     func update() {
-        if context.hasChanges {
+        if container.viewContext.hasChanges {
             do {
-                try context.save()
+                try container.viewContext.save()
             } catch {
                 print(error.localizedDescription)
             }
