@@ -7,7 +7,7 @@
 
 import CoreData
 
-struct CoreDataStack {
+struct CoreDataStack: PersistentStore {
 
     private var container: NSPersistentContainer
 
