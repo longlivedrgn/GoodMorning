@@ -10,7 +10,7 @@ import XCTest
 
 class CoreDataTestSetup: XCTestCase {
 
-    var sut: PersistentStore!
+    var sut: CoreDataStack!
 
     override func setUpWithError() throws {
         sut = CoreDataStack(container: .goodMorning)
