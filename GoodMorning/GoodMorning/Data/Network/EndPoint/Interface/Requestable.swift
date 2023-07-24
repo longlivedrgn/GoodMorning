@@ -30,9 +30,8 @@ extension Requestable {
     }
 
     func makeRequest() throws -> URLRequest {
-        // NetworkError와 연결하기
         guard let url = self.urlComponents else {
-            throw fatalError()
+            throw NetworkError.failToMakeRequest
         }
 
         var request = URLRequest(url: url)
