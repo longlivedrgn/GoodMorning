@@ -188,9 +188,9 @@
 		80773A822A57E6210020F1DD /* GoodMorning */ = {
 			isa = PBXGroup;
 			children = (
+				80EB03132A6E9E3D00455E05 /* Data */,
 				8060B4152A6130C100726C83 /* Resources */,
 				8060B4112A6129E400726C83 /* Extension */,
-				8060B40A2A61287D00726C83 /* Network */,
 				80773A832A57E6210020F1DD /* AppDelegate.swift */,
 				80773A852A57E6210020F1DD /* SceneDelegate.swift */,
 				80773A872A57E6210020F1DD /* ViewController.swift */,
@@ -215,6 +215,14 @@
 				80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */,
 			);
 			path = GoodMorningUITests;
+			sourceTree = "<group>";
+		};
+		80EB03132A6E9E3D00455E05 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8060B40A2A61287D00726C83 /* Network */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		87880F812A612C4500FF1B4D /* Serialization */ = {
