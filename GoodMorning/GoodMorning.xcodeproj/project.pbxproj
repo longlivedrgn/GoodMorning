@@ -183,6 +183,33 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
+		80611FC02A6E76590093E958 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				80611FC22A6E76880093E958 /* Model */,
+				80611FC12A6E76670093E958 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		80611FC12A6E76670093E958 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8735552E2A69544F0027A847 /* DTO */,
+				8735552B2A69510C0027A847 /* API */,
+				873555202A694A810027A847 /* EndPoint */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		80611FC22A6E76880093E958 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				873555332A6954D10027A847 /* Coordinate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		80773A772A57E6210020F1DD = {
 			isa = PBXGroup;
 			children = (
@@ -212,14 +239,11 @@
 				801B3B682A63D79900B57D19 /* Extensions */,
 				801B3B532A63D67D00B57D19 /* Resources */,
 				80773A832A57E6210020F1DD /* AppDelegate.swift */,
-				8735552E2A69544F0027A847 /* DTO */,
-				8735552B2A69510C0027A847 /* API */,
-				873555202A694A810027A847 /* EndPoint */,
+				80611FC02A6E76590093E958 /* Data */,
 				80773A852A57E6210020F1DD /* SceneDelegate.swift */,
 				80773A872A57E6210020F1DD /* ViewController.swift */,
 				80773A942A57E6230020F1DD /* Info.plist */,
 				80773A8C2A57E6210020F1DD /* GoodMorning.xcdatamodeld */,
-				873555332A6954D10027A847 /* Coordinate.swift */,
 			);
 			path = GoodMorning;
 			sourceTree = "<group>";
