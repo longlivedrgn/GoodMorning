@@ -12,7 +12,6 @@ struct CurrentWeatherDTO: Decodable {
     let weather: [WeatherDTO]
 
     enum CodingKeys: String, CodingKey {
-
         case temperature = "main"
         case weather
     }
