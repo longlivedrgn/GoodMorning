@@ -11,6 +11,8 @@
 		<string>Pretendard-Bold.otf</string>
 		<string>Pretendard-ExtraBold.otf</string>
 	</array>
+	<key>OpenWeatherAPIKey</key>
+	<string>$(OPEN_WEATHER_API_KEY)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
