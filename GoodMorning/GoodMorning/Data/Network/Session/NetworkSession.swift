@@ -7,9 +7,7 @@
 
 import Foundation
 
-typealias NetworkResult = Result<Data, NetworkError>
-
-final class NetworkSession {
+final class NetworkSession: NetworkSessionProtocol {
 
     private let session: URLSession
 
