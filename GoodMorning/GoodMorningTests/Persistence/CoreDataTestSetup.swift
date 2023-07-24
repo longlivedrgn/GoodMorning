@@ -13,7 +13,7 @@ class CoreDataTestSetup: XCTestCase {
     var sut: CoreDataStack!
 
     override func setUpWithError() throws {
-        sut = CoreDataStack()
+        sut = CoreDataStack(container: .goodMorning)
     }
 
     override func tearDownWithError() throws {

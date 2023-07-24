@@ -10,10 +10,9 @@ import CoreData
 struct CoreDataStack {
 
     private var container: NSPersistentContainer
-    private let containerName = "GoodMorning"
 
-    init() {
-        self.container = NSPersistentContainer(name: containerName)
+    init(container: Container) {
+        self.container = NSPersistentContainer(name: container.name)
         initiateContainer()
     }
 
@@ -47,6 +46,19 @@ struct CoreDataStack {
                 try container.viewContext.save()
             } catch {
                 print(error.localizedDescription)
+            }
+        }
+    }
+}
+
+extension CoreDataStack {
+    enum Container {
+        case goodMorning
+
+        var name: String {
+            switch self {
+            case .goodMorning:
+                return "GoodMorning"
             }
         }
     }
