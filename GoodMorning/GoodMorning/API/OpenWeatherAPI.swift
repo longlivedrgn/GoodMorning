@@ -33,11 +33,10 @@ enum OpenWeatherAPI {
         queryItem.append(keyParameter)
 
         switch self {
-        case .currentWeather(let coordinate):
-            let latitudeParameter = URLQueryItem(name: "lat", value: coordinate.latitude)
-            let longitudeParameter = URLQueryItem(name: "lon", value: coordinate.longitude)
+        case .currentWeather(var coordinate):
             let unitParameter = URLQueryItem(name: "units", value: "metric")
-            queryItem.append(contentsOf: [latitudeParameter, longitudeParameter, unitParameter])
+            queryItem.append(unitParameter)
+            queryItem.append(contentsOf: coordinate.urlQueryItem)
         }
 
         return queryItem
