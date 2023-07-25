@@ -8,7 +8,7 @@
 import CoreLocation
 @testable import GoodMorning
 
-class MockLocationFetcher: LocationFetcher {
+class MockLocationFetcher: LocationFetchable {
 
     var locationFetcherDelegate: GoodMorning.LocationFetcherDelegate?
     var locationCallBackValue: CLLocation?

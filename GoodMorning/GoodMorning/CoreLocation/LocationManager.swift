@@ -11,10 +11,10 @@ final class LocationManager: NSObject {
 
     typealias LocationCallBack = ((CLLocation?, Error?) -> Void)
 
-    private var locationFetcher: LocationFetcher
+    private var locationFetcher: LocationFetchable
     var locationCallBack: LocationCallBack?
 
-    init(locationFetcher: LocationFetcher = CLLocationManager()) {
+    init(locationFetcher: LocationFetchable = CLLocationManager()) {
         self.locationFetcher = locationFetcher
         super.init()
         self.locationFetcher.locationFetcherDelegate = self
@@ -32,7 +32,7 @@ final class LocationManager: NSObject {
 
 extension LocationManager: LocationFetcherDelegate {
 
-    func locationFetcher(_ fetcher: LocationFetcher, didUpdateLocations locations: [CLLocation]) {
+    func locationFetcher(_ fetcher: LocationFetchable, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             locationCallBack?(location, nil)
         } else {
@@ -40,12 +40,12 @@ extension LocationManager: LocationFetcherDelegate {
         }
     }
 
-    func locationFetcher(_ fetcher: LocationFetcher, didFailWithError error: Error) {
+    func locationFetcher(_ fetcher: LocationFetchable, didFailWithError error: Error) {
         locationCallBack?(nil, error)
     }
 
     func locationFetcher(
-        _ fetcher: LocationFetcher,
+        _ fetcher: LocationFetchable,
         didChangeAuthorization authorization: CLAuthorizationStatus
     ) {
         switch authorization {

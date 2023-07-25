@@ -1,5 +1,5 @@
 //
-//  LocationFetcher.swift
+//  LocationFetchable.swift
 //  GoodMorning
 //
 //  Created by Miro on 2023/07/17.
@@ -7,7 +7,7 @@
 
 import CoreLocation
 
-protocol LocationFetcher {
+protocol LocationFetchable {
 
     var locationFetcherDelegate: LocationFetcherDelegate? { get set }
 

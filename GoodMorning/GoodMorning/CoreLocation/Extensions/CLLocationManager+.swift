@@ -7,7 +7,7 @@
 
 import CoreLocation
 
-extension CLLocationManager: LocationFetcher {
+extension CLLocationManager: LocationFetchable {
 
     var locationFetcherDelegate: LocationFetcherDelegate? {
         get {
