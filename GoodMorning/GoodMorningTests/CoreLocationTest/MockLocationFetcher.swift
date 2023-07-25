@@ -11,7 +11,7 @@ import CoreLocation
 class MockLocationFetcher: LocationFetchable {
 
     var locationFetcherDelegate: GoodMorning.LocationFetcherDelegate?
-    var locationCallBackValue: CLLocation?
+    var locationCallBackValue: Coordinate?
     var locationErrorCallBackValue: Error?
 
     func startUpdatingLocation() {

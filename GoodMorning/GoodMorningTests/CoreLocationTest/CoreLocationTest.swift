@@ -28,16 +28,18 @@ final class CoreLocationTest: XCTestCase {
 
     func test_임의의_위치를_넣어줬을때_제대로_위치_정보를_가져오는지_확인() {
         let expectationLocation = CLLocation(latitude: 10, longitude: 10)
-        var resultLocation: CLLocation?
+        var resultLocation: Coordinate?
 
         sut.fetchCurrentLocation { location, error in
             resultLocation = location
         }
-        locationFetcher.locationCallBackValue = CLLocation(latitude: 10, longitude: 10)
+        locationFetcher.locationCallBackValue = Coordinate(longitude: String(10.0), latitude: String(10.0))
         locationFetcher.locationErrorCallBackValue = nil
         sut.updateLocation()
 
-        XCTAssertEqual(resultLocation?.coordinate.latitude, expectationLocation.coordinate.latitude)
+        XCTAssertEqual(
+            resultLocation?.latitude, String(expectationLocation.coordinate.latitude)
+        )
     }
 
     func test_네트워크_오류로_로케이션을_받아올_수_없을_때_에러를_던지는지_확인() {
