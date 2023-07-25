@@ -49,6 +49,7 @@ struct CoreDataStack: PersistentStore {
             }
         }
     }
+
 }
 
 extension CoreDataStack {
@@ -62,4 +63,5 @@ extension CoreDataStack {
             }
         }
     }
+    
 }
