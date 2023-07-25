@@ -44,17 +44,10 @@
 		873555322A6954700027A847 /* CurrentWeatherDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873555312A6954700027A847 /* CurrentWeatherDTO.swift */; };
 		873555342A6954D10027A847 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873555332A6954D10027A847 /* Coordinate.swift */; };
 		873555382A6959DC0027A847 /* OpenWeatherAPIEndPointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873555372A6959DC0027A847 /* OpenWeatherAPIEndPointTest.swift */; };
-		874569812A63C8D80092FAE5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874569802A63C8D80092FAE5 /* LocationManager.swift */; };
-		876B04DB2A66841F0077486C /* LocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876B04DA2A66841F0077486C /* LocationError.swift */; };
-		876B04DD2A6688A30077486C /* CoreLocationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876B04DC2A6688A30077486C /* CoreLocationTest.swift */; };
-		876B04E12A6689070077486C /* MockLocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876B04E02A6689070077486C /* MockLocationFetcher.swift */; };
 		877E3FC62A6E3BB400BB06FA /* TemperatureDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877E3FC52A6E3BB400BB06FA /* TemperatureDTO.swift */; };
 		877E3FC82A6E3BC500BB06FA /* WeatherDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877E3FC72A6E3BC500BB06FA /* WeatherDTO.swift */; };
 		87880F832A612C6400FF1B4D /* JSONDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87880F822A612C6400FF1B4D /* JSONDeserializable.swift */; };
 		87880F882A612C8B00FF1B4D /* JSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87880F872A612C8B00FF1B4D /* JSONDeserializer.swift */; };
-		87978FA42A653E68009FE7FD /* LocationFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FA32A653E68009FE7FD /* LocationFetchable.swift */; };
-		87978FA62A653E7F009FE7FD /* LocationFetcherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */; };
-		87978FAB2A653EF4009FE7FD /* CLLocationManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,17 +113,10 @@
 		873555312A6954700027A847 /* CurrentWeatherDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherDTO.swift; sourceTree = "<group>"; };
 		873555332A6954D10027A847 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		873555372A6959DC0027A847 /* OpenWeatherAPIEndPointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAPIEndPointTest.swift; sourceTree = "<group>"; };
-		874569802A63C8D80092FAE5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		876B04DA2A66841F0077486C /* LocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationError.swift; sourceTree = "<group>"; };
-		876B04DC2A6688A30077486C /* CoreLocationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationTest.swift; sourceTree = "<group>"; };
-		876B04E02A6689070077486C /* MockLocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationFetcher.swift; sourceTree = "<group>"; };
 		877E3FC52A6E3BB400BB06FA /* TemperatureDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureDTO.swift; sourceTree = "<group>"; };
 		877E3FC72A6E3BC500BB06FA /* WeatherDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDTO.swift; sourceTree = "<group>"; };
 		87880F822A612C6400FF1B4D /* JSONDeserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
 		87880F872A612C8B00FF1B4D /* JSONDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDeserializer.swift; sourceTree = "<group>"; };
-		87978FA32A653E68009FE7FD /* LocationFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetchable.swift; sourceTree = "<group>"; };
-		87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcherDelegate.swift; sourceTree = "<group>"; };
-		87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+.swift"; sourceTree = "<group>"; };
 		BC808D177BDBE9A5E89AA608 /* Pods-GoodMorningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.release.xcconfig"; sourceTree = "<group>"; };
 		CA403186C607188DBDCA0A62 /* Pods_GoodMorning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodMorning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A73B06F9FAFA89A97431E8 /* Pods_GoodMorning_GoodMorningUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodMorning_GoodMorningUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,7 +200,6 @@
 				801B3B712A63D94E00B57D19 /* UIColor+.swift */,
 				8060B4132A612A5C00726C83 /* URLResponse+.swift */,
 				8060B4182A6131E100726C83 /* Bundle+.swift */,
-				87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -304,7 +289,6 @@
 				801B3B532A63D67D00B57D19 /* Resources */,
 				80EB03172A6EC68F00455E05 /* Domain */,
 				80611FC02A6E76590093E958 /* Data */,
-				8745697F2A63C8C40092FAE5 /* CoreLocation */,
 				80773A852A57E6210020F1DD /* SceneDelegate.swift */,
 				80773A832A57E6210020F1DD /* AppDelegate.swift */,
 				80773A872A57E6210020F1DD /* ViewController.swift */,
@@ -319,7 +303,6 @@
 			children = (
 				80773A9D2A57E6230020F1DD /* GoodMorningTests.swift */,
 				873555392A695B750027A847 /* APIEndPointTest */,
-				876B04E22A668CEF0077486C /* CoreLocationTest */,
 			);
 			path = GoodMorningTests;
 			sourceTree = "<group>";
@@ -411,25 +394,6 @@
 			path = APIEndPointTest;
 			sourceTree = "<group>";
 		};
-		8745697F2A63C8C40092FAE5 /* CoreLocation */ = {
-			isa = PBXGroup;
-			children = (
-				8798C5552A6FA61300EE5BF6 /* Error */,
-				874569802A63C8D80092FAE5 /* LocationManager.swift */,
-				87978FA22A653E5D009FE7FD /* Interface */,
-			);
-			path = CoreLocation;
-			sourceTree = "<group>";
-		};
-		876B04E22A668CEF0077486C /* CoreLocationTest */ = {
-			isa = PBXGroup;
-			children = (
-				876B04E02A6689070077486C /* MockLocationFetcher.swift */,
-				876B04DC2A6688A30077486C /* CoreLocationTest.swift */,
-			);
-			path = CoreLocationTest;
-			sourceTree = "<group>";
-		};
 		87880F812A612C4500FF1B4D /* Serialization */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,23 +409,6 @@
 				87880F822A612C6400FF1B4D /* JSONDeserializable.swift */,
 			);
 			path = Interface;
-			sourceTree = "<group>";
-		};
-		87978FA22A653E5D009FE7FD /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				87978FA32A653E68009FE7FD /* LocationFetchable.swift */,
-				87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */,
-			);
-			path = Interface;
-			sourceTree = "<group>";
-		};
-		8798C5552A6FA61300EE5BF6 /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				876B04DA2A66841F0077486C /* LocationError.swift */,
-			);
-			path = Error;
 			sourceTree = "<group>";
 		};
 		F317094B738C7339B328A52B /* Pods */ = {
@@ -746,7 +693,6 @@
 				8735552A2A694FED0027A847 /* CurrentWeatherEndPoint.swift in Sources */,
 				873555282A694FBA0027A847 /* RequestResponsable.swift in Sources */,
 				877E3FC82A6E3BC500BB06FA /* WeatherDTO.swift in Sources */,
-				87978FAB2A653EF4009FE7FD /* CLLocationManager+.swift in Sources */,
 				80773A882A57E6210020F1DD /* ViewController.swift in Sources */,
 				873555242A694AB40027A847 /* Requestable.swift in Sources */,
 				873555322A6954700027A847 /* CurrentWeatherDTO.swift in Sources */,
@@ -761,17 +707,13 @@
 				8060B40D2A6128FC00726C83 /* NetworkSession.swift in Sources */,
 				87880F832A612C6400FF1B4D /* JSONDeserializable.swift in Sources */,
 				8060B4102A6129A400726C83 /* NetworkError.swift in Sources */,
-				87978FA42A653E68009FE7FD /* LocationFetchable.swift in Sources */,
-				874569812A63C8D80092FAE5 /* LocationManager.swift in Sources */,
 				80773A862A57E6210020F1DD /* SceneDelegate.swift in Sources */,
 				8060B4142A612A5C00726C83 /* URLResponse+.swift in Sources */,
 				87880F882A612C8B00FF1B4D /* JSONDeserializer.swift in Sources */,
-				876B04DB2A66841F0077486C /* LocationError.swift in Sources */,
 				80773A8E2A57E6210020F1DD /* GoodMorning.xcdatamodeld in Sources */,
 				801B3B722A63D94E00B57D19 /* UIColor+.swift in Sources */,
 				8735552D2A6951180027A847 /* OpenWeatherAPI.swift in Sources */,
 				8060B4192A6131E100726C83 /* Bundle+.swift in Sources */,
-				87978FA62A653E7F009FE7FD /* LocationFetcherDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,8 +723,6 @@
 			files = (
 				80773A9E2A57E6230020F1DD /* GoodMorningTests.swift in Sources */,
 				873555382A6959DC0027A847 /* OpenWeatherAPIEndPointTest.swift in Sources */,
-				876B04E12A6689070077486C /* MockLocationFetcher.swift in Sources */,
-				876B04DD2A6688A30077486C /* CoreLocationTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,7 +884,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F2W258F5P6;
+				DEVELOPMENT_TEAM = 9XR48RYD63;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoodMorning/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
