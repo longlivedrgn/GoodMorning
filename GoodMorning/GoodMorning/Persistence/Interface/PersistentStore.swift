@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PersistentStore {
-    func create<T: ManagedEntity>() -> T?
-    func fetch<T: ManagedEntity>() -> [T]
+    func create<EntityType: ManagedEntity>() -> EntityType?
+    func fetch<EntityType: ManagedEntity>() -> [EntityType]
     func update()
 }

@@ -24,14 +24,14 @@ struct CoreDataStack: PersistentStore {
         }
     }
 
-    func create<T: ManagedEntity>() -> T? {
-        let object = T.makeNewObject(in: container.viewContext)
+    func create<EntityType: ManagedEntity>() -> EntityType? {
+        let object = EntityType.makeNewObject(in: container.viewContext)
         return object
     }
 
-    func fetch<T: ManagedEntity>() -> [T] {
+    func fetch<EntityType: ManagedEntity>() -> [EntityType] {
         do {
-            let request = T.makeNewFetchRequest()
+            let request = EntityType.makeNewFetchRequest()
             let fetchResult = try container.viewContext.fetch(request)
             return fetchResult
         } catch {
@@ -63,5 +63,5 @@ extension CoreDataStack {
             }
         }
     }
-    
+
 }
