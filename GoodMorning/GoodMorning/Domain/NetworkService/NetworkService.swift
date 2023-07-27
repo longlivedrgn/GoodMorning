@@ -7,7 +7,7 @@
 
 final class NetworkService: NetworkServiceProtocol {
 
-    private let session: NetworkSession!
+    private let session: NetworkSession
     private let deserializer = JSONDeserializer()
 
     init(session: NetworkSession = NetworkSession()) {
