@@ -1,11 +1,11 @@
 //
-//  NetworkServiceProtocol.swift
+//  NetworkServiceProvidable.swift
 //  GoodMorning
 //
 //  Created by Sunny on 2023/07/24.
 //
 
-protocol NetworkServiceProtocol {
+protocol NetworkServiceProvidable {
 
     func request<Endpoint: RequestResponsable>(
         _ endpoint: Endpoint
