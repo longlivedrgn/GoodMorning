@@ -5,9 +5,9 @@
 //  Created by Sunny on 2023/07/24.
 //
 
-final class NetworkService: NetworkServiceProtocol {
+final class NetworkService: NetworkServiceProvidable {
 
-    private let session: NetworkSession!
+    private let session: NetworkSession
     private let deserializer = JSONDeserializer()
 
     init(session: NetworkSession = NetworkSession()) {
