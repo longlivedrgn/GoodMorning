@@ -10,7 +10,7 @@ import Foundation
 typealias NetworkResult = Result<Data, NetworkError>
 
 protocol NetworkSessionProvidable {
-    
+
     func data(from urlRequest: URLRequest) async throws -> NetworkResult
-    
+
 }
