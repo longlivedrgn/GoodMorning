@@ -7,10 +7,10 @@
 
 final class NetworkService: NetworkServiceProvidable {
 
-    private let session: NetworkSession
+    private let session: NetworkSessionProvidable
     private let deserializer = JSONDeserializer()
 
-    init(session: NetworkSession = NetworkSession()) {
+    init(session: NetworkSessionProvidable = NetworkSession()) {
         self.session = session
     }
 
