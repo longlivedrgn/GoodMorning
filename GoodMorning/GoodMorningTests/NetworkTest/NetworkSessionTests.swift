@@ -8,23 +8,7 @@
 import XCTest
 @testable import GoodMorning
 
-class NetworkSessionTests: XCTestCase {
-
-    var data: Data!
-    var url: URL!
-
-    override func setUpWithError() throws {
-        let jsonLoader = JSONLoader()
-        let fileURL = try jsonLoader.load(fileName: "CurrentWeather")
-        data = try Data(contentsOf: fileURL)
-        url = URL(string: "https://api.test.com")
-    }
-
-    override func tearDownWithError() throws {
-        data = nil
-        try super.tearDownWithError()
-    }
-
+class NetworkSessionTests: NetworkTestSetup {
 
     func test_statusCode가_200이고_데이터가_존재할때() async throws {
         let urlSession = MockURLSession(data: data, statusCode: 200, url: url)
@@ -46,5 +30,6 @@ class NetworkSessionTests: XCTestCase {
         let expectation: NetworkResult = .failure(.outOfResponseCode)
         XCTAssertEqual(result, expectation)
     }
+
 }
 
