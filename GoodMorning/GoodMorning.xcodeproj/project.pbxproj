@@ -22,7 +22,7 @@
 		801B3B722A63D94E00B57D19 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B3B712A63D94E00B57D19 /* UIColor+.swift */; };
 		802CE6FB2A76ABB600F41513 /* CurrentWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = 803569DB2A768E76001C92BC /* CurrentWeather.json */; };
 		802CE6FE2A76ACBC00F41513 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CE6FD2A76ACBC00F41513 /* JSONLoader.swift */; };
-		802CE7042A7767E500F41513 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CE7032A7767E500F41513 /* NetworkServiceTests.swift */; };
+		802CE7042A7767E500F41513 /* SerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CE7032A7767E500F41513 /* SerializationTests.swift */; };
 		802CE7062A77683700F41513 /* NetworkTestSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CE7052A77683700F41513 /* NetworkTestSetup.swift */; };
 		803569CA2A763966001C92BC /* NetworkSessionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803569C92A763966001C92BC /* NetworkSessionProvidable.swift */; };
 		803569CD2A76453B001C92BC /* MockNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803569CC2A76453B001C92BC /* MockNetworkSession.swift */; };
@@ -106,7 +106,7 @@
 		801B3B762A64467F00B57D19 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		801B3B792A6447E300B57D19 /* ManagedEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedEntity.swift; sourceTree = "<group>"; };
 		802CE6FD2A76ACBC00F41513 /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
-		802CE7032A7767E500F41513 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		802CE7032A7767E500F41513 /* SerializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializationTests.swift; sourceTree = "<group>"; };
 		802CE7052A77683700F41513 /* NetworkTestSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestSetup.swift; sourceTree = "<group>"; };
 		803569C92A763966001C92BC /* NetworkSessionProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProvidable.swift; sourceTree = "<group>"; };
 		803569CC2A76453B001C92BC /* MockNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkSession.swift; sourceTree = "<group>"; };
@@ -298,6 +298,25 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		802CE7072A77690A00F41513 /* NetworkSessionTest */ = {
+			isa = PBXGroup;
+			children = (
+				803569D72A768C52001C92BC /* Interface */,
+				803569D42A768C04001C92BC /* MockURLSession.swift */,
+				803569CC2A76453B001C92BC /* MockNetworkSession.swift */,
+				803569D82A768C68001C92BC /* NetworkSessionTests.swift */,
+			);
+			path = NetworkSessionTest;
+			sourceTree = "<group>";
+		};
+		802CE7082A77693900F41513 /* SerializationTest */ = {
+			isa = PBXGroup;
+			children = (
+				802CE7032A7767E500F41513 /* SerializationTests.swift */,
+			);
+			path = SerializationTest;
+			sourceTree = "<group>";
+		};
 		803569C82A763924001C92BC /* Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,13 +328,11 @@
 		803569CB2A76451A001C92BC /* NetworkTest */ = {
 			isa = PBXGroup;
 			children = (
-				802CE6FC2A76AC9B00F41513 /* JSON */,
-				803569D72A768C52001C92BC /* Interface */,
-				803569CC2A76453B001C92BC /* MockNetworkSession.swift */,
-				803569D42A768C04001C92BC /* MockURLSession.swift */,
-				803569D82A768C68001C92BC /* NetworkSessionTests.swift */,
-				802CE7032A7767E500F41513 /* NetworkServiceTests.swift */,
 				802CE7052A77683700F41513 /* NetworkTestSetup.swift */,
+				802CE6FC2A76AC9B00F41513 /* JSON */,
+				802CE7072A77690A00F41513 /* NetworkSessionTest */,
+				802CE7082A77693900F41513 /* SerializationTest */,
+				873555392A695B750027A847 /* APIEndPointTest */,
 			);
 			path = NetworkTest;
 			sourceTree = "<group>";
@@ -421,7 +438,6 @@
 				80773A9D2A57E6230020F1DD /* GoodMorningTests.swift */,
 				803569CB2A76451A001C92BC /* NetworkTest */,
 				801B3B7B2A6449EB00B57D19 /* Persistence */,
-				873555392A695B750027A847 /* APIEndPointTest */,
 				876B04E22A668CEF0077486C /* CoreLocationTest */,
 			);
 			path = GoodMorningTests;
@@ -517,8 +533,8 @@
 		8745697F2A63C8C40092FAE5 /* CoreLocation */ = {
 			isa = PBXGroup;
 			children = (
-				8798C5552A6FA61300EE5BF6 /* Error */,
 				874569802A63C8D80092FAE5 /* LocationManager.swift */,
+				8798C5552A6FA61300EE5BF6 /* Error */,
 				87978FA22A653E5D009FE7FD /* Interface */,
 			);
 			path = CoreLocation;
@@ -885,7 +901,7 @@
 			files = (
 				802CE7062A77683700F41513 /* NetworkTestSetup.swift in Sources */,
 				802CE6FE2A76ACBC00F41513 /* JSONLoader.swift in Sources */,
-				802CE7042A7767E500F41513 /* NetworkServiceTests.swift in Sources */,
+				802CE7042A7767E500F41513 /* SerializationTests.swift in Sources */,
 				80773A9E2A57E6230020F1DD /* GoodMorningTests.swift in Sources */,
 				803569DC2A768E76001C92BC /* CurrentWeather.json in Sources */,
 				873555382A6959DC0027A847 /* OpenWeatherAPIEndPointTest.swift in Sources */,
