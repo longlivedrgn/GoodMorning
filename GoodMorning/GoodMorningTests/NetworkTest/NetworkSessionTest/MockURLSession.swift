@@ -20,7 +20,11 @@ class MockURLSession: URLSessionProvidable {
         self.url = url
     }
 
-    func data(for request: URLRequest) async throws -> (Data, URLResponse) {
+    func data(
+        for request: URLRequest,
+        delegate: (URLSessionTaskDelegate)?
+    ) async throws -> (Data, URLResponse) {
+
         let response = HTTPURLResponse(
             url: url!,
             statusCode: statusCode!,
