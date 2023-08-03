@@ -7,18 +7,17 @@
 
 import Foundation
 
-typealias NetworkResult = Result<Data, NetworkError>
 
-final class NetworkSession {
+final class NetworkSession: NetworkSessionProvidable {
 
-    private let session: URLSession
+    private let session: URLSessionProvidable
 
-    init(session: URLSession = .shared) {
+    init(session: URLSessionProvidable = URLSession.shared) {
         self.session = session
     }
 
     func data(from urlRequest: URLRequest) async throws -> NetworkResult {
-        let (data, response) = try await session.data(for: urlRequest)
+        let (data, response) = try await session.data(for: urlRequest, delegate: nil)
 
         guard response.checkResponse else {
             return .failure(.outOfResponseCode)

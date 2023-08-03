@@ -5,12 +5,12 @@
 //  Created by Sunny on 2023/07/24.
 //
 
-final class NetworkService: NetworkServiceProvidable {
+final class NetworkService {
 
-    private let session: NetworkSession
+    private let session: NetworkSessionProvidable
     private let deserializer = JSONDeserializer()
 
-    init(session: NetworkSession = NetworkSession()) {
+    init(session: NetworkSessionProvidable = NetworkSession()) {
         self.session = session
     }
 
