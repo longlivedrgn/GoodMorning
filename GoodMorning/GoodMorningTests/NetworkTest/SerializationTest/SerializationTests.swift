@@ -8,7 +8,7 @@
 import XCTest
 @testable import GoodMorning
 
-final class SerializationTests: NetworkSessionTests {
+final class SerializationTests: NetworkTestSetup {
 
     var sut: JSONDeserializable!
 
