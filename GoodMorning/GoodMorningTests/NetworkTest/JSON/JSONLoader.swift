@@ -8,6 +8,7 @@
 import Foundation
 
 final class JSONLoader {
+    
     private enum NetworkTestError: Error {
         case isNotFoundJSONFile
     }
