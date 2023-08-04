@@ -95,6 +95,7 @@ class ViewController: UIViewController {
     private func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
             var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+            configuration.headerMode = .supplementary
             let section = NSCollectionLayoutSection.list(
                 using: configuration,
                 layoutEnvironment: layoutEnvironment
@@ -113,13 +114,25 @@ class ViewController: UIViewController {
             cell.updateWithItem(item)
         }
 
-        datasource = UICollectionViewDiffableDataSource<Section, Item> (
+        let headerRegistration = UICollectionView.SupplementaryRegistration<TODOHeaderView>(
+            elementKind: UICollectionView.elementKindSectionHeader
+        ) { supplementaryView, elementKind, indexPath in
+        }
+
+        datasource = UICollectionViewDiffableDataSource<Section, Item>(
             collectionView: TODOCollectionView
         ) { collectionView, indexPath, item in
             return collectionView.dequeueConfiguredReusableCell(
                 using: cellRegistration,
                 for: indexPath,
                 item: item
+            )
+        }
+
+        datasource?.supplementaryViewProvider = { collectionView, kind, indexPath in
+            return collectionView.dequeueConfiguredReusableSupplementary(
+                using: headerRegistration,
+                for: indexPath
             )
         }
 

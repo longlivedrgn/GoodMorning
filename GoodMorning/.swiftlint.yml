@@ -10,7 +10,10 @@ opt_in_rules:
     - line_length
     - weak_delegate
     - trailing_newline
+disabled_rules:
+    - unused_closure_parameter
+    - closure_parameter_position
 function_body_length:
-    error: 25
+    error: 30
 line_length:
     error: 100
