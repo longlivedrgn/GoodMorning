@@ -23,12 +23,14 @@ private extension UICellConfigurationState {
 
 }
 
-private class TODOListCell: UICollectionViewListCell {
+class TODOListCell: UICollectionViewListCell {
     private var item: Item?
     private func defaultListContentConfiguration() -> UIListContentConfiguration {
         return .cell()
     }
-    private lazy var listContentView = UIListContentView(configuration: defaultListContentConfiguration())
+    private lazy var listContentView = UIListContentView(
+        configuration: defaultListContentConfiguration()
+    )
     private let iconImageView = UIImageView()
     // 여기에 button 넣기
 
@@ -59,8 +61,12 @@ private class TODOListCell: UICollectionViewListCell {
     }
 
     override func updateConfiguration(using state: UICellConfigurationState) {
+        setupViewsIfNeeded()
         var content = defaultListContentConfiguration().updated(for: state)
-        content.text = state.item?.description
+        content.attributedText = NSAttributedString(
+            string: state.item?.description ?? "",
+            attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .medium)]
+        )
         listContentView.configuration = content
         iconImageView.image = state.item?.iconImage
     }

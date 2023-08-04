@@ -69,6 +69,7 @@ class ViewController: UIViewController {
     private func configureViews() {
         configureContainerView()
         configureCollectionView()
+        configureDataSource()
 
     }
 
@@ -92,6 +93,35 @@ class ViewController: UIViewController {
     private func createLayout() -> UICollectionViewLayout {
         let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
         return UICollectionViewCompositionalLayout.list(using: configuration)
+    }
+
+    private func configureDataSource() {
+        let cellRegistration = UICollectionView.CellRegistration<TODOListCell, Item> {
+            cell, indexPath, item in
+            cell.updateWithItem(item)
+        }
+
+        datasource = UICollectionViewDiffableDataSource<Section, Item> (
+            collectionView: TODOCollectionView
+        ) { collectionView, indexPath, item in
+            return collectionView.dequeueConfiguredReusableCell(
+                using: cellRegistration,
+                for: indexPath,
+                item: item
+            )
+        }
+
+        applySnapShot()
+    }
+
+    private func applySnapShot() {
+        var snapShot = SnapShot()
+        snapShot.appendSections([Section.main])
+
+        let items = Item.allItems
+        snapShot.appendItems(items, toSection: .main)
+
+        datasource?.apply(snapShot)
     }
 
 }
