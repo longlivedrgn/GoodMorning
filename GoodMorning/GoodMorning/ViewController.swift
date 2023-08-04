@@ -8,13 +8,13 @@
 import UIKit
 import SnapKit
 
-private enum Section: Hashable {
+enum Section: Hashable {
 
     case main
 
 }
 
-private struct Item: Hashable {
+struct Item: Hashable {
 
     let iconImage: UIImage
     let description: String
@@ -54,6 +54,13 @@ class ViewController: UIViewController {
         return view
     }()
 
+    private lazy var TODOCollectionView: UICollectionView = {
+        let collectionview = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        collectionview.backgroundColor = .green
+
+        return collectionview
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -76,7 +83,15 @@ class ViewController: UIViewController {
     }
 
     private func configureCollectionView() {
+        containerView.addSubview(TODOCollectionView)
+        TODOCollectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
 
+    private func createLayout() -> UICollectionViewLayout {
+        let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
+        return UICollectionViewCompositionalLayout.list(using: configuration)
     }
 
 }
