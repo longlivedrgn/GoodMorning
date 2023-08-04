@@ -39,16 +39,25 @@ class TODOListCell: UICollectionViewListCell {
 
         return imageView
     }()
-    private let checkBoxButton: CheckBoxButton = {
-        let button = CheckBoxButton()
 
-        return button
-    }()
+    private let checkBoxButton = CheckBoxButton()
 
     func updateWithItem(_ newItem: Item) {
         guard item != newItem else { return }
         item = newItem
         setNeedsUpdateConfiguration()
+    }
+
+    func addLine(fromPoint start: CGPoint, toPoint end: CGPoint, priority: Priority) {
+        let line = CAShapeLayer()
+        let linePath = UIBezierPath()
+        linePath.move(to: start)
+        linePath.addLine(to: end)
+        line.path = linePath.cgPath
+        line.strokeColor = priority.color.cgColor
+        line.lineWidth = 8
+        line.lineJoin = CAShapeLayerLineJoin.round
+        contentView.layer.addSublayer(line)
     }
 
     override var configurationState: UICellConfigurationState {
@@ -66,7 +75,7 @@ class TODOListCell: UICollectionViewListCell {
         contentView.addSubview(checkBoxButton)
 
         iconImageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(5)
+            make.leading.equalToSuperview().inset(8)
             make.top.bottom.equalToSuperview().inset(3)
             make.width.equalTo(iconImageView.snp.height)
         }
@@ -90,8 +99,9 @@ class TODOListCell: UICollectionViewListCell {
             attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .medium)]
         )
         listContentView.configuration = content
-
-        let valueConfiguration = UIListContentConfiguration.valueCell().updated(for: state)
         iconImageView.image = state.item?.iconImage
+        let start = contentView.bounds.origin
+        let end = CGPoint(x: start.x, y: start.y + contentView.bounds.height)
+        addLine(fromPoint: start, toPoint: end, priority: state.item?.priority ?? .high)
     }
 }
