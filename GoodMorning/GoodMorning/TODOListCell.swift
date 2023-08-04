@@ -31,7 +31,12 @@ class TODOListCell: UICollectionViewListCell {
     private lazy var listContentView = UIListContentView(
         configuration: defaultListContentConfiguration()
     )
-    private let iconImageView = UIImageView()
+    private let iconImageView: CircleImageView = {
+        let imageView = CircleImageView()
+        imageView.backgroundColor = .red
+
+        return imageView
+    }()
     // 여기에 button 넣기
 
     func updateWithItem(_ newItem: Item) {
@@ -68,6 +73,8 @@ class TODOListCell: UICollectionViewListCell {
             attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .medium)]
         )
         listContentView.configuration = content
+
+        let valueConfiguration = UIListContentConfiguration.valueCell().updated(for: state)
         iconImageView.image = state.item?.iconImage
     }
 }
