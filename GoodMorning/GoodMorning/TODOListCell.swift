@@ -33,7 +33,8 @@ class TODOListCell: UICollectionViewListCell {
     )
     private let iconImageView: CircleImageView = {
         let imageView = CircleImageView()
-        imageView.backgroundColor = .red
+        imageView.layer.borderColor = UIColor.gray.cgColor
+        imageView.layer.borderWidth = 1
 
         return imageView
     }()
@@ -52,11 +53,14 @@ class TODOListCell: UICollectionViewListCell {
     }
 
     private func setupViewsIfNeeded() {
+        contentView.layer.cornerRadius = 10
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor.gray.cgColor
         contentView.addSubview(listContentView)
         contentView.addSubview(iconImageView)
         iconImageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.top.bottom.equalToSuperview()
+            make.leading.equalToSuperview().inset(5)
+            make.top.bottom.equalToSuperview().inset(3)
             make.width.equalTo(iconImageView.snp.height)
         }
         listContentView.snp.makeConstraints { make in

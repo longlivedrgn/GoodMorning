@@ -91,8 +91,18 @@ class ViewController: UIViewController {
     }
 
     private func createLayout() -> UICollectionViewLayout {
-        let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
-        return UICollectionViewCompositionalLayout.list(using: configuration)
+        let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
+            var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+            let section = NSCollectionLayoutSection.list(
+                using: configuration,
+                layoutEnvironment: layoutEnvironment
+            )
+            section.interGroupSpacing = 5
+
+            return section
+        }
+
+        return layout
     }
 
     private func configureDataSource() {
