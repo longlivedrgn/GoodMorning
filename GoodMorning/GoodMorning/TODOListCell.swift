@@ -35,10 +35,15 @@ class TODOListCell: UICollectionViewListCell {
         let imageView = CircleImageView()
         imageView.layer.borderColor = UIColor.gray.cgColor
         imageView.layer.borderWidth = 1
+        imageView.contentMode = .scaleAspectFit
 
         return imageView
     }()
-    // 여기에 button 넣기
+    private let checkBoxButton: CheckBoxButton = {
+        let button = CheckBoxButton()
+
+        return button
+    }()
 
     func updateWithItem(_ newItem: Item) {
         guard item != newItem else { return }
@@ -58,10 +63,18 @@ class TODOListCell: UICollectionViewListCell {
         contentView.layer.borderColor = UIColor.gray.cgColor
         contentView.addSubview(listContentView)
         contentView.addSubview(iconImageView)
+        contentView.addSubview(checkBoxButton)
+
         iconImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(5)
             make.top.bottom.equalToSuperview().inset(3)
             make.width.equalTo(iconImageView.snp.height)
+        }
+        checkBoxButton.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.height.equalTo(iconImageView.snp.height).multipliedBy(0.8)
+            make.width.equalTo(checkBoxButton.snp.height)
+            make.trailing.equalToSuperview().inset(5)
         }
         listContentView.snp.makeConstraints { make in
             make.top.bottom.trailing.equalToSuperview()

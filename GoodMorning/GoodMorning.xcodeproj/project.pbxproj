@@ -54,6 +54,7 @@
 		874569812A63C8D80092FAE5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874569802A63C8D80092FAE5 /* LocationManager.swift */; };
 		875C79C52A7CC46400B93DBD /* TODOListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875C79C42A7CC46400B93DBD /* TODOListCell.swift */; };
 		875C79C72A7CD27600B93DBD /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875C79C62A7CD27600B93DBD /* CircleImageView.swift */; };
+		875C79C92A7CE5D400B93DBD /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875C79C82A7CE5D400B93DBD /* CheckBoxButton.swift */; };
 		876B04DB2A66841F0077486C /* LocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876B04DA2A66841F0077486C /* LocationError.swift */; };
 		876B04DD2A6688A30077486C /* CoreLocationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876B04DC2A6688A30077486C /* CoreLocationTest.swift */; };
 		876B04E12A6689070077486C /* MockLocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876B04E02A6689070077486C /* MockLocationFetcher.swift */; };
@@ -145,6 +146,7 @@
 		874569802A63C8D80092FAE5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		875C79C42A7CC46400B93DBD /* TODOListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOListCell.swift; sourceTree = "<group>"; };
 		875C79C62A7CD27600B93DBD /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		875C79C82A7CE5D400B93DBD /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		876B04DA2A66841F0077486C /* LocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationError.swift; sourceTree = "<group>"; };
 		876B04DC2A6688A30077486C /* CoreLocationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationTest.swift; sourceTree = "<group>"; };
 		876B04E02A6689070077486C /* MockLocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationFetcher.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				80773A872A57E6210020F1DD /* ViewController.swift */,
 				875C79C42A7CC46400B93DBD /* TODOListCell.swift */,
 				875C79C62A7CD27600B93DBD /* CircleImageView.swift */,
+				875C79C82A7CE5D400B93DBD /* CheckBoxButton.swift */,
 				80773A942A57E6230020F1DD /* Info.plist */,
 			);
 			path = GoodMorning;
@@ -865,6 +868,7 @@
 				8060B40D2A6128FC00726C83 /* NetworkSession.swift in Sources */,
 				87880F832A612C6400FF1B4D /* JSONDeserializable.swift in Sources */,
 				80F90C622A7BB8FE007E1D23 /* URLSessionProvidable.swift in Sources */,
+				875C79C92A7CE5D400B93DBD /* CheckBoxButton.swift in Sources */,
 				875C79C72A7CD27600B93DBD /* CircleImageView.swift in Sources */,
 				8060B4102A6129A400726C83 /* NetworkError.swift in Sources */,
 				87978FA42A653E68009FE7FD /* LocationFetchable.swift in Sources */,

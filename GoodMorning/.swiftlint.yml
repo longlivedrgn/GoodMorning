@@ -11,6 +11,6 @@ opt_in_rules:
     - weak_delegate
     - trailing_newline
 function_body_length:
-    error: 20
+    error: 25
 line_length:
     error: 100

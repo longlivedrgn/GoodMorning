@@ -27,15 +27,15 @@ struct Item: Hashable {
             description: "Swift 공부하기", isChecked: false
         ),
         Item(
-            iconImage: UIImage(systemName: "headphones")!,
+            iconImage: UIImage(systemName: "sun.min")!,
             description: "물 한잔 마시기", isChecked: false
         ),
         Item(
-            iconImage: UIImage(systemName: "headphones")!,
+            iconImage: UIImage(systemName: "keyboard")!,
             description: "집 청소하기", isChecked: false
         ),
         Item(
-            iconImage: UIImage(systemName: "headphones")!,
+            iconImage: UIImage(systemName: "figure.walk")!,
             description: "야곰한테 전화하기", isChecked: false
         )
     ]
@@ -50,13 +50,14 @@ class ViewController: UIViewController {
 
     private let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .red
         return view
     }()
 
     private lazy var TODOCollectionView: UICollectionView = {
         let collectionview = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionview.backgroundColor = .green
+        collectionview.layer.cornerRadius = 30
+        collectionview.isScrollEnabled = false
 
         return collectionview
     }()
@@ -79,7 +80,7 @@ class ViewController: UIViewController {
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
-            make.height.equalTo(view.snp.height).dividedBy(2.5)
+            make.height.equalTo(view.snp.height).dividedBy(3)
         }
     }
 
