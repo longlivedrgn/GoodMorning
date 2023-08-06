@@ -12,14 +12,28 @@ class TODOHeaderView: UICollectionReusableView {
     private let editButton: UIButton = {
         let button = UIButton()
         button.setTitle("Edit", for: .normal)
-        button.setTitleColor(.gray, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 15)
+        button.setTitleColor(.darkGray, for: .normal)
 
         return button
     }()
 
     private let plusTODOButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "plus.circle"), for: .normal)
+        let SFSymbolConfiguration = UIImage.SymbolConfiguration(
+            pointSize: 20,
+            weight: .bold,
+            scale: .large
+        )
+        let SFSymbolImage = UIImage(
+            systemName: "plus.circle",
+            withConfiguration: SFSymbolConfiguration
+        )
+
+        button.setImage(
+            SFSymbolImage?.withTintColor(.black, renderingMode: .alwaysOriginal),
+            for: .normal
+        )
 
         return button
     }()
@@ -34,6 +48,9 @@ class TODOHeaderView: UICollectionReusableView {
     }
 
     private func configure() {
+//        self.snp.makeConstraints { make in
+//            make.height.equalTo(100)
+//        }
         addSubview(editButton)
         addSubview(plusTODOButton)
 

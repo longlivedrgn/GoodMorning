@@ -28,15 +28,15 @@ struct Item: Hashable {
             description: "Swift 공부하기", isChecked: false, priority: .high
         ),
         Item(
-            iconImage: UIImage(systemName: "sun.min")!,
+            iconImage: UIImage(systemName: "sun.min") ?? UIImage(),
             description: "물 한잔 마시기", isChecked: false, priority: .high
         ),
         Item(
-            iconImage: UIImage(systemName: "keyboard")!,
+            iconImage: UIImage(systemName: "keyboard") ?? UIImage(),
             description: "집 청소하기", isChecked: false, priority: .medium
         ),
         Item(
-            iconImage: UIImage(systemName: "figure.walk")!,
+            iconImage: UIImage(systemName: "figure.walk") ?? UIImage(),
             description: "야곰한테 전화하기", isChecked: false, priority: .low
         )
     ]
@@ -96,11 +96,14 @@ class ViewController: UIViewController {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
             var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
             configuration.headerMode = .supplementary
+            configuration.headerTopPadding = 15
+
             let section = NSCollectionLayoutSection.list(
                 using: configuration,
                 layoutEnvironment: layoutEnvironment
             )
-            section.interGroupSpacing = 5
+            section.interGroupSpacing = 7
+            section.contentInsets.top = 10
 
             return section
         }
