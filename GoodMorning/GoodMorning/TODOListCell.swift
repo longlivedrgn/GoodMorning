@@ -58,6 +58,7 @@ class TODOListCell: UICollectionViewListCell {
         line.lineWidth = 8
         line.lineJoin = CAShapeLayerLineJoin.round
         contentView.layer.addSublayer(line)
+        contentView.clipsToBounds = true
     }
 
     override var configurationState: UICellConfigurationState {
@@ -75,7 +76,7 @@ class TODOListCell: UICollectionViewListCell {
         contentView.addSubview(checkBoxButton)
 
         iconImageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(8)
+            make.leading.equalToSuperview().inset(15)
             make.top.bottom.equalToSuperview().inset(3)
             make.width.equalTo(iconImageView.snp.height)
         }
@@ -83,7 +84,7 @@ class TODOListCell: UICollectionViewListCell {
             make.centerY.equalToSuperview()
             make.height.equalTo(iconImageView.snp.height).multipliedBy(0.8)
             make.width.equalTo(checkBoxButton.snp.height)
-            make.trailing.equalToSuperview().inset(5)
+            make.trailing.equalToSuperview().inset(15)
         }
         listContentView.snp.makeConstraints { make in
             make.top.bottom.trailing.equalToSuperview()
@@ -100,8 +101,10 @@ class TODOListCell: UICollectionViewListCell {
         )
         listContentView.configuration = content
         iconImageView.image = state.item?.iconImage
+
         let start = contentView.bounds.origin
         let end = CGPoint(x: start.x, y: start.y + contentView.bounds.height)
         addLine(fromPoint: start, toPoint: end, priority: state.item?.priority ?? .high)
+
     }
 }

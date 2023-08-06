@@ -115,7 +115,7 @@ class ViewController: UIViewController {
         let cellRegistration = UICollectionView.CellRegistration<TODOListCell, Item> {
             cell, indexPath, item in
             cell.updateWithItem(item)
-            cell.accessories = [.delete()]
+            cell.accessories = [.delete(), .reorder()]
         }
 
         let headerRegistration = UICollectionView.SupplementaryRegistration<TODOHeaderView>(
