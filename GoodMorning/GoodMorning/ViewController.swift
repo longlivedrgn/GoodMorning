@@ -24,7 +24,7 @@ struct Item: Hashable {
 
     static let allItems = [
         Item(
-            iconImage: UIImage(systemName: "headphones")!,
+            iconImage: UIImage(systemName: "headphones") ?? UIImage(),
             description: "Swift 공부하기", isChecked: false, priority: .high
         ),
         Item(
@@ -115,11 +115,13 @@ class ViewController: UIViewController {
         let cellRegistration = UICollectionView.CellRegistration<TODOListCell, Item> {
             cell, indexPath, item in
             cell.updateWithItem(item)
+            cell.accessories = [.delete()]
         }
 
         let headerRegistration = UICollectionView.SupplementaryRegistration<TODOHeaderView>(
             elementKind: UICollectionView.elementKindSectionHeader
         ) { supplementaryView, elementKind, indexPath in
+            supplementaryView.delegate = self
         }
 
         datasource = UICollectionViewDiffableDataSource<Section, Item>(
@@ -150,6 +152,23 @@ class ViewController: UIViewController {
         snapShot.appendItems(items, toSection: .main)
 
         datasource?.apply(snapShot)
+    }
+
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        TODOCollectionView.isEditing = editing
+    }
+
+}
+
+extension ViewController: TODOHeaderViewDelegate {
+
+    func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didEditButtonTapped sender: UIButton) {
+        TODOCollectionView.isEditing.toggle()
+    }
+
+    func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didPlusButtonTapped sender: UIButton) {
+        print("plusbuttondidTapped!")
     }
 
 }

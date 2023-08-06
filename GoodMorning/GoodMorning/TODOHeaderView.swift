@@ -9,8 +9,15 @@ import UIKit
 
 class TODOHeaderView: UICollectionReusableView {
 
-    private let editButton: UIButton = {
+    weak var delegate: TODOHeaderViewDelegate?
+
+    private lazy var editButton: UIButton = {
         let button = UIButton()
+        button.addTarget(
+            self,
+            action: #selector(editButtonTapped),
+            for: .touchUpInside
+        )
         button.setTitle("Edit", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15)
         button.setTitleColor(.darkGray, for: .normal)
@@ -18,8 +25,13 @@ class TODOHeaderView: UICollectionReusableView {
         return button
     }()
 
-    private let plusTODOButton: UIButton = {
+    private lazy var plusTODOButton: UIButton = {
         let button = UIButton()
+        button.addTarget(
+            self,
+            action: #selector(plusButtonTapped),
+            for: .touchUpInside
+        )
         let SFSymbolConfiguration = UIImage.SymbolConfiguration(
             pointSize: 20,
             weight: .bold,
@@ -48,9 +60,6 @@ class TODOHeaderView: UICollectionReusableView {
     }
 
     private func configure() {
-//        self.snp.makeConstraints { make in
-//            make.height.equalTo(100)
-//        }
         addSubview(editButton)
         addSubview(plusTODOButton)
 
@@ -61,6 +70,14 @@ class TODOHeaderView: UICollectionReusableView {
         plusTODOButton.snp.makeConstraints { make in
             make.trailing.top.bottom.equalToSuperview()
         }
+    }
+
+    @objc private func editButtonTapped(_ sender: UIButton) {
+        delegate?.TODOHeaderView(self, didEditButtonTapped: sender)
+    }
+
+    @objc private func plusButtonTapped(_ sender: UIButton) {
+        delegate?.TODOHeaderView(self, didPlusButtonTapped: sender)
     }
 
 }
