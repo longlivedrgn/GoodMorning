@@ -40,7 +40,7 @@ class TODOListCell: UICollectionViewListCell {
         return imageView
     }()
 
-    private let checkBoxButton = CheckBoxButton()
+    let checkBoxButton = CheckBoxButton()
 
     func updateWithItem(_ newItem: Item) {
         guard item != newItem else { return }

@@ -47,6 +47,7 @@ class ViewController: UIViewController {
 
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
     private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, Item>
+    private var backingStore: [Item] = Item.allItems
     private var datasource: DataSource?
 
     private let containerView: UIView = {
@@ -66,13 +67,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
+        applySnapShot()
     }
 
     private func configureViews() {
         configureContainerView()
         configureCollectionView()
         configureDataSource()
-
     }
 
     private func configureContainerView() {
@@ -141,14 +142,23 @@ class ViewController: UIViewController {
             )
         }
 
-        applySnapShot()
+        configureReordering()
+    }
+
+    private func configureReordering() {
+        datasource?.reorderingHandlers.canReorderItem = { item in return true }
+        datasource?.reorderingHandlers.didReorder = { [weak self] transaction in
+            if let updatedBackingStore = self?.backingStore.applying(transaction.difference) {
+                self?.backingStore = updatedBackingStore
+            }
+        }
     }
 
     private func applySnapShot() {
         var snapShot = SnapShot()
         snapShot.appendSections([Section.main])
 
-        let items = Item.allItems
+        let items = backingStore
         snapShot.appendItems(items, toSection: .main)
 
         datasource?.apply(snapShot)
@@ -165,6 +175,15 @@ extension ViewController: TODOHeaderViewDelegate {
 
     func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didEditButtonTapped sender: UIButton) {
         TODOCollectionView.isEditing.toggle()
+        print(backingStore)
+//        let indexPaths = TODOCollectionView.indexPathsForVisibleItems
+//        for indexPath in indexPaths {
+//            guard let cell = TODOCollectionView.cellForItem(
+//                at: indexPath
+//            ) as? TODOListCell else { return }
+//            cell.contentView.layer.borderColor = UIColor.white.cgColor
+//            cell.checkBoxButton.isHidden = true
+//        }
     }
 
     func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didPlusButtonTapped sender: UIButton) {
