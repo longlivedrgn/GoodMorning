@@ -116,7 +116,10 @@ class ViewController: UIViewController {
         let cellRegistration = UICollectionView.CellRegistration<TODOListCell, Item> {
             cell, indexPath, item in
             cell.updateWithItem(item)
-            cell.accessories = [.delete(), .reorder()]
+            cell.accessories = [.delete(displayed: .whenEditing, actionHandler: {
+                [weak self] in
+                self?.delete(item)
+            }), .reorder()]
         }
 
         let headerRegistration = UICollectionView.SupplementaryRegistration<TODOHeaderView>(
@@ -143,6 +146,12 @@ class ViewController: UIViewController {
         }
 
         configureReordering()
+    }
+
+    private func delete(_ item: Item) {
+        guard let indexPath = datasource?.indexPath(for: item) else { return }
+        backingStore.remove(at: indexPath.item)
+        applySnapShot()
     }
 
     private func configureReordering() {
@@ -175,15 +184,6 @@ extension ViewController: TODOHeaderViewDelegate {
 
     func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didEditButtonTapped sender: UIButton) {
         TODOCollectionView.isEditing.toggle()
-        print(backingStore)
-//        let indexPaths = TODOCollectionView.indexPathsForVisibleItems
-//        for indexPath in indexPaths {
-//            guard let cell = TODOCollectionView.cellForItem(
-//                at: indexPath
-//            ) as? TODOListCell else { return }
-//            cell.contentView.layer.borderColor = UIColor.white.cgColor
-//            cell.checkBoxButton.isHidden = true
-//        }
     }
 
     func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didPlusButtonTapped sender: UIButton) {
