@@ -8,42 +8,7 @@
 import UIKit
 import SnapKit
 
-enum Section: Hashable {
-
-    case main
-
-}
-
-struct Item: Hashable {
-
-    let iconImage: UIImage
-    let description: String
-    let isChecked: Bool
-    let priority: Priority
-    let identifier = UUID()
-
-    static let allItems = [
-        Item(
-            iconImage: UIImage(systemName: "headphones") ?? UIImage(),
-            description: "Swift 공부하기", isChecked: false, priority: .high
-        ),
-        Item(
-            iconImage: UIImage(systemName: "sun.min") ?? UIImage(),
-            description: "물 한잔 마시기", isChecked: false, priority: .high
-        ),
-        Item(
-            iconImage: UIImage(systemName: "keyboard") ?? UIImage(),
-            description: "집 청소하기", isChecked: false, priority: .medium
-        ),
-        Item(
-            iconImage: UIImage(systemName: "figure.walk") ?? UIImage(),
-            description: "야곰한테 전화하기", isChecked: false, priority: .low
-        )
-    ]
-
-}
-
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
     private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, Item>
@@ -57,7 +22,6 @@ class ViewController: UIViewController {
 
     private lazy var TODOCollectionView: UICollectionView = {
         let collectionview = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
-        collectionview.backgroundColor = .green
         collectionview.layer.cornerRadius = 30
         collectionview.isScrollEnabled = false
 
@@ -145,7 +109,7 @@ class ViewController: UIViewController {
             )
         }
 
-        configureReordering()
+        configureReorderingAccessory()
     }
 
     private func delete(_ item: Item) {
@@ -154,7 +118,7 @@ class ViewController: UIViewController {
         applySnapShot()
     }
 
-    private func configureReordering() {
+    private func configureReorderingAccessory() {
         datasource?.reorderingHandlers.canReorderItem = { item in return true }
         datasource?.reorderingHandlers.didReorder = { [weak self] transaction in
             if let updatedBackingStore = self?.backingStore.applying(transaction.difference) {
@@ -171,11 +135,6 @@ class ViewController: UIViewController {
         snapShot.appendItems(items, toSection: .main)
 
         datasource?.apply(snapShot)
-    }
-
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-        TODOCollectionView.isEditing = editing
     }
 
 }

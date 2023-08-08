@@ -68,6 +68,8 @@
 		87978FA42A653E68009FE7FD /* LocationFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FA32A653E68009FE7FD /* LocationFetchable.swift */; };
 		87978FA62A653E7F009FE7FD /* LocationFetcherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */; };
 		87978FAB2A653EF4009FE7FD /* CLLocationManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */; };
+		87EFC10F2A8203EF00843DCC /* TODOCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC10E2A8203EF00843DCC /* TODOCollectionViewSection.swift */; };
+		87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +165,8 @@
 		87978FA32A653E68009FE7FD /* LocationFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetchable.swift; sourceTree = "<group>"; };
 		87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcherDelegate.swift; sourceTree = "<group>"; };
 		87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+.swift"; sourceTree = "<group>"; };
+		87EFC10E2A8203EF00843DCC /* TODOCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOCollectionViewSection.swift; sourceTree = "<group>"; };
+		87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOCollectionViewItem.swift; sourceTree = "<group>"; };
 		BC808D177BDBE9A5E89AA608 /* Pods-GoodMorningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.release.xcconfig"; sourceTree = "<group>"; };
 		CA403186C607188DBDCA0A62 /* Pods_GoodMorning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodMorning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A73B06F9FAFA89A97431E8 /* Pods_GoodMorning_GoodMorningUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodMorning_GoodMorningUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -417,6 +421,8 @@
 				80773A852A57E6210020F1DD /* SceneDelegate.swift */,
 				80773A832A57E6210020F1DD /* AppDelegate.swift */,
 				80773A872A57E6210020F1DD /* ViewController.swift */,
+				87EFC10E2A8203EF00843DCC /* TODOCollectionViewSection.swift */,
+				87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */,
 				875C79CE2A7CF85B00B93DBD /* TODOHeaderView.swift */,
 				877981392A7F573B00DB0ED0 /* TODOHeaderViewDelegate.swift */,
 				875C79CC2A7CEED300B93DBD /* Priority.swift */,
@@ -867,6 +873,7 @@
 				80773A882A57E6210020F1DD /* ViewController.swift in Sources */,
 				873555242A694AB40027A847 /* Requestable.swift in Sources */,
 				873555322A6954700027A847 /* CurrentWeatherDTO.swift in Sources */,
+				87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */,
 				873555262A694ABA0027A847 /* Responsable.swift in Sources */,
 				80773A842A57E6210020F1DD /* AppDelegate.swift in Sources */,
 				877E3FC62A6E3BB400BB06FA /* TemperatureDTO.swift in Sources */,
@@ -879,6 +886,7 @@
 				80F90C622A7BB8FE007E1D23 /* URLSessionProvidable.swift in Sources */,
 				875C79C92A7CE5D400B93DBD /* CheckBoxButton.swift in Sources */,
 				875C79C72A7CD27600B93DBD /* CircleImageView.swift in Sources */,
+				87EFC10F2A8203EF00843DCC /* TODOCollectionViewSection.swift in Sources */,
 				8060B4102A6129A400726C83 /* NetworkError.swift in Sources */,
 				87978FA42A653E68009FE7FD /* LocationFetchable.swift in Sources */,
 				874569812A63C8D80092FAE5 /* LocationManager.swift in Sources */,
