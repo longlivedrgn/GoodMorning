@@ -7,28 +7,33 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 fileprivate extension UIConfigurationStateCustomKey {
 
-    static let item = UIConfigurationStateCustomKey("com.GoodMoring.TODOListCell.item")
+    static let item = UIConfigurationStateCustomKey("TODOListCell.item")
 
 }
 
 private extension UICellConfigurationState {
 
-    var item: Item? {
-        set { self[.item] = newValue }
-        get { return self[.item] as? Item }
+    var item: TODOItem? {
+        get {
+            return self[UIConfigurationStateCustomKey.item] as? TODOItem
+        }
+        set {
+            self[UIConfigurationStateCustomKey.item] = newValue
+        }
     }
 
 }
 
 class TODOListCell: UICollectionViewListCell {
-    private var item: Item?
-    private func defaultListContentConfiguration() -> UIListContentConfiguration {
-        return .cell()
-    }
-    private lazy var listContentView = UIListContentView(
+
+    private var item: TODOItem?
+
+    private let checkBoxButton = CheckBoxButton()
+    private lazy var TODOListContentView = UIListContentView(
         configuration: defaultListContentConfiguration()
     )
     private let iconImageView: CircleImageView = {
@@ -40,38 +45,66 @@ class TODOListCell: UICollectionViewListCell {
         return imageView
     }()
 
-    let checkBoxButton = CheckBoxButton()
+    override var configurationState: UICellConfigurationState {
+        var state = super.configurationState
+        state.item = self.item
 
-    func updateWithItem(_ newItem: Item) {
+        return state
+    }
+
+    override func updateConfiguration(using state: UICellConfigurationState) {
+        setupViewsIfNeeded()
+
+        var content = defaultListContentConfiguration().updated(for: state)
+        content.attributedText = NSAttributedString(
+            string: state.item?.description ?? "",
+            attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .medium)]
+        )
+        TODOListContentView.configuration = content
+        iconImageView.image = state.item?.iconImage
+
+        configureLine(with: state)
+    }
+
+    func updateWithItem(_ newItem: TODOItem) {
         guard item != newItem else { return }
         item = newItem
         setNeedsUpdateConfiguration()
     }
 
-    func addLine(fromPoint start: CGPoint, toPoint end: CGPoint, priority: Priority) {
+    private func defaultListContentConfiguration() -> UIListContentConfiguration {
+        return .cell()
+    }
+
+    private func addLine(fromPoint start: CGPoint, toPoint end: CGPoint, priority: Priority) {
         let line = CAShapeLayer()
         let linePath = UIBezierPath()
+
         linePath.move(to: start)
         linePath.addLine(to: end)
+
         line.path = linePath.cgPath
         line.strokeColor = priority.color.cgColor
         line.lineWidth = 8
         line.lineJoin = CAShapeLayerLineJoin.round
+
         contentView.layer.addSublayer(line)
         contentView.clipsToBounds = true
     }
 
-    override var configurationState: UICellConfigurationState {
-        var state = super.configurationState
-        state.item = self.item
-        return state
+    private func setupViewsIfNeeded() {
+        configureLayer()
+        configureSubViews()
     }
 
-    private func setupViewsIfNeeded() {
+    private func configureLayer() {
         contentView.layer.cornerRadius = 10
         contentView.layer.borderWidth = 1
         contentView.layer.borderColor = UIColor.gray.cgColor
-        contentView.addSubview(listContentView)
+    }
+
+    private func configureSubViews() {
+        contentView.addSubview(TODOListContentView)
         contentView.addSubview(iconImageView)
         contentView.addSubview(checkBoxButton)
 
@@ -86,25 +119,17 @@ class TODOListCell: UICollectionViewListCell {
             make.width.equalTo(checkBoxButton.snp.height)
             make.trailing.equalToSuperview().inset(15)
         }
-        listContentView.snp.makeConstraints { make in
+        TODOListContentView.snp.makeConstraints { make in
             make.top.bottom.trailing.equalToSuperview()
             make.leading.equalTo(iconImageView.snp.trailing)
         }
     }
 
-    override func updateConfiguration(using state: UICellConfigurationState) {
-        setupViewsIfNeeded()
-        var content = defaultListContentConfiguration().updated(for: state)
-        content.attributedText = NSAttributedString(
-            string: state.item?.description ?? "",
-            attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .medium)]
-        )
-        listContentView.configuration = content
-        iconImageView.image = state.item?.iconImage
-
+    private func configureLine(with state: UICellConfigurationState) {
         let start = contentView.bounds.origin
         let end = CGPoint(x: start.x, y: start.y + contentView.bounds.height)
-        addLine(fromPoint: start, toPoint: end, priority: state.item?.priority ?? .high)
 
+        addLine(fromPoint: start, toPoint: end, priority: state.item?.priority ?? .high)
     }
+
 }

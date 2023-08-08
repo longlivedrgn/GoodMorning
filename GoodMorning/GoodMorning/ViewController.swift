@@ -10,9 +10,9 @@ import SnapKit
 
 final class ViewController: UIViewController {
 
-    private typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
-    private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, Item>
-    private var backingStore: [Item] = Item.allItems
+    private typealias DataSource = UICollectionViewDiffableDataSource<Section, TODOItem>
+    private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, TODOItem>
+    private var backingStore: [TODOItem] = TODOItem.allItems
     private var datasource: DataSource?
 
     private let containerView: UIView = {
@@ -77,7 +77,7 @@ final class ViewController: UIViewController {
     }
 
     private func configureDataSource() {
-        let cellRegistration = UICollectionView.CellRegistration<TODOListCell, Item> {
+        let cellRegistration = UICollectionView.CellRegistration<TODOListCell, TODOItem> {
             cell, indexPath, item in
             cell.updateWithItem(item)
             cell.accessories = [.delete(displayed: .whenEditing, actionHandler: {
@@ -92,7 +92,7 @@ final class ViewController: UIViewController {
             supplementaryView.delegate = self
         }
 
-        datasource = UICollectionViewDiffableDataSource<Section, Item>(
+        datasource = UICollectionViewDiffableDataSource<Section, TODOItem>(
             collectionView: TODOCollectionView
         ) { collectionView, indexPath, item in
             return collectionView.dequeueConfiguredReusableCell(
@@ -112,7 +112,7 @@ final class ViewController: UIViewController {
         configureReorderingAccessory()
     }
 
-    private func delete(_ item: Item) {
+    private func delete(_ item: TODOItem) {
         guard let indexPath = datasource?.indexPath(for: item) else { return }
         backingStore.remove(at: indexPath.item)
         applySnapShot()

@@ -12,4 +12,3 @@ enum Section: Hashable {
     case main
 
 }
-

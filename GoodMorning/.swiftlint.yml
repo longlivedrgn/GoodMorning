@@ -13,6 +13,7 @@ opt_in_rules:
 disabled_rules:
     - unused_closure_parameter
     - closure_parameter_position
+    - identifier_name
 function_body_length:
     error: 30
 line_length:
