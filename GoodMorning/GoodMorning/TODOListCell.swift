@@ -9,30 +9,11 @@ import Foundation
 import UIKit
 import SnapKit
 
-fileprivate extension UIConfigurationStateCustomKey {
-
-    static let item = UIConfigurationStateCustomKey("TODOListCell.item")
-
-}
-
-private extension UICellConfigurationState {
-
-    var item: TODOItem? {
-        get {
-            return self[UIConfigurationStateCustomKey.item] as? TODOItem
-        }
-        set {
-            self[UIConfigurationStateCustomKey.item] = newValue
-        }
-    }
-
-}
-
 class TODOListCell: UICollectionViewListCell {
 
     private var item: TODOItem?
 
-    private let checkBoxButton = CheckBoxButton()
+    let checkBoxButton = CheckBoxButton()
     private lazy var TODOListContentView = UIListContentView(
         configuration: defaultListContentConfiguration()
     )

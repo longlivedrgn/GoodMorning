@@ -80,6 +80,7 @@ final class ViewController: UIViewController {
         let cellRegistration = UICollectionView.CellRegistration<TODOListCell, TODOItem> {
             cell, indexPath, item in
             cell.updateWithItem(item)
+            cell.checkBoxButton.delegate = self
             cell.accessories = [.delete(displayed: .whenEditing, actionHandler: {
                 [weak self] in
                 self?.delete(item)
@@ -147,6 +148,17 @@ extension ViewController: TODOHeaderViewDelegate {
 
     func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didPlusButtonTapped sender: UIButton) {
         print("plusbuttondidTapped!")
+    }
+
+}
+
+extension ViewController: CheckBoxButtonDelegate {
+
+    func checkBoxButton(
+        _ checkBoxButton: CheckBoxButton,
+        didCheckBoxButtonTapped sender: UIButton
+    ) {
+        // button 이벤트 전달!
     }
 
 }

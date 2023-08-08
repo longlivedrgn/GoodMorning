@@ -9,7 +9,13 @@ import UIKit
 
 class CheckBoxButton: UIButton {
 
-    var isChecked = false
+    var isChecked = false {
+        didSet {
+            self.updateCheckMarkImage()
+        }
+    }
+
+    weak var delegate: CheckBoxButtonDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,9 +31,20 @@ class CheckBoxButton: UIButton {
         layer.cornerRadius = 10
         layer.borderColor = UIColor.gray.cgColor
         layer.borderWidth = 1
-        setButtonTitle()
+        addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
+        updateCheckMarkImage()
     }
 
-    func setButtonTitle() {
+    @objc private  func didButtonTapped() {
+        isChecked.toggle()
     }
+
+    private func updateCheckMarkImage() {
+        if isChecked {
+            self.setImage(UIImage.checkmark, for: .normal)
+        } else {
+            self.setImage(nil, for: .normal)
+        }
+    }
+
 }
