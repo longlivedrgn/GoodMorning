@@ -16,7 +16,7 @@ final class CoreDataTests: CoreDataTestSetup {
         XCTAssertNotNil(fetchedObjects)
     }
 
-    func test_manangedObject_추가하기() {
+    func test_manangedObject_추가하기()  {
         guard let newObject: MorningRoutine = sut.create() else { return }
         let fetchedObjects: [MorningRoutine] = sut.fetch()
         XCTAssertNotNil(fetchedObjects)
@@ -27,6 +27,6 @@ final class CoreDataTests: CoreDataTestSetup {
         newObject.routine = "물마시기"
         newObject.isChecked = false
         let fetchedObjects: [MorningRoutine] = sut.fetch()
-        XCTAssertTrue(fetchedObjects.first!.routine == "물마시기")
+        XCTAssertTrue(fetchedObjects.first?.routine ?? "" == "물마시기")
     }
 }

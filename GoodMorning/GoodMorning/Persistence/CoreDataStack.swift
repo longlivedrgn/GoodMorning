@@ -6,13 +6,18 @@
 //
 
 import CoreData
+import UIKit
 
 struct CoreDataStack: PersistentStore {
 
     private var container: NSPersistentContainer
+    private let queue: DispatchQueue
+    private var backgroundContext: NSManagedObjectContext
 
     init(container: Container) {
         self.container = NSPersistentContainer(name: container.name)
+        self.queue = DispatchQueue(label: container.name)
+        self.backgroundContext = self.container.newBackgroundContext()
         initiateContainer()
     }
 
@@ -20,13 +25,31 @@ struct CoreDataStack: PersistentStore {
         container.loadPersistentStores { (_, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
+            } else {
+                container.viewContext.configureViewContext()
+                backgroundContext.configureBackgroundContext()
             }
         }
     }
 
     func create<EntityType: ManagedEntity>() -> EntityType? {
-        let object = EntityType.makeNewObject(in: container.viewContext)
-        return object
+        let dispatchGroup = DispatchGroup()
+        var result: EntityType?
+
+        dispatchGroup.enter()
+        let createWork = DispatchWorkItem {
+            let managedEntity = backgroundContext.performAndWait {
+                let object = EntityType.makeNewObject(in: backgroundContext)
+                return object
+            }
+
+            result = managedEntity
+            dispatchGroup.leave()
+        }
+        queue.async(execute: createWork)
+        dispatchGroup.wait()
+
+        return result
     }
 
     func fetch<EntityType: ManagedEntity>() -> [EntityType] {
@@ -41,13 +64,24 @@ struct CoreDataStack: PersistentStore {
     }
 
     func update() {
-        if container.viewContext.hasChanges {
-            do {
-                try container.viewContext.save()
-            } catch {
-                print(error.localizedDescription)
+        let dispatchGroup = DispatchGroup()
+
+        dispatchGroup.enter()
+        let updateWork = DispatchWorkItem {
+            backgroundContext.performAndWait {
+                if backgroundContext.hasChanges {
+                    do {
+                        try backgroundContext.save()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
             }
+            dispatchGroup.leave()
         }
+
+        queue.async(execute: updateWork)
+        dispatchGroup.wait()
     }
 
 }
