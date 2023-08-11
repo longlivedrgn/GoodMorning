@@ -27,6 +27,7 @@ final class WeatherStackView: UIStackView {
         super.layoutSubviews()
 
         configureWeatherViewMargin()
+        configureImageViewSize()
     }
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -52,6 +53,7 @@ final class WeatherStackView: UIStackView {
         self.clipsToBounds = true
         self.layer.cornerRadius = 20
         self.backgroundColor = .white
+        self.alignment = .center
     }
 
     private func configureWeatherViewMargin() {
@@ -64,6 +66,13 @@ final class WeatherStackView: UIStackView {
             bottom: verticalMargin,
             right: horizontalMargin
         )
+    }
+
+    private func configureImageViewSize() {
+        let height = self.frame.height * 0.5
+
+        imageView.heightAnchor.constraint(equalToConstant: height).isActive = true
+        imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor).isActive = true
     }
 
 }

@@ -24,7 +24,7 @@ final class HomeView: UIView {
         collectionView.heightAnchor.constraint(equalToConstant: 258).isActive = true
         return collectionView
     }()
-    private let weatherStackView = WeatherStackView(weather: .clear, temperature: 27)
+    private let weatherStackView = WeatherStackView(weather: .drizzle, temperature: 27)
 
     init() {
         super.init(frame: .zero)

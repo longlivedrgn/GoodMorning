@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 final class NetworkSession: NetworkSessionProvidable {
 
     private let session: URLSessionProvidable
