@@ -35,14 +35,10 @@ final class WeatherStackView: UIStackView {
 
     private func setupWeatherView( _ weather: WeatherConditions, _ temperature: Int) {
         let temperatureLabel: UILabel = {
-            let label = PretendardLabel(
-                text: temperature.temperature,
-                size: 40,
-                weight: .regular
-            )
+            let label = PretendardLabel(text: temperature.temperature,size: 40,weight: .regular)
             return label
         }()
-        imageView.image = weather.image
+        self.imageView.image = weather.image
 
         self.addArrangedSubviews([imageView, temperatureLabel])
     }
@@ -69,10 +65,11 @@ final class WeatherStackView: UIStackView {
     }
 
     private func configureImageViewSize() {
-        let height = self.frame.height * 0.5
+        let size = self.frame.height * 0.5
 
-        imageView.heightAnchor.constraint(equalToConstant: height).isActive = true
-        imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor).isActive = true
+        self.imageView.snp.makeConstraints { make in
+            make.height.width.equalTo(size)
+        }
     }
 
 }
