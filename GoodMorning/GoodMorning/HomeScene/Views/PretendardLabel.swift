@@ -9,11 +9,13 @@ import UIKit
 
 final class PretendardLabel: UILabel {
 
-    init(text: String,
+    init(
+        text: String,
          color: UIColor = .black,
          alignment: NSTextAlignment = .center,
          size: CGFloat,
-         weight: UIFont.Weight) {
+         weight: UIFont.Weight
+    ) {
         super.init(frame: .zero)
 
         self.text = text
