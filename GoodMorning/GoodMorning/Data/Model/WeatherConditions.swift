@@ -1,5 +1,5 @@
 //
-//  WeatherIcon.swift
+//  WeatherConditions.swift
 //  GoodMorning
 //
 //  Created by Sunny on 2023/08/11.
