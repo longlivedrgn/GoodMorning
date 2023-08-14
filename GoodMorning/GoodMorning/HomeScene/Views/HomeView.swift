@@ -19,7 +19,6 @@ final class HomeView: UIView {
             frame: .zero,
             collectionViewLayout: UICollectionViewLayout()
         )
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         // 추후 크기 조정
         collectionView.heightAnchor.constraint(equalToConstant: 258).isActive = true
         return collectionView
