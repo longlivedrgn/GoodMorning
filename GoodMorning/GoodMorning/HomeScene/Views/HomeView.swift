@@ -19,8 +19,6 @@ final class HomeView: UIView {
             frame: .zero,
             collectionViewLayout: UICollectionViewLayout()
         )
-        // 추후 크기 조정
-        collectionView.heightAnchor.constraint(equalToConstant: 258).isActive = true
         return collectionView
     }()
     private let weatherStackView = WeatherStackView(weather: .drizzle, temperature: 27)
@@ -41,6 +39,7 @@ final class HomeView: UIView {
         super.layoutSubviews()
 
         configureContentViewMargins()
+        configureRoutineCollectionView()
         configureWeatherStackView()
     }
 
@@ -56,11 +55,18 @@ final class HomeView: UIView {
         )
     }
 
+    private func configureRoutineCollectionView() {
+        let height = self.frame.height * 0.304
+        routineCollectionView.snp.makeConstraints { routineCollectionView in
+            routineCollectionView.height.equalTo(height)
+        }
+    }
+
     private func configureWeatherStackView() {
-        let width = self.frame.height * 0.258
-        weatherStackView.widthAnchor.constraint(equalToConstant: width).isActive = true
-        weatherStackView.heightAnchor.constraint(
-            equalTo: weatherStackView.widthAnchor).isActive = true
+        let size = self.frame.height * 0.258
+        self.weatherStackView.snp.makeConstraints { weatherStackView in
+            weatherStackView.width.height.equalTo(size)
+        }
     }
 
     private func setupView() {
