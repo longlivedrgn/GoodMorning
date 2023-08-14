@@ -44,10 +44,10 @@ final class HomeView: UIView {
     }
 
     private func configureContentViewMargins() {
-        contentView.isLayoutMarginsRelativeArrangement = true
+        self.contentView.isLayoutMarginsRelativeArrangement = true
 
         let layoutMargins = self.frame.width * 0.058
-        contentView.layoutMargins = .init(
+        self.contentView.layoutMargins = .init(
             top: layoutMargins,
             left: layoutMargins,
             bottom: layoutMargins,
@@ -57,7 +57,7 @@ final class HomeView: UIView {
 
     private func configureRoutineCollectionView() {
         let height = self.frame.height * 0.304
-        routineCollectionView.snp.makeConstraints { routineCollectionView in
+        self.routineCollectionView.snp.makeConstraints { routineCollectionView in
             routineCollectionView.height.equalTo(height)
         }
     }
@@ -71,12 +71,12 @@ final class HomeView: UIView {
 
     private func setupView() {
         self.addSubview(scrollView)
-        scrollView.addSubview(contentView)
+        self.scrollView.addSubview(contentView)
 
-        scrollView.snp.makeConstraints { scrollView in
+        self.scrollView.snp.makeConstraints { scrollView in
             scrollView.top.bottom.leading.trailing.equalTo(self.safeAreaLayoutGuide)
         }
-        contentView.snp.makeConstraints { contentView in
+        self.contentView.snp.makeConstraints { contentView in
             contentView.top.equalTo(scrollView.contentLayoutGuide)
             contentView.leading.trailing.bottom.centerX.equalToSuperview()
         }
@@ -91,12 +91,12 @@ final class HomeView: UIView {
     private func setupContentView() {
         let weatherStackView = makeWeatherStackView()
         let todayLuckStackView = TodayLuckStackView()
-        contentView.addArrangedSubviews(
+        self.contentView.addArrangedSubviews(
             [titleStackView, routineCollectionView, weatherStackView, todayLuckStackView]
         )
 
         // MARK: color 관련. 추후 삭제
-        routineCollectionView.backgroundColor = .blue
+        self.routineCollectionView.backgroundColor = .blue
     }
 
     private func makeWeatherStackView() -> UIStackView {
