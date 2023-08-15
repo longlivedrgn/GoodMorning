@@ -80,7 +80,7 @@ final class ViewController: UIViewController {
         let cellRegistration = UICollectionView.CellRegistration<TODOListCell, TODOItem> {
             cell, indexPath, item in
             cell.updateWithItem(item)
-            cell.checkBoxButton.delegate = self
+            cell.configureDelegate(self)
             cell.accessories = [.delete(displayed: .whenEditing, actionHandler: {
                 [weak self] in
                 self?.delete(item)

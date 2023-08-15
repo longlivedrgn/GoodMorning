@@ -12,7 +12,7 @@ final class TODOListCell: UICollectionViewListCell {
 
     private var item: TODOItem?
 
-    let checkBoxButton = CheckBoxButton()
+    private let checkBoxButton = CheckBoxButton()
     private lazy var TODOListContentView = UIListContentView(
         configuration: defaultListContentConfiguration()
     )
@@ -50,6 +50,10 @@ final class TODOListCell: UICollectionViewListCell {
         guard item != newItem else { return }
         item = newItem
         setNeedsUpdateConfiguration()
+    }
+
+    func configureDelegate(_ delegate: CheckBoxButtonDelegate) {
+        self.checkBoxButton.delegate = delegate
     }
 
     private func defaultListContentConfiguration() -> UIListContentConfiguration {
