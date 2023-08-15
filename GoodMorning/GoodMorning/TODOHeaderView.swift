@@ -26,25 +26,12 @@ class TODOHeaderView: UICollectionReusableView {
     }()
 
     private lazy var plusTODOButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .contactAdd)
+        button.tintColor = .black
         button.addTarget(
             self,
             action: #selector(plusButtonTapped),
             for: .touchUpInside
-        )
-        let SFSymbolConfiguration = UIImage.SymbolConfiguration(
-            pointSize: 20,
-            weight: .bold,
-            scale: .large
-        )
-        let SFSymbolImage = UIImage(
-            systemName: "plus.circle",
-            withConfiguration: SFSymbolConfiguration
-        )
-
-        button.setImage(
-            SFSymbolImage?.withTintColor(.black, renderingMode: .alwaysOriginal),
-            for: .normal
         )
 
         return button
