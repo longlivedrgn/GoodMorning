@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Section: Hashable {
+enum Section {
 
     case main
 
