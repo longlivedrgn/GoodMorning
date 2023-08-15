@@ -22,6 +22,7 @@ final class CheckBoxButton: UIButton {
 
     private func configureAttributes() {
         backgroundColor = .white
+        tintColor = .black
         layer.cornerRadius = 10
         layer.borderColor = UIColor.design(.checkBox)?.withAlphaComponent(0.2).cgColor
         layer.borderWidth = 1
@@ -36,6 +37,25 @@ final class CheckBoxButton: UIButton {
     private func updateCheckMarkImage() {
         self.setImage(UIImage.checkmark, for: .selected)
         self.setImage(nil, for: .normal)
+    }
+
+}
+
+fileprivate extension UIImage {
+
+    static var checkmark: UIImage? {
+        let SFSymbolConfiguration = UIImage.SymbolConfiguration(
+            pointSize: 15,
+            weight: .bold,
+            scale: .large
+        )
+
+        let SFSymbolImage = UIImage(
+            systemName: "checkmark",
+            withConfiguration: SFSymbolConfiguration
+        )
+
+        return SFSymbolImage
     }
 
 }

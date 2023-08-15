@@ -72,7 +72,6 @@
 		87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */; };
 		87EFC1132A821B4B00843DCC /* UIConfigurationStateCustomKey+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1122A821B4B00843DCC /* UIConfigurationStateCustomKey+.swift */; };
 		87EFC1152A821B6F00843DCC /* UICellConfigurationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1142A821B6F00843DCC /* UICellConfigurationState.swift */; };
-		87EFC1172A821FBB00843DCC /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1162A821FBB00843DCC /* UIImage+.swift */; };
 		87EFC1192A8223D300843DCC /* CheckBoxButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -173,7 +172,6 @@
 		87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOCollectionViewItem.swift; sourceTree = "<group>"; };
 		87EFC1122A821B4B00843DCC /* UIConfigurationStateCustomKey+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIConfigurationStateCustomKey+.swift"; sourceTree = "<group>"; };
 		87EFC1142A821B6F00843DCC /* UICellConfigurationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICellConfigurationState.swift; sourceTree = "<group>"; };
-		87EFC1162A821FBB00843DCC /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButtonDelegate.swift; sourceTree = "<group>"; };
 		BC808D177BDBE9A5E89AA608 /* Pods-GoodMorningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.release.xcconfig"; sourceTree = "<group>"; };
 		CA403186C607188DBDCA0A62 /* Pods_GoodMorning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodMorning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -440,7 +438,6 @@
 				875C79C62A7CD27600B93DBD /* CircleImageView.swift */,
 				875C79C82A7CE5D400B93DBD /* CheckBoxButton.swift */,
 				87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */,
-				87EFC1162A821FBB00843DCC /* UIImage+.swift */,
 				80773A942A57E6230020F1DD /* Info.plist */,
 			);
 			path = GoodMorning;
@@ -915,7 +912,6 @@
 				875C79CF2A7CF85B00B93DBD /* TODOHeaderView.swift in Sources */,
 				8735552D2A6951180027A847 /* OpenWeatherAPI.swift in Sources */,
 				8060B4192A6131E100726C83 /* Bundle+.swift in Sources */,
-				87EFC1172A821FBB00843DCC /* UIImage+.swift in Sources */,
 				87EFC1152A821B6F00843DCC /* UICellConfigurationState.swift in Sources */,
 				87978FA62A653E7F009FE7FD /* LocationFetcherDelegate.swift in Sources */,
 			);
