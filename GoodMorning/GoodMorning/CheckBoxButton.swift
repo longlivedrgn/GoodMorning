@@ -29,7 +29,7 @@ final class CheckBoxButton: UIButton {
     private func configureAttributes() {
         backgroundColor = .white
         layer.cornerRadius = 10
-        layer.borderColor = UIColor.gray.cgColor
+        layer.borderColor = UIColor.design(.checkBox)?.withAlphaComponent(0.2).cgColor
         layer.borderWidth = 1
         addTarget(self, action: #selector(didButtonTapped), for: .touchUpInside)
         updateCheckMarkImage()
