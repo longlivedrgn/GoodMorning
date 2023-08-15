@@ -9,12 +9,6 @@ import UIKit
 
 final class CheckBoxButton: UIButton {
 
-    var isChecked = false {
-        didSet {
-            self.updateCheckMarkImage()
-        }
-    }
-
     weak var delegate: CheckBoxButtonDelegate?
 
     override init(frame: CGRect) {
@@ -36,15 +30,12 @@ final class CheckBoxButton: UIButton {
     }
 
     @objc private  func didButtonTapped() {
-        isChecked.toggle()
+        isSelected.toggle()
     }
 
     private func updateCheckMarkImage() {
-        if isChecked {
-            self.setImage(UIImage.checkmark, for: .normal)
-        } else {
-            self.setImage(nil, for: .normal)
-        }
+        self.setImage(UIImage.checkmark, for: .selected)
+        self.setImage(nil, for: .normal)
     }
 
 }
