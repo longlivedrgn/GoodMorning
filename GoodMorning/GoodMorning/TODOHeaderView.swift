@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TODOHeaderView: UICollectionReusableView {
+final class TODOHeaderView: UICollectionReusableView {
 
     weak var delegate: TODOHeaderViewDelegate?
 
