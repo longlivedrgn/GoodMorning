@@ -51,6 +51,7 @@
 		873555322A6954700027A847 /* CurrentWeatherDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873555312A6954700027A847 /* CurrentWeatherDTO.swift */; };
 		873555342A6954D10027A847 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873555332A6954D10027A847 /* Coordinate.swift */; };
 		873555382A6959DC0027A847 /* OpenWeatherAPIEndPointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873555372A6959DC0027A847 /* OpenWeatherAPIEndPointTest.swift */; };
+		8744BAE32A8E0B0100449FD9 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744BAE22A8E0B0100449FD9 /* CALayer+.swift */; };
 		874569812A63C8D80092FAE5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874569802A63C8D80092FAE5 /* LocationManager.swift */; };
 		875C79C52A7CC46400B93DBD /* TODOListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875C79C42A7CC46400B93DBD /* TODOListCell.swift */; };
 		875C79C72A7CD27600B93DBD /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875C79C62A7CD27600B93DBD /* CircleImageView.swift */; };
@@ -151,6 +152,7 @@
 		873555312A6954700027A847 /* CurrentWeatherDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherDTO.swift; sourceTree = "<group>"; };
 		873555332A6954D10027A847 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		873555372A6959DC0027A847 /* OpenWeatherAPIEndPointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAPIEndPointTest.swift; sourceTree = "<group>"; };
+		8744BAE22A8E0B0100449FD9 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		874569802A63C8D80092FAE5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		875C79C42A7CC46400B93DBD /* TODOListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOListCell.swift; sourceTree = "<group>"; };
 		875C79C62A7CD27600B93DBD /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				8060B4132A612A5C00726C83 /* URLResponse+.swift */,
 				8060B4182A6131E100726C83 /* Bundle+.swift */,
 				87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */,
+				8744BAE22A8E0B0100449FD9 /* CALayer+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -875,6 +878,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8735552A2A694FED0027A847 /* CurrentWeatherEndPoint.swift in Sources */,
+				8744BAE32A8E0B0100449FD9 /* CALayer+.swift in Sources */,
 				873555282A694FBA0027A847 /* RequestResponsable.swift in Sources */,
 				80F90C662A7BC48E007E1D23 /* NetworkSessionProvidable.swift in Sources */,
 				877E3FC82A6E3BC500BB06FA /* WeatherDTO.swift in Sources */,

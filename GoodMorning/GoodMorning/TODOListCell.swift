@@ -18,8 +18,7 @@ final class TODOListCell: UICollectionViewListCell {
     )
     private let iconImageView: CircleImageView = {
         let imageView = CircleImageView()
-        imageView.layer.borderColor = UIColor.gray.cgColor
-        imageView.layer.borderWidth = 1
+        imageView.layer.configureBorder(cornerRadius: 0)
         imageView.contentMode = .scaleAspectFit
 
         return imageView
@@ -77,14 +76,8 @@ final class TODOListCell: UICollectionViewListCell {
     }
 
     private func setupViewsIfNeeded() {
-        configureLayer()
+        contentView.layer.configureBorder()
         configureSubViews()
-    }
-
-    private func configureLayer() {
-        contentView.layer.cornerRadius = 10
-        contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor.gray.cgColor
     }
 
     private func configureSubViews() {
