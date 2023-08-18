@@ -12,7 +12,7 @@ final class TodayLuckStackView: UIStackView {
     private let dobleLabel = DoubleLabelStackView(type: .luck)
 
     private let imageView: UIImageView = {
-        let imageView = UIImageView(image: Image.luck.image)
+        let imageView = UIImageView(image: UIImage.SFSymbol(.luck))
         imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor).isActive = true
         imageView.tintColor = .black
         return imageView
@@ -58,22 +58,5 @@ final class TodayLuckStackView: UIStackView {
             bottom: verticalMargins,
             right: horizontalMargins
         )
-    }
-}
-
-fileprivate extension TodayLuckStackView {
-    enum Image {
-        case luck
-
-        var systemName: String {
-            switch self {
-            case .luck:
-                return "bubbles.and.sparkles.fill"
-            }
-        }
-
-        var image: UIImage? {
-            return UIImage(systemName: self.systemName)
-        }
     }
 }
