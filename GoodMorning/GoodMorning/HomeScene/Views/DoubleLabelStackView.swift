@@ -61,7 +61,9 @@ final class DoubleLabelStackView: UIStackView {
 }
 
 extension DoubleLabelStackView {
+
     enum LabelType {
+
         case title
         case luck
 
@@ -87,6 +89,7 @@ extension DoubleLabelStackView {
 }
 
 fileprivate extension Date {
+
     var description: String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ko_KR")

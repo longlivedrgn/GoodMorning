@@ -22,6 +22,7 @@ final class HomeView: UIView {
         return collectionView
     }()
     private let weatherStackView = WeatherStackView(weather: .drizzle, temperature: 27)
+    private let todayLuckStackView = TodayLuckStackView()
 
     init() {
         super.init(frame: .zero)
@@ -90,7 +91,6 @@ final class HomeView: UIView {
 
     private func setupContentView() {
         let weatherStackView = makeWeatherStackView()
-        let todayLuckStackView = TodayLuckStackView()
         self.contentView.addArrangedSubviews(
             [titleStackView, routineCollectionView, weatherStackView, todayLuckStackView]
         )
