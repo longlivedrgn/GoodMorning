@@ -19,15 +19,15 @@ final class WeatherStackView: UIStackView {
     init(weather: WeatherConditions, temperature: Int) {
         super.init(frame: .zero)
 
-        setupWeatherView(weather, temperature)
-        configureWeatherView()
+        self.setupWeatherView(weather, temperature)
+        self.configureWeatherView()
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        configureWeatherViewMargin()
-        configureImageViewSize()
+        self.configureWeatherViewMargin()
+        self.configureImageViewSize()
     }
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -35,7 +35,7 @@ final class WeatherStackView: UIStackView {
 
     private func setupWeatherView( _ weather: WeatherConditions, _ temperature: Int) {
         let temperatureLabel: UILabel = {
-            let label = PretendardLabel(text: temperature.temperature,size: 40,weight: .regular)
+            let label = PretendardLabel(text: temperature.temperature, size: 40, weight: .regular)
             return label
         }()
         self.imageView.image = weather.image

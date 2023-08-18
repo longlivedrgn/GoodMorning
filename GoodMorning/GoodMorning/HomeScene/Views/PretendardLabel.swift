@@ -11,10 +11,10 @@ final class PretendardLabel: UILabel {
 
     init(
         text: String,
-         color: UIColor = .black,
-         alignment: NSTextAlignment = .center,
-         size: CGFloat,
-         weight: UIFont.Weight
+        color: UIColor = .black,
+        alignment: NSTextAlignment = .center,
+        size: CGFloat,
+        weight: UIFont.Weight
     ) {
         super.init(frame: .zero)
 

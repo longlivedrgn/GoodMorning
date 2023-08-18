@@ -28,7 +28,7 @@ final class DoubleLabelStackView: UIStackView {
             size: 30,
             weight: .bold)
         self.addArrangedSubviews([firstLabel, secondLabel])
-        configureDoubleLabelStackView(spacing: 10)
+        self.configureDoubleLabelStackView(spacing: 10)
     }
 
     convenience init(type: LabelType) {
@@ -45,7 +45,7 @@ final class DoubleLabelStackView: UIStackView {
             size: 17,
             weight: .regular)
         self.addArrangedSubviews([firstLabel, secondLabel])
-        configureDoubleLabelStackView(spacing: 3)
+        self.configureDoubleLabelStackView(spacing: 3)
     }
 
     required init(coder: NSCoder) {

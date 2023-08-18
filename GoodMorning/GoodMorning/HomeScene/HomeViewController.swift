@@ -16,7 +16,7 @@ final class HomeViewController: UIViewController {
     }
 
     override func loadView() {
-        view = homeView
+        self.view = homeView
     }
 
 }

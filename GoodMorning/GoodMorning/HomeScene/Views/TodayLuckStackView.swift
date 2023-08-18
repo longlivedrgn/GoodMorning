@@ -21,14 +21,14 @@ final class TodayLuckStackView: UIStackView {
     init() {
         super.init(frame: .zero)
 
-        setupStackView()
-        configureStackView()
+        self.setupStackView()
+        self.configureStackView()
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        configureStackViewMargins()
+        self.configureStackViewMargins()
     }
 
     required init(coder: NSCoder) {

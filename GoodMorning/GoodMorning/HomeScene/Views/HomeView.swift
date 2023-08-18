@@ -26,9 +26,9 @@ final class HomeView: UIView {
     init() {
         super.init(frame: .zero)
 
-        setupView()
-        configureView()
-        setupContentView()
+        self.setupView()
+        self.configureView()
+        self.setupContentView()
     }
 
     required init?(coder: NSCoder) {
@@ -38,9 +38,9 @@ final class HomeView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        configureContentViewMargins()
-        configureRoutineCollectionView()
-        configureWeatherStackView()
+        self.configureContentViewMargins()
+        self.configureRoutineCollectionView()
+        self.configureWeatherStackView()
     }
 
     private func configureContentViewMargins() {
