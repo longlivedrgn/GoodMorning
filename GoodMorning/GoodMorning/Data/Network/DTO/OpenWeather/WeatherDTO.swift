@@ -8,6 +8,7 @@ import Foundation
 
 struct WeatherDTO: Decodable {
 
+    let id: Int
     let icon: String
 
 }
