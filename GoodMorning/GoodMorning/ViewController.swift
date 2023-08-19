@@ -162,3 +162,13 @@ extension ViewController: CheckBoxButtonDelegate {
     }
 
 }
+
+extension ViewController {
+
+    enum Section {
+
+        case main
+
+    }
+    
+}

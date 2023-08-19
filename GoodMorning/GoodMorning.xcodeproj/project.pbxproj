@@ -79,7 +79,6 @@
 		87978FA42A653E68009FE7FD /* LocationFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FA32A653E68009FE7FD /* LocationFetchable.swift */; };
 		87978FA62A653E7F009FE7FD /* LocationFetcherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */; };
 		87978FAB2A653EF4009FE7FD /* CLLocationManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */; };
-		87EFC10F2A8203EF00843DCC /* TODOCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC10E2A8203EF00843DCC /* TODOCollectionViewSection.swift */; };
 		87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */; };
 		87EFC1132A821B4B00843DCC /* UIConfigurationStateCustomKey+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1122A821B4B00843DCC /* UIConfigurationStateCustomKey+.swift */; };
 		87EFC1152A821B6F00843DCC /* UICellConfigurationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1142A821B6F00843DCC /* UICellConfigurationState.swift */; };
@@ -190,7 +189,6 @@
 		87978FA32A653E68009FE7FD /* LocationFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetchable.swift; sourceTree = "<group>"; };
 		87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcherDelegate.swift; sourceTree = "<group>"; };
 		87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+.swift"; sourceTree = "<group>"; };
-		87EFC10E2A8203EF00843DCC /* TODOCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOCollectionViewSection.swift; sourceTree = "<group>"; };
 		87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOCollectionViewItem.swift; sourceTree = "<group>"; };
 		87EFC1122A821B4B00843DCC /* UIConfigurationStateCustomKey+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIConfigurationStateCustomKey+.swift"; sourceTree = "<group>"; };
 		87EFC1142A821B6F00843DCC /* UICellConfigurationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICellConfigurationState.swift; sourceTree = "<group>"; };
@@ -456,7 +454,6 @@
 				80773A852A57E6210020F1DD /* SceneDelegate.swift */,
 				80773A832A57E6210020F1DD /* AppDelegate.swift */,
 				80F90D002A8F3E7B007E1D23 /* ViewController.swift */,
-				87EFC10E2A8203EF00843DCC /* TODOCollectionViewSection.swift */,
 				87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */,
 				875C79CE2A7CF85B00B93DBD /* TODOHeaderView.swift */,
 				877981392A7F573B00DB0ED0 /* TODOHeaderViewDelegate.swift */,
@@ -949,7 +946,6 @@
 				80F90C622A7BB8FE007E1D23 /* URLSessionProvidable.swift in Sources */,
 				875C79C92A7CE5D400B93DBD /* CheckBoxButton.swift in Sources */,
 				875C79C72A7CD27600B93DBD /* CircleImageView.swift in Sources */,
-				87EFC10F2A8203EF00843DCC /* TODOCollectionViewSection.swift in Sources */,
 				8060B4102A6129A400726C83 /* NetworkError.swift in Sources */,
 				87978FA42A653E68009FE7FD /* LocationFetchable.swift in Sources */,
 				80F90CCB2A84CF6C007E1D23 /* UIStackVeiw+.swift in Sources */,
