@@ -33,21 +33,19 @@ struct CoreDataStack: PersistentStore {
     }
 
     func create<EntityType: ManagedEntity>() -> EntityType? {
-        let dispatchGroup = DispatchGroup()
         var result: EntityType?
 
-        dispatchGroup.enter()
+        print("1: \(Thread.current)")
         let createWork = DispatchWorkItem {
+            print("2: \(Thread.current)")
             let managedEntity = backgroundContext.performAndWait {
+                print("3: \(Thread.current)")
                 let object = EntityType.makeNewObject(in: backgroundContext)
                 return object
             }
-
             result = managedEntity
-            dispatchGroup.leave()
         }
-        queue.async(execute: createWork)
-        dispatchGroup.wait()
+        queue.asyncAndWait(execute: createWork)
 
         return result
     }
@@ -64,9 +62,6 @@ struct CoreDataStack: PersistentStore {
     }
 
     func update() {
-        let dispatchGroup = DispatchGroup()
-
-        dispatchGroup.enter()
         let updateWork = DispatchWorkItem {
             backgroundContext.performAndWait {
                 if backgroundContext.hasChanges {
@@ -77,17 +72,17 @@ struct CoreDataStack: PersistentStore {
                     }
                 }
             }
-            dispatchGroup.leave()
         }
 
-        queue.async(execute: updateWork)
-        dispatchGroup.wait()
+        queue.asyncAndWait(execute: updateWork)
     }
 
 }
 
 extension CoreDataStack {
+
     enum Container {
+
         case goodMorning
 
         var name: String {
@@ -96,6 +91,20 @@ extension CoreDataStack {
                 return "GoodMorning"
             }
         }
+
+    }
+
+    private enum CoreDataStackError: LocalizedError {
+
+        case isFailedToCreateEntity
+
+        var errorDescription: String? {
+            switch self {
+            case .isFailedToCreateEntity:
+                return "Entity 만들기에 실패하였습니다."
+            }
+        }
+
     }
 
 }
