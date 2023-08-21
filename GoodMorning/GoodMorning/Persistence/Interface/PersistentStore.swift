@@ -6,7 +6,7 @@
 //
 
 protocol PersistentStore {
-    func create<EntityType: ManagedEntity>() -> EntityType?
+    func create<EntityType: ManagedEntity>() async -> EntityType?
     func fetch<EntityType: ManagedEntity>() -> [EntityType]
     func update()
 }

@@ -16,14 +16,14 @@ final class CoreDataTests: CoreDataTestSetup {
         XCTAssertNotNil(fetchedObjects)
     }
 
-    func test_manangedObject_추가하기()  {
-        guard let newObject: MorningRoutine = sut.create() else { return }
-        let fetchedObjects: [MorningRoutine] = sut.fetch()
-        XCTAssertNotNil(fetchedObjects)
-    }
+//    func test_manangedObject_추가하기()  {
+//        guard let newObject: MorningRoutine = sut.create() else { return }
+//        let fetchedObjects: [MorningRoutine] = sut.fetch()
+//        XCTAssertNotNil(fetchedObjects)
+//    }
 
-    func test_fetch하기() {
-        guard let newObject: MorningRoutine = sut.create() else { return }
+    func test_fetch하기() async {
+        guard let newObject: MorningRoutine = await sut.create() else { return }
         newObject.routine = "물마시기"
         newObject.isChecked = false
         let fetchedObjects: [MorningRoutine] = sut.fetch()

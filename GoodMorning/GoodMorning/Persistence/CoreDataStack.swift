@@ -8,16 +8,15 @@
 import CoreData
 import UIKit
 
-struct CoreDataStack: PersistentStore {
+final class CoreDataStack: PersistentStore {
 
     private var container: NSPersistentContainer
-    private let queue: DispatchQueue
-    private var backgroundContext: NSManagedObjectContext
+    private lazy var backgroundContext: NSManagedObjectContext = {
+        return container.newBackgroundContext()
+    }()
 
     init(container: Container) {
         self.container = NSPersistentContainer(name: container.name)
-        self.queue = DispatchQueue(label: container.name)
-        self.backgroundContext = self.container.newBackgroundContext()
         initiateContainer()
     }
 
@@ -26,28 +25,20 @@ struct CoreDataStack: PersistentStore {
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             } else {
-                container.viewContext.configureViewContext()
-                backgroundContext.configureBackgroundContext()
+                self.container.viewContext.configureViewContext()
+                self.backgroundContext = self.container.newBackgroundContext()
+                self.backgroundContext.configureBackgroundContext()
             }
         }
     }
 
-    func create<EntityType: ManagedEntity>() -> EntityType? {
-        var result: EntityType?
-
-        print("1: \(Thread.current)")
-        let createWork = DispatchWorkItem {
-            print("2: \(Thread.current)")
-            let managedEntity = backgroundContext.performAndWait {
-                print("3: \(Thread.current)")
-                let object = EntityType.makeNewObject(in: backgroundContext)
-                return object
-            }
-            result = managedEntity
+    func create<EntityType: ManagedEntity>() async -> EntityType? {
+        let managedEntity = await backgroundContext.perform {
+            let object = EntityType.makeNewObject(in: self.backgroundContext)
+            return object
         }
-        queue.asyncAndWait(execute: createWork)
 
-        return result
+        return managedEntity
     }
 
     func fetch<EntityType: ManagedEntity>() -> [EntityType] {
@@ -62,19 +53,15 @@ struct CoreDataStack: PersistentStore {
     }
 
     func update() {
-        let updateWork = DispatchWorkItem {
-            backgroundContext.performAndWait {
-                if backgroundContext.hasChanges {
-                    do {
-                        try backgroundContext.save()
-                    } catch {
-                        print(error.localizedDescription)
-                    }
+        backgroundContext.perform {
+            if self.backgroundContext.hasChanges {
+                do {
+                    try self.backgroundContext.save()
+                } catch {
+                    print(error.localizedDescription)
                 }
             }
         }
-
-        queue.asyncAndWait(execute: updateWork)
     }
 
 }
