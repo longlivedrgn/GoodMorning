@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  GoodMorning
 //
 //  Created by Sunny on 2023/07/07.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class ViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, TODOItem>
     private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, TODOItem>
@@ -140,7 +140,7 @@ final class ViewController: UIViewController {
 
 }
 
-extension ViewController: TODOHeaderViewDelegate {
+extension HomeViewController: TODOHeaderViewDelegate {
 
     func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didEditButtonTapped sender: UIButton) {
         TODOCollectionView.isEditing.toggle()
@@ -152,7 +152,7 @@ extension ViewController: TODOHeaderViewDelegate {
 
 }
 
-extension ViewController: CheckBoxButtonDelegate {
+extension HomeViewController: CheckBoxButtonDelegate {
 
     func checkBoxButton(
         _ checkBoxButton: CheckBoxButton,
@@ -163,12 +163,12 @@ extension ViewController: CheckBoxButtonDelegate {
 
 }
 
-extension ViewController {
+extension HomeViewController {
 
     enum Section {
 
         case main
 
     }
-    
+
 }

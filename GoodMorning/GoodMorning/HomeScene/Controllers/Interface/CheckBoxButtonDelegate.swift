@@ -10,6 +10,5 @@ import UIKit
 protocol CheckBoxButtonDelegate: AnyObject {
 
     func checkBoxButton(_ checkBoxButton: CheckBoxButton, didCheckBoxButtonTapped sender: UIButton)
-    
-}
 
+}

@@ -110,3 +110,22 @@ final class TODOListCell: UICollectionViewListCell {
     }
 
 }
+
+fileprivate extension UICellConfigurationState {
+
+    var item: TODOItem? {
+        get {
+            return self[UIConfigurationStateCustomKey.item] as? TODOItem
+        }
+        set {
+            self[UIConfigurationStateCustomKey.item] = newValue
+        }
+    }
+
+}
+
+fileprivate extension UIConfigurationStateCustomKey {
+
+    static let item = UIConfigurationStateCustomKey("TODOListCell.item")
+
+}
