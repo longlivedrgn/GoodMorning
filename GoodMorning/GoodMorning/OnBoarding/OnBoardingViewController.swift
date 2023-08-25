@@ -47,6 +47,9 @@ final class OnBoardingViewController: UIViewController {
             borderColor: UIColor.design(.mainBackground)?.cgColor
         )
         textInputView.delegate = self
+        textInputView.placeholder = "이름을 작성해주세요."
+        textInputView.textAlignment = .center
+
         let userNameStackView = UserInformationStackView(title: "이름", subView: textInputView)
 
         return userNameStackView
@@ -61,6 +64,8 @@ final class OnBoardingViewController: UIViewController {
         let textField = UITextField()
         textField.backgroundColor = .lightGray
         textField.inputView = datePicker
+        textField.placeholder = "생년월일을 작성해주세요."
+        textField.textAlignment = .center
 
         let birthDateStackView = UserInformationStackView(title: "생년월일", subView: textField)
 
