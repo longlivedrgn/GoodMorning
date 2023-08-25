@@ -63,7 +63,6 @@ final class OnBoardingViewController: UIViewController {
         userNameTextField.textAlignment = .center
         userNameTextField.delegate = self
 
-
         return userNameTextField
     }()
 
@@ -93,7 +92,7 @@ final class OnBoardingViewController: UIViewController {
         let birthDateTextField = UITextField()
         birthDateTextField.font = .pretendard(size: 20, weight: .bold)
         birthDateTextField.layer.cornerRadius = 10
-        birthDateTextField.backgroundColor = .lightGray
+        birthDateTextField.backgroundColor = .lightGray.withAlphaComponent(0.3)
         birthDateTextField.inputView = self.birthDatePicker
         birthDateTextField.placeholder = "생년월일을 작성해주세요."
         birthDateTextField.textAlignment = .center
@@ -111,9 +110,12 @@ final class OnBoardingViewController: UIViewController {
     }()
 
     private let genderStackView: UserInformationStackView = {
-        let segmentControl = UISegmentedControl(items: ["여자", "남자"])
-        segmentControl.selectedSegmentIndex = 0
-        let genderStackView = UserInformationStackView(title: "성별", subView: segmentControl)
+        let segmentedControl = UISegmentedControl(items: ["여자", "남자"])
+        let font = UIFont.pretendard(size: 20, weight: .medium)
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+
+        let genderStackView = UserInformationStackView(title: "성별", subView: segmentedControl)
 
         return genderStackView
     }()
@@ -127,7 +129,7 @@ final class OnBoardingViewController: UIViewController {
             genderStackView]
         )
         userInputStackView.axis = .vertical
-        userInputStackView.spacing = 20
+        userInputStackView.spacing = 30
 
         return userInputStackView
     }()
@@ -160,7 +162,8 @@ final class OnBoardingViewController: UIViewController {
 
         self.startGoodMorningButton.snp.makeConstraints { make in
             make.leading.trailing.equalTo(userInputStackView)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(40)
+            make.height.equalTo(self.genderStackView.snp.height)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(60)
         }
     }
 
