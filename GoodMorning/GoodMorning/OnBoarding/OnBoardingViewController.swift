@@ -22,20 +22,21 @@ final class OnBoardingViewController: UIViewController {
             text: "좋은 아침입니다.",
             alignment: .left,
             size: 33,
-            weight: .heavy
+            weight: .medium
         )
         let descriptionLabel = PretendardLabel(
             text: "굿모닝에서는 오늘의 운세 기능을 제공하고 있어요. 더 정확한 정보를 전달해 드리기 위해 아래와 같은 정보가 필요해요.",
-            color: .darkGray,
+            color: .lightGray,
             alignment: .left,
             size: 17,
-            weight: .heavy
+            weight: .medium
         )
         descriptionLabel.numberOfLines = 0
 
         greetingStackView.addArrangedSubviews([helloLabel, goodMorningLabel, descriptionLabel]
         )
         greetingStackView.axis = .vertical
+        greetingStackView.spacing = 10
 
         return greetingStackView
     }()
@@ -45,39 +46,50 @@ final class OnBoardingViewController: UIViewController {
         startGoodMorningButton.layer.cornerRadius = 15
         startGoodMorningButton.setTitle("굿모닝 시작하기", for: .normal)
         startGoodMorningButton.setTitleColor(.black, for: .normal)
+        startGoodMorningButton.titleLabel?.font = .pretendard(size: 30, weight: .medium)
         startGoodMorningButton.backgroundColor = .design(.mainBackground)
 
         return startGoodMorningButton
     }()
 
     private lazy var userNameStackView: UserInformationStackView = {
-        let textInputView = UITextField()
-        textInputView.layer.configureBorder(
+        let userNameTextField = UITextField()
+        userNameTextField.layer.configureBorder(
             borderWidth: 2,
             borderColor: UIColor.design(.mainBackground)?.cgColor
         )
-        textInputView.placeholder = "이름을 작성해주세요."
-        textInputView.textAlignment = .center
-        textInputView.delegate = self
+        userNameTextField.placeholder = "이름을 작성해주세요."
+        userNameTextField.textAlignment = .center
+        userNameTextField.delegate = self
+        userNameTextField.font = .pretendard(size: 30, weight: .medium)
 
-        let userNameStackView = UserInformationStackView(title: "이름", subView: textInputView)
+        let userNameStackView = UserInformationStackView(title: "이름", subView: userNameTextField)
 
         return userNameStackView
     }()
 
     private lazy var birthDateStackView: UserInformationStackView = {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.addTarget(self, action: #selector(datePickerValueDidChanged), for: .valueChanged)
+        let birthDatePicker = UIDatePicker()
+        birthDatePicker.datePickerMode = .date
+        birthDatePicker.preferredDatePickerStyle = .wheels
+        birthDatePicker.addTarget(
+            self,
+            action: #selector(datePickerValueDidChanged),
+            for: .valueChanged
+        )
 
-        let textField = UITextField()
-        textField.backgroundColor = .lightGray
-        textField.inputView = datePicker
-        textField.placeholder = "생년월일을 작성해주세요."
-        textField.textAlignment = .center
+        let birthDateTextField = UITextField()
+        birthDateTextField.font = .pretendard(size: 20, weight: .medium)
+        birthDateTextField.layer.cornerRadius = 10
+        birthDateTextField.backgroundColor = .lightGray
+        birthDateTextField.inputView = birthDatePicker
+        birthDateTextField.placeholder = "생년월일을 작성해주세요."
+        birthDateTextField.textAlignment = .center
 
-        let birthDateStackView = UserInformationStackView(title: "생년월일", subView: textField)
+        let birthDateStackView = UserInformationStackView(
+            title: "생년월일",
+            subView: birthDateTextField
+        )
 
         return birthDateStackView
     }()
@@ -99,6 +111,7 @@ final class OnBoardingViewController: UIViewController {
             genderStackView]
         )
         userInputStackView.axis = .vertical
+        userInputStackView.spacing = 20
 
         return userInputStackView
     }()

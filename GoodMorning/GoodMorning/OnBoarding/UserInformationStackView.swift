@@ -19,11 +19,11 @@ class UserInformationStackView: UIStackView {
 
     convenience init(title: String, subView: UIView) {
         self.init(frame: .zero)
-
-        let titleLabel = PretendardLabel(text: title, size: 18, weight: .regular)
+        let titleLabel = PretendardLabel(text: title, alignment: .left, size: 20, weight: .bold)
         self.addArrangedSubviews([titleLabel, subView])
 
         self.axis = .vertical
+        self.spacing = 10
     }
 
 }
