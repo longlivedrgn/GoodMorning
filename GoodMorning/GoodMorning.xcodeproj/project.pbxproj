@@ -79,6 +79,9 @@
 		87978FA42A653E68009FE7FD /* LocationFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FA32A653E68009FE7FD /* LocationFetchable.swift */; };
 		87978FA62A653E7F009FE7FD /* LocationFetcherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */; };
 		87978FAB2A653EF4009FE7FD /* CLLocationManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */; };
+		879EEE9A2A973DAC005B8A95 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879EEE992A973DAC005B8A95 /* OnBoardingViewController.swift */; };
+		879EEE9C2A9747A4005B8A95 /* UserInformationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879EEE9B2A9747A4005B8A95 /* UserInformationStackView.swift */; };
+		879EEE9E2A975298005B8A95 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879EEE9D2A975298005B8A95 /* Date+.swift */; };
 		87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */; };
 		87EFC1192A8223D300843DCC /* CheckBoxButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -187,6 +190,9 @@
 		87978FA32A653E68009FE7FD /* LocationFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetchable.swift; sourceTree = "<group>"; };
 		87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcherDelegate.swift; sourceTree = "<group>"; };
 		87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+.swift"; sourceTree = "<group>"; };
+		879EEE992A973DAC005B8A95 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		879EEE9B2A9747A4005B8A95 /* UserInformationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationStackView.swift; sourceTree = "<group>"; };
+		879EEE9D2A975298005B8A95 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOCollectionViewItem.swift; sourceTree = "<group>"; };
 		87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButtonDelegate.swift; sourceTree = "<group>"; };
 		BC808D177BDBE9A5E89AA608 /* Pods-GoodMorningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -273,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				801B3B692A63D7A100B57D19 /* UIFont+.swift */,
+				879EEE9D2A975298005B8A95 /* Date+.swift */,
 				801B3B712A63D94E00B57D19 /* UIColor+.swift */,
 				8060B4132A612A5C00726C83 /* URLResponse+.swift */,
 				8060B4182A6131E100726C83 /* Bundle+.swift */,
@@ -443,6 +450,7 @@
 		80773A822A57E6210020F1DD /* GoodMorning */ = {
 			isa = PBXGroup;
 			children = (
+				879EEE982A973BDC005B8A95 /* OnBoarding */,
 				80F90CC02A84C4D0007E1D23 /* HomeScene */,
 				801B3B732A63DB0C00B57D19 /* Persistence */,
 				801B3B682A63D79900B57D19 /* Extensions */,
@@ -672,6 +680,15 @@
 				876B04DA2A66841F0077486C /* LocationError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		879EEE982A973BDC005B8A95 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				879EEE992A973DAC005B8A95 /* OnBoardingViewController.swift */,
+				879EEE9B2A9747A4005B8A95 /* UserInformationStackView.swift */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		F317094B738C7339B328A52B /* Pods */ = {
@@ -966,6 +983,7 @@
 				80F90D012A8F3E7B007E1D23 /* HomeViewController.swift in Sources */,
 				873555242A694AB40027A847 /* Requestable.swift in Sources */,
 				873555322A6954700027A847 /* CurrentWeatherDTO.swift in Sources */,
+				879EEE9E2A975298005B8A95 /* Date+.swift in Sources */,
 				87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */,
 				873555262A694ABA0027A847 /* Responsable.swift in Sources */,
 				80773A842A57E6210020F1DD /* AppDelegate.swift in Sources */,
@@ -984,6 +1002,7 @@
 				87978FA42A653E68009FE7FD /* LocationFetchable.swift in Sources */,
 				80F90CCB2A84CF6C007E1D23 /* UIStackVeiw+.swift in Sources */,
 				874569812A63C8D80092FAE5 /* LocationManager.swift in Sources */,
+				879EEE9A2A973DAC005B8A95 /* OnBoardingViewController.swift in Sources */,
 				8779813A2A7F573B00DB0ED0 /* TODOHeaderViewDelegate.swift in Sources */,
 				80773A862A57E6210020F1DD /* SceneDelegate.swift in Sources */,
 				8060B4142A612A5C00726C83 /* URLResponse+.swift in Sources */,
@@ -996,6 +1015,7 @@
 				875C79CD2A7CEED300B93DBD /* Priority.swift in Sources */,
 				875C79CF2A7CF85B00B93DBD /* TODOHeaderView.swift in Sources */,
 				80F90CD32A860E06007E1D23 /* Int+.swift in Sources */,
+				879EEE9C2A9747A4005B8A95 /* UserInformationStackView.swift in Sources */,
 				80F90CC52A84C91D007E1D23 /* DoubleLabelStackView.swift in Sources */,
 				8735552D2A6951180027A847 /* OpenWeatherAPI.swift in Sources */,
 				8060B4192A6131E100726C83 /* Bundle+.swift in Sources */,
