@@ -40,15 +40,25 @@ final class OnBoardingViewController: UIViewController {
         return greetingStackView
     }()
 
+    private let startGoodMorningButton: UIButton = {
+        let startGoodMorningButton = UIButton()
+        startGoodMorningButton.layer.cornerRadius = 15
+        startGoodMorningButton.setTitle("굿모닝 시작하기", for: .normal)
+        startGoodMorningButton.setTitleColor(.black, for: .normal)
+        startGoodMorningButton.backgroundColor = .design(.mainBackground)
+
+        return startGoodMorningButton
+    }()
+
     private lazy var userNameStackView: UserInformationStackView = {
         let textInputView = UITextField()
         textInputView.layer.configureBorder(
             borderWidth: 2,
             borderColor: UIColor.design(.mainBackground)?.cgColor
         )
-        textInputView.delegate = self
         textInputView.placeholder = "이름을 작성해주세요."
         textInputView.textAlignment = .center
+        textInputView.delegate = self
 
         let userNameStackView = UserInformationStackView(title: "이름", subView: textInputView)
 
@@ -98,6 +108,7 @@ final class OnBoardingViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(greetingStackView)
         view.addSubview(userInputStackView)
+        view.addSubview(startGoodMorningButton)
         setUpDatePickerToolBar()
 
         greetingStackView.snp.makeConstraints { make in
@@ -107,6 +118,11 @@ final class OnBoardingViewController: UIViewController {
         userInputStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(30)
             make.top.equalTo(greetingStackView.snp.bottom).offset(40)
+        }
+
+        startGoodMorningButton.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(userInputStackView)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(40)
         }
     }
 
