@@ -7,9 +7,12 @@
 
 import UIKit
 
-class UserInformationStackView: UIStackView {
+final class UserInformationStackView: UIStackView {
+
+    private(set) var titleLabel: PretendardLabel
 
     override init(frame: CGRect) {
+        self.titleLabel = PretendardLabel(text: "", size: 10, weight: .medium)
         super.init(frame: frame)
     }
 
@@ -19,9 +22,9 @@ class UserInformationStackView: UIStackView {
 
     convenience init(title: String, subView: UIView) {
         self.init(frame: .zero)
-        let titleLabel = PretendardLabel(text: title, alignment: .left, size: 20, weight: .bold)
-        self.addArrangedSubviews([titleLabel, subView])
+        self.titleLabel = PretendardLabel(text: title, alignment: .left, size: 20, weight: .bold)
 
+        self.addArrangedSubviews([titleLabel, subView])
         self.axis = .vertical
         self.spacing = 10
     }

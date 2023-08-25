@@ -9,7 +9,6 @@ import UIKit
 
 final class OnBoardingViewController: UIViewController {
 
-    // MARK: guard 문으로 가져오는 거 해결하기!~!~!~!
     private let greetingStackView: UIStackView = {
         let greetingStackView = UIStackView()
         let helloLabel = PretendardLabel(
@@ -52,23 +51,32 @@ final class OnBoardingViewController: UIViewController {
         return startGoodMorningButton
     }()
 
-    private lazy var userNameStackView: UserInformationStackView = {
+    private lazy var userNameTextField: UITextField = {
         let userNameTextField = UITextField()
+        userNameTextField.font = .pretendard(size: 20, weight: .bold)
         userNameTextField.layer.configureBorder(
+            cornerRadius: 15,
             borderWidth: 2,
             borderColor: UIColor.design(.mainBackground)?.cgColor
         )
         userNameTextField.placeholder = "이름을 작성해주세요."
         userNameTextField.textAlignment = .center
         userNameTextField.delegate = self
-        userNameTextField.font = .pretendard(size: 30, weight: .medium)
 
-        let userNameStackView = UserInformationStackView(title: "이름", subView: userNameTextField)
+
+        return userNameTextField
+    }()
+
+    private lazy var userNameStackView: UserInformationStackView = {
+        let userNameStackView = UserInformationStackView(
+            title: "이름",
+            subView: self.userNameTextField
+        )
 
         return userNameStackView
     }()
 
-    private lazy var birthDateStackView: UserInformationStackView = {
+    private lazy var birthDatePicker: UIDatePicker = {
         let birthDatePicker = UIDatePicker()
         birthDatePicker.datePickerMode = .date
         birthDatePicker.preferredDatePickerStyle = .wheels
@@ -78,14 +86,22 @@ final class OnBoardingViewController: UIViewController {
             for: .valueChanged
         )
 
+        return birthDatePicker
+    }()
+
+    private lazy var birthDateTextField: UITextField = {
         let birthDateTextField = UITextField()
-        birthDateTextField.font = .pretendard(size: 20, weight: .medium)
+        birthDateTextField.font = .pretendard(size: 20, weight: .bold)
         birthDateTextField.layer.cornerRadius = 10
         birthDateTextField.backgroundColor = .lightGray
-        birthDateTextField.inputView = birthDatePicker
+        birthDateTextField.inputView = self.birthDatePicker
         birthDateTextField.placeholder = "생년월일을 작성해주세요."
         birthDateTextField.textAlignment = .center
 
+        return birthDateTextField
+    }()
+
+    private lazy var birthDateStackView: UserInformationStackView = {
         let birthDateStackView = UserInformationStackView(
             title: "생년월일",
             subView: birthDateTextField
@@ -118,30 +134,38 @@ final class OnBoardingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        view.addSubview(greetingStackView)
-        view.addSubview(userInputStackView)
-        view.addSubview(startGoodMorningButton)
-        setUpDatePickerToolBar()
+        self.view.addSubview(self.greetingStackView)
+        self.view.addSubview(self.userInputStackView)
+        self.view.addSubview(self.startGoodMorningButton)
+        self.setUpDatePickerToolBar()
+        self.view.backgroundColor = .white
 
-        greetingStackView.snp.makeConstraints { make in
+        self.greetingStackView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).inset(40)
             make.leading.trailing.equalToSuperview().inset(40)
         }
-        userInputStackView.snp.makeConstraints { make in
+
+        self.userInputStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(30)
             make.top.equalTo(greetingStackView.snp.bottom).offset(40)
         }
 
-        startGoodMorningButton.snp.makeConstraints { make in
+        self.userNameTextField.snp.makeConstraints { make in
+            make.height.equalTo(userNameStackView.titleLabel.snp.height).multipliedBy(2.0)
+        }
+
+        self.birthDateTextField.snp.makeConstraints { make in
+            make.height.equalTo(birthDateStackView.titleLabel.snp.height).multipliedBy(2.0)
+        }
+
+        self.startGoodMorningButton.snp.makeConstraints { make in
             make.leading.trailing.equalTo(userInputStackView)
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(40)
         }
     }
 
     @objc private func datePickerValueDidChanged(_ sender: UIDatePicker) {
-        guard let textField = birthDateStackView.arrangedSubviews[1] as? UITextField else { return }
-        textField.text = sender.date.yearMonthDayFormat()
+        self.birthDateTextField.text = sender.date.yearMonthDayFormat()
     }
 
     private func setUpDatePickerToolBar() {
@@ -157,16 +181,12 @@ final class OnBoardingViewController: UIViewController {
         toolBar.items = [space, doneButton]
         toolBar.sizeToFit()
 
-        guard let textField = birthDateStackView.arrangedSubviews[1] as? UITextField else { return }
-        textField.inputAccessoryView = toolBar
+        self.birthDateTextField.inputAccessoryView = toolBar
     }
 
     @objc private func doneButtonDidTapped(_ sender: UIBarButtonItem) {
-        guard let textField = birthDateStackView.arrangedSubviews[1] as? UITextField else { return }
-        guard let datePicker = textField.inputView as? UIDatePicker else { return }
-
-        textField.text = datePicker.date.yearMonthDayFormat()
-        textField.resignFirstResponder()
+        self.birthDateTextField.text = self.birthDatePicker.date.yearMonthDayFormat()
+        self.birthDateTextField.resignFirstResponder()
     }
 
 }
@@ -179,7 +199,7 @@ extension OnBoardingViewController: UITextFieldDelegate {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
+        self.view.endEditing(true)
     }
 
 }
