@@ -8,11 +8,17 @@
 enum Image {
 
     case luck
+    case trash
+    case check
 
     var systemName: String {
         switch self {
         case .luck:
             return "bubbles.and.sparkles.fill"
+        case .trash:
+            return "trash"
+        case .check:
+            return "checkmark"
         }
     }
 

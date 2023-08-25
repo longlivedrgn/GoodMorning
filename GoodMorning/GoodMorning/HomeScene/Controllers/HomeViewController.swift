@@ -117,11 +117,7 @@ final class HomeViewController: UIViewController {
     private func configureTODOModal() {
         let todoModalViewController = TODOModalViewController()
 
-        if let sheet = sheetPresentationController {
-            sheet.detents = [.medium()]
-        }
-
-        present(todoModalViewController, animated: true)
+        present(UINavigationController(rootViewController: todoModalViewController), animated: true)
     }
 
     private func delete(_ item: TODOItem) {
