@@ -39,6 +39,15 @@ final class TODOModalViewController: UIViewController {
         return button
     }()
 
+    private lazy var prioritySegmentedControl: UISegmentedControl = {
+        let segmentedControl = PrioritySegmentedControl(items: Priority.allCases.map {
+            guard let image = $0.image else { return }
+            return image
+        })
+        segmentedControl.addTarget(self, action: #selector(selectedPriority), for: .valueChanged)
+        return segmentedControl
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -81,7 +90,7 @@ final class TODOModalViewController: UIViewController {
             let priorityStackView = makePriorityStackView()
             stackView.addArrangedSubviews([titleStackView, textView, priorityStackView])
 
-            stackView.backgroundColor = .yellow
+//            stackView.backgroundColor = .yellow
             stackView.spacing = 35
             stackView.axis = .vertical
             return stackView
@@ -117,10 +126,13 @@ final class TODOModalViewController: UIViewController {
         let priorityLabelView = makePriorityLabelView()
 
         let stackView: UIStackView = {
-            let stackView = UIStackView(arrangedSubviews: [priorityLabelView])
+            let stackView = UIStackView(
+                arrangedSubviews: [priorityLabelView, prioritySegmentedControl]
+            )
+            stackView.axis = .vertical
             stackView.spacing = 17
 //            stackView.alignment = .center
-            stackView.backgroundColor = .purple
+//            stackView.backgroundColor = .purple.withAlphaComponent(0.3)
             return stackView
         }()
 
@@ -159,4 +171,9 @@ final class TODOModalViewController: UIViewController {
     @objc private func tappedCheckButton() {
         print("check button 눌림")
     }
+
+    @objc private func selectedPriority() {
+        print("priority 선택 : \(prioritySegmentedControl.selectedSegmentIndex)")
+    }
+
 }

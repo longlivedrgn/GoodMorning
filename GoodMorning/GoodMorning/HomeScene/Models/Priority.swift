@@ -7,20 +7,31 @@
 
 import UIKit
 
-enum Priority {
+enum Priority: Int, CaseIterable {
 
     case high
     case medium
     case low
 
     var color: UIColor {
+         switch self {
+         case .high:
+             return UIColor.red
+         case .medium:
+             return UIColor.orange
+         case .low:
+             return UIColor.blue
+         }
+     }
+
+    var image: UIImage? {
         switch self {
         case .high:
-            return UIColor.red
+            return UIImage(named: "Priority.high")
         case .medium:
-            return UIColor.orange
+            return UIImage(named: "Priority.medium")
         case .low:
-            return UIColor.blue
+            return UIImage(named: "Priority.low")
         }
     }
 

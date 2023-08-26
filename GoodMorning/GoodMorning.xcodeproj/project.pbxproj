@@ -28,6 +28,7 @@
 		803569D92A768C68001C92BC /* NetworkSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803569D82A768C68001C92BC /* NetworkSessionTests.swift */; };
 		803569DC2A768E76001C92BC /* CurrentWeather.json in Sources */ = {isa = PBXBuildFile; fileRef = 803569DB2A768E76001C92BC /* CurrentWeather.json */; };
 		805EA6B62A98AA8B00A3545C /* TODOModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805EA6B52A98AA8B00A3545C /* TODOModalViewController.swift */; };
+		805EA6B92A99ECAD00A3545C /* PrioritySegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805EA6B82A99ECAD00A3545C /* PrioritySegmentedControl.swift */; };
 		8060B40D2A6128FC00726C83 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8060B40C2A6128FC00726C83 /* NetworkSession.swift */; };
 		8060B4102A6129A400726C83 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8060B40F2A6129A400726C83 /* NetworkError.swift */; };
 		8060B4142A612A5C00726C83 /* URLResponse+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8060B4132A612A5C00726C83 /* URLResponse+.swift */; };
@@ -130,6 +131,7 @@
 		803569D82A768C68001C92BC /* NetworkSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionTests.swift; sourceTree = "<group>"; };
 		803569DB2A768E76001C92BC /* CurrentWeather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CurrentWeather.json; sourceTree = "<group>"; };
 		805EA6B52A98AA8B00A3545C /* TODOModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOModalViewController.swift; sourceTree = "<group>"; };
+		805EA6B82A99ECAD00A3545C /* PrioritySegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrioritySegmentedControl.swift; sourceTree = "<group>"; };
 		805FA7032A6D43FA00089070 /* CoreDataTestSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestSetup.swift; sourceTree = "<group>"; };
 		8060B40C2A6128FC00726C83 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		8060B40F2A6129A400726C83 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 		805EA6B12A98A1BC00A3545C /* TODOModalScene */ = {
 			isa = PBXGroup;
 			children = (
+				805EA6B72A99EC8B00A3545C /* Views */,
 				805EA6B22A98A1D600A3545C /* Controllers */,
 			);
 			path = TODOModalScene;
@@ -385,6 +388,14 @@
 				805EA6B52A98AA8B00A3545C /* TODOModalViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		805EA6B72A99EC8B00A3545C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				805EA6B82A99ECAD00A3545C /* PrioritySegmentedControl.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8060B40B2A6128EC00726C83 /* Session */ = {
@@ -1007,6 +1018,7 @@
 				8779813A2A7F573B00DB0ED0 /* TODOHeaderViewDelegate.swift in Sources */,
 				80773A862A57E6210020F1DD /* SceneDelegate.swift in Sources */,
 				8060B4142A612A5C00726C83 /* URLResponse+.swift in Sources */,
+				805EA6B92A99ECAD00A3545C /* PrioritySegmentedControl.swift in Sources */,
 				87EFC1192A8223D300843DCC /* CheckBoxButtonDelegate.swift in Sources */,
 				875C79C52A7CC46400B93DBD /* TODOListCell.swift in Sources */,
 				87880F882A612C8B00FF1B4D /* JSONDeserializer.swift in Sources */,
