@@ -14,9 +14,29 @@ final class TODOModalViewController: UIViewController {
 //        textField.leftViewMode = .always
 //        textField.leftView = emojiView
 
-        textField.font = .pretendard(size: 30, weight: .semibold)
+        textField.font = .pretendard(size: 30, weight: .bold)
         textField.text = "Swift 공부하기"   // 추후 CoreData와 연결 예정
         return textField
+    }()
+
+    private let textView: UITextView = {
+        let textView = UITextView()
+        textView.text = """
+                        추상 클래스는 하나 이상의 추상 메서드(구현이 없는 메서드)를 포함할 수 있는 클래스입니다.
+                        객체 생성이 불가능하며, 이 클래스를 상속받은 자식 클래스에서 추상 메서드를 구현해야 합니다.
+                        추상 클래스는 일반적으로 객체들 간의 공통된 특성을 정의하는데 사용됩니다.
+                        """
+        textView.font = .pretendard(size: 18, weight: .semibold)
+        textView.heightAnchor.constraint(equalToConstant: 124).isActive = true
+        textView.backgroundColor = .blue
+        return textView
+    }()
+
+    private let questionButton: UIButton = {
+        let button = UIButton()
+        button.setImage(.SFSymbol(.question), for: .normal)
+        button.tintColor = .black.withAlphaComponent(0.7)
+        return button
     }()
 
     override func viewDidLoad() {
@@ -58,10 +78,12 @@ final class TODOModalViewController: UIViewController {
             let stackView = UIStackView(frame: .zero)
 
             let titleStackView = makeTitleStackView()
-            stackView.addArrangedSubviews([titleStackView])
+            let priorityStackView = makePriorityStackView()
+            stackView.addArrangedSubviews([titleStackView, textView, priorityStackView])
 
-            // MARK: 추후 삭제
             stackView.backgroundColor = .yellow
+            stackView.spacing = 35
+            stackView.axis = .vertical
             return stackView
         }()
 
@@ -73,7 +95,6 @@ final class TODOModalViewController: UIViewController {
     }
 
     private func makeTitleStackView() -> UIStackView {
-
         // MARK: 추후 TextField로 변경 예정
         let emojiView = UIView()
         emojiView.translatesAutoresizingMaskIntoConstraints = false
@@ -85,10 +106,50 @@ final class TODOModalViewController: UIViewController {
             let stackView = UIStackView(arrangedSubviews: [emojiView, titleTextField])
             stackView.spacing = 20
             stackView.alignment = .center
+            stackView.backgroundColor = .gray
             return stackView
         }()
 
         return stackView
+    }
+
+    private func makePriorityStackView() -> UIStackView {
+        let priorityLabelView = makePriorityLabelView()
+
+        let stackView: UIStackView = {
+            let stackView = UIStackView(arrangedSubviews: [priorityLabelView])
+            stackView.spacing = 17
+//            stackView.alignment = .center
+            stackView.backgroundColor = .purple
+            return stackView
+        }()
+
+        return stackView
+    }
+
+    private func makePriorityLabelView() -> UIView {
+        let label: UILabel = {
+            let label = PretendardLabel(text: "중요도", size: 15, weight: .semibold)
+            return label
+        }()
+
+        let view: UIView = {
+            let view = UIView()
+            view.addSubview(label)
+            label.snp.makeConstraints { label in
+                label.leading.top.equalToSuperview()
+            }
+
+            view.addSubview(questionButton)
+            questionButton.snp.makeConstraints { questionButton in
+                questionButton.leading.equalTo(label.snp.trailing).offset(4)
+                questionButton.top.equalToSuperview()
+                questionButton.centerY.equalTo(label.snp.centerY)
+            }
+            return view
+        }()
+
+        return view
     }
 
     @objc private func tappedDeleteButton() {

@@ -10,6 +10,7 @@ enum Image {
     case luck
     case trash
     case check
+    case question
 
     var systemName: String {
         switch self {
@@ -19,6 +20,8 @@ enum Image {
             return "trash"
         case .check:
             return "checkmark"
+        case .question:
+            return "questionmark.circle.fill"
         }
     }
 
