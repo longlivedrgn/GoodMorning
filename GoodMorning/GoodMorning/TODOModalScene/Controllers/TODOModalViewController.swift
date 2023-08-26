@@ -11,9 +11,6 @@ final class TODOModalViewController: UIViewController {
 
     private let titleTextField: UITextField = {
         let textField = UITextField()
-        //        textField.leftViewMode = .always
-        //        textField.leftView = emojiView
-
         textField.font = .pretendard(size: 30, weight: .bold)
         textField.text = "Swift 공부하기"   // 추후 CoreData와 연결 예정
         return textField
@@ -27,8 +24,7 @@ final class TODOModalViewController: UIViewController {
                         추상 클래스는 일반적으로 객체들 간의 공통된 특성을 정의하는데 사용됩니다.
                         """
         textView.font = .pretendard(size: 18, weight: .semibold)
-        textView.heightAnchor.constraint(equalToConstant: 124).isActive = true
-        textView.backgroundColor = .blue
+        textView.heightAnchor.constraint(equalToConstant: 140).isActive = true
         return textView
     }()
 
@@ -87,8 +83,7 @@ final class TODOModalViewController: UIViewController {
             let priorityStackView = makePriorityLabelView()
             stackView.addArrangedSubviews([titleStackView, textView, priorityStackView])
 
-//            stackView.backgroundColor = .yellow
-            stackView.spacing = 35
+            stackView.spacing = 30
             stackView.axis = .vertical
             return stackView
         }()
@@ -102,17 +97,19 @@ final class TODOModalViewController: UIViewController {
 
     private func makeTitleStackView() -> UIStackView {
         // MARK: 추후 TextField로 변경 예정
-        let emojiView = UIView()
-        emojiView.translatesAutoresizingMaskIntoConstraints = false
-        emojiView.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        emojiView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        emojiView.backgroundColor = .systemPink
+        let emojiTextField: EmojiTextField = {
+            let emoji = EmojiTextField()
+            emoji.widthAnchor.constraint(equalToConstant: 40).isActive = true
+            emoji.clipsToBounds = true
+            emoji.backgroundColor = .systemPink
+            emoji.delegate = self
+            return emoji
+        }()
 
         let stackView: UIStackView = {
-            let stackView = UIStackView(arrangedSubviews: [emojiView, titleTextField])
-            stackView.spacing = 20
-            stackView.alignment = .center
-            stackView.backgroundColor = .gray
+            let stackView = UIStackView(arrangedSubviews: [emojiTextField, titleTextField])
+            stackView.spacing = 10
+//            stackView.backgroundColor = .gray
             return stackView
         }()
 
@@ -122,6 +119,7 @@ final class TODOModalViewController: UIViewController {
     private func makePriorityLabelView() -> UIView {
         let label: UILabel = {
             let label = PretendardLabel(text: "중요도", size: 15, weight: .semibold)
+            label.textColor = .black.withAlphaComponent(0.7)
             return label
         }()
 
@@ -163,6 +161,28 @@ final class TODOModalViewController: UIViewController {
 
     @objc private func selectedPriority() {
         prioritySegmentedControl.selectedIndex = prioritySegmentedControl.selectedSegmentIndex
+    }
+
+}
+
+extension TODOModalViewController: UITextFieldDelegate {
+
+    func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool {
+        if string.count == 0 {
+            textField.text = "😀"
+            return false
+        }
+
+        if string.count > 0 {
+            textField.text = string
+            return false
+        }
+
+        return true
     }
 
 }
