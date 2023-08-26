@@ -11,8 +11,8 @@ final class TODOModalViewController: UIViewController {
 
     private let titleTextField: UITextField = {
         let textField = UITextField()
-//        textField.leftViewMode = .always
-//        textField.leftView = emojiView
+        //        textField.leftViewMode = .always
+        //        textField.leftView = emojiView
 
         textField.font = .pretendard(size: 30, weight: .bold)
         textField.text = "Swift 공부하기"   // 추후 CoreData와 연결 예정
@@ -39,11 +39,8 @@ final class TODOModalViewController: UIViewController {
         return button
     }()
 
-    private lazy var prioritySegmentedControl: UISegmentedControl = {
-        let segmentedControl = PrioritySegmentedControl(items: Priority.allCases.map {
-            guard let image = $0.image else { return }
-            return image
-        })
+    private lazy var prioritySegmentedControl: PrioritySegmentedControl = {
+        let segmentedControl = PrioritySegmentedControl()
         segmentedControl.addTarget(self, action: #selector(selectedPriority), for: .valueChanged)
         return segmentedControl
     }()
@@ -87,7 +84,7 @@ final class TODOModalViewController: UIViewController {
             let stackView = UIStackView(frame: .zero)
 
             let titleStackView = makeTitleStackView()
-            let priorityStackView = makePriorityStackView()
+            let priorityStackView = makePriorityLabelView()
             stackView.addArrangedSubviews([titleStackView, textView, priorityStackView])
 
 //            stackView.backgroundColor = .yellow
@@ -122,23 +119,6 @@ final class TODOModalViewController: UIViewController {
         return stackView
     }
 
-    private func makePriorityStackView() -> UIStackView {
-        let priorityLabelView = makePriorityLabelView()
-
-        let stackView: UIStackView = {
-            let stackView = UIStackView(
-                arrangedSubviews: [priorityLabelView, prioritySegmentedControl]
-            )
-            stackView.axis = .vertical
-            stackView.spacing = 17
-//            stackView.alignment = .center
-//            stackView.backgroundColor = .purple.withAlphaComponent(0.3)
-            return stackView
-        }()
-
-        return stackView
-    }
-
     private func makePriorityLabelView() -> UIView {
         let label: UILabel = {
             let label = PretendardLabel(text: "중요도", size: 15, weight: .semibold)
@@ -158,6 +138,15 @@ final class TODOModalViewController: UIViewController {
                 questionButton.top.equalToSuperview()
                 questionButton.centerY.equalTo(label.snp.centerY)
             }
+
+            view.addSubview(prioritySegmentedControl)
+            prioritySegmentedControl.snp.makeConstraints { control in
+                control.top.equalTo(label.snp.bottom).offset(17)
+                control.leading.equalToSuperview()
+                control.height.equalTo(40)
+                control.width.equalTo(170)
+            }
+
             return view
         }()
 
@@ -173,7 +162,7 @@ final class TODOModalViewController: UIViewController {
     }
 
     @objc private func selectedPriority() {
-        print("priority 선택 : \(prioritySegmentedControl.selectedSegmentIndex)")
+        prioritySegmentedControl.selectedIndex = prioritySegmentedControl.selectedSegmentIndex
     }
 
 }

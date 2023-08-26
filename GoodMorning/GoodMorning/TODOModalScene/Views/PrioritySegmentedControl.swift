@@ -9,20 +9,38 @@ import UIKit
 
 final class PrioritySegmentedControl: UISegmentedControl {
 
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
+    var selectedIndex: Int  = 0 {
+        didSet {
+            configurePrioritySegmentedControlImage()
+        }
+    }
+
+    init() {
+        let array = Priority.allCases.map { $0.rawValue.description }
+        super.init(items: array)
 
         self.removeBackgroundColor()
         self.configurePrioritySegmentedControl()
     }
 
-    override init(items: [Any]?) {
-        super.init(items: items)
-        self.removeBackgroundColor()
-    }
-
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    private func configurePrioritySegmentedControlImage() {
+        Priority.allCases.forEach { priority in
+            if selectedIndex == priority.rawValue {
+                super.setImage(
+                    priority.image?.withRenderingMode(.alwaysOriginal),
+                    forSegmentAt: selectedIndex
+                )
+            } else {
+                super.setImage(
+                    priority.image?.withAlpha(0.4).withRenderingMode(.alwaysOriginal),
+                    forSegmentAt: priority.rawValue
+                )
+            }
+        }
     }
 
     private func removeBackgroundColor() {
@@ -41,6 +59,7 @@ final class PrioritySegmentedControl: UISegmentedControl {
 
     private func configurePrioritySegmentedControl() {
         self.selectedSegmentIndex = 0
+        configurePrioritySegmentedControlImage()
     }
 
 }
