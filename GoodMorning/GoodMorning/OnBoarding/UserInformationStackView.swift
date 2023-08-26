@@ -24,7 +24,7 @@ final class UserInformationStackView: UIStackView {
         self.init(frame: .zero)
         self.titleLabel = PretendardLabel(text: title, alignment: .left, size: 20, weight: .bold)
 
-        self.addArrangedSubviews([titleLabel, subView])
+        self.addArrangedSubviews([self.titleLabel, subView])
         self.axis = .vertical
         self.spacing = 10
     }

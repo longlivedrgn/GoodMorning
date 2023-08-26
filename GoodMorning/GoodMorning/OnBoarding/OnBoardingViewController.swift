@@ -32,23 +32,33 @@ final class OnBoardingViewController: UIViewController {
         )
         descriptionLabel.numberOfLines = 0
 
-        greetingStackView.addArrangedSubviews([helloLabel, goodMorningLabel, descriptionLabel]
-        )
+        greetingStackView.addArrangedSubviews([helloLabel, goodMorningLabel, descriptionLabel])
         greetingStackView.axis = .vertical
         greetingStackView.spacing = 10
 
         return greetingStackView
     }()
 
-    private let startGoodMorningButton: UIButton = {
-        let startGoodMorningButton = UIButton()
-        startGoodMorningButton.layer.cornerRadius = 15
-        startGoodMorningButton.setTitle("굿모닝 시작하기", for: .normal)
-        startGoodMorningButton.setTitleColor(.black, for: .normal)
-        startGoodMorningButton.titleLabel?.font = .pretendard(size: 30, weight: .medium)
-        startGoodMorningButton.backgroundColor = .design(.mainBackground)
+    private lazy var userInputStackView: UIStackView = {
+        let userInputStackView = UIStackView()
+        userInputStackView.addArrangedSubviews([
+            userNameStackView,
+            birthDateStackView,
+            genderStackView]
+        )
+        userInputStackView.axis = .vertical
+        userInputStackView.spacing = 30
 
-        return startGoodMorningButton
+        return userInputStackView
+    }()
+
+    private lazy var userNameStackView: UserInformationStackView = {
+        let userNameStackView = UserInformationStackView(
+            title: "이름",
+            subView: self.userNameTextField
+        )
+
+        return userNameStackView
     }()
 
     private lazy var userNameTextField: UITextField = {
@@ -66,13 +76,25 @@ final class OnBoardingViewController: UIViewController {
         return userNameTextField
     }()
 
-    private lazy var userNameStackView: UserInformationStackView = {
-        let userNameStackView = UserInformationStackView(
-            title: "이름",
-            subView: self.userNameTextField
+    private lazy var birthDateStackView: UserInformationStackView = {
+        let birthDateStackView = UserInformationStackView(
+            title: "생년월일",
+            subView: birthDateTextField
         )
 
-        return userNameStackView
+        return birthDateStackView
+    }()
+
+    private lazy var birthDateTextField: UITextField = {
+        let birthDateTextField = UITextField()
+        birthDateTextField.font = .pretendard(size: 20, weight: .bold)
+        birthDateTextField.layer.cornerRadius = 10
+        birthDateTextField.backgroundColor = .lightGray.withAlphaComponent(0.3)
+        birthDateTextField.inputView = self.birthDatePicker
+        birthDateTextField.placeholder = "생년월일을 작성해주세요."
+        birthDateTextField.textAlignment = .center
+
+        return birthDateTextField
     }()
 
     private lazy var birthDatePicker: UIDatePicker = {
@@ -88,30 +110,9 @@ final class OnBoardingViewController: UIViewController {
         return birthDatePicker
     }()
 
-    private lazy var birthDateTextField: UITextField = {
-        let birthDateTextField = UITextField()
-        birthDateTextField.font = .pretendard(size: 20, weight: .bold)
-        birthDateTextField.layer.cornerRadius = 10
-        birthDateTextField.backgroundColor = .lightGray.withAlphaComponent(0.3)
-        birthDateTextField.inputView = self.birthDatePicker
-        birthDateTextField.placeholder = "생년월일을 작성해주세요."
-        birthDateTextField.textAlignment = .center
-
-        return birthDateTextField
-    }()
-
-    private lazy var birthDateStackView: UserInformationStackView = {
-        let birthDateStackView = UserInformationStackView(
-            title: "생년월일",
-            subView: birthDateTextField
-        )
-
-        return birthDateStackView
-    }()
-
     private let genderStackView: UserInformationStackView = {
-        let segmentedControl = UISegmentedControl(items: ["여자", "남자"])
         let font = UIFont.pretendard(size: 20, weight: .medium)
+        let segmentedControl = UISegmentedControl(items: ["여자", "남자"])
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
 
@@ -120,18 +121,15 @@ final class OnBoardingViewController: UIViewController {
         return genderStackView
     }()
 
-    private lazy var userInputStackView: UIStackView = {
-        let userInputStackView = UIStackView()
+    private let startGoodMorningButton: UIButton = {
+        let startGoodMorningButton = UIButton()
+        startGoodMorningButton.layer.cornerRadius = 15
+        startGoodMorningButton.setTitle("굿모닝 시작하기", for: .normal)
+        startGoodMorningButton.setTitleColor(.black, for: .normal)
+        startGoodMorningButton.titleLabel?.font = .pretendard(size: 30, weight: .medium)
+        startGoodMorningButton.backgroundColor = .design(.mainBackground)
 
-        userInputStackView.addArrangedSubviews([
-            userNameStackView,
-            birthDateStackView,
-            genderStackView]
-        )
-        userInputStackView.axis = .vertical
-        userInputStackView.spacing = 30
-
-        return userInputStackView
+        return startGoodMorningButton
     }()
 
     override func viewDidLoad() {
@@ -171,20 +169,14 @@ final class OnBoardingViewController: UIViewController {
         }
     }
 
-    @objc private func datePickerValueDidChanged(_ sender: UIDatePicker) {
-        self.birthDateTextField.text = sender.date.yearMonthDayFormat()
-    }
-
     private func setUpDatePickerToolBar() {
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(
             barButtonSystemItem: .done,
             target: self,
             action: #selector(doneButtonDidTapped)
         )
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         toolBar.items = [space, doneButton]
         toolBar.sizeToFit()
 
@@ -194,6 +186,10 @@ final class OnBoardingViewController: UIViewController {
     @objc private func doneButtonDidTapped(_ sender: UIBarButtonItem) {
         self.birthDateTextField.text = self.birthDatePicker.date.yearMonthDayFormat()
         self.birthDateTextField.resignFirstResponder()
+    }
+
+    @objc private func datePickerValueDidChanged(_ sender: UIDatePicker) {
+        self.birthDateTextField.text = sender.date.yearMonthDayFormat()
     }
 
 }
