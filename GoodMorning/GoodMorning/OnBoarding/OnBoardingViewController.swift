@@ -143,27 +143,31 @@ final class OnBoardingViewController: UIViewController {
         self.view.backgroundColor = .white
 
         self.greetingStackView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(40)
+            make.top.greaterThanOrEqualTo(self.view.safeAreaLayoutGuide).inset(20)
             make.leading.trailing.equalToSuperview().inset(40)
         }
 
         self.userInputStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(30)
-            make.top.equalTo(greetingStackView.snp.bottom).offset(40)
+            make.top.greaterThanOrEqualTo(self.greetingStackView.snp.bottom).offset(40)
         }
 
         self.userNameTextField.snp.makeConstraints { make in
-            make.height.equalTo(userNameStackView.titleLabel.snp.height).multipliedBy(2.0)
+            make.height.equalTo(self.userNameStackView.titleLabel.snp.height).multipliedBy(2.0)
         }
 
         self.birthDateTextField.snp.makeConstraints { make in
-            make.height.equalTo(birthDateStackView.titleLabel.snp.height).multipliedBy(2.0)
+            make.height.equalTo(self.birthDateStackView.titleLabel.snp.height).multipliedBy(2.0)
         }
 
         self.startGoodMorningButton.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(userInputStackView)
+            make.leading.trailing.equalTo(self.userInputStackView)
             make.height.equalTo(self.genderStackView.snp.height)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(60)
+            make.top.lessThanOrEqualTo(self.userInputStackView.snp.bottom).offset(100)
+            make.top.greaterThanOrEqualTo(self.userInputStackView.snp.bottom).offset(30)
+            make.bottom.greaterThanOrEqualTo(
+                self.view.safeAreaLayoutGuide
+            ).inset(30).priority(.high)
         }
     }
 
@@ -172,14 +176,14 @@ final class OnBoardingViewController: UIViewController {
     }
 
     private func setUpDatePickerToolBar() {
-        let toolBar = UIToolbar()
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(
             barButtonSystemItem: .done,
             target: self,
             action: #selector(doneButtonDidTapped)
         )
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
 
         toolBar.items = [space, doneButton]
         toolBar.sizeToFit()
