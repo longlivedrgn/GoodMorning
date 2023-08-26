@@ -9,7 +9,7 @@ import UIKit
 
 final class EmojiTextField: UITextField {
 
-//    override var textInputContextIdentifier: String? { "" }
+    override var textInputContextIdentifier: String? { "" }
 
     override init(frame: CGRect) {
         super.init(frame: .zero)

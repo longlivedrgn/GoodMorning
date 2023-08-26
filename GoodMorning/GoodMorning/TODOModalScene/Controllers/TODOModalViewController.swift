@@ -64,12 +64,14 @@ final class TODOModalViewController: UIViewController {
             target: self,
             action: #selector(tappedDeleteButton)
         )
+        deleteItem.tintColor = .black
         let checkItem = UIBarButtonItem(
             image: .SFSymbol(.check),
             style: .plain,
             target: self,
             action: #selector(tappedCheckButton)
         )
+        checkItem.tintColor = .black
         // MARK: 추후 색상 변경
         self.navigationItem.leftBarButtonItem = deleteItem
         self.navigationItem.rightBarButtonItem = checkItem
@@ -101,7 +103,7 @@ final class TODOModalViewController: UIViewController {
             let emoji = EmojiTextField()
             emoji.widthAnchor.constraint(equalToConstant: 40).isActive = true
             emoji.clipsToBounds = true
-            emoji.backgroundColor = .systemPink
+//            emoji.backgroundColor = .systemPink
             emoji.delegate = self
             return emoji
         }()
