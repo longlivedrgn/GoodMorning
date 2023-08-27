@@ -144,7 +144,24 @@ final class OnBoardingViewController: UIViewController {
         self.view.addSubview(self.greetingStackView)
         self.view.addSubview(self.userInputStackView)
         self.view.addSubview(self.startGoodMorningButton)
+        configureConstraints()
+    }
 
+    private func setUpDatePickerToolBar() {
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(doneButtonDidTapped)
+        )
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        toolBar.items = [space, doneButton]
+        toolBar.sizeToFit()
+
+        self.birthDateTextField.inputAccessoryView = toolBar
+    }
+
+    private func configureConstraints() {
         self.greetingStackView.snp.makeConstraints { make in
             make.top.greaterThanOrEqualTo(self.view.safeAreaLayoutGuide).inset(20)
             make.leading.trailing.equalToSuperview().inset(40)
@@ -172,20 +189,6 @@ final class OnBoardingViewController: UIViewController {
                 self.view.safeAreaLayoutGuide
             ).inset(30).priority(.high)
         }
-    }
-
-    private func setUpDatePickerToolBar() {
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(
-            barButtonSystemItem: .done,
-            target: self,
-            action: #selector(doneButtonDidTapped)
-        )
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        toolBar.items = [space, doneButton]
-        toolBar.sizeToFit()
-
-        self.birthDateTextField.inputAccessoryView = toolBar
     }
 
     @objc private func doneButtonDidTapped(_ sender: UIBarButtonItem) {
