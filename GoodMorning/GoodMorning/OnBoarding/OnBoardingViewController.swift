@@ -42,9 +42,9 @@ final class OnBoardingViewController: UIViewController {
     private lazy var userInputStackView: UIStackView = {
         let userInputStackView = UIStackView()
         userInputStackView.addArrangedSubviews([
-            userNameStackView,
-            birthDateStackView,
-            genderStackView]
+            self.userNameStackView,
+            self.birthDateStackView,
+            self.genderStackView]
         )
         userInputStackView.axis = .vertical
         userInputStackView.spacing = 30
@@ -79,7 +79,7 @@ final class OnBoardingViewController: UIViewController {
     private lazy var birthDateStackView: UserInformationStackView = {
         let birthDateStackView = UserInformationStackView(
             title: "생년월일",
-            subView: birthDateTextField
+            subView: self.birthDateTextField
         )
 
         return birthDateStackView
@@ -134,12 +134,16 @@ final class OnBoardingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addKeyBoardObserver()
+        self.view.backgroundColor = .white
+        configureSubViews()
+        addKeyBoardObserver()
+        setUpDatePickerToolBar()
+    }
+
+    private func configureSubViews() {
         self.view.addSubview(self.greetingStackView)
         self.view.addSubview(self.userInputStackView)
         self.view.addSubview(self.startGoodMorningButton)
-        self.setUpDatePickerToolBar()
-        self.view.backgroundColor = .white
 
         self.greetingStackView.snp.makeConstraints { make in
             make.top.greaterThanOrEqualTo(self.view.safeAreaLayoutGuide).inset(20)
