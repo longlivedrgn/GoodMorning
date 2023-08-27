@@ -82,6 +82,7 @@
 		879EEE9A2A973DAC005B8A95 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879EEE992A973DAC005B8A95 /* OnBoardingViewController.swift */; };
 		879EEE9C2A9747A4005B8A95 /* UserInformationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879EEE9B2A9747A4005B8A95 /* UserInformationStackView.swift */; };
 		879EEE9E2A975298005B8A95 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879EEE9D2A975298005B8A95 /* Date+.swift */; };
+		87AAFC0A2A9A474B003149F4 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AAFC092A9A474B003149F4 /* UIViewController+.swift */; };
 		87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */; };
 		87EFC1192A8223D300843DCC /* CheckBoxButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -193,6 +194,7 @@
 		879EEE992A973DAC005B8A95 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		879EEE9B2A9747A4005B8A95 /* UserInformationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationStackView.swift; sourceTree = "<group>"; };
 		879EEE9D2A975298005B8A95 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		87AAFC092A9A474B003149F4 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOCollectionViewItem.swift; sourceTree = "<group>"; };
 		87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButtonDelegate.swift; sourceTree = "<group>"; };
 		BC808D177BDBE9A5E89AA608 /* Pods-GoodMorningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				80F90CCA2A84CF6C007E1D23 /* UIStackVeiw+.swift */,
 				80F90CD22A860E06007E1D23 /* Int+.swift */,
 				80F90CFA2A8F092C007E1D23 /* UIImage+.swift */,
+				87AAFC092A9A474B003149F4 /* UIViewController+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -993,6 +996,7 @@
 				80EB031E2A6EC82F00455E05 /* NetworkService.swift in Sources */,
 				801B3B6A2A63D7A100B57D19 /* UIFont+.swift in Sources */,
 				801B3B702A63D92500B57D19 /* Palette.swift in Sources */,
+				87AAFC0A2A9A474B003149F4 /* UIViewController+.swift in Sources */,
 				8060B40D2A6128FC00726C83 /* NetworkSession.swift in Sources */,
 				87880F832A612C6400FF1B4D /* JSONDeserializable.swift in Sources */,
 				80F90C622A7BB8FE007E1D23 /* URLSessionProvidable.swift in Sources */,

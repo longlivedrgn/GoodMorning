@@ -134,6 +134,7 @@ final class OnBoardingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addKeyBoardObserver()
         self.view.addSubview(self.greetingStackView)
         self.view.addSubview(self.userInputStackView)
         self.view.addSubview(self.startGoodMorningButton)
