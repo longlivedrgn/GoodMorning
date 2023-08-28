@@ -22,7 +22,7 @@ final class TODOModalViewController: UIViewController {
                         추상 클래스는 하나 이상의 추상 메서드(구현이 없는 메서드)를 포함할 수 있는 클래스입니다.
                         객체 생성이 불가능하며, 이 클래스를 상속받은 자식 클래스에서 추상 메서드를 구현해야 합니다.
                         추상 클래스는 일반적으로 객체들 간의 공통된 특성을 정의하는데 사용됩니다.
-                        """
+                        """     // 추후 CoreData와 연결 예정
         textView.font = .pretendard(size: 18, weight: .semibold)
         textView.heightAnchor.constraint(equalToConstant: 140).isActive = true
         return textView
@@ -72,7 +72,6 @@ final class TODOModalViewController: UIViewController {
             action: #selector(tappedCheckButton)
         )
         checkItem.tintColor = .black
-        // MARK: 추후 색상 변경
         self.navigationItem.leftBarButtonItem = deleteItem
         self.navigationItem.rightBarButtonItem = checkItem
     }
@@ -90,7 +89,7 @@ final class TODOModalViewController: UIViewController {
             return stackView
         }()
 
-        view.addSubview(totalStackView)
+        self.view.addSubview(totalStackView)
         totalStackView.snp.makeConstraints { totalStackView in
             totalStackView.top.bottom.equalTo(view.safeAreaLayoutGuide)
             totalStackView.leading.trailing.equalToSuperview().inset(18)
@@ -98,12 +97,10 @@ final class TODOModalViewController: UIViewController {
     }
 
     private func makeTitleStackView() -> UIStackView {
-        // MARK: 추후 TextField로 변경 예정
         let emojiTextField: EmojiTextField = {
             let emoji = EmojiTextField()
             emoji.widthAnchor.constraint(equalToConstant: 40).isActive = true
             emoji.clipsToBounds = true
-//            emoji.backgroundColor = .systemPink
             emoji.delegate = self
             return emoji
         }()
@@ -111,7 +108,6 @@ final class TODOModalViewController: UIViewController {
         let stackView: UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [emojiTextField, titleTextField])
             stackView.spacing = 10
-//            stackView.backgroundColor = .gray
             return stackView
         }()
 
@@ -162,7 +158,8 @@ final class TODOModalViewController: UIViewController {
     }
 
     @objc private func selectedPriority() {
-        prioritySegmentedControl.selectedIndex = prioritySegmentedControl.selectedSegmentIndex
+        self.prioritySegmentedControl.selectedIndex = self.prioritySegmentedControl
+            .selectedSegmentIndex
     }
 
 }
@@ -175,6 +172,7 @@ extension TODOModalViewController: UITextFieldDelegate {
         replacementString string: String
     ) -> Bool {
         if string.count == 0 {
+            // 만약 이모티콘이 비었으면 기본값으로 설정.
             textField.text = "😀"
             return false
         }

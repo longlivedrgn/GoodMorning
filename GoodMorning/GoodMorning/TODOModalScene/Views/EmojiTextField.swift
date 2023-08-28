@@ -9,8 +9,6 @@ import UIKit
 
 final class EmojiTextField: UITextField {
 
-    override var textInputContextIdentifier: String? { "" }
-
     override init(frame: CGRect) {
         super.init(frame: .zero)
 
@@ -29,6 +27,7 @@ final class EmojiTextField: UITextField {
     }
 
     private func configureEmojiTextField() {
+        // 이모지 기본 값 설정. 추후
         self.text = "📚"
         self.font = .pretendard(size: 35, weight: .bold)
         self.tintColor = .clear

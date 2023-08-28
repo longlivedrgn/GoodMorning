@@ -29,10 +29,10 @@ final class PrioritySegmentedControl: UISegmentedControl {
 
     private func configurePrioritySegmentedControlImage() {
         Priority.allCases.forEach { priority in
-            if selectedIndex == priority.rawValue {
+            if self.selectedIndex == priority.rawValue {
                 super.setImage(
                     priority.image?.withRenderingMode(.alwaysOriginal),
-                    forSegmentAt: selectedIndex
+                    forSegmentAt: self.selectedIndex
                 )
             } else {
                 super.setImage(
