@@ -24,7 +24,6 @@ final class TODOModalViewController: UIViewController {
                         추상 클래스는 일반적으로 객체들 간의 공통된 특성을 정의하는데 사용됩니다.
                         """     // 추후 CoreData와 연결 예정
         textView.font = .pretendard(size: 18, weight: .semibold)
-        textView.heightAnchor.constraint(equalToConstant: 140).isActive = true
         return textView
     }()
 
@@ -47,6 +46,7 @@ final class TODOModalViewController: UIViewController {
         configureTODOModal()
         configureNavigationBar()
         setupTODOModal()
+        setupTextView()
     }
 
     private func configureTODOModal() {
@@ -84,26 +84,31 @@ final class TODOModalViewController: UIViewController {
             let priorityStackView = makePriorityLabelView()
             stackView.addArrangedSubviews([titleStackView, textView, priorityStackView])
 
-            stackView.spacing = 30
+            let spacing = view.frame.height * 0.035
+            stackView.spacing = spacing
             stackView.axis = .vertical
             return stackView
         }()
 
         self.view.addSubview(totalStackView)
+        let horizontalInset: CGFloat = self.view.frame.width * 0.046
         totalStackView.snp.makeConstraints { totalStackView in
             totalStackView.top.bottom.equalTo(view.safeAreaLayoutGuide)
-            totalStackView.leading.trailing.equalToSuperview().inset(18)
+            totalStackView.leading.trailing.equalToSuperview().inset(horizontalInset)
         }
     }
 
     private func makeTitleStackView() -> UIStackView {
         let emojiTextField: EmojiTextField = {
             let emoji = EmojiTextField()
-            emoji.widthAnchor.constraint(equalToConstant: 40).isActive = true
             emoji.clipsToBounds = true
             emoji.delegate = self
             return emoji
         }()
+        let width = self.view.frame.width * 0.1
+        emojiTextField.snp.makeConstraints { emojiTextField in
+            emojiTextField.width.equalTo(width)
+        }
 
         let stackView: UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [emojiTextField, titleTextField])
@@ -136,17 +141,27 @@ final class TODOModalViewController: UIViewController {
             }
 
             view.addSubview(prioritySegmentedControl)
+            let controlTopOffset: CGFloat = self.view.frame.height * 0.02
+            let controlHeight: CGFloat = self.view.frame.height * 0.047
+            let controlWidth: CGFloat = self.view.frame.width * 0.433
             prioritySegmentedControl.snp.makeConstraints { control in
-                control.top.equalTo(label.snp.bottom).offset(17)
+                control.top.equalTo(label.snp.bottom).offset(controlTopOffset)
                 control.leading.equalToSuperview()
-                control.height.equalTo(40)
-                control.width.equalTo(170)
+                control.height.equalTo(controlHeight)
+                control.width.equalTo(controlWidth)
             }
 
             return view
         }()
 
         return view
+    }
+
+    private func setupTextView() {
+        let height = self.view.frame.height * 0.164
+        self.textView.snp.makeConstraints { textView in
+            textView.height.equalTo(height)
+        }
     }
 
     @objc private func tappedDeleteButton() {
