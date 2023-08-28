@@ -49,6 +49,10 @@ final class TODOModalViewController: UIViewController {
         setupTextView()
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
     private func configureTODOModal() {
         self.view.backgroundColor = .systemBackground
 
