@@ -154,11 +154,11 @@ final class OnBoardingViewController: UIViewController {
             target: self,
             action: #selector(doneButtonDidTapped)
         )
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        toolBar.items = [space, doneButton]
-        toolBar.sizeToFit()
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        toolbar.items = [space, doneButton]
 
-        self.birthDateTextField.inputAccessoryView = toolBar
+        self.birthDateTextField.inputAccessoryView = toolbar
     }
 
     private func configureConstraints() {
