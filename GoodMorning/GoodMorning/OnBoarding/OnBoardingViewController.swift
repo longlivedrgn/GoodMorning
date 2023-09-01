@@ -168,7 +168,7 @@ final class OnBoardingViewController: UIViewController {
         }
 
         self.userInputStackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.leading.trailing.equalToSuperview().inset(40)
             make.top.greaterThanOrEqualTo(self.greetingStackView.snp.bottom).offset(40)
         }
 
