@@ -66,14 +66,14 @@ final class TODOModalViewController: UIViewController {
             image: .SFSymbol(.trash),
             style: .plain,
             target: self,
-            action: #selector(tappedDeleteButton)
+            action: #selector(deleteButtonDidTap)
         )
         deleteItem.tintColor = .black
         let checkItem = UIBarButtonItem(
             image: .SFSymbol(.check),
             style: .plain,
             target: self,
-            action: #selector(tappedCheckButton)
+            action: #selector(checkButtonDidTap)
         )
         checkItem.tintColor = .black
         self.navigationItem.leftBarButtonItem = deleteItem
@@ -168,11 +168,11 @@ final class TODOModalViewController: UIViewController {
         }
     }
 
-    @objc private func tappedDeleteButton() {
+    @objc private func deleteButtonDidTap() {
         print("delete button 눌림")
     }
 
-    @objc private func tappedCheckButton() {
+    @objc private func checkButtonDidTap() {
         print("check button 눌림")
     }
 
