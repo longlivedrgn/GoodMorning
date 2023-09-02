@@ -190,18 +190,14 @@ extension TODOModalViewController: UITextFieldDelegate {
         shouldChangeCharactersIn range: NSRange,
         replacementString string: String
     ) -> Bool {
-        if string.count == 0 {
-            // 만약 이모티콘이 비었으면 기본값으로 설정.
-            textField.text = "😀"
-            return false
-        }
 
-        if string.count > 0 {
+        if string.count == 0 {
+            return false
+        } else {
+            guard Character(string).isEmoji else { return false }
             textField.text = string
             return false
         }
-
-        return true
     }
 
 }
