@@ -140,6 +140,19 @@ final class OnBoardingViewController: UIViewController {
         setUpDatePickerToolBar()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+
     private func configureSubViews() {
         self.view.addSubview(self.greetingStackView)
         self.view.addSubview(self.userInputStackView)
