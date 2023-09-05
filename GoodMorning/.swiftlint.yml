@@ -2,8 +2,8 @@ excluded:
     - Pods
     - GoodMorningTests
     - GoodMorningUITests
-    - GoodMorning/AppDelegate.swift
-    - GoodMorning/SceneDelegate.swift
+    - GoodMorning/Resources/AppDelegate.swift
+    - GoodMorning/Resources/SceneDelegate.swift
 opt_in_rules:
     - force_unwrapping
     - function_body_length

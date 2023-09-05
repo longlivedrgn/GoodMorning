@@ -31,6 +31,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
+        configureTODOModal()
         applySnapShot()
     }
 
@@ -111,6 +112,12 @@ final class HomeViewController: UIViewController {
         }
 
         configureReorderingAccessory()
+    }
+
+    private func configureTODOModal() {
+        let todoModalViewController = TODOModalViewController()
+
+        present(UINavigationController(rootViewController: todoModalViewController), animated: true)
     }
 
     private func delete(_ item: TODOItem) {

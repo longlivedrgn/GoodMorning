@@ -13,4 +13,10 @@ extension UIImage {
         return UIImage(systemName: type.systemName)
     }
 
+    func withAlpha(_ alpha: CGFloat) -> UIImage {
+        return UIGraphicsImageRenderer(size: size).image { _ in
+            draw(at: .zero, blendMode: .normal, alpha: alpha)
+        }
+    }
+
 }
