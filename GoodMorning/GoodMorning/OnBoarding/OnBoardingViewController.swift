@@ -178,11 +178,11 @@ final class OnBoardingViewController: UIViewController {
     private func configureConstraints() {
         self.greetingStackView.snp.makeConstraints { make in
             make.top.greaterThanOrEqualTo(self.view.safeAreaLayoutGuide).inset(20)
-            make.leading.trailing.equalToSuperview().inset(40)
+            make.leading.trailing.equalToSuperview().inset(23)
         }
 
         self.userInputStackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(40)
+            make.leading.trailing.equalToSuperview().inset(23)
             make.top.greaterThanOrEqualTo(self.greetingStackView.snp.bottom).offset(40)
         }
 
