@@ -101,6 +101,7 @@ final class OnBoardingViewController: UIViewController {
         let birthDatePicker = UIDatePicker()
         birthDatePicker.datePickerMode = .date
         birthDatePicker.preferredDatePickerStyle = .wheels
+        birthDatePicker.locale = Locale(identifier: "ko_KR")
         birthDatePicker.addTarget(
             self,
             action: #selector(datePickerValueDidChanged),
