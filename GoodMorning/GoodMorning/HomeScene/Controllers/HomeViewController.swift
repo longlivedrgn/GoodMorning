@@ -10,20 +10,22 @@ import SnapKit
 
 final class HomeViewController: UIViewController {
 
+    private let scrollView = UIScrollView()
+    private let contentView = UIStackView()
+    private let weatherStackView = WeatherStackView(weather: .drizzle, temperature: 27)
+    private let todayLuckStackView = TodayLuckStackView()
+    private let titleStackView = DoubleLabelStackView(type: .title, nickName: "Miro")
+
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, TODOItem>
     private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, TODOItem>
     private var backingStore: [TODOItem] = TODOItem.allItems
     private var datasource: DataSource?
 
-    private let containerView: UIView = {
-        let view = UIView()
-        return view
-    }()
-
-    private lazy var TODOCollectionView: UICollectionView = {
+    private lazy var routineCollectionView: UICollectionView = {
         let collectionview = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionview.layer.cornerRadius = 30
         collectionview.isScrollEnabled = false
+        collectionview.backgroundColor = .red
 
         return collectionview
     }()
@@ -31,31 +33,85 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
-        configureTODOModal()
-        applySnapShot()
     }
 
     private func configureViews() {
-        configureContainerView()
-        configureCollectionView()
+        self.view.addSubview(scrollView)
+        self.scrollView.addSubview(contentView)
+
+        self.view.backgroundColor = .design(.mainBackground)
+
+        configureContentView()
+        configureRoutineCollectionView()
+        configureWeatherStackView()
+        configureConstraints()
+        applySnapShot()
+    }
+
+    private func configureConstraints() {
+        self.scrollView.snp.makeConstraints { scrollView in
+            scrollView.bottom.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            scrollView.top.equalTo(view.snp.top)
+        }
+        self.contentView.snp.makeConstraints { contentView in
+            contentView.top.equalTo(scrollView.contentLayoutGuide)
+            contentView.leading.trailing.bottom.centerX.equalToSuperview()
+        }
+    }
+
+    private func configureContentView() {
+        self.contentView.axis = .vertical
+        self.contentView.spacing = 15
+        self.contentView.isLayoutMarginsRelativeArrangement = true
+
+        let weatherStackView = makeWeatherStackView()
+        self.contentView.addArrangedSubviews(
+            [titleStackView, routineCollectionView, weatherStackView, todayLuckStackView]
+        )
+
+        let layoutMargins = self.view.frame.width * 0.058
+        self.contentView.layoutMargins = .init(
+            top: layoutMargins,
+            left: layoutMargins,
+            bottom: layoutMargins,
+            right: layoutMargins
+        )
+    }
+
+    private func configureRoutineCollectionView() {
+        let height = self.view.frame.height * 0.350
+        self.routineCollectionView.snp.makeConstraints { routineCollectionView in
+            routineCollectionView.height.equalTo(height)
+        }
+
         configureDataSource()
     }
 
-    private func configureContainerView() {
-        view.addSubview(containerView)
-        containerView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.height.equalTo(view.snp.height).dividedBy(3)
+    private func configureWeatherStackView() {
+        let size = self.view.frame.height * 0.258
+        self.weatherStackView.snp.makeConstraints { weatherStackView in
+            weatherStackView.width.height.equalTo(size)
         }
     }
 
-    private func configureCollectionView() {
-        containerView.addSubview(TODOCollectionView)
-        TODOCollectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+    private func makeWeatherStackView() -> UIStackView {
+        let emptyView: UIView = {
+            let view = UIView()
+            view.backgroundColor = .white
+            view.clipsToBounds = true
+            view.layer.cornerRadius = 20
+            return view
+        }()
+
+        let stackView: UIStackView = {
+            let stackView = UIStackView()
+            stackView.addArrangedSubviews([weatherStackView, emptyView])
+            stackView.axis = .horizontal
+            stackView.spacing = 13
+            return stackView
+        }()
+
+        return stackView
     }
 
     private func createLayout() -> UICollectionViewLayout {
@@ -63,6 +119,7 @@ final class HomeViewController: UIViewController {
             var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
             configuration.headerMode = .supplementary
             configuration.headerTopPadding = 15
+            configuration.backgroundColor = .white
 
             let section = NSCollectionLayoutSection.list(
                 using: configuration,
@@ -95,7 +152,7 @@ final class HomeViewController: UIViewController {
         }
 
         datasource = UICollectionViewDiffableDataSource<Section, TODOItem>(
-            collectionView: TODOCollectionView
+            collectionView: routineCollectionView
         ) { collectionView, indexPath, item in
             return collectionView.dequeueConfiguredReusableCell(
                 using: cellRegistration,
@@ -114,7 +171,7 @@ final class HomeViewController: UIViewController {
         configureReorderingAccessory()
     }
 
-    private func configureTODOModal() {
+    private func presentTODOModalScene() {
         let todoModalViewController = TODOModalViewController()
 
         present(UINavigationController(rootViewController: todoModalViewController), animated: true)
@@ -150,11 +207,11 @@ final class HomeViewController: UIViewController {
 extension HomeViewController: TODOHeaderViewDelegate {
 
     func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didEditButtonTapped sender: UIButton) {
-        TODOCollectionView.isEditing.toggle()
+        routineCollectionView.isEditing.toggle()
     }
 
     func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didPlusButtonTapped sender: UIButton) {
-        print("plusbuttondidTapped!")
+        presentTODOModalScene()
     }
 
 }
@@ -173,9 +230,7 @@ extension HomeViewController: CheckBoxButtonDelegate {
 extension HomeViewController {
 
     enum Section {
-
         case main
-
     }
 
 }

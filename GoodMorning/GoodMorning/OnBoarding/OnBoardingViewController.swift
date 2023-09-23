@@ -136,7 +136,7 @@ final class OnBoardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        configureSubViews()
+        configureViews()
         addKeyBoardObserver()
         setUpDatePickerToolBar()
     }
@@ -154,7 +154,7 @@ final class OnBoardingViewController: UIViewController {
         )
     }
 
-    private func configureSubViews() {
+    private func configureViews() {
         self.view.addSubview(self.greetingStackView)
         self.view.addSubview(self.userInputStackView)
         self.view.addSubview(self.startGoodMorningButton)
