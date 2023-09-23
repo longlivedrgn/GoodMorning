@@ -249,8 +249,6 @@
 		801B3B532A63D67D00B57D19 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				80773A852A57E6210020F1DD /* SceneDelegate.swift */,
-				80773A832A57E6210020F1DD /* AppDelegate.swift */,
 				80F90D032A933F36007E1D23 /* Common */,
 				801B3B672A63D76500B57D19 /* Designs */,
 				80773A8F2A57E6230020F1DD /* Assets.xcassets */,
@@ -429,15 +427,6 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
-		80611FC02A6E76590093E958 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				80611FC22A6E76880093E958 /* Model */,
-				80611FC12A6E76670093E958 /* Network */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		80611FC12A6E76670093E958 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,15 +475,13 @@
 		80773A822A57E6210020F1DD /* GoodMorning */ = {
 			isa = PBXGroup;
 			children = (
-				805EA6B12A98A1BC00A3545C /* TODOModalScene */,
-				879EEE982A973BDC005B8A95 /* OnBoarding */,
-				80F90CC02A84C4D0007E1D23 /* HomeScene */,
-				801B3B732A63DB0C00B57D19 /* Persistence */,
+				80EB03182A6EC6BE00455E05 /* NetworkService */,
+				8702ACD82ABEDC5C00B69BFA /* Data */,
+				8702ACD72ABEDC5500B69BFA /* Domain */,
+				8702ACD62ABEDC4600B69BFA /* Presentatiion */,
+				8702ACD42ABEDC2700B69BFA /* Application */,
 				801B3B682A63D79900B57D19 /* Extensions */,
 				801B3B532A63D67D00B57D19 /* Resources */,
-				80EB03172A6EC68F00455E05 /* Domain */,
-				80611FC02A6E76590093E958 /* Data */,
-				8745697F2A63C8C40092FAE5 /* CoreLocation */,
 				80773A942A57E6230020F1DD /* Info.plist */,
 			);
 			path = GoodMorning;
@@ -518,14 +505,6 @@
 				80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */,
 			);
 			path = GoodMorningUITests;
-			sourceTree = "<group>";
-		};
-		80EB03172A6EC68F00455E05 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				80EB03182A6EC6BE00455E05 /* NetworkService */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		80EB03182A6EC6BE00455E05 /* NetworkService */ = {
@@ -610,6 +589,45 @@
 				877981392A7F573B00DB0ED0 /* TODOHeaderViewDelegate.swift */,
 			);
 			path = Interface;
+			sourceTree = "<group>";
+		};
+		8702ACD42ABEDC2700B69BFA /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				80773A852A57E6210020F1DD /* SceneDelegate.swift */,
+				80773A832A57E6210020F1DD /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8702ACD62ABEDC4600B69BFA /* Presentatiion */ = {
+			isa = PBXGroup;
+			children = (
+				805EA6B12A98A1BC00A3545C /* TODOModalScene */,
+				879EEE982A973BDC005B8A95 /* OnBoarding */,
+				80F90CC02A84C4D0007E1D23 /* HomeScene */,
+			);
+			path = Presentatiion;
+			sourceTree = "<group>";
+		};
+		8702ACD72ABEDC5500B69BFA /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				80611FC22A6E76880093E958 /* Model */,
+			);
+			name = Domain;
+			path = Presentatiion/Domain;
+			sourceTree = "<group>";
+		};
+		8702ACD82ABEDC5C00B69BFA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				80611FC12A6E76670093E958 /* Network */,
+				8745697F2A63C8C40092FAE5 /* CoreLocation */,
+				801B3B732A63DB0C00B57D19 /* Persistence */,
+			);
+			name = Data;
+			path = Presentatiion/Domain/Data;
 			sourceTree = "<group>";
 		};
 		873555202A694A810027A847 /* EndPoint */ = {
