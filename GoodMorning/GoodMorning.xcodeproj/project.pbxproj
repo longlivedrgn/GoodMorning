@@ -83,6 +83,10 @@
 		87978FA42A653E68009FE7FD /* LocationFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FA32A653E68009FE7FD /* LocationFetchable.swift */; };
 		87978FA62A653E7F009FE7FD /* LocationFetcherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */; };
 		87978FAB2A653EF4009FE7FD /* CLLocationManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */; };
+		879EEE9A2A973DAC005B8A95 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879EEE992A973DAC005B8A95 /* OnBoardingViewController.swift */; };
+		879EEE9C2A9747A4005B8A95 /* UserInformationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879EEE9B2A9747A4005B8A95 /* UserInformationStackView.swift */; };
+		879EEE9E2A975298005B8A95 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879EEE9D2A975298005B8A95 /* Date+.swift */; };
+		87AAFC0A2A9A474B003149F4 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AAFC092A9A474B003149F4 /* UIViewController+.swift */; };
 		87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */; };
 		87EFC1192A8223D300843DCC /* CheckBoxButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -195,6 +199,10 @@
 		87978FA32A653E68009FE7FD /* LocationFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetchable.swift; sourceTree = "<group>"; };
 		87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcherDelegate.swift; sourceTree = "<group>"; };
 		87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+.swift"; sourceTree = "<group>"; };
+		879EEE992A973DAC005B8A95 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		879EEE9B2A9747A4005B8A95 /* UserInformationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationStackView.swift; sourceTree = "<group>"; };
+		879EEE9D2A975298005B8A95 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		87AAFC092A9A474B003149F4 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOCollectionViewItem.swift; sourceTree = "<group>"; };
 		87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButtonDelegate.swift; sourceTree = "<group>"; };
 		BC808D177BDBE9A5E89AA608 /* Pods-GoodMorningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -281,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				801B3B692A63D7A100B57D19 /* UIFont+.swift */,
+				879EEE9D2A975298005B8A95 /* Date+.swift */,
 				801B3B712A63D94E00B57D19 /* UIColor+.swift */,
 				8060B4132A612A5C00726C83 /* URLResponse+.swift */,
 				8060B4182A6131E100726C83 /* Bundle+.swift */,
@@ -289,6 +298,7 @@
 				80F90CCA2A84CF6C007E1D23 /* UIStackVeiw+.swift */,
 				80F90CD22A860E06007E1D23 /* Int+.swift */,
 				80F90CFA2A8F092C007E1D23 /* UIImage+.swift */,
+				87AAFC092A9A474B003149F4 /* UIViewController+.swift */,
 				805EA6CB2AA376DC00A3545C /* Character+.swift */,
 			);
 			path = Extensions;
@@ -479,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				805EA6B12A98A1BC00A3545C /* TODOModalScene */,
+				879EEE982A973BDC005B8A95 /* OnBoarding */,
 				80F90CC02A84C4D0007E1D23 /* HomeScene */,
 				801B3B732A63DB0C00B57D19 /* Persistence */,
 				801B3B682A63D79900B57D19 /* Extensions */,
@@ -708,6 +719,15 @@
 				876B04DA2A66841F0077486C /* LocationError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		879EEE982A973BDC005B8A95 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				879EEE992A973DAC005B8A95 /* OnBoardingViewController.swift */,
+				879EEE9B2A9747A4005B8A95 /* UserInformationStackView.swift */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		F317094B738C7339B328A52B /* Pods */ = {
@@ -1003,6 +1023,7 @@
 				873555242A694AB40027A847 /* Requestable.swift in Sources */,
 				805EA6CC2AA376DC00A3545C /* Character+.swift in Sources */,
 				873555322A6954700027A847 /* CurrentWeatherDTO.swift in Sources */,
+				879EEE9E2A975298005B8A95 /* Date+.swift in Sources */,
 				87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */,
 				873555262A694ABA0027A847 /* Responsable.swift in Sources */,
 				805EA6B62A98AA8B00A3545C /* TODOModalViewController.swift in Sources */,
@@ -1013,6 +1034,7 @@
 				80EB031E2A6EC82F00455E05 /* NetworkService.swift in Sources */,
 				801B3B6A2A63D7A100B57D19 /* UIFont+.swift in Sources */,
 				801B3B702A63D92500B57D19 /* Palette.swift in Sources */,
+				87AAFC0A2A9A474B003149F4 /* UIViewController+.swift in Sources */,
 				8060B40D2A6128FC00726C83 /* NetworkSession.swift in Sources */,
 				87880F832A612C6400FF1B4D /* JSONDeserializable.swift in Sources */,
 				80F90C622A7BB8FE007E1D23 /* URLSessionProvidable.swift in Sources */,
@@ -1022,6 +1044,7 @@
 				87978FA42A653E68009FE7FD /* LocationFetchable.swift in Sources */,
 				80F90CCB2A84CF6C007E1D23 /* UIStackVeiw+.swift in Sources */,
 				874569812A63C8D80092FAE5 /* LocationManager.swift in Sources */,
+				879EEE9A2A973DAC005B8A95 /* OnBoardingViewController.swift in Sources */,
 				8779813A2A7F573B00DB0ED0 /* TODOHeaderViewDelegate.swift in Sources */,
 				80773A862A57E6210020F1DD /* SceneDelegate.swift in Sources */,
 				8060B4142A612A5C00726C83 /* URLResponse+.swift in Sources */,
@@ -1036,6 +1059,7 @@
 				875C79CF2A7CF85B00B93DBD /* TODOHeaderView.swift in Sources */,
 				805EA6BB2A9A4BF700A3545C /* EmojiTextField.swift in Sources */,
 				80F90CD32A860E06007E1D23 /* Int+.swift in Sources */,
+				879EEE9C2A9747A4005B8A95 /* UserInformationStackView.swift in Sources */,
 				80F90CC52A84C91D007E1D23 /* DoubleLabelStackView.swift in Sources */,
 				8735552D2A6951180027A847 /* OpenWeatherAPI.swift in Sources */,
 				8060B4192A6131E100726C83 /* Bundle+.swift in Sources */,
@@ -1220,7 +1244,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F2W258F5P6;
+				DEVELOPMENT_TEAM = 9XR48RYD63;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoodMorning/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
