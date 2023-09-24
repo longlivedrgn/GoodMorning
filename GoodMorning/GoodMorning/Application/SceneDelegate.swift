@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var rootViewControllerFactory = RootViewControllerFactory()
 
     func scene(
         _ scene: UIScene,
@@ -20,8 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let window = UIWindow(windowScene: windowScene)
-        let homeViewController = HomeViewController()
-        window.rootViewController = UINavigationController(rootViewController: homeViewController)
+        window.rootViewController = UINavigationController(
+            rootViewController: rootViewControllerFactory.rootViewController
+        )
         window.makeKeyAndVisible()
         self.window = window
     }

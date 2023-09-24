@@ -129,6 +129,11 @@ final class OnBoardingViewController: UIViewController {
         startGoodMorningButton.setTitleColor(.black, for: .normal)
         startGoodMorningButton.titleLabel?.font = .pretendard(size: 30, weight: .medium)
         startGoodMorningButton.backgroundColor = .design(.mainBackground)
+        startGoodMorningButton.addTarget(
+            self,
+            action: #selector(startGoodMorningButtonDidTapped),
+            for: .touchUpInside
+        )
 
         return startGoodMorningButton
     }()
@@ -212,6 +217,12 @@ final class OnBoardingViewController: UIViewController {
 
     @objc private func datePickerValueDidChanged(_ sender: UIDatePicker) {
         self.birthDateTextField.text = sender.date.yearMonthDayFormat()
+    }
+
+    @objc private func startGoodMorningButtonDidTapped(_ sender: UIButton) {
+        let homeViewController = HomeViewController()
+        homeViewController.modalPresentationStyle = .fullScreen
+        present(homeViewController, animated: true)
     }
 
 }
