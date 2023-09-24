@@ -56,6 +56,15 @@
 		80F90CFD2A8F095A007E1D23 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90CFC2A8F095A007E1D23 /* Images.swift */; };
 		80F90D012A8F3E7B007E1D23 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90D002A8F3E7B007E1D23 /* HomeViewController.swift */; };
 		8702ACDB2ABFF48500B69BFA /* RootViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702ACDA2ABFF48500B69BFA /* RootViewControllerFactory.swift */; };
+		8702ACDE2ABFF5F700B69BFA /* FetchCurrentWeatherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702ACDD2ABFF5F700B69BFA /* FetchCurrentWeatherUseCase.swift */; };
+		8702ACE02ABFF6D900B69BFA /* FetchCurrentToDoListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702ACDF2ABFF6D900B69BFA /* FetchCurrentToDoListUseCase.swift */; };
+		8702ACE22ABFF6E900B69BFA /* EditToDoListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702ACE12ABFF6E900B69BFA /* EditToDoListUseCase.swift */; };
+		8702ACE62ABFFA3700B69BFA /* ToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702ACE52ABFFA3700B69BFA /* ToDoListRepository.swift */; };
+		8702ACE82ABFFA4600B69BFA /* CurrentWeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702ACE72ABFFA4600B69BFA /* CurrentWeatherRepository.swift */; };
+		8702ACEA2ABFFB3900B69BFA /* ToDoListEditRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702ACE92ABFFB3900B69BFA /* ToDoListEditRepository.swift */; };
+		8702ACED2ABFFC0400B69BFA /* DefaultCurrentWeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702ACEC2ABFFC0400B69BFA /* DefaultCurrentWeatherRepository.swift */; };
+		8702ACEF2ABFFC0F00B69BFA /* DefaultToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702ACEE2ABFFC0F00B69BFA /* DefaultToDoListRepository.swift */; };
+		8702ACF12ABFFC2000B69BFA /* DefaultToDoListEditRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702ACF02ABFFC2000B69BFA /* DefaultToDoListEditRepository.swift */; };
 		8728F3C82A57F3280064A655 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8728F3C72A57F3280064A655 /* .swiftlint.yml */; };
 		873555242A694AB40027A847 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873555232A694AB40027A847 /* Requestable.swift */; };
 		873555262A694ABA0027A847 /* Responsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873555252A694ABA0027A847 /* Responsable.swift */; };
@@ -172,6 +181,15 @@
 		80F90CFC2A8F095A007E1D23 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		80F90D002A8F3E7B007E1D23 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8702ACDA2ABFF48500B69BFA /* RootViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewControllerFactory.swift; sourceTree = "<group>"; };
+		8702ACDD2ABFF5F700B69BFA /* FetchCurrentWeatherUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCurrentWeatherUseCase.swift; sourceTree = "<group>"; };
+		8702ACDF2ABFF6D900B69BFA /* FetchCurrentToDoListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCurrentToDoListUseCase.swift; sourceTree = "<group>"; };
+		8702ACE12ABFF6E900B69BFA /* EditToDoListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditToDoListUseCase.swift; sourceTree = "<group>"; };
+		8702ACE52ABFFA3700B69BFA /* ToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListRepository.swift; sourceTree = "<group>"; };
+		8702ACE72ABFFA4600B69BFA /* CurrentWeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherRepository.swift; sourceTree = "<group>"; };
+		8702ACE92ABFFB3900B69BFA /* ToDoListEditRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListEditRepository.swift; sourceTree = "<group>"; };
+		8702ACEC2ABFFC0400B69BFA /* DefaultCurrentWeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCurrentWeatherRepository.swift; sourceTree = "<group>"; };
+		8702ACEE2ABFFC0F00B69BFA /* DefaultToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultToDoListRepository.swift; sourceTree = "<group>"; };
+		8702ACF02ABFFC2000B69BFA /* DefaultToDoListEditRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultToDoListEditRepository.swift; sourceTree = "<group>"; };
 		8728F3C72A57F3280064A655 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		873555232A694AB40027A847 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		873555252A694ABA0027A847 /* Responsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responsable.swift; sourceTree = "<group>"; };
@@ -314,9 +332,9 @@
 		801B3B732A63DB0C00B57D19 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				801B3B742A63DEAC00B57D19 /* CoreDataStack.swift */,
 				801B3B7E2A6455CF00B57D19 /* Models */,
 				801B3B782A6447C400B57D19 /* Interface */,
-				801B3B742A63DEAC00B57D19 /* CoreDataStack.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -432,6 +450,7 @@
 		80611FC12A6E76670093E958 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				80EB03182A6EC6BE00455E05 /* NetworkService */,
 				8735552E2A69544F0027A847 /* DTO */,
 				8735552B2A69510C0027A847 /* API */,
 				873555202A694A810027A847 /* EndPoint */,
@@ -442,13 +461,13 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		80611FC22A6E76880093E958 /* Model */ = {
+		80611FC22A6E76880093E958 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				873555332A6954D10027A847 /* Coordinate.swift */,
 				80F90CD02A855E89007E1D23 /* WeatherConditions.swift */,
 			);
-			path = Model;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		80773A772A57E6210020F1DD = {
@@ -477,10 +496,9 @@
 		80773A822A57E6210020F1DD /* GoodMorning */ = {
 			isa = PBXGroup;
 			children = (
-				80EB03182A6EC6BE00455E05 /* NetworkService */,
-				8702ACD82ABEDC5C00B69BFA /* Data */,
 				8702ACD72ABEDC5500B69BFA /* Domain */,
 				8702ACD62ABEDC4600B69BFA /* Presentatiion */,
+				8702ACD82ABEDC5C00B69BFA /* Data */,
 				8702ACD42ABEDC2700B69BFA /* Application */,
 				801B3B682A63D79900B57D19 /* Extensions */,
 				801B3B532A63D67D00B57D19 /* Resources */,
@@ -616,7 +634,9 @@
 		8702ACD72ABEDC5500B69BFA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				80611FC22A6E76880093E958 /* Model */,
+				8702ACE32ABFF9FF00B69BFA /* Interface */,
+				8702ACDC2ABFF5BE00B69BFA /* UseCases */,
+				80611FC22A6E76880093E958 /* Entities */,
 			);
 			name = Domain;
 			path = Presentatiion/Domain;
@@ -625,12 +645,51 @@
 		8702ACD82ABEDC5C00B69BFA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8702ACEB2ABFFBE400B69BFA /* Repositories */,
 				80611FC12A6E76670093E958 /* Network */,
 				8745697F2A63C8C40092FAE5 /* CoreLocation */,
 				801B3B732A63DB0C00B57D19 /* Persistence */,
 			);
 			name = Data;
 			path = Presentatiion/Domain/Data;
+			sourceTree = "<group>";
+		};
+		8702ACDC2ABFF5BE00B69BFA /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				8702ACDD2ABFF5F700B69BFA /* FetchCurrentWeatherUseCase.swift */,
+				8702ACDF2ABFF6D900B69BFA /* FetchCurrentToDoListUseCase.swift */,
+				8702ACE12ABFF6E900B69BFA /* EditToDoListUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		8702ACE32ABFF9FF00B69BFA /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				8702ACE42ABFFA0600B69BFA /* Repositories */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		8702ACE42ABFFA0600B69BFA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				8702ACE52ABFFA3700B69BFA /* ToDoListRepository.swift */,
+				8702ACE92ABFFB3900B69BFA /* ToDoListEditRepository.swift */,
+				8702ACE72ABFFA4600B69BFA /* CurrentWeatherRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		8702ACEB2ABFFBE400B69BFA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				8702ACEC2ABFFC0400B69BFA /* DefaultCurrentWeatherRepository.swift */,
+				8702ACEE2ABFFC0F00B69BFA /* DefaultToDoListRepository.swift */,
+				8702ACF02ABFFC2000B69BFA /* DefaultToDoListEditRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		873555202A694A810027A847 /* EndPoint */ = {
@@ -1045,14 +1104,19 @@
 				873555262A694ABA0027A847 /* Responsable.swift in Sources */,
 				805EA6B62A98AA8B00A3545C /* TODOModalViewController.swift in Sources */,
 				80773A842A57E6210020F1DD /* AppDelegate.swift in Sources */,
+				8702ACEF2ABFFC0F00B69BFA /* DefaultToDoListRepository.swift in Sources */,
 				877E3FC62A6E3BB400BB06FA /* TemperatureDTO.swift in Sources */,
 				80F90CD12A855E89007E1D23 /* WeatherConditions.swift in Sources */,
+				8702ACDE2ABFF5F700B69BFA /* FetchCurrentWeatherUseCase.swift in Sources */,
 				873555342A6954D10027A847 /* Coordinate.swift in Sources */,
 				80EB031E2A6EC82F00455E05 /* NetworkService.swift in Sources */,
 				801B3B6A2A63D7A100B57D19 /* UIFont+.swift in Sources */,
 				801B3B702A63D92500B57D19 /* Palette.swift in Sources */,
 				87AAFC0A2A9A474B003149F4 /* UIViewController+.swift in Sources */,
 				8060B40D2A6128FC00726C83 /* NetworkSession.swift in Sources */,
+				8702ACE22ABFF6E900B69BFA /* EditToDoListUseCase.swift in Sources */,
+				8702ACEA2ABFFB3900B69BFA /* ToDoListEditRepository.swift in Sources */,
+				8702ACF12ABFFC2000B69BFA /* DefaultToDoListEditRepository.swift in Sources */,
 				87880F832A612C6400FF1B4D /* JSONDeserializable.swift in Sources */,
 				80F90C622A7BB8FE007E1D23 /* URLSessionProvidable.swift in Sources */,
 				875C79C92A7CE5D400B93DBD /* CheckBoxButton.swift in Sources */,
@@ -1064,10 +1128,13 @@
 				879EEE9A2A973DAC005B8A95 /* OnBoardingViewController.swift in Sources */,
 				8779813A2A7F573B00DB0ED0 /* TODOHeaderViewDelegate.swift in Sources */,
 				80773A862A57E6210020F1DD /* SceneDelegate.swift in Sources */,
+				8702ACED2ABFFC0400B69BFA /* DefaultCurrentWeatherRepository.swift in Sources */,
 				8060B4142A612A5C00726C83 /* URLResponse+.swift in Sources */,
+				8702ACE02ABFF6D900B69BFA /* FetchCurrentToDoListUseCase.swift in Sources */,
 				805EA6B92A99ECAD00A3545C /* PrioritySegmentedControl.swift in Sources */,
 				87EFC1192A8223D300843DCC /* CheckBoxButtonDelegate.swift in Sources */,
 				875C79C52A7CC46400B93DBD /* TODOListCell.swift in Sources */,
+				8702ACE82ABFFA4600B69BFA /* CurrentWeatherRepository.swift in Sources */,
 				87880F882A612C8B00FF1B4D /* JSONDeserializer.swift in Sources */,
 				80F90CC72A84CA51007E1D23 /* PretendardLabel.swift in Sources */,
 				876B04DB2A66841F0077486C /* LocationError.swift in Sources */,
@@ -1078,6 +1145,7 @@
 				80F90CD32A860E06007E1D23 /* Int+.swift in Sources */,
 				879EEE9C2A9747A4005B8A95 /* UserInformationStackView.swift in Sources */,
 				80F90CC52A84C91D007E1D23 /* DoubleLabelStackView.swift in Sources */,
+				8702ACE62ABFFA3700B69BFA /* ToDoListRepository.swift in Sources */,
 				8735552D2A6951180027A847 /* OpenWeatherAPI.swift in Sources */,
 				8060B4192A6131E100726C83 /* Bundle+.swift in Sources */,
 				80F90CCD2A84E13D007E1D23 /* TodayLuckStackView.swift in Sources */,
