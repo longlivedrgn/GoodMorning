@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+final class FetchCurrentWeatherUseCase: UseCase {
+
+    private let currentWeatherRepository: CurrentWeatherRepository
+
+    init(currentWeatherRepository: CurrentWeatherRepository) {
+        self.currentWeatherRepository = currentWeatherRepository
+    }
+
+    func execute() {
+//        return currentWeatherRepository.fetchCurrentWeather()
+    }
+
+}

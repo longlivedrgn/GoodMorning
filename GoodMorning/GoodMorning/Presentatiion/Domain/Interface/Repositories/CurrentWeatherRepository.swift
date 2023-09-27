@@ -9,5 +9,5 @@ import Foundation
 
 // 현재 날씨 가져오기
 protocol CurrentWeatherRepository {
-    func fetchCurrentWeather()
+    func fetchCurrentWeather(location: Coordinate) async throws -> CurrentWeather
 }
