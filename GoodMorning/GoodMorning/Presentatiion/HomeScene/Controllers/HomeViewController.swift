@@ -8,10 +8,15 @@
 import UIKit
 import SnapKit
 
+fileprivate func makeRepository() -> CurrentWeatherRepository {
+    return DefaultCurrentWeatherRepository()
+}
+
 final class HomeViewController: UIViewController {
 
     private let scrollView = UIScrollView()
     private let contentView = UIStackView()
+    private var fetchCurrentWeatherUseCase: FetchCurrentWeatherUseCase?
     private let weatherStackView = WeatherStackView(weather: .drizzle, temperature: 27)
     private let todayLuckStackView = TodayLuckStackView()
     private let titleStackView = DoubleLabelStackView(type: .title, nickName: "Miro")
@@ -38,6 +43,9 @@ final class HomeViewController: UIViewController {
     private func configureViews() {
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(contentView)
+        fetchCurrentWeatherUseCase = DefaultFetchCurrentWeatherUseCase(
+            currentWeatherRepository: makeRepository()
+        )
 
         self.view.backgroundColor = .design(.mainBackground)
 

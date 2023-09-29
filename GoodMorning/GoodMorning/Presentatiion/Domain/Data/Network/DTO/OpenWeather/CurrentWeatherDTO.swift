@@ -17,3 +17,18 @@ struct CurrentWeatherDTO: Decodable {
     }
 
 }
+
+extension CurrentWeatherDTO {
+
+    func toDomain() -> CurrentWeather {
+        let weatherCondition =  WeatherConditions.condition(
+            forCode: weather.first?.id ?? 0
+        ) ?? WeatherConditions.atmosphere
+
+        return CurrentWeather(
+            temperature: temperature.averageTemperature,
+            condition: weatherCondition
+        )
+    }
+
+}

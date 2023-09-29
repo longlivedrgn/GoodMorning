@@ -21,24 +21,12 @@ extension DefaultCurrentWeatherRepository: CurrentWeatherRepository {
 
         switch networkResult {
         case .success(let response):
-            let currentWeather = convert(response)
+            let currentWeather = response.toDomain()
             return currentWeather
         case .failure(let error):
             // error 핸들링하기
             throw error
         }
-    }
-
-    func convert(_ currentDTO: CurrentWeatherDTO) -> CurrentWeather {
-        // 에러 핸들링!...
-        let weatherCondition =  WeatherConditions.condition(
-            forCode: currentDTO.weather.first?.id ?? 0
-        ) ?? WeatherConditions.atmosphere
-
-        return CurrentWeather(
-            temperature: currentDTO.temperature.averageTemperature,
-            condition: weatherCondition
-        )
     }
 
 }
