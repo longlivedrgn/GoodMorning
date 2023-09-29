@@ -8,14 +8,21 @@
 import UIKit
 import SnapKit
 
-fileprivate func makeRepository() -> CurrentWeatherRepository {
+fileprivate func makeCurrentWeatherRepository() -> CurrentWeatherRepository {
     return DefaultCurrentWeatherRepository()
+}
+
+fileprivate func makeCurrentLocationRepository() -> CurrentLocationRepository {
+    return DefaultFetchCurrentLocationRepository()
 }
 
 final class HomeViewController: UIViewController {
 
     private let scrollView = UIScrollView()
     private let contentView = UIStackView()
+    private let fetchCurrentLocationUseCase = DefaultFetchCurrentLocationUseCase(
+        currentLocationRepository: makeCurrentLocationRepository()
+    )
     private var fetchCurrentWeatherUseCase: FetchCurrentWeatherUseCase?
     private let weatherStackView = WeatherStackView(weather: .drizzle, temperature: 27)
     private let todayLuckStackView = TodayLuckStackView()
@@ -37,14 +44,27 @@ final class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUseCases()
         configureViews()
+    }
+
+    private func setupUseCases() {
+        fetchCurrentLocationUseCase.execute { coordinate in
+            self.fetchCurrentWeatherUseCase = DefaultFetchCurrentWeatherUseCase(
+                currentWeatherRepository: makeCurrentWeatherRepository()
+            )
+            Task {
+                let result = try await self.fetchCurrentWeatherUseCase?.execute(value: coordinate)
+                print(result)
+            }
+        }
     }
 
     private func configureViews() {
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(contentView)
         fetchCurrentWeatherUseCase = DefaultFetchCurrentWeatherUseCase(
-            currentWeatherRepository: makeRepository()
+            currentWeatherRepository: makeCurrentWeatherRepository()
         )
 
         self.view.backgroundColor = .design(.mainBackground)

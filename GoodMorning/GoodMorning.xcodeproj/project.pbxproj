@@ -86,6 +86,9 @@
 		876B04DD2A6688A30077486C /* CoreLocationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876B04DC2A6688A30077486C /* CoreLocationTest.swift */; };
 		876B04E12A6689070077486C /* MockLocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876B04E02A6689070077486C /* MockLocationFetcher.swift */; };
 		8779813A2A7F573B00DB0ED0 /* TODOHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877981392A7F573B00DB0ED0 /* TODOHeaderViewDelegate.swift */; };
+		877DB5F62AC66DBC004724EE /* CurrentLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DB5F52AC66DBC004724EE /* CurrentLocationRepository.swift */; };
+		877DB5F82AC66DF0004724EE /* DefaultFetchCurrentLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DB5F72AC66DF0004724EE /* DefaultFetchCurrentLocationRepository.swift */; };
+		877DB5FA2AC67109004724EE /* DefaultFetchCurrentLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877DB5F92AC67109004724EE /* DefaultFetchCurrentLocationUseCase.swift */; };
 		877E3FC62A6E3BB400BB06FA /* TemperatureDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877E3FC52A6E3BB400BB06FA /* TemperatureDTO.swift */; };
 		877E3FC82A6E3BC500BB06FA /* WeatherDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877E3FC72A6E3BC500BB06FA /* WeatherDTO.swift */; };
 		87880F832A612C6400FF1B4D /* JSONDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87880F822A612C6400FF1B4D /* JSONDeserializable.swift */; };
@@ -212,6 +215,9 @@
 		876B04DC2A6688A30077486C /* CoreLocationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationTest.swift; sourceTree = "<group>"; };
 		876B04E02A6689070077486C /* MockLocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationFetcher.swift; sourceTree = "<group>"; };
 		877981392A7F573B00DB0ED0 /* TODOHeaderViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOHeaderViewDelegate.swift; sourceTree = "<group>"; };
+		877DB5F52AC66DBC004724EE /* CurrentLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationRepository.swift; sourceTree = "<group>"; };
+		877DB5F72AC66DF0004724EE /* DefaultFetchCurrentLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchCurrentLocationRepository.swift; sourceTree = "<group>"; };
+		877DB5F92AC67109004724EE /* DefaultFetchCurrentLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFetchCurrentLocationUseCase.swift; sourceTree = "<group>"; };
 		877E3FC52A6E3BB400BB06FA /* TemperatureDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureDTO.swift; sourceTree = "<group>"; };
 		877E3FC72A6E3BC500BB06FA /* WeatherDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDTO.swift; sourceTree = "<group>"; };
 		87880F822A612C6400FF1B4D /* JSONDeserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
@@ -661,6 +667,7 @@
 			isa = PBXGroup;
 			children = (
 				8702ACDD2ABFF5F700B69BFA /* DefaultFetchCurrentWeatherUseCase.swift */,
+				877DB5F92AC67109004724EE /* DefaultFetchCurrentLocationUseCase.swift */,
 				8702ACDF2ABFF6D900B69BFA /* FetchCurrentToDoListUseCase.swift */,
 				8702ACE12ABFF6E900B69BFA /* EditToDoListUseCase.swift */,
 			);
@@ -681,6 +688,7 @@
 				8702ACE52ABFFA3700B69BFA /* ToDoListRepository.swift */,
 				8702ACE92ABFFB3900B69BFA /* ToDoListEditRepository.swift */,
 				8702ACE72ABFFA4600B69BFA /* CurrentWeatherRepository.swift */,
+				877DB5F52AC66DBC004724EE /* CurrentLocationRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -689,6 +697,7 @@
 			isa = PBXGroup;
 			children = (
 				8702ACEC2ABFFC0400B69BFA /* DefaultCurrentWeatherRepository.swift */,
+				877DB5F72AC66DF0004724EE /* DefaultFetchCurrentLocationRepository.swift */,
 				8702ACEE2ABFFC0F00B69BFA /* DefaultToDoListRepository.swift */,
 				8702ACF02ABFFC2000B69BFA /* DefaultToDoListEditRepository.swift */,
 			);
@@ -1140,6 +1149,7 @@
 				875C79C52A7CC46400B93DBD /* TODOListCell.swift in Sources */,
 				8702ACE82ABFFA4600B69BFA /* CurrentWeatherRepository.swift in Sources */,
 				87880F882A612C8B00FF1B4D /* JSONDeserializer.swift in Sources */,
+				877DB5F82AC66DF0004724EE /* DefaultFetchCurrentLocationRepository.swift in Sources */,
 				80F90CC72A84CA51007E1D23 /* PretendardLabel.swift in Sources */,
 				876B04DB2A66841F0077486C /* LocationError.swift in Sources */,
 				801B3B722A63D94E00B57D19 /* UIColor+.swift in Sources */,
@@ -1150,10 +1160,12 @@
 				879EEE9C2A9747A4005B8A95 /* UserInformationStackView.swift in Sources */,
 				80F90CC52A84C91D007E1D23 /* DoubleLabelStackView.swift in Sources */,
 				8702ACE62ABFFA3700B69BFA /* ToDoListRepository.swift in Sources */,
+				877DB5FA2AC67109004724EE /* DefaultFetchCurrentLocationUseCase.swift in Sources */,
 				8735552D2A6951180027A847 /* OpenWeatherAPI.swift in Sources */,
 				8060B4192A6131E100726C83 /* Bundle+.swift in Sources */,
 				80F90CCD2A84E13D007E1D23 /* TodayLuckStackView.swift in Sources */,
 				8702ACDB2ABFF48500B69BFA /* RootViewControllerFactory.swift in Sources */,
+				877DB5F62AC66DBC004724EE /* CurrentLocationRepository.swift in Sources */,
 				87978FA62A653E7F009FE7FD /* LocationFetcherDelegate.swift in Sources */,
 				80F90CFB2A8F092C007E1D23 /* UIImage+.swift in Sources */,
 			);
