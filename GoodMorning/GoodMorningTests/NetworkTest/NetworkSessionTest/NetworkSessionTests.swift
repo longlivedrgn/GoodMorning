@@ -11,7 +11,7 @@ import XCTest
 class NetworkSessionTests: NetworkTestSetup {
 
     func test_statusCode가_200이고_데이터가_존재할때() async throws {
-        let urlSession = MockURLSession(data: data, statusCode: 200, url: url)
+        let urlSession = URLSessionStub(data: data, statusCode: 200, url: url)
         let networkSession = NetworkSession(session: urlSession)
 
         let urlRequest = URLRequest(url: url)
@@ -22,7 +22,7 @@ class NetworkSessionTests: NetworkTestSetup {
     }
 
     func test_statusCode가_200번대가_아닐때() async throws {
-        let urlSession = MockURLSession(data: nil, statusCode: 300, url: url)
+        let urlSession = URLSessionStub(data: nil, statusCode: 300, url: url)
         let networkSession = NetworkSession(session: urlSession)
 
         let urlRequest = URLRequest(url: url)

@@ -24,7 +24,7 @@
 		802CE6FE2A76ACBC00F41513 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CE6FD2A76ACBC00F41513 /* JSONLoader.swift */; };
 		802CE7042A7767E500F41513 /* SerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CE7032A7767E500F41513 /* SerializationTests.swift */; };
 		802CE7062A77683700F41513 /* NetworkTestSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CE7052A77683700F41513 /* NetworkTestSetup.swift */; };
-		803569D52A768C04001C92BC /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803569D42A768C04001C92BC /* MockURLSession.swift */; };
+		803569D52A768C04001C92BC /* URLSessionStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803569D42A768C04001C92BC /* URLSessionStub.swift */; };
 		803569D92A768C68001C92BC /* NetworkSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803569D82A768C68001C92BC /* NetworkSessionTests.swift */; };
 		803569DC2A768E76001C92BC /* CurrentWeather.json in Sources */ = {isa = PBXBuildFile; fileRef = 803569DB2A768E76001C92BC /* CurrentWeather.json */; };
 		805EA6B62A98AA8B00A3545C /* TODOModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805EA6B52A98AA8B00A3545C /* TODOModalViewController.swift */; };
@@ -129,7 +129,7 @@
 		802CE6FD2A76ACBC00F41513 /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
 		802CE7032A7767E500F41513 /* SerializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializationTests.swift; sourceTree = "<group>"; };
 		802CE7052A77683700F41513 /* NetworkTestSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestSetup.swift; sourceTree = "<group>"; };
-		803569D42A768C04001C92BC /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		803569D42A768C04001C92BC /* URLSessionStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionStub.swift; sourceTree = "<group>"; };
 		803569D82A768C68001C92BC /* NetworkSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionTests.swift; sourceTree = "<group>"; };
 		803569DB2A768E76001C92BC /* CurrentWeather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CurrentWeather.json; sourceTree = "<group>"; };
 		805EA6B52A98AA8B00A3545C /* TODOModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOModalViewController.swift; sourceTree = "<group>"; };
@@ -352,7 +352,7 @@
 		802CE7072A77690A00F41513 /* NetworkSessionTest */ = {
 			isa = PBXGroup;
 			children = (
-				803569D42A768C04001C92BC /* MockURLSession.swift */,
+				803569D42A768C04001C92BC /* URLSessionStub.swift */,
 				803569D82A768C68001C92BC /* NetworkSessionTests.swift */,
 			);
 			path = NetworkSessionTest;
@@ -1058,7 +1058,7 @@
 				876B04E12A6689070077486C /* MockLocationFetcher.swift in Sources */,
 				876B04DD2A6688A30077486C /* CoreLocationTest.swift in Sources */,
 				803569D92A768C68001C92BC /* NetworkSessionTests.swift in Sources */,
-				803569D52A768C04001C92BC /* MockURLSession.swift in Sources */,
+				803569D52A768C04001C92BC /* URLSessionStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

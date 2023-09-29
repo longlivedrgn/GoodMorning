@@ -1,5 +1,5 @@
 //
-//  MockURLSession.swift
+//  URLSessionStub.swift
 //  GoodMorningTests
 //
 //  Created by Sunny on 2023/07/30.
@@ -8,7 +8,7 @@
 import Foundation
 @testable import GoodMorning
 
-class MockURLSession: URLSessionProvidable {
+class URLSessionStub: URLSessionProvidable {
 
     var data: Data?
     var statusCode: Int?
