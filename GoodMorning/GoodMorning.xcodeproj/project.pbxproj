@@ -89,6 +89,9 @@
 		87978FA42A653E68009FE7FD /* LocationFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FA32A653E68009FE7FD /* LocationFetchable.swift */; };
 		87978FA62A653E7F009FE7FD /* LocationFetcherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */; };
 		87978FAB2A653EF4009FE7FD /* CLLocationManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */; };
+		87EA72A52ACBE9300042DD88 /* DefaultWeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA72A42ACBE9300042DD88 /* DefaultWeatherRepository.swift */; };
+		87EA72A72ACBEA260042DD88 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA72A62ACBEA260042DD88 /* WeatherRepository.swift */; };
+		87EA72A92ACBED880042DD88 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA72A82ACBED880042DD88 /* CurrentWeather.swift */; };
 		87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */; };
 		87EFC1192A8223D300843DCC /* CheckBoxButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -202,6 +205,9 @@
 		87978FA32A653E68009FE7FD /* LocationFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetchable.swift; sourceTree = "<group>"; };
 		87978FA52A653E7F009FE7FD /* LocationFetcherDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcherDelegate.swift; sourceTree = "<group>"; };
 		87978FAA2A653EF4009FE7FD /* CLLocationManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+.swift"; sourceTree = "<group>"; };
+		87EA72A42ACBE9300042DD88 /* DefaultWeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWeatherRepository.swift; sourceTree = "<group>"; };
+		87EA72A62ACBEA260042DD88 /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
+		87EA72A82ACBED880042DD88 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOCollectionViewItem.swift; sourceTree = "<group>"; };
 		87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButtonDelegate.swift; sourceTree = "<group>"; };
 		BC808D177BDBE9A5E89AA608 /* Pods-GoodMorningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -403,8 +409,8 @@
 		80611FC02A6E76590093E958 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				87EA72A32ACBE8B80042DD88 /* Repositories */,
 				80B699562ACBE1BE00CD3F8C /* PersistentStorage */,
-				80611FC22A6E76880093E958 /* Model */,
 				80611FC12A6E76670093E958 /* Network */,
 			);
 			path = Data;
@@ -421,15 +427,6 @@
 				8060B40B2A6128EC00726C83 /* Session */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		80611FC22A6E76880093E958 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				873555332A6954D10027A847 /* Coordinate.swift */,
-				80F90CD02A855E89007E1D23 /* WeatherConditions.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		80773A772A57E6210020F1DD = {
@@ -522,6 +519,9 @@
 		80EB03172A6EC68F00455E05 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				87EA72A12ACBE6DE0042DD88 /* Interfaces */,
+				87EA72A02ACBE6D50042DD88 /* UseCases */,
+				87EA729F2ACBE6C70042DD88 /* Entities */,
 				80EB03182A6EC6BE00455E05 /* NetworkService */,
 			);
 			path = Domain;
@@ -716,6 +716,47 @@
 				876B04DA2A66841F0077486C /* LocationError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		87EA729F2ACBE6C70042DD88 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				873555332A6954D10027A847 /* Coordinate.swift */,
+				80F90CD02A855E89007E1D23 /* WeatherConditions.swift */,
+				87EA72A82ACBED880042DD88 /* CurrentWeather.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		87EA72A02ACBE6D50042DD88 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		87EA72A12ACBE6DE0042DD88 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				87EA72A22ACBE6EB0042DD88 /* Repositories */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		87EA72A22ACBE6EB0042DD88 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				87EA72A62ACBEA260042DD88 /* WeatherRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		87EA72A32ACBE8B80042DD88 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				87EA72A42ACBE9300042DD88 /* DefaultWeatherRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		F317094B738C7339B328A52B /* Pods */ = {
@@ -1015,6 +1056,7 @@
 				873555322A6954700027A847 /* CurrentWeatherDTO.swift in Sources */,
 				87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */,
 				873555262A694ABA0027A847 /* Responsable.swift in Sources */,
+				87EA72A92ACBED880042DD88 /* CurrentWeather.swift in Sources */,
 				805EA6B62A98AA8B00A3545C /* TODOModalViewController.swift in Sources */,
 				80773A842A57E6210020F1DD /* AppDelegate.swift in Sources */,
 				877E3FC62A6E3BB400BB06FA /* TemperatureDTO.swift in Sources */,
@@ -1029,6 +1071,7 @@
 				80B6995D2ACBE2F800CD3F8C /* DefaultCoreDataStack.swift in Sources */,
 				875C79C92A7CE5D400B93DBD /* CheckBoxButton.swift in Sources */,
 				875C79C72A7CD27600B93DBD /* CircleImageView.swift in Sources */,
+				87EA72A52ACBE9300042DD88 /* DefaultWeatherRepository.swift in Sources */,
 				8060B4102A6129A400726C83 /* NetworkError.swift in Sources */,
 				87978FA42A653E68009FE7FD /* LocationFetchable.swift in Sources */,
 				80F90CCB2A84CF6C007E1D23 /* UIStackVeiw+.swift in Sources */,
@@ -1039,6 +1082,7 @@
 				805EA6B92A99ECAD00A3545C /* PrioritySegmentedControl.swift in Sources */,
 				87EFC1192A8223D300843DCC /* CheckBoxButtonDelegate.swift in Sources */,
 				875C79C52A7CC46400B93DBD /* TODOListCell.swift in Sources */,
+				87EA72A72ACBEA260042DD88 /* WeatherRepository.swift in Sources */,
 				87880F882A612C8B00FF1B4D /* JSONDeserializer.swift in Sources */,
 				80B6995C2ACBE2F400CD3F8C /* ManagedEntity.swift in Sources */,
 				80F90CC72A84CA51007E1D23 /* PretendardLabel.swift in Sources */,
