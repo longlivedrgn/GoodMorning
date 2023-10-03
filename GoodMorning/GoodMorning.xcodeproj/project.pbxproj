@@ -42,6 +42,12 @@
 		80773A9E2A57E6230020F1DD /* GoodMorningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773A9D2A57E6230020F1DD /* GoodMorningTests.swift */; };
 		80773AA82A57E6230020F1DD /* GoodMorningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */; };
 		80773AAA2A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */; };
+		80B699592ACBE22000CD3F8C /* GoodMorning.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80611FC62A6E7BB00093E958 /* GoodMorning.xcdatamodeld */; };
+		80B6995A2ACBE22200CD3F8C /* MorningRoutine+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800986102A645FAE00F4E010 /* MorningRoutine+CoreDataClass.swift */; };
+		80B6995B2ACBE22500CD3F8C /* MorningRoutine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800986112A645FAE00F4E010 /* MorningRoutine+CoreDataProperties.swift */; };
+		80B6995C2ACBE2F400CD3F8C /* ManagedEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B3B792A6447E300B57D19 /* ManagedEntity.swift */; };
+		80B6995D2ACBE2F800CD3F8C /* DefaultCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B3B742A63DEAC00B57D19 /* DefaultCoreDataStack.swift */; };
+		80B6995F2ACBE41400CD3F8C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B6995E2ACBE41400CD3F8C /* CoreDataStack.swift */; };
 		80EB031E2A6EC82F00455E05 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB031D2A6EC82F00455E05 /* NetworkService.swift */; };
 		80F90C622A7BB8FE007E1D23 /* URLSessionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90C612A7BB8FE007E1D23 /* URLSessionProvidable.swift */; };
 		80F90C662A7BC48E007E1D23 /* NetworkSessionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90C652A7BC48E007E1D23 /* NetworkSessionProvidable.swift */; };
@@ -123,7 +129,7 @@
 		801B3B6D2A63D87C00B57D19 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		801B3B6F2A63D92500B57D19 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		801B3B712A63D94E00B57D19 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
-		801B3B742A63DEAC00B57D19 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		801B3B742A63DEAC00B57D19 /* DefaultCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCoreDataStack.swift; sourceTree = "<group>"; };
 		801B3B762A64467F00B57D19 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		801B3B792A6447E300B57D19 /* ManagedEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedEntity.swift; sourceTree = "<group>"; };
 		802CE6FD2A76ACBC00F41513 /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 		80773AA32A57E6230020F1DD /* GoodMorningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodMorningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningUITests.swift; sourceTree = "<group>"; };
 		80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		80B6995E2ACBE41400CD3F8C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		80EB03162A6EC11400455E05 /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		80EB031D2A6EC82F00455E05 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		80F90C612A7BB8FE007E1D23 /* URLSessionProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvidable.swift; sourceTree = "<group>"; };
@@ -303,24 +310,6 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
-		801B3B732A63DB0C00B57D19 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				801B3B7E2A6455CF00B57D19 /* Models */,
-				801B3B782A6447C400B57D19 /* Interface */,
-				801B3B742A63DEAC00B57D19 /* CoreDataStack.swift */,
-			);
-			path = Persistence;
-			sourceTree = "<group>";
-		};
-		801B3B782A6447C400B57D19 /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				801B3B792A6447E300B57D19 /* ManagedEntity.swift */,
-			);
-			path = Interface;
-			sourceTree = "<group>";
-		};
 		801B3B7B2A6449EB00B57D19 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,16 +317,6 @@
 				805FA7032A6D43FA00089070 /* CoreDataTestSetup.swift */,
 			);
 			path = Persistence;
-			sourceTree = "<group>";
-		};
-		801B3B7E2A6455CF00B57D19 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				80611FC62A6E7BB00093E958 /* GoodMorning.xcdatamodeld */,
-				800986102A645FAE00F4E010 /* MorningRoutine+CoreDataClass.swift */,
-				800986112A645FAE00F4E010 /* MorningRoutine+CoreDataProperties.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		802CE6FC2A76AC9B00F41513 /* JSON */ = {
@@ -424,6 +403,7 @@
 		80611FC02A6E76590093E958 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				80B699562ACBE1BE00CD3F8C /* PersistentStorage */,
 				80611FC22A6E76880093E958 /* Model */,
 				80611FC12A6E76670093E958 /* Network */,
 			);
@@ -480,7 +460,6 @@
 			children = (
 				805EA6B12A98A1BC00A3545C /* TODOModalScene */,
 				80F90CC02A84C4D0007E1D23 /* HomeScene */,
-				801B3B732A63DB0C00B57D19 /* Persistence */,
 				801B3B682A63D79900B57D19 /* Extensions */,
 				801B3B532A63D67D00B57D19 /* Resources */,
 				80EB03172A6EC68F00455E05 /* Domain */,
@@ -509,6 +488,35 @@
 				80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */,
 			);
 			path = GoodMorningUITests;
+			sourceTree = "<group>";
+		};
+		80B699562ACBE1BE00CD3F8C /* PersistentStorage */ = {
+			isa = PBXGroup;
+			children = (
+				801B3B742A63DEAC00B57D19 /* DefaultCoreDataStack.swift */,
+				80B699572ACBE1E000CD3F8C /* Interface */,
+				80B699582ACBE1E500CD3F8C /* CoreDataStack */,
+			);
+			path = PersistentStorage;
+			sourceTree = "<group>";
+		};
+		80B699572ACBE1E000CD3F8C /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				801B3B792A6447E300B57D19 /* ManagedEntity.swift */,
+				80B6995E2ACBE41400CD3F8C /* CoreDataStack.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		80B699582ACBE1E500CD3F8C /* CoreDataStack */ = {
+			isa = PBXGroup;
+			children = (
+				80611FC62A6E7BB00093E958 /* GoodMorning.xcdatamodeld */,
+				800986102A645FAE00F4E010 /* MorningRoutine+CoreDataClass.swift */,
+				800986112A645FAE00F4E010 /* MorningRoutine+CoreDataProperties.swift */,
+			);
+			path = CoreDataStack;
 			sourceTree = "<group>";
 		};
 		80EB03172A6EC68F00455E05 /* Domain */ = {
@@ -999,6 +1007,7 @@
 				877E3FC82A6E3BC500BB06FA /* WeatherDTO.swift in Sources */,
 				80F90CCF2A855CDA007E1D23 /* WeatherStackView.swift in Sources */,
 				87978FAB2A653EF4009FE7FD /* CLLocationManager+.swift in Sources */,
+				80B699592ACBE22000CD3F8C /* GoodMorning.xcdatamodeld in Sources */,
 				80F90D012A8F3E7B007E1D23 /* HomeViewController.swift in Sources */,
 				873555242A694AB40027A847 /* Requestable.swift in Sources */,
 				805EA6CC2AA376DC00A3545C /* Character+.swift in Sources */,
@@ -1016,6 +1025,7 @@
 				8060B40D2A6128FC00726C83 /* NetworkSession.swift in Sources */,
 				87880F832A612C6400FF1B4D /* JSONDeserializable.swift in Sources */,
 				80F90C622A7BB8FE007E1D23 /* URLSessionProvidable.swift in Sources */,
+				80B6995D2ACBE2F800CD3F8C /* DefaultCoreDataStack.swift in Sources */,
 				875C79C92A7CE5D400B93DBD /* CheckBoxButton.swift in Sources */,
 				875C79C72A7CD27600B93DBD /* CircleImageView.swift in Sources */,
 				8060B4102A6129A400726C83 /* NetworkError.swift in Sources */,
@@ -1029,6 +1039,7 @@
 				87EFC1192A8223D300843DCC /* CheckBoxButtonDelegate.swift in Sources */,
 				875C79C52A7CC46400B93DBD /* TODOListCell.swift in Sources */,
 				87880F882A612C8B00FF1B4D /* JSONDeserializer.swift in Sources */,
+				80B6995C2ACBE2F400CD3F8C /* ManagedEntity.swift in Sources */,
 				80F90CC72A84CA51007E1D23 /* PretendardLabel.swift in Sources */,
 				876B04DB2A66841F0077486C /* LocationError.swift in Sources */,
 				801B3B722A63D94E00B57D19 /* UIColor+.swift in Sources */,
@@ -1036,12 +1047,15 @@
 				875C79CF2A7CF85B00B93DBD /* TODOHeaderView.swift in Sources */,
 				805EA6BB2A9A4BF700A3545C /* EmojiTextField.swift in Sources */,
 				80F90CD32A860E06007E1D23 /* Int+.swift in Sources */,
+				80B6995A2ACBE22200CD3F8C /* MorningRoutine+CoreDataClass.swift in Sources */,
 				80F90CC52A84C91D007E1D23 /* DoubleLabelStackView.swift in Sources */,
 				8735552D2A6951180027A847 /* OpenWeatherAPI.swift in Sources */,
 				8060B4192A6131E100726C83 /* Bundle+.swift in Sources */,
+				80B6995B2ACBE22500CD3F8C /* MorningRoutine+CoreDataProperties.swift in Sources */,
 				80F90CCD2A84E13D007E1D23 /* TodayLuckStackView.swift in Sources */,
 				87978FA62A653E7F009FE7FD /* LocationFetcherDelegate.swift in Sources */,
 				80F90CFB2A8F092C007E1D23 /* UIImage+.swift in Sources */,
+				80B6995F2ACBE41400CD3F8C /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

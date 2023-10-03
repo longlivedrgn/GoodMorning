@@ -8,11 +8,14 @@
 import CoreData
 
 protocol ManagedEntity: NSFetchRequestResult {
+
     static func makeNewObject(in context: NSManagedObjectContext) -> Self?
     static func makeNewFetchRequest() -> NSFetchRequest<Self>
+
 }
 
 extension ManagedEntity {
+
     static var name: String {
         return String(describing: Self.self)
     }
@@ -26,4 +29,5 @@ extension ManagedEntity {
     static func makeNewFetchRequest() -> NSFetchRequest<Self> {
         return NSFetchRequest(entityName: name)
     }
+
 }

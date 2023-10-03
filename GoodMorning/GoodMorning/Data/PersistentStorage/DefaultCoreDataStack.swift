@@ -1,5 +1,5 @@
 //
-//  CoreDataStack.swift
+//  DefaultCoreDataStack.swift
 //  GoodMorning
 //
 //  Created by Sunny on 2023/07/16.
@@ -7,7 +7,7 @@
 
 import CoreData
 
-struct CoreDataStack {
+struct DefaultCoreDataStack: CoreDataStack {
 
     private var container: NSPersistentContainer
 
@@ -52,7 +52,8 @@ struct CoreDataStack {
 
 }
 
-extension CoreDataStack {
+extension DefaultCoreDataStack {
+
     enum Container {
         case goodMorning
 
