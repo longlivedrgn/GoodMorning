@@ -40,7 +40,7 @@ final class TODOListCell: UICollectionViewListCell {
             attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .medium)]
         )
         TODOListContentView.configuration = content
-        iconImageView.image = state.item?.iconImage
+//        iconImageView.image = state.item?.iconImage
 
         configureLine(with: state)
     }

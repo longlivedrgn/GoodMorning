@@ -52,7 +52,10 @@ final class DefaultCoreDataStack: CoreDataStack {
     }
 
     func delete<EntityType: ManagedEntity>(_ entity: EntityType) {
-
+        backgroundContext.perform {
+            guard let object = entity as? NSManagedObject else { return }
+            self.backgroundContext.delete(object)
+        }
     }
 
     func update() {

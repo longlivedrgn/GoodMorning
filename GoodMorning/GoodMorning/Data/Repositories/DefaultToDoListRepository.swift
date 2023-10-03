@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum CoreDataError: Error {
+    case failToMakeEntity
+    case failToFindEntity
+}
+
 final class DefaultToDoListRepository: ToDoListRepository {
 
     private let coreDataStack: CoreDataStack
@@ -19,10 +24,42 @@ final class DefaultToDoListRepository: ToDoListRepository {
 
 extension DefaultToDoListRepository {
 
-    // 1. todo list 목록 가져오기
+    func fetchToDoList() -> [TODOItem] {
+        let morningRoutine: [MorningRoutine] = coreDataStack.fetch()
+        let item = morningRoutine.map { routine in
+            TODOItem(
+                iconImage: routine.icon,
+                description: routine.description,
+                isChecked: routine.isChecked,
+                priority: routine.priority
+            )
+        }
 
-    // 2. todo list 추가 / 저장
+        return item
+    }
 
-    // 3. todo list 삭제
+    func addToDoListItem(item: TODOItem) async throws {
+        guard let entity: MorningRoutine = await coreDataStack.create() else {
+            throw CoreDataError.failToMakeEntity
+        }
+        entity.isChecked = item.isChecked
+        entity.routine = item.description
+        entity.icon = item.iconImage
+        entity.priority = item.priority
+        entity.identifier = item.identifier
+
+        coreDataStack.update()
+    }
+
+    func deleteToDoListItem(item: TODOItem) throws {
+        let morningRoutines: [MorningRoutine] = coreDataStack.fetch()
+        let morningRoutine = morningRoutines.filter { $0.identifier == item.identifier}
+
+        guard let deleteItem = morningRoutine.first else {
+            throw CoreDataError.failToFindEntity
+        }
+
+        coreDataStack.delete(deleteItem)
+    }
 
 }
