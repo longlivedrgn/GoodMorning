@@ -7,9 +7,12 @@
 
 import CoreData
 
-struct DefaultCoreDataStack: CoreDataStack {
+final class DefaultCoreDataStack: CoreDataStack {
 
     private var container: NSPersistentContainer
+    private lazy var backgroundContext: NSManagedObjectContext = {
+        return container.newBackgroundContext()
+    }()
 
     init(container: Container) {
         self.container = NSPersistentContainer(name: container.name)
@@ -20,13 +23,21 @@ struct DefaultCoreDataStack: CoreDataStack {
         container.loadPersistentStores { (_, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
+            } else {
+                self.container.viewContext.configureViewContext()
+                self.backgroundContext = self.container.newBackgroundContext()
+                self.backgroundContext.configureBackgroundContext()
             }
         }
     }
 
-    func create<EntityType: ManagedEntity>() -> EntityType? {
-        let object = EntityType.makeNewObject(in: container.viewContext)
-        return object
+    func create<EntityType: ManagedEntity>() async -> EntityType? {
+        let managedEntity = await backgroundContext.perform {
+            let object = EntityType.makeNewObject(in: self.backgroundContext)
+            return object
+        }
+
+        return managedEntity
     }
 
     func fetch<EntityType: ManagedEntity>() -> [EntityType] {
@@ -41,15 +52,17 @@ struct DefaultCoreDataStack: CoreDataStack {
     }
 
     func delete<EntityType: ManagedEntity>(_ entity: EntityType) {
-        
+
     }
 
     func update() {
-        if container.viewContext.hasChanges {
-            do {
-                try container.viewContext.save()
-            } catch {
-                print(error.localizedDescription)
+        backgroundContext.perform {
+            if self.backgroundContext.hasChanges {
+                do {
+                    try self.backgroundContext.save()
+                } catch {
+                    print(error.localizedDescription)
+                }
             }
         }
     }
@@ -67,6 +80,33 @@ extension DefaultCoreDataStack {
                 return "GoodMorning"
             }
         }
+    }
+
+    private enum CoreDataStackError: LocalizedError {
+
+        case isFailedToCreateEntity
+
+        var errorDescription: String? {
+            switch self {
+            case .isFailedToCreateEntity:
+                return "Entity 만들기에 실패하였습니다."
+            }
+        }
+
+    }
+
+}
+
+internal extension NSManagedObjectContext {
+
+    func configureBackgroundContext() {
+        mergePolicy = NSOverwriteMergePolicy
+    }
+
+    func configureViewContext() {
+        automaticallyMergesChangesFromParent = true
+        shouldDeleteInaccessibleFaults = true
+        mergePolicy = NSRollbackMergePolicy
     }
 
 }

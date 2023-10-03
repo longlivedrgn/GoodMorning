@@ -7,8 +7,9 @@
 
 protocol CoreDataStack {
 
-    func create<EntityType: ManagedEntity>() -> EntityType?
+    func create<EntityType: ManagedEntity>() async -> EntityType?
     func fetch<EntityType: ManagedEntity>() -> [EntityType]
+    func delete<EntityType: ManagedEntity>(_ entity: EntityType)
     func update()
 
 }
