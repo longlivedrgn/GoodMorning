@@ -9,6 +9,6 @@ import Foundation
 
 protocol CurrentLocationRepository {
 
-    func fetchCurrentWeather() -> Result<Coordinate?, LocationError>?
+    func fetchCurrentLocation() -> Result<Coordinate?, LocationError>?
 
 }

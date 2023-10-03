@@ -48,6 +48,7 @@
 		80B6995F2ACBE41400CD3F8C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B6995E2ACBE41400CD3F8C /* CoreDataStack.swift */; };
 		80B699622ACBE53F00CD3F8C /* MorningRoutine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B699602ACBE53F00CD3F8C /* MorningRoutine+CoreDataProperties.swift */; };
 		80B699632ACBE53F00CD3F8C /* MorningRoutine+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B699612ACBE53F00CD3F8C /* MorningRoutine+CoreDataClass.swift */; };
+		80B699652ACBFF4900CD3F8C /* DefaultToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B699642ACBFF4900CD3F8C /* DefaultToDoListRepository.swift */; };
 		80EB031E2A6EC82F00455E05 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB031D2A6EC82F00455E05 /* NetworkService.swift */; };
 		80F90C622A7BB8FE007E1D23 /* URLSessionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90C612A7BB8FE007E1D23 /* URLSessionProvidable.swift */; };
 		80F90C662A7BC48E007E1D23 /* NetworkSessionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90C652A7BC48E007E1D23 /* NetworkSessionProvidable.swift */; };
@@ -165,6 +166,7 @@
 		80B6995E2ACBE41400CD3F8C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		80B699602ACBE53F00CD3F8C /* MorningRoutine+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MorningRoutine+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		80B699612ACBE53F00CD3F8C /* MorningRoutine+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MorningRoutine+CoreDataClass.swift"; sourceTree = "<group>"; };
+		80B699642ACBFF4900CD3F8C /* DefaultToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultToDoListRepository.swift; sourceTree = "<group>"; };
 		80EB03162A6EC11400455E05 /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		80EB031D2A6EC82F00455E05 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		80F90C612A7BB8FE007E1D23 /* URLSessionProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvidable.swift; sourceTree = "<group>"; };
@@ -761,6 +763,7 @@
 			children = (
 				87EA72A42ACBE9300042DD88 /* DefaultWeatherRepository.swift */,
 				87EA72AA2ACBF1690042DD88 /* DefaultCurrentLocationRepository.swift */,
+				80B699642ACBFF4900CD3F8C /* DefaultToDoListRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1062,6 +1065,7 @@
 				805EA6CC2AA376DC00A3545C /* Character+.swift in Sources */,
 				873555322A6954700027A847 /* CurrentWeatherDTO.swift in Sources */,
 				87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */,
+				80B699652ACBFF4900CD3F8C /* DefaultToDoListRepository.swift in Sources */,
 				873555262A694ABA0027A847 /* Responsable.swift in Sources */,
 				87EA72A92ACBED880042DD88 /* CurrentWeather.swift in Sources */,
 				805EA6B62A98AA8B00A3545C /* TODOModalViewController.swift in Sources */,
