@@ -10,5 +10,6 @@ import Foundation
 enum LocationError: Error {
 
     case canNotBeLocated
+    case unknowned
 
 }

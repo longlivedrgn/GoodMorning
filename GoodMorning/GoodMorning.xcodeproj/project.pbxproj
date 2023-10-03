@@ -92,6 +92,8 @@
 		87EA72A52ACBE9300042DD88 /* DefaultWeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA72A42ACBE9300042DD88 /* DefaultWeatherRepository.swift */; };
 		87EA72A72ACBEA260042DD88 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA72A62ACBEA260042DD88 /* WeatherRepository.swift */; };
 		87EA72A92ACBED880042DD88 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA72A82ACBED880042DD88 /* CurrentWeather.swift */; };
+		87EA72AB2ACBF1690042DD88 /* DefaultCurrentLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA72AA2ACBF1690042DD88 /* DefaultCurrentLocationRepository.swift */; };
+		87EA72AD2ACBF1C50042DD88 /* CurrentLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA72AC2ACBF1C50042DD88 /* CurrentLocationRepository.swift */; };
 		87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */; };
 		87EFC1192A8223D300843DCC /* CheckBoxButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -208,6 +210,8 @@
 		87EA72A42ACBE9300042DD88 /* DefaultWeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWeatherRepository.swift; sourceTree = "<group>"; };
 		87EA72A62ACBEA260042DD88 /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
 		87EA72A82ACBED880042DD88 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		87EA72AA2ACBF1690042DD88 /* DefaultCurrentLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCurrentLocationRepository.swift; sourceTree = "<group>"; };
+		87EA72AC2ACBF1C50042DD88 /* CurrentLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationRepository.swift; sourceTree = "<group>"; };
 		87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOCollectionViewItem.swift; sourceTree = "<group>"; };
 		87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButtonDelegate.swift; sourceTree = "<group>"; };
 		BC808D177BDBE9A5E89AA608 /* Pods-GoodMorningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -747,6 +751,7 @@
 			isa = PBXGroup;
 			children = (
 				87EA72A62ACBEA260042DD88 /* WeatherRepository.swift */,
+				87EA72AC2ACBF1C50042DD88 /* CurrentLocationRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -755,6 +760,7 @@
 			isa = PBXGroup;
 			children = (
 				87EA72A42ACBE9300042DD88 /* DefaultWeatherRepository.swift */,
+				87EA72AA2ACBF1690042DD88 /* DefaultCurrentLocationRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1039,6 +1045,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87EA72AB2ACBF1690042DD88 /* DefaultCurrentLocationRepository.swift in Sources */,
 				8735552A2A694FED0027A847 /* CurrentWeatherEndPoint.swift in Sources */,
 				8744BAE32A8E0B0100449FD9 /* CALayer+.swift in Sources */,
 				873555282A694FBA0027A847 /* RequestResponsable.swift in Sources */,
@@ -1089,6 +1096,7 @@
 				876B04DB2A66841F0077486C /* LocationError.swift in Sources */,
 				801B3B722A63D94E00B57D19 /* UIColor+.swift in Sources */,
 				875C79CD2A7CEED300B93DBD /* Priority.swift in Sources */,
+				87EA72AD2ACBF1C50042DD88 /* CurrentLocationRepository.swift in Sources */,
 				875C79CF2A7CF85B00B93DBD /* TODOHeaderView.swift in Sources */,
 				80B699622ACBE53F00CD3F8C /* MorningRoutine+CoreDataProperties.swift in Sources */,
 				805EA6BB2A9A4BF700A3545C /* EmojiTextField.swift in Sources */,
