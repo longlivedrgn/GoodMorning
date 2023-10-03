@@ -40,6 +40,10 @@ struct DefaultCoreDataStack: CoreDataStack {
         }
     }
 
+    func delete<EntityType: ManagedEntity>(_ entity: EntityType) {
+        
+    }
+
     func update() {
         if container.viewContext.hasChanges {
             do {
