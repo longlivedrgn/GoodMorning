@@ -18,7 +18,8 @@ extension MorningRoutine {
     @NSManaged public var isChecked: Bool
     @NSManaged public var routine: String?
     @NSManaged public var icon: String?
-    @NSManaged public var priorityValue: Int32
+    @NSManaged private var priorityValue: Int32
+    @NSManaged public var identifier: UUID
 
     var priority: Priority {
         get {
