@@ -43,11 +43,11 @@
 		80773AA82A57E6230020F1DD /* GoodMorningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */; };
 		80773AAA2A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */; };
 		80B699592ACBE22000CD3F8C /* GoodMorning.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80611FC62A6E7BB00093E958 /* GoodMorning.xcdatamodeld */; };
-		80B6995A2ACBE22200CD3F8C /* MorningRoutine+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800986102A645FAE00F4E010 /* MorningRoutine+CoreDataClass.swift */; };
-		80B6995B2ACBE22500CD3F8C /* MorningRoutine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800986112A645FAE00F4E010 /* MorningRoutine+CoreDataProperties.swift */; };
 		80B6995C2ACBE2F400CD3F8C /* ManagedEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B3B792A6447E300B57D19 /* ManagedEntity.swift */; };
 		80B6995D2ACBE2F800CD3F8C /* DefaultCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B3B742A63DEAC00B57D19 /* DefaultCoreDataStack.swift */; };
 		80B6995F2ACBE41400CD3F8C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B6995E2ACBE41400CD3F8C /* CoreDataStack.swift */; };
+		80B699622ACBE53F00CD3F8C /* MorningRoutine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B699602ACBE53F00CD3F8C /* MorningRoutine+CoreDataProperties.swift */; };
+		80B699632ACBE53F00CD3F8C /* MorningRoutine+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B699612ACBE53F00CD3F8C /* MorningRoutine+CoreDataClass.swift */; };
 		80EB031E2A6EC82F00455E05 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB031D2A6EC82F00455E05 /* NetworkService.swift */; };
 		80F90C622A7BB8FE007E1D23 /* URLSessionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90C612A7BB8FE007E1D23 /* URLSessionProvidable.swift */; };
 		80F90C662A7BC48E007E1D23 /* NetworkSessionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90C652A7BC48E007E1D23 /* NetworkSessionProvidable.swift */; };
@@ -117,8 +117,6 @@
 		44048179FEB6BFA45E48DE05 /* Pods-GoodMorning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorning.release.xcconfig"; path = "Target Support Files/Pods-GoodMorning/Pods-GoodMorning.release.xcconfig"; sourceTree = "<group>"; };
 		5AF9639F8258B0F2AB9B33E5 /* Pods-GoodMorning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorning.debug.xcconfig"; path = "Target Support Files/Pods-GoodMorning/Pods-GoodMorning.debug.xcconfig"; sourceTree = "<group>"; };
 		6BAC3DBE78E80CAFE9AD5EA6 /* Pods-GoodMorningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.debug.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.debug.xcconfig"; sourceTree = "<group>"; };
-		800986102A645FAE00F4E010 /* MorningRoutine+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MorningRoutine+CoreDataClass.swift"; sourceTree = "<group>"; };
-		800986112A645FAE00F4E010 /* MorningRoutine+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MorningRoutine+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		801B3B552A63D6C100B57D19 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		801B3B572A63D6C100B57D19 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		801B3B582A63D6C100B57D19 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -160,6 +158,8 @@
 		80773AA72A57E6230020F1DD /* GoodMorningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningUITests.swift; sourceTree = "<group>"; };
 		80773AA92A57E6230020F1DD /* GoodMorningUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		80B6995E2ACBE41400CD3F8C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		80B699602ACBE53F00CD3F8C /* MorningRoutine+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MorningRoutine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		80B699612ACBE53F00CD3F8C /* MorningRoutine+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MorningRoutine+CoreDataClass.swift"; sourceTree = "<group>"; };
 		80EB03162A6EC11400455E05 /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		80EB031D2A6EC82F00455E05 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		80F90C612A7BB8FE007E1D23 /* URLSessionProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvidable.swift; sourceTree = "<group>"; };
@@ -513,8 +513,8 @@
 			isa = PBXGroup;
 			children = (
 				80611FC62A6E7BB00093E958 /* GoodMorning.xcdatamodeld */,
-				800986102A645FAE00F4E010 /* MorningRoutine+CoreDataClass.swift */,
-				800986112A645FAE00F4E010 /* MorningRoutine+CoreDataProperties.swift */,
+				80B699612ACBE53F00CD3F8C /* MorningRoutine+CoreDataClass.swift */,
+				80B699602ACBE53F00CD3F8C /* MorningRoutine+CoreDataProperties.swift */,
 			);
 			path = CoreDataStack;
 			sourceTree = "<group>";
@@ -1001,6 +1001,7 @@
 				8735552A2A694FED0027A847 /* CurrentWeatherEndPoint.swift in Sources */,
 				8744BAE32A8E0B0100449FD9 /* CALayer+.swift in Sources */,
 				873555282A694FBA0027A847 /* RequestResponsable.swift in Sources */,
+				80B699632ACBE53F00CD3F8C /* MorningRoutine+CoreDataClass.swift in Sources */,
 				80F90C662A7BC48E007E1D23 /* NetworkSessionProvidable.swift in Sources */,
 				80F90CC22A84C7EB007E1D23 /* HomeView.swift in Sources */,
 				80F90CFD2A8F095A007E1D23 /* Images.swift in Sources */,
@@ -1045,13 +1046,12 @@
 				801B3B722A63D94E00B57D19 /* UIColor+.swift in Sources */,
 				875C79CD2A7CEED300B93DBD /* Priority.swift in Sources */,
 				875C79CF2A7CF85B00B93DBD /* TODOHeaderView.swift in Sources */,
+				80B699622ACBE53F00CD3F8C /* MorningRoutine+CoreDataProperties.swift in Sources */,
 				805EA6BB2A9A4BF700A3545C /* EmojiTextField.swift in Sources */,
 				80F90CD32A860E06007E1D23 /* Int+.swift in Sources */,
-				80B6995A2ACBE22200CD3F8C /* MorningRoutine+CoreDataClass.swift in Sources */,
 				80F90CC52A84C91D007E1D23 /* DoubleLabelStackView.swift in Sources */,
 				8735552D2A6951180027A847 /* OpenWeatherAPI.swift in Sources */,
 				8060B4192A6131E100726C83 /* Bundle+.swift in Sources */,
-				80B6995B2ACBE22500CD3F8C /* MorningRoutine+CoreDataProperties.swift in Sources */,
 				80F90CCD2A84E13D007E1D23 /* TodayLuckStackView.swift in Sources */,
 				87978FA62A653E7F009FE7FD /* LocationFetcherDelegate.swift in Sources */,
 				80F90CFB2A8F092C007E1D23 /* UIImage+.swift in Sources */,
