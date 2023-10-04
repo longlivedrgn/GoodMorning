@@ -79,7 +79,7 @@ final class HomeViewController: UIViewController {
             contentView.leading.trailing.bottom.centerX.equalToSuperview()
         }
 
-        let height = self.view.frame.height * 0.304
+        let height = self.view.frame.height * 0.32
         self.TODOCollectionView.snp.makeConstraints { todoCollectionView in
             todoCollectionView.height.equalTo(height)
         }
