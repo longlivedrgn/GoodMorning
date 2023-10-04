@@ -53,7 +53,6 @@
 		80EB031E2A6EC82F00455E05 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB031D2A6EC82F00455E05 /* NetworkService.swift */; };
 		80F90C622A7BB8FE007E1D23 /* URLSessionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90C612A7BB8FE007E1D23 /* URLSessionProvidable.swift */; };
 		80F90C662A7BC48E007E1D23 /* NetworkSessionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90C652A7BC48E007E1D23 /* NetworkSessionProvidable.swift */; };
-		80F90CC22A84C7EB007E1D23 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90CC12A84C7EB007E1D23 /* HomeView.swift */; };
 		80F90CC52A84C91D007E1D23 /* DoubleLabelStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90CC42A84C91D007E1D23 /* DoubleLabelStackView.swift */; };
 		80F90CC72A84CA51007E1D23 /* PretendardLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90CC62A84CA51007E1D23 /* PretendardLabel.swift */; };
 		80F90CCB2A84CF6C007E1D23 /* UIStackVeiw+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90CCA2A84CF6C007E1D23 /* UIStackVeiw+.swift */; };
@@ -173,7 +172,6 @@
 		80EB031D2A6EC82F00455E05 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		80F90C612A7BB8FE007E1D23 /* URLSessionProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvidable.swift; sourceTree = "<group>"; };
 		80F90C652A7BC48E007E1D23 /* NetworkSessionProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProvidable.swift; sourceTree = "<group>"; };
-		80F90CC12A84C7EB007E1D23 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		80F90CC42A84C91D007E1D23 /* DoubleLabelStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLabelStackView.swift; sourceTree = "<group>"; };
 		80F90CC62A84CA51007E1D23 /* PretendardLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PretendardLabel.swift; sourceTree = "<group>"; };
 		80F90CCA2A84CF6C007E1D23 /* UIStackVeiw+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackVeiw+.swift"; sourceTree = "<group>"; };
@@ -566,7 +564,6 @@
 			isa = PBXGroup;
 			children = (
 				80F90D042A933F6A007E1D23 /* TODO */,
-				80F90CC12A84C7EB007E1D23 /* HomeView.swift */,
 				80F90CC42A84C91D007E1D23 /* DoubleLabelStackView.swift */,
 				80F90CCC2A84E13D007E1D23 /* TodayLuckStackView.swift */,
 				80F90CCE2A855CDA007E1D23 /* WeatherStackView.swift */,
@@ -1057,7 +1054,6 @@
 				873555282A694FBA0027A847 /* RequestResponsable.swift in Sources */,
 				80B699632ACBE53F00CD3F8C /* MorningRoutine+CoreDataClass.swift in Sources */,
 				80F90C662A7BC48E007E1D23 /* NetworkSessionProvidable.swift in Sources */,
-				80F90CC22A84C7EB007E1D23 /* HomeView.swift in Sources */,
 				80F90CFD2A8F095A007E1D23 /* Images.swift in Sources */,
 				877E3FC82A6E3BC500BB06FA /* WeatherDTO.swift in Sources */,
 				80F90CCF2A855CDA007E1D23 /* WeatherStackView.swift in Sources */,

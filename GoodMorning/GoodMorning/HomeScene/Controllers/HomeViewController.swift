@@ -10,66 +10,124 @@ import SnapKit
 
 final class HomeViewController: UIViewController {
 
-    private typealias DataSource = UICollectionViewDiffableDataSource<Section, TODOItem>
-    private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, TODOItem>
     private var backingStore: [TODOItem] = TODOItem.allItems
     private var datasource: DataSource?
 
-    private let containerView: UIView = {
-        let view = UIView()
-        return view
-    }()
+    private let scrollView = UIScrollView()
+    private let contentView = UIStackView()
+
+    private let titleStackView = DoubleLabelStackView(type: .title, nickName: "Miro")
 
     private lazy var TODOCollectionView: UICollectionView = {
         let collectionview = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionview.layer.cornerRadius = 30
         collectionview.isScrollEnabled = false
+        collectionview.backgroundColor = .white
 
         return collectionview
     }()
 
+    private let weatherStackView = WeatherStackView(weather: .drizzle, temperature: 27)
+
+    private let todayLuckStackView = TodayLuckStackView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         configureViews()
-        configureTODOModal()
+//        configureTODOModal()
         applySnapShot()
     }
 
     private func configureViews() {
-        configureContainerView()
-        configureCollectionView()
+        configureContentViewMargins()
+
+        configureView()
+        setupAutoLayout()
+
         configureDataSource()
     }
 
-    private func configureContainerView() {
-        view.addSubview(containerView)
-        containerView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.height.equalTo(view.snp.height).dividedBy(3)
-        }
+    private func configureContentViewMargins() {
+        self.contentView.isLayoutMarginsRelativeArrangement = true
+
+        let layoutMargins = self.view.frame.width * 0.058
+        self.contentView.layoutMargins = .init(
+            top: layoutMargins,
+            left: layoutMargins,
+            bottom: layoutMargins,
+            right: layoutMargins
+        )
     }
 
-    private func configureCollectionView() {
-        containerView.addSubview(TODOCollectionView)
-        TODOCollectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+    private func configureView() {
+        self.navigationController?.navigationBar.isHidden = true
+        self.view.backgroundColor = .design(.mainBackground)
+        self.contentView.axis = .vertical
+        self.contentView.spacing = 15
+    }
+
+    private func setupAutoLayout() {
+        self.view.addSubview(scrollView)
+        self.scrollView.snp.makeConstraints { scrollView in
+            scrollView.top.bottom.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
         }
+
+        self.scrollView.addSubview(contentView)
+        self.contentView.snp.makeConstraints { contentView in
+            contentView.top.equalTo(scrollView.contentLayoutGuide)
+            contentView.leading.trailing.bottom.centerX.equalToSuperview()
+        }
+
+        let height = self.view.frame.height * 0.304
+        self.TODOCollectionView.snp.makeConstraints { todoCollectionView in
+            todoCollectionView.height.equalTo(height)
+        }
+
+        let size = self.view.frame.height * 0.258
+        self.weatherStackView.snp.makeConstraints { weatherStackView in
+            weatherStackView.width.height.equalTo(size)
+        }
+
+        let weatherStackView = makeWeatherStackView()
+        self.contentView.addArrangedSubviews(
+            [titleStackView, TODOCollectionView, weatherStackView, todayLuckStackView]
+        )
+    }
+
+    private func makeWeatherStackView() -> UIStackView {
+        let emptyView: UIView = {
+            let view = UIView()
+            view.backgroundColor = .white
+            view.clipsToBounds = true
+            view.layer.cornerRadius = 20
+            return view
+        }()
+
+        let stackView: UIStackView = {
+            let stackView = UIStackView()
+            stackView.addArrangedSubviews([weatherStackView, emptyView])
+            stackView.axis = .horizontal
+            stackView.spacing = 13
+            return stackView
+        }()
+
+        return stackView
     }
 
     private func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
             var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+            configuration.backgroundColor = .clear
             configuration.headerMode = .supplementary
-            configuration.headerTopPadding = 15
+            configuration.headerTopPadding = 10
 
             let section = NSCollectionLayoutSection.list(
                 using: configuration,
                 layoutEnvironment: layoutEnvironment
             )
             section.interGroupSpacing = 7
-            section.contentInsets.top = 10
+            section.contentInsets.top = 7
 
             return section
         }
@@ -82,8 +140,7 @@ final class HomeViewController: UIViewController {
             cell, indexPath, item in
             cell.updateWithItem(item)
             cell.configureDelegate(self)
-            cell.accessories = [.delete(displayed: .whenEditing, actionHandler: {
-                [weak self] in
+            cell.accessories = [.delete(displayed: .whenEditing, actionHandler: { [weak self] in
                 self?.delete(item)
             }), .reorder()]
         }
@@ -171,6 +228,9 @@ extension HomeViewController: CheckBoxButtonDelegate {
 }
 
 extension HomeViewController {
+
+    private typealias DataSource = UICollectionViewDiffableDataSource<Section, TODOItem>
+    private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, TODOItem>
 
     enum Section {
 
