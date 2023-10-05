@@ -40,6 +40,17 @@ final class TODOModalViewController: UIViewController {
         return segmentedControl
     }()
 
+    let priorityView: UIView = {
+        let view = UIView()
+        return view
+    }()
+
+    let priorityLabel: UILabel = {
+        let label = PretendardLabel(text: "중요도", size: 15, weight: .semibold)
+        label.textColor = .black.withAlphaComponent(0.7)
+        return label
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,11 +58,17 @@ final class TODOModalViewController: UIViewController {
         configureNavigationBar()
         setupTODOModal()
         setupTextView()
+        setupPriorityView()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+
+}
+
+// MARK: Functions - private
+extension TODOModalViewController {
 
     private func configureTODOModal() {
         self.view.backgroundColor = .systemBackground
@@ -85,8 +102,7 @@ final class TODOModalViewController: UIViewController {
             let stackView = UIStackView(frame: .zero)
 
             let titleStackView = makeTitleStackView()
-            let priorityStackView = makePriorityLabelView()
-            stackView.addArrangedSubviews([titleStackView, textView, priorityStackView])
+            stackView.addArrangedSubviews([titleStackView, textView, priorityView])
 
             let spacing = view.frame.height * 0.035
             stackView.spacing = spacing
@@ -123,42 +139,29 @@ final class TODOModalViewController: UIViewController {
         return stackView
     }
 
-    private func makePriorityLabelView() -> UIView {
-        let label: UILabel = {
-            let label = PretendardLabel(text: "중요도", size: 15, weight: .semibold)
-            label.textColor = .black.withAlphaComponent(0.7)
-            return label
-        }()
+    private func setupPriorityView() {
+        priorityView.addSubview(priorityLabel)
+        priorityLabel.snp.makeConstraints { label in
+            label.leading.top.equalToSuperview()
+        }
 
-        let view: UIView = {
-            let view = UIView()
-            view.addSubview(label)
-            label.snp.makeConstraints { label in
-                label.leading.top.equalToSuperview()
-            }
+        priorityView.addSubview(questionButton)
+        questionButton.snp.makeConstraints { questionButton in
+            questionButton.leading.equalTo(priorityLabel.snp.trailing).offset(4)
+            questionButton.top.equalToSuperview()
+            questionButton.centerY.equalTo(priorityLabel.snp.centerY)
+        }
 
-            view.addSubview(questionButton)
-            questionButton.snp.makeConstraints { questionButton in
-                questionButton.leading.equalTo(label.snp.trailing).offset(4)
-                questionButton.top.equalToSuperview()
-                questionButton.centerY.equalTo(label.snp.centerY)
-            }
-
-            view.addSubview(prioritySegmentedControl)
-            let controlTopOffset: CGFloat = self.view.frame.height * 0.02
-            let controlHeight: CGFloat = self.view.frame.height * 0.047
-            let controlWidth: CGFloat = self.view.frame.width * 0.433
-            prioritySegmentedControl.snp.makeConstraints { control in
-                control.top.equalTo(label.snp.bottom).offset(controlTopOffset)
-                control.leading.equalToSuperview()
-                control.height.equalTo(controlHeight)
-                control.width.equalTo(controlWidth)
-            }
-
-            return view
-        }()
-
-        return view
+        priorityView.addSubview(prioritySegmentedControl)
+        let controlTopOffset: CGFloat = self.view.frame.height * 0.02
+        let controlHeight: CGFloat = self.view.frame.height * 0.047
+        let controlWidth: CGFloat = self.view.frame.width * 0.433
+        prioritySegmentedControl.snp.makeConstraints { control in
+            control.top.equalTo(priorityLabel.snp.bottom).offset(controlTopOffset)
+            control.leading.equalToSuperview()
+            control.height.equalTo(controlHeight)
+            control.width.equalTo(controlWidth)
+        }
     }
 
     private func setupTextView() {
@@ -167,6 +170,11 @@ final class TODOModalViewController: UIViewController {
             textView.height.equalTo(height)
         }
     }
+
+}
+
+// MARK: Functions - @objc
+extension TODOModalViewController {
 
     @objc private func deleteButtonDidTap() {
         print("delete button 눌림")
