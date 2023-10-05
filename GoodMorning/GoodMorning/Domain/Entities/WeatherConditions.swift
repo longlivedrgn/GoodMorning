@@ -30,30 +30,18 @@ enum WeatherConditions: String {
 
     static func condition(forCode code: Int) -> WeatherConditions? {
         switch code {
-        case 200...232:
-            return .thunderstorm
-        case 300...321:
-            return .drizzle
-        case 600...622:
-            return .snow
-        case 701...781:
-            return .atmosphere
-        case 800...800:
-            return .clear
-        case 500...504:
-            return .rain
-        case 511...511:
-            return .freezing
-        case 520...531:
-            return .shower
-        case 801...801:
-            return .few
-        case 802...802:
-            return .scattered
-        case 803...804:
-            return .broken
-        default:
-            return nil
+        case 200...232: return .thunderstorm
+        case 300...321: return .drizzle
+        case 600...622: return .snow
+        case 701...781: return .atmosphere
+        case 800...800: return .clear
+        case 500...504: return .rain
+        case 511: return .freezing
+        case 520...531: return .shower
+        case 801: return .few
+        case 802: return .scattered
+        case 803...804: return .broken
+        default: return nil
         }
     }
 
