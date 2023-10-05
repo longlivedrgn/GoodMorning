@@ -14,7 +14,9 @@ disabled_rules:
     - unused_closure_parameter
     - closure_parameter_position
     - identifier_name
+type_body_length:
+    warning: 100
 function_body_length:
-    error: 30
+    warning: 20
 line_length:
     error: 100
