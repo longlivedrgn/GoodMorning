@@ -19,7 +19,10 @@ final class HomeViewController: UIViewController {
     private let titleStackView = DoubleLabelStackView(type: .title, nickName: "Miro")
 
     private lazy var TODOCollectionView: UICollectionView = {
-        let collectionview = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        let collectionview = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: ToDoCollectionViewLayout.createLayout()
+        )
         collectionview.layer.cornerRadius = 30
         collectionview.isScrollEnabled = false
         collectionview.backgroundColor = .white
@@ -29,6 +32,21 @@ final class HomeViewController: UIViewController {
 
     private let weatherStackView = WeatherStackView(weather: .drizzle, temperature: 27)
 
+    let emptyView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 20
+        return view
+    }()
+
+    let weatherTotalStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 13
+        return stackView
+    }()
+
     private let todayLuckStackView = TodayLuckStackView()
 
     override func viewDidLoad() {
@@ -37,15 +55,22 @@ final class HomeViewController: UIViewController {
         configureViews()
 //        configureTODOModal()
         applySnapShot()
+
+        configureDataSource()
+        configureSupplementaryView()
+        configureReorderingAccessory()
     }
+
+}
+
+extension HomeViewController {
 
     private func configureViews() {
         configureContentViewMargins()
 
         configureView()
-        setupAutoLayout()
-
-        configureDataSource()
+        setupView()
+        setupContentView()
     }
 
     private func configureContentViewMargins() {
@@ -67,7 +92,7 @@ final class HomeViewController: UIViewController {
         self.contentView.spacing = 15
     }
 
-    private func setupAutoLayout() {
+    private func setupView() {
         self.view.addSubview(scrollView)
         self.scrollView.snp.makeConstraints { scrollView in
             scrollView.top.bottom.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
@@ -78,7 +103,9 @@ final class HomeViewController: UIViewController {
             contentView.top.equalTo(scrollView.contentLayoutGuide)
             contentView.leading.trailing.bottom.centerX.equalToSuperview()
         }
+    }
 
+    private func setupContentView() {
         let height = self.view.frame.height * 0.32
         self.TODOCollectionView.snp.makeConstraints { todoCollectionView in
             todoCollectionView.height.equalTo(height)
@@ -89,66 +116,20 @@ final class HomeViewController: UIViewController {
             weatherStackView.width.height.equalTo(size)
         }
 
-        let weatherStackView = makeWeatherStackView()
+        weatherTotalStackView.addArrangedSubviews([weatherStackView, emptyView])
         self.contentView.addArrangedSubviews(
-            [titleStackView, TODOCollectionView, weatherStackView, todayLuckStackView]
+            [titleStackView, TODOCollectionView, weatherTotalStackView, todayLuckStackView]
         )
     }
 
-    private func makeWeatherStackView() -> UIStackView {
-        let emptyView: UIView = {
-            let view = UIView()
-            view.backgroundColor = .white
-            view.clipsToBounds = true
-            view.layer.cornerRadius = 20
-            return view
-        }()
-
-        let stackView: UIStackView = {
-            let stackView = UIStackView()
-            stackView.addArrangedSubviews([weatherStackView, emptyView])
-            stackView.axis = .horizontal
-            stackView.spacing = 13
-            return stackView
-        }()
-
-        return stackView
-    }
-
-    private func createLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
-            var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-            configuration.backgroundColor = .clear
-            configuration.headerMode = .supplementary
-            configuration.headerTopPadding = 10
-
-            let section = NSCollectionLayoutSection.list(
-                using: configuration,
-                layoutEnvironment: layoutEnvironment
-            )
-            section.interGroupSpacing = 7
-            section.contentInsets.top = 7
-
-            return section
-        }
-
-        return layout
-    }
-
     private func configureDataSource() {
-        let cellRegistration = UICollectionView.CellRegistration<TODOListCell, TODOItem> {
+        let cellRegistration = CellRegistration {
             cell, indexPath, item in
             cell.updateWithItem(item)
             cell.configureDelegate(self)
             cell.accessories = [.delete(displayed: .whenEditing, actionHandler: { [weak self] in
                 self?.delete(item)
             }), .reorder()]
-        }
-
-        let headerRegistration = UICollectionView.SupplementaryRegistration<TODOHeaderView>(
-            elementKind: UICollectionView.elementKindSectionHeader
-        ) { supplementaryView, elementKind, indexPath in
-            supplementaryView.delegate = self
         }
 
         datasource = UICollectionViewDiffableDataSource<Section, TODOItem>(
@@ -160,6 +141,14 @@ final class HomeViewController: UIViewController {
                 item: item
             )
         }
+    }
+
+    private func configureSupplementaryView() {
+        let headerRegistration = HeaderRegistration(
+            elementKind: UICollectionView.elementKindSectionHeader
+        ) { supplementaryView, elementKind, indexPath in
+            supplementaryView.delegate = self
+        }
 
         datasource?.supplementaryViewProvider = { collectionView, kind, indexPath in
             return collectionView.dequeueConfiguredReusableSupplementary(
@@ -167,8 +156,6 @@ final class HomeViewController: UIViewController {
                 for: indexPath
             )
         }
-
-        configureReorderingAccessory()
     }
 
     private func configureTODOModal() {
@@ -204,6 +191,19 @@ final class HomeViewController: UIViewController {
 
 }
 
+// MARK: Functions - CheckBoxButtonDelegate
+extension HomeViewController: CheckBoxButtonDelegate {
+
+    func checkBoxButton(
+        _ checkBoxButton: CheckBoxButton,
+        didCheckBoxButtonTapped sender: UIButton
+    ) {
+        // button 이벤트 전달!
+    }
+
+}
+
+// MARK: Functions - TODOHeaderViewDelegate
 extension HomeViewController: TODOHeaderViewDelegate {
 
     func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didEditButtonTapped sender: UIButton) {
@@ -216,21 +216,14 @@ extension HomeViewController: TODOHeaderViewDelegate {
 
 }
 
-extension HomeViewController: CheckBoxButtonDelegate {
-
-    func checkBoxButton(
-        _ checkBoxButton: CheckBoxButton,
-        didCheckBoxButtonTapped sender: UIButton
-    ) {
-        // button 이벤트 전달!
-    }
-
-}
-
 extension HomeViewController {
 
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, TODOItem>
     private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, TODOItem>
+
+    private typealias CellRegistration = UICollectionView.CellRegistration<TODOListCell, TODOItem>
+    private typealias HeaderRegistration =
+        UICollectionView.SupplementaryRegistration<TODOHeaderView>
 
     enum Section {
 

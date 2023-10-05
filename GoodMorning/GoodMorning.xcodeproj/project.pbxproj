@@ -10,6 +10,7 @@
 		2AA8E0E66D1C2C13361E90D3 /* Pods_GoodMorning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA403186C607188DBDCA0A62 /* Pods_GoodMorning.framework */; };
 		5B6C17EBB4DD7EF12285B757 /* Pods_GoodMorning_GoodMorningUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A73B06F9FAFA89A97431E8 /* Pods_GoodMorning_GoodMorningUITests.framework */; };
 		61C9D522AD2D75840A99DAF2 /* Pods_GoodMorningTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 114C112F21E8009D0AC8150F /* Pods_GoodMorningTests.framework */; };
+		800B4CDA2ACF1F8C00EE3D93 /* ToDoCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800B4CD92ACF1F8C00EE3D93 /* ToDoCollectionViewLayout.swift */; };
 		801B3B5E2A63D6C100B57D19 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 801B3B552A63D6C100B57D19 /* Pretendard-Bold.otf */; };
 		801B3B602A63D6C100B57D19 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 801B3B572A63D6C100B57D19 /* Pretendard-Medium.otf */; };
 		801B3B612A63D6C100B57D19 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 801B3B582A63D6C100B57D19 /* Pretendard-ExtraBold.otf */; };
@@ -123,6 +124,7 @@
 		44048179FEB6BFA45E48DE05 /* Pods-GoodMorning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorning.release.xcconfig"; path = "Target Support Files/Pods-GoodMorning/Pods-GoodMorning.release.xcconfig"; sourceTree = "<group>"; };
 		5AF9639F8258B0F2AB9B33E5 /* Pods-GoodMorning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorning.debug.xcconfig"; path = "Target Support Files/Pods-GoodMorning/Pods-GoodMorning.debug.xcconfig"; sourceTree = "<group>"; };
 		6BAC3DBE78E80CAFE9AD5EA6 /* Pods-GoodMorningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.debug.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.debug.xcconfig"; sourceTree = "<group>"; };
+		800B4CD92ACF1F8C00EE3D93 /* ToDoCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCollectionViewLayout.swift; sourceTree = "<group>"; };
 		801B3B552A63D6C100B57D19 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		801B3B572A63D6C100B57D19 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		801B3B582A63D6C100B57D19 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 			isa = PBXGroup;
 			children = (
 				80F90D002A8F3E7B007E1D23 /* HomeViewController.swift */,
+				800B4CD92ACF1F8C00EE3D93 /* ToDoCollectionViewLayout.swift */,
 				80F90D072A93401C007E1D23 /* Interface */,
 			);
 			path = Controllers;
@@ -1098,6 +1101,7 @@
 				80F90CC72A84CA51007E1D23 /* PretendardLabel.swift in Sources */,
 				876B04DB2A66841F0077486C /* LocationError.swift in Sources */,
 				801B3B722A63D94E00B57D19 /* UIColor+.swift in Sources */,
+				800B4CDA2ACF1F8C00EE3D93 /* ToDoCollectionViewLayout.swift in Sources */,
 				875C79CD2A7CEED300B93DBD /* Priority.swift in Sources */,
 				87EA72AD2ACBF1C50042DD88 /* CurrentLocationRepository.swift in Sources */,
 				875C79CF2A7CF85B00B93DBD /* TODOHeaderView.swift in Sources */,
