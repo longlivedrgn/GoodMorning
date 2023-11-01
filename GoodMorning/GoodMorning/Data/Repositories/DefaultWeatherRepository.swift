@@ -25,7 +25,7 @@ extension DefaultWeatherRepository: WeatherRepository {
     ) async throws -> Result<CurrentWeather, NetworkError> {
 
         let currentWeatherEndPoint = CurrentWeatherEndPoint(coordinate: coordinate)
-        let networkResult = try await  networkService.request(currentWeatherEndPoint)
+        let networkResult = try await networkService.request(currentWeatherEndPoint)
 
         switch networkResult {
         case .success(let currentWeatherDTO):
