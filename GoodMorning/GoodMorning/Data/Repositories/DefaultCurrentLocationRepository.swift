@@ -32,4 +32,5 @@ extension DefaultCurrentLocationRepository: CurrentLocationRepository {
 
         return coreLocationResult
     }
+
 }
