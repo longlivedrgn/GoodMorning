@@ -8,8 +8,8 @@
 protocol ToDoListRepository {
 
     func fetchToDoList() -> [TODOItem]
-    func addToDoListItem(item: TODOItem) async throws
-    func deleteToDoListItem(item: TODOItem) throws
+    func addToDoItem(item: TODOItem) async throws
+    func deleteToDoItem(item: TODOItem) throws
     func updateToDoItem(item: TODOItem) throws
 
 }

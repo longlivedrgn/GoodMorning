@@ -38,7 +38,7 @@ extension DefaultToDoListRepository {
         return item
     }
 
-    func addToDoListItem(item: TODOItem) async throws {
+    func addToDoItem(item: TODOItem) async throws {
         guard let entity: MorningRoutine = await coreDataStack.create() else {
             throw CoreDataError.failToMakeEntity
         }
@@ -51,7 +51,7 @@ extension DefaultToDoListRepository {
         coreDataStack.save()
     }
 
-    func deleteToDoListItem(item: TODOItem) throws {
+    func deleteToDoItem(item: TODOItem) throws {
         let morningRoutine = fetchMorningRoutine(item)
 
         guard let deleteItem = morningRoutine else {
