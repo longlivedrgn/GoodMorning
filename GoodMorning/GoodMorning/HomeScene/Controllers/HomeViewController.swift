@@ -10,7 +10,7 @@ import SnapKit
 
 final class HomeViewController: UIViewController {
 
-    private var backingStore: [TODOItem] = TODOItem.allItems
+    private var backingStore: [ToDoItem] = ToDoItem.allItems
     private var datasource: DataSource?
 
     private let scrollView = UIScrollView()
@@ -132,7 +132,7 @@ extension HomeViewController {
             }), .reorder()]
         }
 
-        datasource = UICollectionViewDiffableDataSource<Section, TODOItem>(
+        datasource = UICollectionViewDiffableDataSource<Section, ToDoItem>(
             collectionView: TODOCollectionView
         ) { collectionView, indexPath, item in
             return collectionView.dequeueConfiguredReusableCell(
@@ -164,7 +164,7 @@ extension HomeViewController {
         present(UINavigationController(rootViewController: todoModalViewController), animated: true)
     }
 
-    private func delete(_ item: TODOItem) {
+    private func delete(_ item: ToDoItem) {
         guard let indexPath = datasource?.indexPath(for: item) else { return }
         backingStore.remove(at: indexPath.item)
         applySnapShot()
@@ -218,10 +218,10 @@ extension HomeViewController: TODOHeaderViewDelegate {
 
 extension HomeViewController {
 
-    private typealias DataSource = UICollectionViewDiffableDataSource<Section, TODOItem>
-    private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, TODOItem>
+    private typealias DataSource = UICollectionViewDiffableDataSource<Section, ToDoItem>
+    private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, ToDoItem>
 
-    private typealias CellRegistration = UICollectionView.CellRegistration<TODOListCell, TODOItem>
+    private typealias CellRegistration = UICollectionView.CellRegistration<TODOListCell, ToDoItem>
     private typealias HeaderRegistration =
         UICollectionView.SupplementaryRegistration<TODOHeaderView>
 

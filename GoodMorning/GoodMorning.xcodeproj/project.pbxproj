@@ -52,6 +52,7 @@
 		80B699652ACBFF4900CD3F8C /* DefaultToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B699642ACBFF4900CD3F8C /* DefaultToDoListRepository.swift */; };
 		80B699672ACBFFC400CD3F8C /* ToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B699662ACBFFC400CD3F8C /* ToDoListRepository.swift */; };
 		80BAF64F2AF513C00064196A /* ToDoListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BAF64E2AF513C00064196A /* ToDoListUseCase.swift */; };
+		80BAF6522AF51B970064196A /* ToDoListRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BAF6512AF51B970064196A /* ToDoListRepositoryTest.swift */; };
 		80EB031E2A6EC82F00455E05 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB031D2A6EC82F00455E05 /* NetworkService.swift */; };
 		80F90C622A7BB8FE007E1D23 /* URLSessionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90C612A7BB8FE007E1D23 /* URLSessionProvidable.swift */; };
 		80F90C662A7BC48E007E1D23 /* NetworkSessionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90C652A7BC48E007E1D23 /* NetworkSessionProvidable.swift */; };
@@ -97,7 +98,7 @@
 		87EA72A92ACBED880042DD88 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA72A82ACBED880042DD88 /* CurrentWeather.swift */; };
 		87EA72AB2ACBF1690042DD88 /* DefaultCurrentLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA72AA2ACBF1690042DD88 /* DefaultCurrentLocationRepository.swift */; };
 		87EA72AD2ACBF1C50042DD88 /* CurrentLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA72AC2ACBF1C50042DD88 /* CurrentLocationRepository.swift */; };
-		87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */; };
+		87EFC1112A8203F900843DCC /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1102A8203F900843DCC /* ToDoItem.swift */; };
 		87EFC1192A8223D300843DCC /* CheckBoxButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +173,7 @@
 		80B699642ACBFF4900CD3F8C /* DefaultToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultToDoListRepository.swift; sourceTree = "<group>"; };
 		80B699662ACBFFC400CD3F8C /* ToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListRepository.swift; sourceTree = "<group>"; };
 		80BAF64E2AF513C00064196A /* ToDoListUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListUseCase.swift; sourceTree = "<group>"; };
+		80BAF6512AF51B970064196A /* ToDoListRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListRepositoryTest.swift; sourceTree = "<group>"; };
 		80EB03162A6EC11400455E05 /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		80EB031D2A6EC82F00455E05 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		80F90C612A7BB8FE007E1D23 /* URLSessionProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvidable.swift; sourceTree = "<group>"; };
@@ -218,7 +220,7 @@
 		87EA72A82ACBED880042DD88 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		87EA72AA2ACBF1690042DD88 /* DefaultCurrentLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCurrentLocationRepository.swift; sourceTree = "<group>"; };
 		87EA72AC2ACBF1C50042DD88 /* CurrentLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationRepository.swift; sourceTree = "<group>"; };
-		87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOCollectionViewItem.swift; sourceTree = "<group>"; };
+		87EFC1102A8203F900843DCC /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		87EFC1182A8223D300843DCC /* CheckBoxButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButtonDelegate.swift; sourceTree = "<group>"; };
 		BC808D177BDBE9A5E89AA608 /* Pods-GoodMorningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodMorningTests.release.xcconfig"; path = "Target Support Files/Pods-GoodMorningTests/Pods-GoodMorningTests.release.xcconfig"; sourceTree = "<group>"; };
 		CA403186C607188DBDCA0A62 /* Pods_GoodMorning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodMorning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -481,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				80773A9D2A57E6230020F1DD /* GoodMorningTests.swift */,
+				80BAF6502AF5148C0064196A /* Repositories */,
 				803569CB2A76451A001C92BC /* NetworkTest */,
 				801B3B7B2A6449EB00B57D19 /* Persistence */,
 				876B04E22A668CEF0077486C /* CoreLocationTest */,
@@ -524,6 +527,14 @@
 				80B699602ACBE53F00CD3F8C /* MorningRoutine+CoreDataProperties.swift */,
 			);
 			path = CoreDataStack;
+			sourceTree = "<group>";
+		};
+		80BAF6502AF5148C0064196A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				80BAF6512AF51B970064196A /* ToDoListRepositoryTest.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		80EB03172A6EC68F00455E05 /* Domain */ = {
@@ -598,7 +609,7 @@
 			isa = PBXGroup;
 			children = (
 				875C79CC2A7CEED300B93DBD /* Priority.swift */,
-				87EFC1102A8203F900843DCC /* TODOCollectionViewItem.swift */,
+				87EFC1102A8203F900843DCC /* ToDoItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1069,7 +1080,7 @@
 				873555242A694AB40027A847 /* Requestable.swift in Sources */,
 				805EA6CC2AA376DC00A3545C /* Character+.swift in Sources */,
 				873555322A6954700027A847 /* CurrentWeatherDTO.swift in Sources */,
-				87EFC1112A8203F900843DCC /* TODOCollectionViewItem.swift in Sources */,
+				87EFC1112A8203F900843DCC /* ToDoItem.swift in Sources */,
 				80B699652ACBFF4900CD3F8C /* DefaultToDoListRepository.swift in Sources */,
 				873555262A694ABA0027A847 /* Responsable.swift in Sources */,
 				87EA72A92ACBED880042DD88 /* CurrentWeather.swift in Sources */,
@@ -1131,6 +1142,7 @@
 				802CE6FE2A76ACBC00F41513 /* JSONLoader.swift in Sources */,
 				802CE7042A7767E500F41513 /* SerializationTests.swift in Sources */,
 				80773A9E2A57E6230020F1DD /* GoodMorningTests.swift in Sources */,
+				80BAF6522AF51B970064196A /* ToDoListRepositoryTest.swift in Sources */,
 				803569DC2A768E76001C92BC /* CurrentWeather.json in Sources */,
 				873555382A6959DC0027A847 /* OpenWeatherAPIEndPointTest.swift in Sources */,
 				876B04E12A6689070077486C /* MockLocationFetcher.swift in Sources */,

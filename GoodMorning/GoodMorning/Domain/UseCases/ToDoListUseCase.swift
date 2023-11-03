@@ -15,20 +15,20 @@ final class ToDoListUseCase {
         self.todoListRepository = todoListRepository
     }
 
-    func fetchToDoList() -> [TODOItem] {
+    func fetchToDoList() -> [ToDoItem] {
         return todoListRepository.fetchToDoList()
     }
 
-    func updateToDoItem(_ item: TODOItem) throws {
+    func updateToDoItem(_ item: ToDoItem) throws {
         try todoListRepository.updateToDoItem(item: item)
     }
 
-    func deleteToDoItem(_ item: TODOItem) throws {
+    func deleteToDoItem(_ item: ToDoItem) throws {
         try todoListRepository.deleteToDoItem(item: item)
     }
 
-    func addToDoItem(_ item: TODOItem) async throws {
+    func addToDoItem(_ item: ToDoItem) async throws {
         try await todoListRepository.addToDoItem(item: item)
     }
-    
+
 }

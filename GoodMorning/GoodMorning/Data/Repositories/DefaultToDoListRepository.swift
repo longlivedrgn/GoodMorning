@@ -24,10 +24,10 @@ final class DefaultToDoListRepository: ToDoListRepository {
 
 extension DefaultToDoListRepository {
 
-    func fetchToDoList() -> [TODOItem] {
+    func fetchToDoList() -> [ToDoItem] {
         let morningRoutine: [MorningRoutine] = coreDataStack.fetch()
         let item = morningRoutine.map { routine in
-            TODOItem(
+            ToDoItem(
                 iconImage: routine.icon,
                 description: routine.description,
                 isChecked: routine.isChecked,
@@ -38,7 +38,7 @@ extension DefaultToDoListRepository {
         return item
     }
 
-    func addToDoItem(item: TODOItem) async throws {
+    func addToDoItem(item: ToDoItem) async throws {
         guard let entity: MorningRoutine = await coreDataStack.create() else {
             throw CoreDataError.failToMakeEntity
         }
@@ -51,7 +51,7 @@ extension DefaultToDoListRepository {
         coreDataStack.save()
     }
 
-    func deleteToDoItem(item: TODOItem) throws {
+    func deleteToDoItem(item: ToDoItem) throws {
         let morningRoutine = fetchMorningRoutine(item)
 
         guard let deleteItem = morningRoutine else {
@@ -62,7 +62,7 @@ extension DefaultToDoListRepository {
         coreDataStack.save()
     }
 
-    func updateToDoItem(item: TODOItem) throws {
+    func updateToDoItem(item: ToDoItem) throws {
         let morningRoutine = fetchMorningRoutine(item)
 
         guard let updateItem = morningRoutine else {
@@ -81,7 +81,7 @@ extension DefaultToDoListRepository {
 
 extension DefaultToDoListRepository {
 
-    private func fetchMorningRoutine(_ item: TODOItem) -> MorningRoutine? {
+    private func fetchMorningRoutine(_ item: ToDoItem) -> MorningRoutine? {
         guard let morningRoutine: MorningRoutine = coreDataStack.fetch(id: item.identifier) else {
             return nil
         }
