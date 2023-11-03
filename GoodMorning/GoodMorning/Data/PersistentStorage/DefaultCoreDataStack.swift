@@ -54,7 +54,7 @@ final class DefaultCoreDataStack: CoreDataStack {
     func fetch<EntityType: ManagedEntity>(id: UUID) -> EntityType? {
         do {
             let request = EntityType.makeNewFetchRequest()
-            let predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            let predicate = NSPredicate(format: "identifier == %@", id as CVarArg)
             request.predicate = predicate
             let fetchResult = try container.viewContext.fetch(request)
             return fetchResult.first
