@@ -58,7 +58,7 @@ final class DefaultCoreDataStack: CoreDataStack {
         }
     }
 
-    func update() {
+    func save() {
         backgroundContext.perform {
             if self.backgroundContext.hasChanges {
                 do {
