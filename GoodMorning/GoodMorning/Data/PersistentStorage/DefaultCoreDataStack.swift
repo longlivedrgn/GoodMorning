@@ -51,6 +51,19 @@ final class DefaultCoreDataStack: CoreDataStack {
         }
     }
 
+    func fetch<EntityType: ManagedEntity>(id: UUID) -> EntityType? {
+        do {
+            let request = EntityType.makeNewFetchRequest()
+            let predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            request.predicate = predicate
+            let fetchResult = try container.viewContext.fetch(request)
+            return fetchResult.first
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
+
     func delete<EntityType: ManagedEntity>(_ entity: EntityType) {
         backgroundContext.perform {
             guard let object = entity as? NSManagedObject else { return }

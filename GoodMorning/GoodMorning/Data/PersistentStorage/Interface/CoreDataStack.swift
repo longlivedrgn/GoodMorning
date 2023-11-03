@@ -9,6 +9,7 @@ protocol CoreDataStack {
 
     func create<EntityType: ManagedEntity>() async -> EntityType?
     func fetch<EntityType: ManagedEntity>() -> [EntityType]
+    func fetch<EntityType: ManagedEntity>(id: UUID) -> EntityType?
     func delete<EntityType: ManagedEntity>(_ entity: EntityType)
     func save()
 
