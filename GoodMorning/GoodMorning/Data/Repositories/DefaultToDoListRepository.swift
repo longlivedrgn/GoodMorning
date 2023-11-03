@@ -59,8 +59,24 @@ extension DefaultToDoListRepository {
         }
 
         coreDataStack.delete(deleteItem)
+        coreDataStack.save()
     }
-    
+
+    func updateToDoItem(item: TODOItem) throws {
+        let morningRoutine = fetchMorningRoutine(item)
+
+        guard let updateItem = morningRoutine else {
+            throw CoreDataError.failToFindEntity
+        }
+
+        updateItem.isChecked = item.isChecked
+        updateItem.routine = item.description
+        updateItem.icon = item.iconImage
+        updateItem.priority = item.priority
+
+        coreDataStack.save()
+    }
+
 }
 
 extension DefaultToDoListRepository {
