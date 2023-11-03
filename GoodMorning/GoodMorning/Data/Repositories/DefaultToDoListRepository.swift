@@ -48,18 +48,29 @@ extension DefaultToDoListRepository {
         entity.priority = item.priority
         entity.identifier = item.identifier
 
-        coreDataStack.update()
+        coreDataStack.save()
     }
 
     func deleteToDoListItem(item: TODOItem) throws {
-        let morningRoutines: [MorningRoutine] = coreDataStack.fetch()
-        let morningRoutine = morningRoutines.filter { $0.identifier == item.identifier}
+        let morningRoutine = fetchMorningRoutine(item)
 
-        guard let deleteItem = morningRoutine.first else {
+        guard let deleteItem = morningRoutine else {
             throw CoreDataError.failToFindEntity
         }
 
         coreDataStack.delete(deleteItem)
+    }
+    
+}
+
+extension DefaultToDoListRepository {
+
+    private func fetchMorningRoutine(_ item: TODOItem) -> MorningRoutine? {
+        guard let morningRoutine: MorningRoutine = coreDataStack.fetch(id: item.identifier) else {
+            return nil
+        }
+
+        return morningRoutine
     }
 
 }
