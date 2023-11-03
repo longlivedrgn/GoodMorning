@@ -5,6 +5,8 @@
 //  Created by Sunny on 2023/10/03.
 //
 
+import Foundation
+
 protocol CoreDataStack {
 
     func create<EntityType: ManagedEntity>() async -> EntityType?
