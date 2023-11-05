@@ -39,8 +39,18 @@ final class ToDoListRepositoryTest: XCTestCase {
     }
 
     func test_기존의_ToDoItem을_업데이트하기() async throws {
+        let newItem = ToDoItem(
+            iconImage: nil,
+            description: "새로운 아이템 2",
+            isChecked: false,
+            priority: .low
+        )
+
+        try await sut.addToDoItem(item: newItem)
+        print("test/ newItem의 identifier: \(newItem.identifier)")
+
         try sut.updateToDoItem(
-            self.id,
+            newItem.identifier,
             isChecked: true,
             routine: "새로운 아이템 4",
             icon: nil,

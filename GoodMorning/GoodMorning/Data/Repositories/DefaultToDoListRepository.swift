@@ -46,12 +46,12 @@ extension DefaultToDoListRepository {
         entity.routine = item.description
         entity.icon = item.iconImage
         entity.priority = item.priority
-        entity.identifier = item.identifier.uuidString
+        entity.identifier = item.identifier
 
         coreDataStack.save()
     }
 
-    func deleteToDoItem(_ id: String) throws {
+    func deleteToDoItem(_ id: UUID) throws {
         let morningRoutine = fetchMorningRoutine(id)
 
         guard let deleteItem = morningRoutine else {
@@ -63,7 +63,7 @@ extension DefaultToDoListRepository {
     }
 
     func updateToDoItem(
-        _ id: String,
+        _ id: UUID,
         isChecked: Bool,
         routine: String,
         icon: String?,
@@ -87,7 +87,7 @@ extension DefaultToDoListRepository {
 
 extension DefaultToDoListRepository {
 
-    private func fetchMorningRoutine(_ id: String) -> MorningRoutine? {
+    private func fetchMorningRoutine(_ id: UUID) -> MorningRoutine? {
         guard let morningRoutine: MorningRoutine = coreDataStack.fetch(id: id) else {
             return nil
         }

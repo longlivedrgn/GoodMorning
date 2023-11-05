@@ -57,7 +57,7 @@ final class DefaultCoreDataStack: CoreDataStack {
         }
     }
 
-    func fetch<EntityType: ManagedEntity>(id: String) -> EntityType? {
+    func fetch<EntityType: ManagedEntity>(id: UUID) -> EntityType? {
         backgroundContext.performAndWait {
             do {
                 let request = EntityType.makeNewFetchRequest()
@@ -81,10 +81,18 @@ final class DefaultCoreDataStack: CoreDataStack {
 
     func save() {
         backgroundContext.performAndWait {
-            // backgroundContext가 아닌 viewContext를 저장해야 CoreData DB가 변경됌.
+            // 작업을 backgroundContext에서 진행했는지, viewContext에서 진행했는지에 따라 save
             if self.container.viewContext.hasChanges {
                 do {
                     try self.container.viewContext.save()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+
+            if backgroundContext.hasChanges {
+                do {
+                    try self.backgroundContext.save()
                 } catch {
                     print(error.localizedDescription)
                 }

@@ -5,7 +5,7 @@
 //  Created by Sunny on 11/3/23.
 //
 
-import Foundation
+import Foundation.NSUUID
 
 final class ToDoListUseCase {
 
@@ -20,7 +20,7 @@ final class ToDoListUseCase {
     }
 
     func updateToDoItem(
-        _ id: String,
+        _ id: UUID,
         isChecked: Bool,
         routine: String,
         icon: String,
@@ -35,7 +35,7 @@ final class ToDoListUseCase {
         )
     }
 
-    func deleteToDoItem(_ id: String) throws {
+    func deleteToDoItem(_ id: UUID) throws {
         try todoListRepository.deleteToDoItem(id)
     }
 
