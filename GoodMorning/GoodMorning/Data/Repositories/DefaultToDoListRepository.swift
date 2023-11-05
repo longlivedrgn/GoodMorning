@@ -46,13 +46,13 @@ extension DefaultToDoListRepository {
         entity.routine = item.description
         entity.icon = item.iconImage
         entity.priority = item.priority
-        entity.identifier = item.identifier
+        entity.identifier = item.identifier.uuidString
 
         coreDataStack.save()
     }
 
-    func deleteToDoItem(item: ToDoItem) throws {
-        let morningRoutine = fetchMorningRoutine(item)
+    func deleteToDoItem(_ id: String) throws {
+        let morningRoutine = fetchMorningRoutine(id)
 
         guard let deleteItem = morningRoutine else {
             throw CoreDataError.failToFindEntity
@@ -62,17 +62,23 @@ extension DefaultToDoListRepository {
         coreDataStack.save()
     }
 
-    func updateToDoItem(item: ToDoItem) throws {
-        let morningRoutine = fetchMorningRoutine(item)
+    func updateToDoItem(
+        _ id: String,
+        isChecked: Bool,
+        routine: String,
+        icon: String?,
+        priority: Priority
+    ) throws {
+        let morningRoutine = fetchMorningRoutine(id)
 
         guard let updateItem = morningRoutine else {
             throw CoreDataError.failToFindEntity
         }
 
-        updateItem.isChecked = item.isChecked
-        updateItem.routine = item.description
-        updateItem.icon = item.iconImage
-        updateItem.priority = item.priority
+        updateItem.isChecked = isChecked
+        updateItem.routine = routine
+        updateItem.icon = icon
+        updateItem.priority = priority
 
         coreDataStack.save()
     }
@@ -81,8 +87,8 @@ extension DefaultToDoListRepository {
 
 extension DefaultToDoListRepository {
 
-    private func fetchMorningRoutine(_ item: ToDoItem) -> MorningRoutine? {
-        guard let morningRoutine: MorningRoutine = coreDataStack.fetch(id: item.identifier) else {
+    private func fetchMorningRoutine(_ id: String) -> MorningRoutine? {
+        guard let morningRoutine: MorningRoutine = coreDataStack.fetch(id: id) else {
             return nil
         }
 

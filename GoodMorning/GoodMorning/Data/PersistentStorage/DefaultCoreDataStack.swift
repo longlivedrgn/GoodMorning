@@ -32,6 +32,7 @@ final class DefaultCoreDataStack: CoreDataStack {
     }
 
     func create<EntityType: ManagedEntity>() async -> EntityType? {
+        // performAndWait로는 main thread로 동작
         let managedEntity = await backgroundContext.perform {
             let object = EntityType.makeNewObject(in: self.backgroundContext)
             return object
@@ -56,7 +57,7 @@ final class DefaultCoreDataStack: CoreDataStack {
         }
     }
 
-    func fetch<EntityType: ManagedEntity>(id: UUID) -> EntityType? {
+    func fetch<EntityType: ManagedEntity>(id: String) -> EntityType? {
         backgroundContext.performAndWait {
             do {
                 let request = EntityType.makeNewFetchRequest()

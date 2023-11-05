@@ -5,13 +5,11 @@
 //  Created by Sunny on 2023/10/03.
 //
 
-import Foundation
-
 protocol CoreDataStack {
 
     func create<EntityType: ManagedEntity>() async -> EntityType?
     func fetch<EntityType: ManagedEntity>() -> [EntityType]
-    func fetch<EntityType: ManagedEntity>(id: UUID) -> EntityType?
+    func fetch<EntityType: ManagedEntity>(id: String) -> EntityType?
     func delete<EntityType: ManagedEntity>(_ entity: EntityType)
     func save()
 
