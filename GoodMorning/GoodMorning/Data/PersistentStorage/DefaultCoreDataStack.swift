@@ -41,26 +41,33 @@ final class DefaultCoreDataStack: CoreDataStack {
     }
 
     func fetch<EntityType: ManagedEntity>() -> [EntityType] {
-        do {
-            let request = EntityType.makeNewFetchRequest()
-            let fetchResult = try container.viewContext.fetch(request)
-            return fetchResult
-        } catch {
-            print(error.localizedDescription)
-            return []
+        // 그냥 main thread의 viewContext로 돌리면
+        // backgroundContext에서 save한 create entity가 바로 조회되지 않고 약간의 시간이 걸림
+        // sleep(1~3) 을 해야지 fetch 가능
+        backgroundContext.performAndWait {
+            do {
+                let request = EntityType.makeNewFetchRequest()
+                let fetchResult = try container.viewContext.fetch(request)
+                return fetchResult
+            } catch {
+                print(error.localizedDescription)
+                return []
+            }
         }
     }
 
     func fetch<EntityType: ManagedEntity>(id: UUID) -> EntityType? {
-        do {
-            let request = EntityType.makeNewFetchRequest()
-            let predicate = NSPredicate(format: "identifier == %@", id as CVarArg)
-            request.predicate = predicate
-            let fetchResult = try container.viewContext.fetch(request)
-            return fetchResult.first
-        } catch {
-            print(error.localizedDescription)
-            return nil
+        backgroundContext.performAndWait {
+            do {
+                let request = EntityType.makeNewFetchRequest()
+                let predicate = NSPredicate(format: "identifier == %@", id as CVarArg)
+                request.predicate = predicate
+                let fetchResult = try container.viewContext.fetch(request)
+                return fetchResult.first
+            } catch {
+                print(error.localizedDescription)
+                return nil
+            }
         }
     }
 
