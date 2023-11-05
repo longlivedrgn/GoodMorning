@@ -80,10 +80,11 @@ final class DefaultCoreDataStack: CoreDataStack {
     }
 
     func save() {
-        backgroundContext.perform {
-            if self.backgroundContext.hasChanges {
+        backgroundContext.performAndWait {
+            // backgroundContext가 아닌 viewContext를 저장해야 CoreData DB가 변경됌.
+            if self.container.viewContext.hasChanges {
                 do {
-                    try self.backgroundContext.save()
+                    try self.container.viewContext.save()
                 } catch {
                     print(error.localizedDescription)
                 }
