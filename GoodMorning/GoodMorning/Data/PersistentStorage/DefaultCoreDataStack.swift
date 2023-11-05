@@ -32,7 +32,6 @@ final class DefaultCoreDataStack: CoreDataStack {
     }
 
     func create<EntityType: ManagedEntity>() async -> EntityType? {
-        // performAndWait로는 main thread로 동작
         let managedEntity = await backgroundContext.perform {
             let object = EntityType.makeNewObject(in: self.backgroundContext)
             return object
@@ -42,9 +41,6 @@ final class DefaultCoreDataStack: CoreDataStack {
     }
 
     func fetch<EntityType: ManagedEntity>() -> [EntityType] {
-        // 그냥 main thread의 viewContext로 돌리면
-        // backgroundContext에서 save한 create entity가 바로 조회되지 않고 약간의 시간이 걸림
-        // sleep(1~3) 을 해야지 fetch 가능
         backgroundContext.performAndWait {
             do {
                 let request = EntityType.makeNewFetchRequest()
@@ -81,7 +77,6 @@ final class DefaultCoreDataStack: CoreDataStack {
 
     func save() {
         backgroundContext.performAndWait {
-            // 작업을 backgroundContext에서 진행했는지, viewContext에서 진행했는지에 따라 save
             if self.container.viewContext.hasChanges {
                 do {
                     try self.container.viewContext.save()
@@ -90,7 +85,7 @@ final class DefaultCoreDataStack: CoreDataStack {
                 }
             }
 
-            if backgroundContext.hasChanges {
+            if self.backgroundContext.hasChanges {
                 do {
                     try self.backgroundContext.save()
                 } catch {
