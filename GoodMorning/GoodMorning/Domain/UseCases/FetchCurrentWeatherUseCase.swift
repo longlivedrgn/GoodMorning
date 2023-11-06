@@ -18,26 +18,30 @@ final class FetchCurrentWeatherUseCase {
     }
 
     func execute() async throws -> CurrentWeather {
-
         let locationResult = locationRepository.fetchCurrentLocation()
 
         switch locationResult {
         case .success(let coordinate):
-            let currentWeatherResult = try await weatherRepository.fetchCurrentWeather(
-                in: coordinate ?? Coordinate(longitude: "0", latitude: "0")
-            )
+            guard let coordinate else { throw LocationError.unknowned }
+            let currentWeather = try await currentWeather(in: coordinate)
 
-            switch currentWeatherResult {
-            case .success(let weather):
-                return weather
-            case .failure(let networkError):
-                throw networkError
-            }
+            return currentWeather
 
         case .failure(let error):
             throw error
         case .none:
             throw LocationError.unknowned
+        }
+    }
+
+    func currentWeather(in coordinate: Coordinate) async throws -> CurrentWeather {
+        let currentWeatherResult = try await weatherRepository.fetchCurrentWeather(in: coordinate)
+
+        switch currentWeatherResult {
+        case .success(let weather):
+            return weather
+        case .failure(let error):
+            throw error
         }
     }
 
