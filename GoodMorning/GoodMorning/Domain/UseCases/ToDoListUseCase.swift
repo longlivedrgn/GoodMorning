@@ -19,24 +19,18 @@ final class ToDoListUseCase {
         return todoListRepository.fetchToDoList()
     }
 
-    func updateToDoItem(
-        _ id: UUID,
-        isChecked: Bool,
-        routine: String,
-        icon: String,
-        priority: Priority
-    ) throws {
+    func updateToDoItem(_ item: ToDoItem) throws {
         try todoListRepository.updateToDoItem(
-            id,
-            isChecked: isChecked,
-            routine: routine,
-            icon: icon,
-            priority: priority
+            item.identifier,
+            isChecked: item.isChecked,
+            routine: item.description,
+            icon: item.iconImage,
+            priority: item.priority
         )
     }
 
-    func deleteToDoItem(_ id: UUID) throws {
-        try todoListRepository.deleteToDoItem(id)
+    func deleteToDoItem(_ item: ToDoItem) throws {
+        try todoListRepository.deleteToDoItem(item.identifier)
     }
 
     func addToDoItem(_ item: ToDoItem) async throws {
