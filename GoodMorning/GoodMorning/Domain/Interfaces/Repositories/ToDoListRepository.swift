@@ -5,10 +5,19 @@
 //  Created by Sunny on 2023/10/03.
 //
 
+import Foundation.NSUUID
+
 protocol ToDoListRepository {
 
-    func fetchToDoList() -> [TODOItem]
-    func addToDoListItem(item: TODOItem) async throws
-    func deleteToDoListItem(item: TODOItem) throws
+    func fetchToDoList() -> [ToDoItem]
+    func addToDoItem(item: ToDoItem) async throws
+    func deleteToDoItem(_ id: UUID) throws
+    func updateToDoItem(
+        _ id: UUID,
+        isChecked: Bool,
+        routine: String,
+        icon: String?,
+        priority: Priority
+    ) throws
 
 }

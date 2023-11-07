@@ -41,13 +41,30 @@ final class DefaultCoreDataStack: CoreDataStack {
     }
 
     func fetch<EntityType: ManagedEntity>() -> [EntityType] {
-        do {
-            let request = EntityType.makeNewFetchRequest()
-            let fetchResult = try container.viewContext.fetch(request)
-            return fetchResult
-        } catch {
-            print(error.localizedDescription)
-            return []
+        backgroundContext.performAndWait {
+            do {
+                let request = EntityType.makeNewFetchRequest()
+                let fetchResult = try container.viewContext.fetch(request)
+                return fetchResult
+            } catch {
+                print(error.localizedDescription)
+                return []
+            }
+        }
+    }
+
+    func fetch<EntityType: ManagedEntity>(id: UUID) -> EntityType? {
+        backgroundContext.performAndWait {
+            do {
+                let request = EntityType.makeNewFetchRequest()
+                let predicate = NSPredicate(format: "identifier == %@", id as CVarArg)
+                request.predicate = predicate
+                let fetchResult = try container.viewContext.fetch(request)
+                return fetchResult.first
+            } catch {
+                print(error.localizedDescription)
+                return nil
+            }
         }
     }
 
@@ -58,8 +75,16 @@ final class DefaultCoreDataStack: CoreDataStack {
         }
     }
 
-    func update() {
-        backgroundContext.perform {
+    func save() {
+        backgroundContext.performAndWait {
+            if self.container.viewContext.hasChanges {
+                do {
+                    try self.container.viewContext.save()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+
             if self.backgroundContext.hasChanges {
                 do {
                     try self.backgroundContext.save()

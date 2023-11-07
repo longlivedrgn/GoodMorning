@@ -29,6 +29,7 @@ final class WeatherStackView: UIStackView {
         self.configureWeatherViewMargin()
         self.configureImageViewSize()
     }
+
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

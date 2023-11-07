@@ -10,7 +10,7 @@ import SnapKit
 
 final class TODOListCell: UICollectionViewListCell {
 
-    private var item: TODOItem?
+    private var item: ToDoItem?
 
     private let checkBoxButton = CheckBoxButton()
     private lazy var TODOListContentView = UIListContentView(
@@ -45,7 +45,7 @@ final class TODOListCell: UICollectionViewListCell {
         configureLine(with: state)
     }
 
-    func updateWithItem(_ newItem: TODOItem) {
+    func updateWithItem(_ newItem: ToDoItem) {
         guard item != newItem else { return }
         item = newItem
         setNeedsUpdateConfiguration()
@@ -113,9 +113,9 @@ final class TODOListCell: UICollectionViewListCell {
 
 fileprivate extension UICellConfigurationState {
 
-    var item: TODOItem? {
+    var item: ToDoItem? {
         get {
-            return self[UIConfigurationStateCustomKey.item] as? TODOItem
+            return self[UIConfigurationStateCustomKey.item] as? ToDoItem
         }
         set {
             self[UIConfigurationStateCustomKey.item] = newValue
