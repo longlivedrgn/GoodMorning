@@ -9,13 +9,18 @@ import Foundation
 
 class HomeSceneViewModel {
     private let fetchCurrentWeatherUseCase: FetchCurrentWeatherUseCase
+    private let actions: HomeSceneViewModelActions?
     // Default 값을 어떻게 줄 지를 고민해봐야될 것 같다...
     // init으로 받아서 ViewController에서 만들어줄지도?..
     let currentWeather: Observable<CurrentWeather?> = Observable(nil)
 
-    init(fetchCurrentWeatherUseCase: FetchCurrentWeatherUseCase) {
+    init(
+        fetchCurrentWeatherUseCase: FetchCurrentWeatherUseCase,
+        actions: HomeSceneViewModelActions? = nil
+    ) {
         self.fetchCurrentWeatherUseCase = fetchCurrentWeatherUseCase
-        fetchCurrentWeather()
+        self.actions = actions
+        self.fetchCurrentWeather()
     }
 
     func fetchCurrentWeather() {
@@ -25,5 +30,22 @@ class HomeSceneViewModel {
             print(fetchedWeather)
         }
     }
+
+}
+
+// MARK: Input, ViewController에게 들어온 events
+extension HomeSceneViewModel {
+
+    func didSelectWeatherView(_ currentWeather: CurrentWeather?) {
+        actions?.showWeatherDetailView(currentWeather)
+
+    }
+
+}
+
+// MARK: HomeScene에서 일어나는 Action들
+struct HomeSceneViewModelActions {
+
+    let showWeatherDetailView: (CurrentWeather?) -> Void
 
 }

@@ -16,12 +16,13 @@ final class WeatherStackView: UIStackView {
         return imageView
     }()
 
+    weak var delegate: WeatherStackViewDelegate?
+
     init(currentWeather: CurrentWeather?) {
         super.init(frame: .zero)
 
         self.setupWeatherView(currentWeather)
         self.configureWeatherView()
-
     }
 
     override func layoutSubviews() {

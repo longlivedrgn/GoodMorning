@@ -10,9 +10,12 @@ import SnapKit
 
 final class HomeViewController: UIViewController {
 
+    // MARK: Properties(Datasource, CoreData, ViewModel)
     private var backingStore: [ToDoItem] = ToDoItem.allItems
     private var datasource: DataSource?
+    private var viewModel: HomeSceneViewModel! // IUO 피해주기!..
 
+    // MARK: Properties(Views)
     private let scrollView = UIScrollView()
     private let contentView = UIStackView()
 
@@ -51,12 +54,9 @@ final class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind(to: HomeSceneViewModel(
-            fetchCurrentWeatherUseCase: FetchCurrentWeatherUseCase(
-                weatherRepository: DefaultWeatherRepository(networkService: NetworkService()),
-                locationRepository: DefaultCurrentLocationRepository()))
-        )
+        configureViewModel()
         configureViews()
+        configureDelegates()
         applySnapShot()
         configureDataSource()
         configureSupplementaryView()
@@ -67,11 +67,23 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController {
 
+    private func configureViewModel() {
+        self.viewModel = HomeSceneViewModel(
+            fetchCurrentWeatherUseCase: FetchCurrentWeatherUseCase(
+                weatherRepository: DefaultWeatherRepository(networkService: NetworkService()),
+                locationRepository: DefaultCurrentLocationRepository()))
+        self.bind(to: viewModel)
+    }
+
     private func configureViews() {
         configureContentViewMargins()
         configureView()
         setupView()
         setupContentView()
+    }
+
+    private func configureDelegates() {
+        self.weatherStackView.delegate = self
     }
 
     private func bind(to viewModel: HomeSceneViewModel) {
@@ -80,7 +92,6 @@ extension HomeViewController {
                 self?.weatherStackView.setupWeatherView(currentWeather)
             }
         }
-
     }
 
     private func configureContentViewMargins() {
@@ -222,6 +233,18 @@ extension HomeViewController: TODOHeaderViewDelegate {
 
     func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didPlusButtonTapped sender: UIButton) {
         print("plusbuttondidTapped!")
+    }
+
+}
+
+// MARK: WeatherStackViewDelegate
+extension HomeViewController: WeatherStackViewDelegate {
+
+    func weatherStackView(
+        _ WeatherStackView: WeatherStackView,
+        didWeatherStackViewTapped sender: WeatherStackView
+    ) {
+        self.viewModel.didSelectWeatherView(viewModel.currentWeather.value)
     }
 
 }
