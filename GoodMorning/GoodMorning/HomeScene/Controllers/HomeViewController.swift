@@ -30,7 +30,7 @@ final class HomeViewController: UIViewController {
         return collectionview
     }()
 
-    private let weatherStackView = WeatherStackView(weather: .drizzle, temperature: 27)
+    private let weatherStackView = WeatherStackView(currentWeather: nil)
 
     let emptyView: UIView = {
         let view = UIView()
@@ -51,11 +51,13 @@ final class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        bind(to: HomeSceneViewModel(
+            fetchCurrentWeatherUseCase: FetchCurrentWeatherUseCase(
+                weatherRepository: DefaultWeatherRepository(networkService: NetworkService()),
+                locationRepository: DefaultCurrentLocationRepository()))
+        )
         configureViews()
-//        configureTODOModal()
         applySnapShot()
-
         configureDataSource()
         configureSupplementaryView()
         configureReorderingAccessory()
@@ -67,10 +69,18 @@ extension HomeViewController {
 
     private func configureViews() {
         configureContentViewMargins()
-
         configureView()
         setupView()
         setupContentView()
+    }
+
+    private func bind(to viewModel: HomeSceneViewModel) {
+        viewModel.currentWeather.observe(on: self) { [weak self] currentWeather in
+            DispatchQueue.main.async {
+                self?.weatherStackView.setupWeatherView(currentWeather)
+            }
+        }
+
     }
 
     private func configureContentViewMargins() {
