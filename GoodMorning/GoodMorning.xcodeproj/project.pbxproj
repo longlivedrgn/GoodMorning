@@ -28,7 +28,7 @@
 		803569D52A768C04001C92BC /* URLSessionStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803569D42A768C04001C92BC /* URLSessionStub.swift */; };
 		803569D92A768C68001C92BC /* NetworkSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803569D82A768C68001C92BC /* NetworkSessionTests.swift */; };
 		803569DC2A768E76001C92BC /* CurrentWeather.json in Sources */ = {isa = PBXBuildFile; fileRef = 803569DB2A768E76001C92BC /* CurrentWeather.json */; };
-		805EA6B62A98AA8B00A3545C /* TODOModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805EA6B52A98AA8B00A3545C /* TODOModalViewController.swift */; };
+		805EA6B62A98AA8B00A3545C /* ToDoModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805EA6B52A98AA8B00A3545C /* ToDoModalViewController.swift */; };
 		805EA6B92A99ECAD00A3545C /* PrioritySegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805EA6B82A99ECAD00A3545C /* PrioritySegmentedControl.swift */; };
 		805EA6BB2A9A4BF700A3545C /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805EA6BA2A9A4BF700A3545C /* EmojiTextField.swift */; };
 		805EA6CC2AA376DC00A3545C /* Character+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805EA6CB2AA376DC00A3545C /* Character+.swift */; };
@@ -147,7 +147,7 @@
 		803569D42A768C04001C92BC /* URLSessionStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionStub.swift; sourceTree = "<group>"; };
 		803569D82A768C68001C92BC /* NetworkSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionTests.swift; sourceTree = "<group>"; };
 		803569DB2A768E76001C92BC /* CurrentWeather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CurrentWeather.json; sourceTree = "<group>"; };
-		805EA6B52A98AA8B00A3545C /* TODOModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOModalViewController.swift; sourceTree = "<group>"; };
+		805EA6B52A98AA8B00A3545C /* ToDoModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModalViewController.swift; sourceTree = "<group>"; };
 		805EA6B82A99ECAD00A3545C /* PrioritySegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrioritySegmentedControl.swift; sourceTree = "<group>"; };
 		805EA6BA2A9A4BF700A3545C /* EmojiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
 		805EA6CB2AA376DC00A3545C /* Character+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+.swift"; sourceTree = "<group>"; };
@@ -377,19 +377,19 @@
 			path = NetworkTest;
 			sourceTree = "<group>";
 		};
-		805EA6B12A98A1BC00A3545C /* TODOModalScene */ = {
+		805EA6B12A98A1BC00A3545C /* ToDoModalScene */ = {
 			isa = PBXGroup;
 			children = (
 				805EA6B72A99EC8B00A3545C /* Views */,
 				805EA6B22A98A1D600A3545C /* Controllers */,
 			);
-			path = TODOModalScene;
+			path = ToDoModalScene;
 			sourceTree = "<group>";
 		};
 		805EA6B22A98A1D600A3545C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				805EA6B52A98AA8B00A3545C /* TODOModalViewController.swift */,
+				805EA6B52A98AA8B00A3545C /* ToDoModalViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -469,7 +469,7 @@
 		80773A822A57E6210020F1DD /* GoodMorning */ = {
 			isa = PBXGroup;
 			children = (
-				805EA6B12A98A1BC00A3545C /* TODOModalScene */,
+				805EA6B12A98A1BC00A3545C /* ToDoModalScene */,
 				80F90CC02A84C4D0007E1D23 /* HomeScene */,
 				801B3B682A63D79900B57D19 /* Extensions */,
 				801B3B532A63D67D00B57D19 /* Resources */,
@@ -1088,7 +1088,7 @@
 				80B699652ACBFF4900CD3F8C /* DefaultToDoListRepository.swift in Sources */,
 				873555262A694ABA0027A847 /* Responsable.swift in Sources */,
 				87EA72A92ACBED880042DD88 /* CurrentWeather.swift in Sources */,
-				805EA6B62A98AA8B00A3545C /* TODOModalViewController.swift in Sources */,
+				805EA6B62A98AA8B00A3545C /* ToDoModalViewController.swift in Sources */,
 				80773A842A57E6210020F1DD /* AppDelegate.swift in Sources */,
 				877E3FC62A6E3BB400BB06FA /* TemperatureDTO.swift in Sources */,
 				80F90CD12A855E89007E1D23 /* WeatherConditions.swift in Sources */,

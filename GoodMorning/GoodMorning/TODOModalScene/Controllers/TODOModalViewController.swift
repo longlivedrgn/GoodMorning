@@ -1,5 +1,5 @@
 //
-//  TODOModalViewController.swift
+//  ToDoModalViewController.swift
 //  GoodMorning
 //
 //  Created by Sunny on 2023/08/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TODOModalViewController: UIViewController {
+final class ToDoModalViewController: UIViewController {
 
     private let titleTextField: UITextField = {
         let textField = UITextField()
