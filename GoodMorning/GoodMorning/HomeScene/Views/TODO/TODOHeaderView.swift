@@ -1,5 +1,5 @@
 //
-//  TODOHeaderView.swift
+//  ToDoHeaderView.swift
 //  GoodMorning
 //
 //  Created by Miro on 2023/08/04.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class TODOHeaderView: UICollectionReusableView {
+final class ToDoHeaderView: UICollectionReusableView {
 
-    weak var delegate: TODOHeaderViewDelegate?
+    weak var delegate: ToDoHeaderViewDelegate?
 
     private lazy var editButton: UIButton = {
         let button = UIButton()
@@ -60,11 +60,11 @@ final class TODOHeaderView: UICollectionReusableView {
     }
 
     @objc private func editButtonTapped(_ sender: UIButton) {
-        delegate?.TODOHeaderView(self, didEditButtonTapped: sender)
+        delegate?.ToDoHeaderView(self, didEditButtonTapped: sender)
     }
 
     @objc private func plusButtonTapped(_ sender: UIButton) {
-        delegate?.TODOHeaderView(self, didPlusButtonTapped: sender)
+        delegate?.ToDoHeaderView(self, didPlusButtonTapped: sender)
     }
 
 }

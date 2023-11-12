@@ -18,7 +18,7 @@ final class HomeViewController: UIViewController {
 
     private let titleStackView = DoubleLabelStackView(type: .title, nickName: "Miro")
 
-    private lazy var TODOCollectionView: UICollectionView = {
+    private lazy var todoCollectionView: UICollectionView = {
         let collectionview = UICollectionView(
             frame: .zero,
             collectionViewLayout: ToDoCollectionViewLayout.createLayout()
@@ -54,11 +54,12 @@ final class HomeViewController: UIViewController {
 
         configureViews()
 //        configureTODOModal()
-        applySnapShot()
 
         configureDataSource()
         configureSupplementaryView()
         configureReorderingAccessory()
+
+        applySnapShot()
     }
 
 }
@@ -107,7 +108,7 @@ extension HomeViewController {
 
     private func setupContentView() {
         let height = self.view.frame.height * 0.32
-        self.TODOCollectionView.snp.makeConstraints { todoCollectionView in
+        self.todoCollectionView.snp.makeConstraints { todoCollectionView in
             todoCollectionView.height.equalTo(height)
         }
 
@@ -118,13 +119,12 @@ extension HomeViewController {
 
         weatherTotalStackView.addArrangedSubviews([weatherStackView, emptyView])
         self.contentView.addArrangedSubviews(
-            [titleStackView, TODOCollectionView, weatherTotalStackView, todayLuckStackView]
+            [titleStackView, todoCollectionView, weatherTotalStackView, todayLuckStackView]
         )
     }
 
     private func configureDataSource() {
-        let cellRegistration = CellRegistration {
-            cell, indexPath, item in
+        let cellRegistration = CellRegistration { cell, indexPath, item in
             cell.updateWithItem(item)
             cell.configureDelegate(self)
             cell.accessories = [.delete(displayed: .whenEditing, actionHandler: { [weak self] in
@@ -133,7 +133,7 @@ extension HomeViewController {
         }
 
         datasource = UICollectionViewDiffableDataSource<Section, ToDoItem>(
-            collectionView: TODOCollectionView
+            collectionView: self.todoCollectionView
         ) { collectionView, indexPath, item in
             return collectionView.dequeueConfiguredReusableCell(
                 using: cellRegistration,
@@ -159,7 +159,7 @@ extension HomeViewController {
     }
 
     private func configureTODOModal() {
-        let todoModalViewController = TODOModalViewController()
+        let todoModalViewController = ToDoModalViewController()
 
         present(UINavigationController(rootViewController: todoModalViewController), animated: true)
     }
@@ -203,14 +203,14 @@ extension HomeViewController: CheckBoxButtonDelegate {
 
 }
 
-// MARK: Functions - TODOHeaderViewDelegate
-extension HomeViewController: TODOHeaderViewDelegate {
+// MARK: Functions - ToDoHeaderViewDelegate
+extension HomeViewController: ToDoHeaderViewDelegate {
 
-    func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didEditButtonTapped sender: UIButton) {
-        TODOCollectionView.isEditing.toggle()
+    func ToDoHeaderView(_ ToDoHeaderView: ToDoHeaderView, didEditButtonTapped sender: UIButton) {
+        todoCollectionView.isEditing.toggle()
     }
 
-    func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didPlusButtonTapped sender: UIButton) {
+    func ToDoHeaderView(_ ToDoHeaderView: ToDoHeaderView, didPlusButtonTapped sender: UIButton) {
         print("plusbuttondidTapped!")
     }
 
@@ -221,9 +221,9 @@ extension HomeViewController {
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, ToDoItem>
     private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, ToDoItem>
 
-    private typealias CellRegistration = UICollectionView.CellRegistration<TODOListCell, ToDoItem>
+    private typealias CellRegistration = UICollectionView.CellRegistration<ToDoListCell, ToDoItem>
     private typealias HeaderRegistration =
-        UICollectionView.SupplementaryRegistration<TODOHeaderView>
+        UICollectionView.SupplementaryRegistration<ToDoHeaderView>
 
     enum Section {
 
