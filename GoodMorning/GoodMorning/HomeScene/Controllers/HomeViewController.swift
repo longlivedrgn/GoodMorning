@@ -211,7 +211,6 @@ extension HomeViewController: ToDoHeaderViewDelegate {
     }
 
     func ToDoHeaderView(_ ToDoHeaderView: ToDoHeaderView, didPlusButtonTapped sender: UIButton) {
-
         presentToDoModal(nil)
     }
 
@@ -221,7 +220,6 @@ extension HomeViewController: ToDoHeaderViewDelegate {
 extension HomeViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
         let item = backingStore[indexPath.item]
         presentToDoModal(item)
     }

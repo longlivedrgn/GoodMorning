@@ -29,6 +29,7 @@
 		803569D92A768C68001C92BC /* NetworkSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803569D82A768C68001C92BC /* NetworkSessionTests.swift */; };
 		803569DC2A768E76001C92BC /* CurrentWeather.json in Sources */ = {isa = PBXBuildFile; fileRef = 803569DB2A768E76001C92BC /* CurrentWeather.json */; };
 		803AD2B42B012A9A00C9941E /* ToDoModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803AD2B32B012A9A00C9941E /* ToDoModalViewModel.swift */; };
+		803AD2B82B014DD400C9941E /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803AD2B72B014DD400C9941E /* Box.swift */; };
 		805EA6B62A98AA8B00A3545C /* ToDoModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805EA6B52A98AA8B00A3545C /* ToDoModalViewController.swift */; };
 		805EA6B92A99ECAD00A3545C /* PrioritySegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805EA6B82A99ECAD00A3545C /* PrioritySegmentedControl.swift */; };
 		805EA6BB2A9A4BF700A3545C /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805EA6BA2A9A4BF700A3545C /* EmojiTextField.swift */; };
@@ -149,6 +150,7 @@
 		803569D82A768C68001C92BC /* NetworkSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionTests.swift; sourceTree = "<group>"; };
 		803569DB2A768E76001C92BC /* CurrentWeather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CurrentWeather.json; sourceTree = "<group>"; };
 		803AD2B32B012A9A00C9941E /* ToDoModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModalViewModel.swift; sourceTree = "<group>"; };
+		803AD2B72B014DD400C9941E /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		805EA6B52A98AA8B00A3545C /* ToDoModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModalViewController.swift; sourceTree = "<group>"; };
 		805EA6B82A99ECAD00A3545C /* PrioritySegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrioritySegmentedControl.swift; sourceTree = "<group>"; };
 		805EA6BA2A9A4BF700A3545C /* EmojiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 			children = (
 				875C79C62A7CD27600B93DBD /* CircleImageView.swift */,
 				80F90CC62A84CA51007E1D23 /* PretendardLabel.swift */,
+				803AD2B72B014DD400C9941E /* Box.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1107,6 +1110,7 @@
 				875C79C72A7CD27600B93DBD /* CircleImageView.swift in Sources */,
 				87EA72A52ACBE9300042DD88 /* DefaultWeatherRepository.swift in Sources */,
 				8060B4102A6129A400726C83 /* NetworkError.swift in Sources */,
+				803AD2B82B014DD400C9941E /* Box.swift in Sources */,
 				87978FA42A653E68009FE7FD /* LocationFetchable.swift in Sources */,
 				80F90CCB2A84CF6C007E1D23 /* UIStackVeiw+.swift in Sources */,
 				874569812A63C8D80092FAE5 /* LocationManager.swift in Sources */,
