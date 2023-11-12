@@ -18,7 +18,7 @@ final class HomeViewController: UIViewController {
 
     private let titleStackView = DoubleLabelStackView(type: .title, nickName: "Miro")
 
-    private lazy var ToDoCollectionView: UICollectionView = {
+    private lazy var todoCollectionView: UICollectionView = {
         let collectionview = UICollectionView(
             frame: .zero,
             collectionViewLayout: ToDoCollectionViewLayout.createLayout()
@@ -107,7 +107,7 @@ extension HomeViewController {
 
     private func setupContentView() {
         let height = self.view.frame.height * 0.32
-        self.ToDoCollectionView.snp.makeConstraints { todoCollectionView in
+        self.todoCollectionView.snp.makeConstraints { todoCollectionView in
             todoCollectionView.height.equalTo(height)
         }
 
@@ -118,7 +118,7 @@ extension HomeViewController {
 
         weatherTotalStackView.addArrangedSubviews([weatherStackView, emptyView])
         self.contentView.addArrangedSubviews(
-            [titleStackView, ToDoCollectionView, weatherTotalStackView, todayLuckStackView]
+            [titleStackView, todoCollectionView, weatherTotalStackView, todayLuckStackView]
         )
     }
 
@@ -133,7 +133,7 @@ extension HomeViewController {
         }
 
         datasource = UICollectionViewDiffableDataSource<Section, ToDoItem>(
-            collectionView: self.ToDoCollectionView
+            collectionView: self.todoCollectionView
         ) { collectionView, indexPath, item in
             return collectionView.dequeueConfiguredReusableCell(
                 using: cellRegistration,
@@ -207,7 +207,7 @@ extension HomeViewController: CheckBoxButtonDelegate {
 extension HomeViewController: ToDoHeaderViewDelegate {
 
     func ToDoHeaderView(_ ToDoHeaderView: ToDoHeaderView, didEditButtonTapped sender: UIButton) {
-        ToDoCollectionView.isEditing.toggle()
+        todoCollectionView.isEditing.toggle()
     }
 
     func ToDoHeaderView(_ ToDoHeaderView: ToDoHeaderView, didPlusButtonTapped sender: UIButton) {
