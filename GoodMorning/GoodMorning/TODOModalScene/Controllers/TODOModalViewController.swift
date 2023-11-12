@@ -68,7 +68,7 @@ final class ToDoModalViewController: UIViewController {
 }
 
 // MARK: Functions - private
-extension TODOModalViewController {
+extension ToDoModalViewController {
 
     private func configureTODOModal() {
         self.view.backgroundColor = .systemBackground
@@ -174,7 +174,7 @@ extension TODOModalViewController {
 }
 
 // MARK: Functions - @objc
-extension TODOModalViewController {
+extension ToDoModalViewController {
 
     @objc private func deleteButtonDidTap() {
         print("delete button 눌림")
@@ -191,7 +191,7 @@ extension TODOModalViewController {
 
 }
 
-extension TODOModalViewController: UITextFieldDelegate {
+extension ToDoModalViewController: UITextFieldDelegate {
 
     func textField(
         _ textField: UITextField,

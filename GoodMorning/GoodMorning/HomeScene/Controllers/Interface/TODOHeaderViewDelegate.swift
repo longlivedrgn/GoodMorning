@@ -7,9 +7,9 @@
 
 import UIKit
 
-protocol TODOHeaderViewDelegate: AnyObject {
+protocol ToDoHeaderViewDelegate: AnyObject {
 
-    func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didEditButtonTapped sender: UIButton)
-    func TODOHeaderView(_ TODOHeaderView: TODOHeaderView, didPlusButtonTapped sender: UIButton)
+    func ToDoHeaderView(_ TODOHeaderView: ToDoHeaderView, didEditButtonTapped sender: UIButton)
+    func ToDoHeaderView(_ TODOHeaderView: ToDoHeaderView, didPlusButtonTapped sender: UIButton)
 
 }

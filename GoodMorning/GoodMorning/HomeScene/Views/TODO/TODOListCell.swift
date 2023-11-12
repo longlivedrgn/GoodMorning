@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class TODOListCell: UICollectionViewListCell {
+final class ToDoListCell: UICollectionViewListCell {
 
     private var item: ToDoItem?
 
