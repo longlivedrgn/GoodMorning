@@ -159,7 +159,7 @@ extension HomeViewController {
     }
 
     private func configureTODOModal() {
-        let todoModalViewController = TODOModalViewController()
+        let todoModalViewController = ToDoModalViewController()
 
         present(UINavigationController(rootViewController: todoModalViewController), animated: true)
     }
