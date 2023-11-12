@@ -54,11 +54,12 @@ final class HomeViewController: UIViewController {
 
         configureViews()
 //        configureTODOModal()
-        applySnapShot()
 
         configureDataSource()
         configureSupplementaryView()
         configureReorderingAccessory()
+
+        applySnapShot()
     }
 
 }
@@ -123,8 +124,7 @@ extension HomeViewController {
     }
 
     private func configureDataSource() {
-        let cellRegistration = CellRegistration {
-            cell, indexPath, item in
+        let cellRegistration = CellRegistration { cell, indexPath, item in
             cell.updateWithItem(item)
             cell.configureDelegate(self)
             cell.accessories = [.delete(displayed: .whenEditing, actionHandler: { [weak self] in
