@@ -12,7 +12,7 @@ final class ToDoModalViewController: UIViewController {
     private let titleTextField: UITextField = {
         let textField = UITextField()
         textField.font = .pretendard(size: 30, weight: .bold)
-        textField.text = "Swift 공부하기"   // 추후 CoreData와 연결 예정
+        textField.text = "Swift 공부하기"
         return textField
     }()
 
@@ -50,6 +50,14 @@ final class ToDoModalViewController: UIViewController {
         label.textColor = .black.withAlphaComponent(0.7)
         return label
     }()
+
+    init(item: UUID?) {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
