@@ -51,7 +51,10 @@ final class ToDoModalViewController: UIViewController {
         return label
     }()
 
-    init(item: UUID?) {
+    private let viewModel: ToDoModalViewModel
+
+    init(viewModel: ToDoModalViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -71,6 +74,15 @@ final class ToDoModalViewController: UIViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+
+}
+
+// MARK: Functions - public
+extension ToDoModalViewController {
+
+    func configureToDoItem(_ id: UUID?) {
+        self.viewModel.configureToDoItem(id)
     }
 
 }

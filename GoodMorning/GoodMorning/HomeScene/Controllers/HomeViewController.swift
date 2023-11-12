@@ -184,8 +184,14 @@ extension HomeViewController {
     }
 
     private func presentToDoModal(_ item: ToDoItem?) {
-        let todoModalViewController = ToDoModalViewController(item: item?.identifier)
+        // 추후 DI Container로.
+        let coreDataStack = DefaultCoreDataStack(container: .goodMorning)
+        let todoListRepository = DefaultToDoListRepository(coreDataStack: coreDataStack)
+        let todoListUseCase = ToDoListUseCase(todoListRepository: todoListRepository)
+        let todoModalViewModel = ToDoModalViewModel(todoListUseCase: todoListUseCase)
+        let todoModalViewController = ToDoModalViewController(viewModel: todoModalViewModel)
 
+        todoModalViewController.configureToDoItem(item?.identifier)
         present(UINavigationController(rootViewController: todoModalViewController), animated: true)
     }
 
