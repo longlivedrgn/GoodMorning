@@ -57,10 +57,10 @@ final class HomeViewController: UIViewController {
         configureViewModel()
         configureViews()
         configureDelegates()
-        applySnapShot()
         configureDataSource()
         configureSupplementaryView()
         configureReorderingAccessory()
+        applySnapShot()
     }
 
 }
@@ -78,7 +78,8 @@ extension HomeViewController {
     private func configureViews() {
         configureContentViewMargins()
         configureView()
-        setupView()
+        configureContentView()
+        setupScrollView()
         setupContentView()
     }
 
@@ -109,11 +110,14 @@ extension HomeViewController {
     private func configureView() {
         self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = .design(.mainBackground)
+    }
+
+    private func configureContentView() {
         self.contentView.axis = .vertical
         self.contentView.spacing = 15
     }
 
-    private func setupView() {
+    private func setupScrollView() {
         self.view.addSubview(scrollView)
         self.scrollView.snp.makeConstraints { scrollView in
             scrollView.top.bottom.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)

@@ -11,7 +11,7 @@ class HomeSceneViewModel {
     private let fetchCurrentWeatherUseCase: FetchCurrentWeatherUseCase
     private let actions: HomeSceneViewModelActions?
     // Default 값을 어떻게 줄 지를 고민해봐야될 것 같다...
-    // init으로 받아서 ViewController에서 만들어줄지도?..
+    // SkeletonView로 잡아버리는 거는 어떨까?..
     let currentWeather: Observable<CurrentWeather?> = Observable(nil)
 
     init(

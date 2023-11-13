@@ -40,4 +40,3 @@ final class Observable<Value> {
     }
 
 }
-
