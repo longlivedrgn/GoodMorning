@@ -15,13 +15,14 @@ final class ToDoModalViewController: UIViewController {
         return textField
     }()
 
+    private let emojiTextField: EmojiTextField = {
+        let emoji = EmojiTextField()
+        emoji.clipsToBounds = true
+        return emoji
+    }()
+
     private let textView: UITextView = {
         let textView = UITextView()
-        textView.text = """
-                        추상 클래스는 하나 이상의 추상 메서드(구현이 없는 메서드)를 포함할 수 있는 클래스입니다.
-                        객체 생성이 불가능하며, 이 클래스를 상속받은 자식 클래스에서 추상 메서드를 구현해야 합니다.
-                        추상 클래스는 일반적으로 객체들 간의 공통된 특성을 정의하는데 사용됩니다.
-                        """     // 추후 CoreData와 연결 예정
         textView.font = .pretendard(size: 18, weight: .semibold)
         return textView
     }()
@@ -35,8 +36,6 @@ final class ToDoModalViewController: UIViewController {
 
     private lazy var prioritySegmentedControl: PrioritySegmentedControl = {
         let segmentedControl = PrioritySegmentedControl()
-        // 아래 메서드로 설정
-//        segmentedControl.selectedIndex =
         segmentedControl.addTarget(self, action: #selector(selectedPriority), for: .valueChanged)
         return segmentedControl
     }()
@@ -142,14 +141,10 @@ extension ToDoModalViewController {
     }
 
     private func makeTitleStackView() -> UIStackView {
-        let emojiTextField: EmojiTextField = {
-            let emoji = EmojiTextField()
-            emoji.clipsToBounds = true
-            emoji.delegate = self
-            return emoji
-        }()
+        self.emojiTextField.delegate = self
+
         let width = self.view.frame.width * 0.1
-        emojiTextField.snp.makeConstraints { emojiTextField in
+        self.emojiTextField.snp.makeConstraints { emojiTextField in
             emojiTextField.width.equalTo(width)
         }
 
@@ -197,6 +192,18 @@ extension ToDoModalViewController {
     private func binding() {
         self.viewModel.title.bind { [weak self] title in
             self?.titleTextField.text = title
+        }
+
+        self.viewModel.description.bind { [weak self] text in
+            self?.textView.text = text
+        }
+
+        self.viewModel.priority.bind { [weak self] priority in
+            self?.prioritySegmentedControl.selectedIndex = priority
+        }
+
+        self.viewModel.icon.bind { [weak self] icon in
+            self?.emojiTextField.text = icon
         }
     }
 

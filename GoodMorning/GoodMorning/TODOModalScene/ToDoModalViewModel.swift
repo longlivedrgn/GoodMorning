@@ -11,6 +11,7 @@ final class ToDoModalViewModel {
 
     var title: Box<String?> = Box(nil)
     var description: Box<String?> = Box(nil)
+    var icon: Box<String?> = Box(nil)
     var priority: Box<Int> = Box(0)
 
     private var item: ToDoItem? = nil
