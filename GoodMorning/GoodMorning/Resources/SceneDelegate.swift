@@ -9,16 +9,24 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    let appDIContainer = AppDIContainer()
+    var appFlowCoordinator: AppFlowCoordinator?
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
+
         let window = UIWindow(windowScene: windowScene)
-        let homeViewController = HomeViewController()
-        window.rootViewController = UINavigationController(rootViewController: homeViewController)
+        let navigationController = UINavigationController()
+        navigationController.navigationBar.isHidden = true
+
+        window.rootViewController = navigationController
+        appFlowCoordinator = AppFlowCoordinator(
+            navigationController: navigationController,
+            appDIContainer: appDIContainer
+        )
+
+        appFlowCoordinator?.start()
         window.makeKeyAndVisible()
         self.window = window
     }

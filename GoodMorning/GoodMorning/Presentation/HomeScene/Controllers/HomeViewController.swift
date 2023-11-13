@@ -52,6 +52,14 @@ final class HomeViewController: UIViewController {
 
     private let todayLuckStackView = TodayLuckStackView()
 
+    static func create(with viewModel: HomeSceneViewModel) -> HomeViewController {
+        let view = HomeViewController()
+        view.viewModel = viewModel
+        // 여기서 Repository를 넘겨주고.. -> 즉 ViewController가 Repository를 가지고 있꼬
+        // 다른 Scene으로 넘어갈 때 해당 Repository를 넘겨주나?..
+        return view
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewModel()
@@ -68,10 +76,6 @@ final class HomeViewController: UIViewController {
 extension HomeViewController {
 
     private func configureViewModel() {
-        self.viewModel = HomeSceneViewModel(
-            fetchCurrentWeatherUseCase: FetchCurrentWeatherUseCase(
-                weatherRepository: DefaultWeatherRepository(networkService: NetworkService()),
-                locationRepository: DefaultCurrentLocationRepository()))
         self.bind(to: viewModel)
     }
 
@@ -108,7 +112,6 @@ extension HomeViewController {
     }
 
     private func configureView() {
-        self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = .design(.mainBackground)
     }
 

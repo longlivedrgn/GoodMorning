@@ -37,7 +37,7 @@ class HomeSceneViewModel {
 extension HomeSceneViewModel {
 
     func didSelectWeatherView(_ currentWeather: CurrentWeather?) {
-        actions?.showWeatherDetailView(currentWeather)
+//        actions?.showWeatherDetailView(currentWeather)
 
     }
 
@@ -46,6 +46,7 @@ extension HomeSceneViewModel {
 // MARK: HomeScene에서 일어나는 Action들
 struct HomeSceneViewModelActions {
 
-    let showWeatherDetailView: (CurrentWeather?) -> Void
+//    let showWeatherDetailView: (CurrentWeather?) -> Void
+    let showToDoModal: (ToDoItem) -> Void
 
 }
