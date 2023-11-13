@@ -217,7 +217,7 @@ extension HomeViewController: ToDoHeaderViewDelegate {
     }
 
     func ToDoHeaderView(_ ToDoHeaderView: ToDoHeaderView, didPlusButtonTapped sender: UIButton) {
-        presentToDoModal(nil)
+        self.presentToDoModal(nil)
     }
 
 }
@@ -227,7 +227,7 @@ extension HomeViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = backingStore[indexPath.item]
-        presentToDoModal(item)
+        self.presentToDoModal(item)
     }
 
 }
