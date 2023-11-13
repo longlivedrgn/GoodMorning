@@ -87,7 +87,7 @@ final class ToDoModalViewController: UIViewController {
 extension ToDoModalViewController {
 
     func configureToDoItem(_ item: ToDoItem?) {
-        self.viewModel.configureToDoItem(item)
+        self.viewModel.configureItem(item)
     }
 
 }
@@ -232,6 +232,15 @@ extension ToDoModalViewController {
 
     @objc private func checkButtonDidTap() {
         print("check button 눌림")
+
+        self.viewModel.updateItem(
+            title: titleTextField.text,
+            description: textView.text,
+            icon: emojiTextField.text,
+            priority: prioritySegmentedControl.selectedIndex
+        )
+
+        self.dismiss(animated: true)
     }
 
     @objc private func selectedPriority() {
@@ -248,7 +257,6 @@ extension ToDoModalViewController: UITextFieldDelegate {
         shouldChangeCharactersIn range: NSRange,
         replacementString string: String
     ) -> Bool {
-
         if string.count == 0 {
             return false
         } else {

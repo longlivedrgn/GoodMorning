@@ -27,10 +27,36 @@ final class ToDoModalViewModel {
 // MARK: Functions - Public
 extension ToDoModalViewModel {
 
-    func configureToDoItem(_ item: ToDoItem?) {
+    func configureItem(_ item: ToDoItem?) {
         self.item = item
 
         setupToDoItem()
+    }
+
+    func updateItem(
+        title: String?,
+        description: String?,
+        icon: String?,
+        priority: Int
+    ) {
+        guard var item = self.item else {
+            let newItem = ToDoItem(
+                iconImage: icon,
+                title: title,
+                description: description,
+                isChecked: false,
+                priority: Priority(rawValue: priority) ?? .high
+            )
+            self.createToDoItem(newItem)
+            return
+        }
+
+        item.title = title
+        item.description = description
+        item.iconImage = icon
+        item.priority = Priority(rawValue: priority) ?? .high
+
+        self.updateToDoItem()
     }
 
 }
@@ -39,11 +65,29 @@ extension ToDoModalViewModel {
 extension ToDoModalViewModel {
 
     private func setupToDoItem() {
-        // 새로운 로또를 추가 하기 위해 빈 화면
         guard let item = item else { return }
         self.title.value = item.title
         self.description.value = item.description
         self.priority.value = item.priority.rawValue
+    }
+
+    private func updateToDoItem() {
+        guard let item = item else { return }
+        do {
+            try self.todoListUseCase.updateToDoItem(item)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    private func createToDoItem(_ item: ToDoItem) {
+        Task {
+            do {
+                try await self.todoListUseCase.addToDoItem(item)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 
 }
