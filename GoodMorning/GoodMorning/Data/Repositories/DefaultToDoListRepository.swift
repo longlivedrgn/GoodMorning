@@ -28,8 +28,9 @@ extension DefaultToDoListRepository {
         let morningRoutine: [MorningRoutine] = coreDataStack.fetch()
         let item = morningRoutine.map { routine in
             ToDoItem(
-                iconImage: routine.icon,
-                description: routine.description,
+                iconImage: routine.icon, 
+                title: routine.title,
+                description: routine.routine,
                 isChecked: routine.isChecked,
                 priority: routine.priority
             )
@@ -64,8 +65,9 @@ extension DefaultToDoListRepository {
 
     func updateToDoItem(
         _ id: UUID,
+        title: String?,
         isChecked: Bool,
-        routine: String,
+        routine: String?,
         icon: String?,
         priority: Priority
     ) throws {
@@ -75,6 +77,7 @@ extension DefaultToDoListRepository {
             throw CoreDataError.failToFindEntity
         }
 
+        updateItem.title = title
         updateItem.isChecked = isChecked
         updateItem.routine = routine
         updateItem.icon = icon

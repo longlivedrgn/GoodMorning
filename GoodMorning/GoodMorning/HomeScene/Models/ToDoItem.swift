@@ -10,7 +10,7 @@ import UIKit
 struct ToDoItem: Hashable {
 
     var iconImage: String?
-    var title: String
+    var title: String?
     var description: String?
     var isChecked: Bool
     var priority: Priority

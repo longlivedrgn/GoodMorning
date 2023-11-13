@@ -14,8 +14,9 @@ protocol ToDoListRepository {
     func deleteToDoItem(_ id: UUID) throws
     func updateToDoItem(
         _ id: UUID,
+        title: String?,
         isChecked: Bool,
-        routine: String,
+        routine: String?,
         icon: String?,
         priority: Priority
     ) throws
