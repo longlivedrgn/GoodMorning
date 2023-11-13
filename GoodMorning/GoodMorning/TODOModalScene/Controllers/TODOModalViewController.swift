@@ -15,10 +15,10 @@ final class ToDoModalViewController: UIViewController {
         textField.placeholder = "모닝 루틴"
         return textField
     }()
-    
 
     private let emojiTextField: EmojiTextField = {
         let emoji = EmojiTextField()
+        emoji.placeholder = "😀"
         emoji.clipsToBounds = true
         return emoji
     }()
