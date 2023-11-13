@@ -59,6 +59,15 @@ extension ToDoModalViewModel {
         self.updateToDoItem()
     }
 
+    func deleteItem() {
+        guard let item = item else { return }
+        do {
+            try self.todoListUseCase.deleteToDoItem(item)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
 }
 
 // MARK: Functions - Private

@@ -227,12 +227,12 @@ extension ToDoModalViewController {
 extension ToDoModalViewController {
 
     @objc private func deleteButtonDidTap() {
-        print("delete button 눌림")
+        self.viewModel.deleteItem()
+        
+        self.dismiss(animated: true)
     }
 
     @objc private func checkButtonDidTap() {
-        print("check button 눌림")
-
         self.viewModel.updateItem(
             title: titleTextField.text,
             description: textView.text,
