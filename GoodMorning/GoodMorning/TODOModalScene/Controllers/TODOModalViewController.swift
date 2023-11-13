@@ -12,8 +12,10 @@ final class ToDoModalViewController: UIViewController {
     private let titleTextField: UITextField = {
         let textField = UITextField()
         textField.font = .pretendard(size: 30, weight: .bold)
+        textField.placeholder = "모닝 루틴"
         return textField
     }()
+    
 
     private let emojiTextField: EmojiTextField = {
         let emoji = EmojiTextField()
@@ -21,6 +23,7 @@ final class ToDoModalViewController: UIViewController {
         return emoji
     }()
 
+    private let textViewPlaceHolder = "모닝 루틴 설명을 입력하세요."
     private let textView: UITextView = {
         let textView = UITextView()
         textView.font = .pretendard(size: 18, weight: .semibold)
@@ -183,6 +186,8 @@ extension ToDoModalViewController {
     }
 
     private func setupTextView() {
+        self.textView.delegate = self
+
         let height = self.view.frame.height * 0.164
         self.textView.snp.makeConstraints { textView in
             textView.height.equalTo(height)
@@ -195,6 +200,10 @@ extension ToDoModalViewController {
         }
 
         self.viewModel.description.bind { [weak self] text in
+            guard let text = text else {
+                self?.setupTextViewPlaceHolder()
+                return
+            }
             self?.textView.text = text
         }
 
@@ -205,6 +214,11 @@ extension ToDoModalViewController {
         self.viewModel.icon.bind { [weak self] icon in
             self?.emojiTextField.text = icon
         }
+    }
+
+    private func setupTextViewPlaceHolder() {
+        self.textView.text = self.textViewPlaceHolder
+        self.textView.textColor = .lightGray
     }
 
 }
@@ -241,6 +255,23 @@ extension ToDoModalViewController: UITextFieldDelegate {
             guard Character(string).isEmoji else { return false }
             textField.text = string
             return false
+        }
+    }
+
+}
+
+extension ToDoModalViewController: UITextViewDelegate {
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == textViewPlaceHolder {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            self.setupTextViewPlaceHolder()
         }
     }
 
