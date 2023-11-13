@@ -12,7 +12,6 @@ final class ToDoModalViewController: UIViewController {
     private let titleTextField: UITextField = {
         let textField = UITextField()
         textField.font = .pretendard(size: 30, weight: .bold)
-        textField.text = "Swift 공부하기"
         return textField
     }()
 
@@ -72,6 +71,8 @@ final class ToDoModalViewController: UIViewController {
         setupTODOModal()
         setupTextView()
         setupPriorityView()
+
+        binding()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -190,6 +191,12 @@ extension ToDoModalViewController {
         let height = self.view.frame.height * 0.164
         self.textView.snp.makeConstraints { textView in
             textView.height.equalTo(height)
+        }
+    }
+
+    private func binding() {
+        self.viewModel.title.bind { [weak self] title in
+            self?.titleTextField.text = title
         }
     }
 

@@ -28,13 +28,15 @@ extension ToDoModalViewModel {
 
     func configureToDoItem(_ item: ToDoItem?) {
         self.item = item
+
+        setupToDoItem()
     }
 
 }
 
 // MARK: Functions - Private
 extension ToDoModalViewModel {
-    
+
     private func setupToDoItem() {
         // 새로운 로또를 추가 하기 위해 빈 화면
         guard let item = item else { return }
