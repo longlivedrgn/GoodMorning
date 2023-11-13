@@ -17,8 +17,6 @@ final class ToDoModalViewModel {
 
     private let todoListUseCase: ToDoListUseCase
 
-    private var itemId: UUID? = nil
-
     init(todoListUseCase: ToDoListUseCase) {
         self.todoListUseCase = todoListUseCase
     }
@@ -28,10 +26,21 @@ final class ToDoModalViewModel {
 // MARK: Functions - Public
 extension ToDoModalViewModel {
 
-    func configureToDoItem(_ item: UUID?) {
-        self.itemId = item
+    func configureToDoItem(_ item: ToDoItem?) {
+        self.item = item
+    }
 
-        print("ViewModel: \(item)")
+}
+
+// MARK: Functions - Private
+extension ToDoModalViewModel {
+    
+    private func setupToDoItem() {
+        // 새로운 로또를 추가 하기 위해 빈 화면
+        guard let item = item else { return }
+        self.title.value = item.title
+        self.description.value = item.description
+        self.priority.value = item.priority.rawValue
     }
 
 }

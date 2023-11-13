@@ -36,6 +36,8 @@ final class ToDoModalViewController: UIViewController {
 
     private lazy var prioritySegmentedControl: PrioritySegmentedControl = {
         let segmentedControl = PrioritySegmentedControl()
+        // 아래 메서드로 설정
+//        segmentedControl.selectedIndex =
         segmentedControl.addTarget(self, action: #selector(selectedPriority), for: .valueChanged)
         return segmentedControl
     }()
@@ -81,8 +83,8 @@ final class ToDoModalViewController: UIViewController {
 // MARK: Functions - public
 extension ToDoModalViewController {
 
-    func configureToDoItem(_ id: UUID?) {
-        self.viewModel.configureToDoItem(id)
+    func configureToDoItem(_ item: ToDoItem?) {
+        self.viewModel.configureToDoItem(item)
     }
 
 }

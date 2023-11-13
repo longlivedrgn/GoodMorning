@@ -191,7 +191,7 @@ extension HomeViewController {
         let todoModalViewModel = ToDoModalViewModel(todoListUseCase: todoListUseCase)
         let todoModalViewController = ToDoModalViewController(viewModel: todoModalViewModel)
 
-        todoModalViewController.configureToDoItem(item?.identifier)
+        todoModalViewController.configureToDoItem(item)
         present(UINavigationController(rootViewController: todoModalViewController), animated: true)
     }
 
