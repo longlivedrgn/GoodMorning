@@ -13,7 +13,7 @@ final class HomeViewController: UIViewController {
     // MARK: Properties(Datasource, CoreData, ViewModel)
     private var backingStore: [ToDoItem] = ToDoItem.allItems
     private var datasource: DataSource?
-    private var viewModel: HomeSceneViewModel! // IUO 피해주기!..
+    private var viewModel: HomeSceneViewModel
 
     // MARK: Properties(Views)
     private let scrollView = UIScrollView()
@@ -52,12 +52,13 @@ final class HomeViewController: UIViewController {
 
     private let todayLuckStackView = TodayLuckStackView()
 
-    static func create(with viewModel: HomeSceneViewModel) -> HomeViewController {
-        let view = HomeViewController()
-        view.viewModel = viewModel
-        // 여기서 Repository를 넘겨주고.. -> 즉 ViewController가 Repository를 가지고 있꼬
-        // 다른 Scene으로 넘어갈 때 해당 Repository를 넘겨주나?..
-        return view
+    init(viewModel: HomeSceneViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {

@@ -43,7 +43,7 @@ final class GoodMorningDIContainer: GoodMorningFlowCoordinatorDependencies {
 
     // MARK: - ModalViewController
     func makeHomeSceneViewController(actions: HomeSceneViewModelActions) -> HomeViewController {
-        HomeViewController.create(with: makeHomeSceneViewModel(actions: actions))
+        HomeViewController(viewModel: makeHomeSceneViewModel(actions: actions))
     }
 
     func makeHomeSceneViewModel(actions: HomeSceneViewModelActions) -> HomeSceneViewModel {
