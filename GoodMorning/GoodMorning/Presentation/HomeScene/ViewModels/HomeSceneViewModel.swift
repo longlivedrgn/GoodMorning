@@ -7,7 +7,8 @@
 
 import Foundation
 
-class HomeSceneViewModel {
+final class HomeSceneViewModel {
+
     private let fetchCurrentWeatherUseCase: FetchCurrentWeatherUseCase
     private let actions: HomeSceneViewModelActions?
     // Default 값을 어떻게 줄 지를 고민해봐야될 것 같다...
@@ -38,7 +39,6 @@ extension HomeSceneViewModel {
 
     func didSelectWeatherView(_ currentWeather: CurrentWeather?) {
 //        actions?.showWeatherDetailView(currentWeather)
-
     }
 
 }
