@@ -9,7 +9,6 @@ import UIKit
 
 final class GoodMorningDIContainer: GoodMorningFlowCoordinatorDependencies {
 
-
     struct Dependencies {
         let networkService: NetworkService
         let locationManager: LocationManager

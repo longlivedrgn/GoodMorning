@@ -9,10 +9,10 @@ import Foundation
 
 final class AppDIContainer {
 
-    lazy var networkService = NetworkService()
-    lazy var locationManager = LocationManager()
+    var networkService = NetworkService()
+    var locationManager = LocationManager()
     // CoreData는 어떻게 설정을 할 것인가?..
-//    lazy var coreDataStack = DefaultCoreDataStack()
+//    var coreDataStack = DefaultCoreDataStack()
 
     func makeGoodMorningDIContainer() -> GoodMorningDIContainer {
         let dependencies = GoodMorningDIContainer.Dependencies(
