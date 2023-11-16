@@ -52,6 +52,12 @@ final class HomeViewController: UIViewController {
 
     private let todayLuckStackView = TodayLuckStackView()
 
+    // MARK: TapGesture
+    lazy var weatherViewTapGesture = UITapGestureRecognizer(
+        target: self,
+        action: #selector(weatherViewDidTapped)
+    )
+
     init(viewModel: HomeSceneViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -65,7 +71,6 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         configureViewModel()
         configureViews()
-        configureDelegates()
         configureDataSource()
         configureSupplementaryView()
         configureReorderingAccessory()
@@ -86,10 +91,6 @@ extension HomeViewController {
         configureContentView()
         setupScrollView()
         setupContentView()
-    }
-
-    private func configureDelegates() {
-        self.weatherStackView.delegate = self
     }
 
     private func bind(to viewModel: HomeSceneViewModel) {
@@ -114,6 +115,7 @@ extension HomeViewController {
 
     private func configureView() {
         self.view.backgroundColor = .design(.mainBackground)
+        self.weatherStackView.addGestureRecognizer(weatherViewTapGesture)
     }
 
     private func configureContentView() {
@@ -245,13 +247,10 @@ extension HomeViewController: TODOHeaderViewDelegate {
 
 }
 
-// MARK: WeatherStackViewDelegate
-extension HomeViewController: WeatherStackViewDelegate {
+// MARK: @objc functions
+extension HomeViewController {
 
-    func weatherStackView(
-        _ WeatherStackView: WeatherStackView,
-        didWeatherStackViewTapped sender: WeatherStackView
-    ) {
+    @objc private func weatherViewDidTapped() {
         self.viewModel.didSelectWeatherView(viewModel.currentWeather.value)
     }
 

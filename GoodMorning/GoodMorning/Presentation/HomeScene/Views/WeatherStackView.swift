@@ -16,8 +16,6 @@ final class WeatherStackView: UIStackView {
         return imageView
     }()
 
-    weak var delegate: WeatherStackViewDelegate?
-
     init(currentWeather: CurrentWeather?) {
         super.init(frame: .zero)
 
