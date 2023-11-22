@@ -55,8 +55,9 @@
 		80BAF64F2AF513C00064196A /* ToDoListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BAF64E2AF513C00064196A /* ToDoListUseCase.swift */; };
 		80BAF6522AF51B970064196A /* ToDoListRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BAF6512AF51B970064196A /* ToDoListRepositoryTest.swift */; };
 		80EB031E2A6EC82F00455E05 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB031D2A6EC82F00455E05 /* NetworkService.swift */; };
-		80EDA04A2B0E3B3D00E812D6 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EDA0492B0E3B3D00E812D6 /* Observable.swift */; };
-		80EDA04C2B0E3B4D00E812D6 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EDA04B2B0E3B4D00E812D6 /* Observer.swift */; };
+		80EDA04E2B0E44B400E812D6 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EDA04D2B0E44B400E812D6 /* Observable.swift */; };
+		80EDA0502B0E44BE00E812D6 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EDA04F2B0E44BE00E812D6 /* Observer.swift */; };
+		80EDA0522B0E44D700E812D6 /* APIKeys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 80EDA0512B0E44D700E812D6 /* APIKeys.xcconfig */; };
 		80F90C622A7BB8FE007E1D23 /* URLSessionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90C612A7BB8FE007E1D23 /* URLSessionProvidable.swift */; };
 		80F90C662A7BC48E007E1D23 /* NetworkSessionProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90C652A7BC48E007E1D23 /* NetworkSessionProvidable.swift */; };
 		80F90CC52A84C91D007E1D23 /* DoubleLabelStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F90CC42A84C91D007E1D23 /* DoubleLabelStackView.swift */; };
@@ -179,10 +180,10 @@
 		80B699662ACBFFC400CD3F8C /* ToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListRepository.swift; sourceTree = "<group>"; };
 		80BAF64E2AF513C00064196A /* ToDoListUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListUseCase.swift; sourceTree = "<group>"; };
 		80BAF6512AF51B970064196A /* ToDoListRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListRepositoryTest.swift; sourceTree = "<group>"; };
-		80EB03162A6EC11400455E05 /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		80EB031D2A6EC82F00455E05 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		80EDA0492B0E3B3D00E812D6 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		80EDA04B2B0E3B4D00E812D6 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		80EDA04D2B0E44B400E812D6 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		80EDA04F2B0E44BE00E812D6 /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		80EDA0512B0E44D700E812D6 /* APIKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKeys.xcconfig; sourceTree = "<group>"; };
 		80F90C612A7BB8FE007E1D23 /* URLSessionProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvidable.swift; sourceTree = "<group>"; };
 		80F90C652A7BC48E007E1D23 /* NetworkSessionProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProvidable.swift; sourceTree = "<group>"; };
 		80F90CC42A84C91D007E1D23 /* DoubleLabelStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLabelStackView.swift; sourceTree = "<group>"; };
@@ -282,7 +283,7 @@
 				801B3B672A63D76500B57D19 /* Designs */,
 				80773A8F2A57E6230020F1DD /* Assets.xcassets */,
 				80773A912A57E6230020F1DD /* LaunchScreen.storyboard */,
-				80EB03162A6EC11400455E05 /* APIKeys.xcconfig */,
+				80EDA0512B0E44D700E812D6 /* APIKeys.xcconfig */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -569,8 +570,8 @@
 		80EDA0482B0E3B3100E812D6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				80EDA0492B0E3B3D00E812D6 /* Observable.swift */,
-				80EDA04B2B0E3B4D00E812D6 /* Observer.swift */,
+				80EDA04D2B0E44B400E812D6 /* Observable.swift */,
+				80EDA04F2B0E44BE00E812D6 /* Observer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -932,6 +933,7 @@
 				801B3B662A63D6C100B57D19 /* Pretendard-Regular.otf in Resources */,
 				801B3B5E2A63D6C100B57D19 /* Pretendard-Bold.otf in Resources */,
 				801B3B612A63D6C100B57D19 /* Pretendard-ExtraBold.otf in Resources */,
+				80EDA0522B0E44D700E812D6 /* APIKeys.xcconfig in Resources */,
 				801B3B642A63D6C100B57D19 /* Pretendard-Light.otf in Resources */,
 				801B3B652A63D6C100B57D19 /* Pretendard-Black.otf in Resources */,
 				80773A932A57E6230020F1DD /* LaunchScreen.storyboard in Resources */,
@@ -1132,7 +1134,7 @@
 				87EFC1192A8223D300843DCC /* CheckBoxButtonDelegate.swift in Sources */,
 				875C79C52A7CC46400B93DBD /* ToDoListCell.swift in Sources */,
 				87EA72A72ACBEA260042DD88 /* WeatherRepository.swift in Sources */,
-				80EDA04C2B0E3B4D00E812D6 /* Observer.swift in Sources */,
+				80EDA0502B0E44BE00E812D6 /* Observer.swift in Sources */,
 				87880F882A612C8B00FF1B4D /* JSONDeserializer.swift in Sources */,
 				80B6995C2ACBE2F400CD3F8C /* ManagedEntity.swift in Sources */,
 				80F90CC72A84CA51007E1D23 /* PretendardLabel.swift in Sources */,
@@ -1146,12 +1148,12 @@
 				80B699622ACBE53F00CD3F8C /* MorningRoutine+CoreDataProperties.swift in Sources */,
 				805EA6BB2A9A4BF700A3545C /* EmojiTextField.swift in Sources */,
 				80F90CD32A860E06007E1D23 /* Int+.swift in Sources */,
+				80EDA04E2B0E44B400E812D6 /* Observable.swift in Sources */,
 				80F90CC52A84C91D007E1D23 /* DoubleLabelStackView.swift in Sources */,
 				80B699672ACBFFC400CD3F8C /* ToDoListRepository.swift in Sources */,
 				8735552D2A6951180027A847 /* OpenWeatherAPI.swift in Sources */,
 				8060B4192A6131E100726C83 /* Bundle+.swift in Sources */,
 				80F90CCD2A84E13D007E1D23 /* TodayLuckStackView.swift in Sources */,
-				80EDA04A2B0E3B3D00E812D6 /* Observable.swift in Sources */,
 				87978FA62A653E7F009FE7FD /* LocationFetcherDelegate.swift in Sources */,
 				80F90CFB2A8F092C007E1D23 /* UIImage+.swift in Sources */,
 				80B6995F2ACBE41400CD3F8C /* CoreDataStack.swift in Sources */,
@@ -1328,7 +1330,7 @@
 		};
 		80773AAE2A57E6230020F1DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5AF9639F8258B0F2AB9B33E5 /* Pods-GoodMorning.debug.xcconfig */;
+			baseConfigurationReference = 80EDA0512B0E44D700E812D6 /* APIKeys.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1357,7 +1359,7 @@
 		};
 		80773AAF2A57E6230020F1DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44048179FEB6BFA45E48DE05 /* Pods-GoodMorning.release.xcconfig */;
+			baseConfigurationReference = 80EDA0512B0E44D700E812D6 /* APIKeys.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
