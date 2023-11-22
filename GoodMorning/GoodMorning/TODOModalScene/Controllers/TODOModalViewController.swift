@@ -195,11 +195,11 @@ extension ToDoModalViewController {
     }
 
     private func binding() {
-        self.viewModel.title.bind { [weak self] title in
+        self.viewModel.title.observe(on: self) { [weak self] title in
             self?.titleTextField.text = title
         }
 
-        self.viewModel.description.bind { [weak self] text in
+        self.viewModel.description.observe(on: self) { [weak self] text in
             guard let text = text else {
                 self?.setupTextViewPlaceHolder()
                 return
@@ -207,11 +207,11 @@ extension ToDoModalViewController {
             self?.textView.text = text
         }
 
-        self.viewModel.priority.bind { [weak self] priority in
+        self.viewModel.priority.observe(on: self) { [weak self] priority in
             self?.prioritySegmentedControl.selectedIndex = priority
         }
 
-        self.viewModel.icon.bind { [weak self] icon in
+        self.viewModel.icon.observe(on: self) { [weak self] icon in
             self?.emojiTextField.text = icon
         }
     }
