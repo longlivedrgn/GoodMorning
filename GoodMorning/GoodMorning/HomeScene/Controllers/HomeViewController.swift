@@ -26,6 +26,7 @@ final class HomeViewController: UIViewController {
         collectionview.layer.cornerRadius = 30
         collectionview.isScrollEnabled = false
         collectionview.backgroundColor = .white
+        collectionview.delegate = self
 
         return collectionview
     }()
@@ -53,7 +54,6 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         configureViews()
-//        configureTODOModal()
 
         configureDataSource()
         configureSupplementaryView()
@@ -158,12 +158,6 @@ extension HomeViewController {
         }
     }
 
-    private func configureTODOModal() {
-        let todoModalViewController = ToDoModalViewController()
-
-        present(UINavigationController(rootViewController: todoModalViewController), animated: true)
-    }
-
     private func delete(_ item: ToDoItem) {
         guard let indexPath = datasource?.indexPath(for: item) else { return }
         backingStore.remove(at: indexPath.item)
@@ -189,6 +183,18 @@ extension HomeViewController {
         datasource?.apply(snapShot)
     }
 
+    private func presentToDoModal(_ item: ToDoItem?) {
+        // 추후 DI Container로.
+        let coreDataStack = DefaultCoreDataStack(container: .goodMorning)
+        let todoListRepository = DefaultToDoListRepository(coreDataStack: coreDataStack)
+        let todoListUseCase = ToDoListUseCase(todoListRepository: todoListRepository)
+        let todoModalViewModel = ToDoModalViewModel(todoListUseCase: todoListUseCase)
+        let todoModalViewController = ToDoModalViewController(viewModel: todoModalViewModel)
+
+        todoModalViewController.configureToDoItem(item)
+        present(UINavigationController(rootViewController: todoModalViewController), animated: true)
+    }
+
 }
 
 // MARK: Functions - CheckBoxButtonDelegate
@@ -211,7 +217,17 @@ extension HomeViewController: ToDoHeaderViewDelegate {
     }
 
     func ToDoHeaderView(_ ToDoHeaderView: ToDoHeaderView, didPlusButtonTapped sender: UIButton) {
-        print("plusbuttondidTapped!")
+        self.presentToDoModal(nil)
+    }
+
+}
+
+// MARK: Functions - ToDoCollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = backingStore[indexPath.item]
+        self.presentToDoModal(item)
     }
 
 }

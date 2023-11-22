@@ -36,7 +36,7 @@ final class ToDoListCell: UICollectionViewListCell {
 
         var content = defaultListContentConfiguration().updated(for: state)
         content.attributedText = NSAttributedString(
-            string: state.item?.description ?? "",
+            string: state.item?.title ?? "",
             attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .medium)]
         )
         TODOListContentView.configuration = content

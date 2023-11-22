@@ -15,6 +15,7 @@ extension MorningRoutine {
         return NSFetchRequest<MorningRoutine>(entityName: "MorningRoutine")
     }
 
+    @NSManaged public var title: String?
     @NSManaged public var isChecked: Bool
     @NSManaged public var routine: String?
     @NSManaged public var icon: String?

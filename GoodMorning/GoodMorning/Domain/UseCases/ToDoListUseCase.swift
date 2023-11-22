@@ -22,6 +22,7 @@ final class ToDoListUseCase {
     func updateToDoItem(_ item: ToDoItem) throws {
         try todoListRepository.updateToDoItem(
             item.identifier,
+            title: item.title,
             isChecked: item.isChecked,
             routine: item.description,
             icon: item.iconImage,
