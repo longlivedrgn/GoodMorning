@@ -10,6 +10,14 @@ import SnapKit
 
 final class HomeViewController: UIViewController {
 
+    // MARK: Actions
+    struct Actions {
+        let showToDoModal: (ToDoItem?) -> Void
+        let showWeatherDetailView: (CurrentWeather?) -> Void
+    }
+
+    var actions: Actions?
+
     // MARK: Properties(Datasource, CoreData, ViewModel)
     private var backingStore: [ToDoItem] = ToDoItem.allItems
     private var datasource: DataSource?
@@ -251,7 +259,7 @@ extension HomeViewController: TODOHeaderViewDelegate {
 extension HomeViewController {
 
     @objc private func weatherViewDidTapped() {
-        self.viewModel.didSelectWeatherView(viewModel.currentWeather.value)
+        self.actions?.showWeatherDetailView(viewModel.currentWeather.value)
     }
 
 }

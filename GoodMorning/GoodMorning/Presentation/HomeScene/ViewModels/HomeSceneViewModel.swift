@@ -10,15 +10,12 @@ import Foundation
 final class HomeSceneViewModel {
 
     private let fetchCurrentWeatherUseCase: FetchCurrentWeatherUseCase
-    private let actions: HomeSceneViewModelActions?
     let currentWeather: Observable<CurrentWeather?> = Observable(nil)
 
     init(
-        fetchCurrentWeatherUseCase: FetchCurrentWeatherUseCase,
-        actions: HomeSceneViewModelActions? = nil
+        fetchCurrentWeatherUseCase: FetchCurrentWeatherUseCase
     ) {
         self.fetchCurrentWeatherUseCase = fetchCurrentWeatherUseCase
-        self.actions = actions
         self.fetchCurrentWeather()
     }
 
@@ -29,22 +26,5 @@ final class HomeSceneViewModel {
             print(fetchedWeather)
         }
     }
-
-}
-
-// MARK: Input, ViewController에게 들어온 events
-extension HomeSceneViewModel {
-
-    func didSelectWeatherView(_ currentWeather: CurrentWeather?) {
-//        actions?.showWeatherDetailView(currentWeather)
-    }
-
-}
-
-// MARK: HomeScene에서 일어나는 Action들
-struct HomeSceneViewModelActions {
-
-//    let showWeatherDetailView: (CurrentWeather?) -> Void
-    let showToDoModal: (ToDoItem) -> Void
 
 }

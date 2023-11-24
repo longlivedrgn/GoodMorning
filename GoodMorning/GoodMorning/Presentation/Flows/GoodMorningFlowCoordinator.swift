@@ -20,22 +20,21 @@ final class GoodMorningFlowCoordinator {
     }
 
     func start() {
-        // 시작점은 HomeScene으로 구성하기
-        let actions = HomeSceneViewModelActions(showToDoModal: showToDoModal)
-        let viewController = dependencies.makeHomeSceneViewController(actions: actions)
+        let viewController = dependencies.makeHomeSceneViewController()
+        viewController.actions = HomeViewController.Actions.init(
+            showToDoModal: showToDoModal,
+            showWeatherDetailView: showWeatherDetailView
+        )
         navigationController?.pushViewController(viewController, animated: false)
     }
 
-    // ToDoModal을 보여주는 함수!
-    func showToDoModal(toDoItem: ToDoItem) {
+    func showToDoModal(toDoItem: ToDoItem?) {
         let viewController = dependencies.makeToDoModalViewController(toDoItem: toDoItem)
         navigationController?.pushViewController(viewController, animated: false)
     }
 
-    // 날씨 Scene으로 넘어가는 함수!
-//    func showWeatherScene() {
-//        let viewController = dependencies.()
-//
-//    }
-}
+    func showWeatherDetailView(currentWeather: CurrentWeather?) {
+        //
+    }
 
+}

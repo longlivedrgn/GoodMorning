@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class GoodMorningDIContainer: GoodMorningFlowCoordinatorDependencies {
+final class GoodMorningDIContainer {
 
     struct Dependencies {
         let networkService: NetworkService
@@ -17,8 +17,6 @@ final class GoodMorningDIContainer: GoodMorningFlowCoordinatorDependencies {
     private let dependencies: Dependencies
 
     // MARK: Persistent Storage
-    // Core Data 객체가 여기에 들어가네?..
-
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
     }
@@ -41,26 +39,23 @@ final class GoodMorningDIContainer: GoodMorningFlowCoordinatorDependencies {
     }
 
     // MARK: - ModalViewController
-    func makeHomeSceneViewController(actions: HomeSceneViewModelActions) -> HomeViewController {
-        HomeViewController(viewModel: makeHomeSceneViewModel(actions: actions))
+    func makeHomeSceneViewController() -> HomeViewController {
+        HomeViewController(viewModel: makeHomeSceneViewModel())
     }
 
-    func makeHomeSceneViewModel(actions: HomeSceneViewModelActions) -> HomeSceneViewModel {
+    func makeHomeSceneViewModel() -> HomeSceneViewModel {
         HomeSceneViewModel(
-            fetchCurrentWeatherUseCase: makeFetchCurrentWeatherUseCase(),
-            actions: actions
+            fetchCurrentWeatherUseCase: makeFetchCurrentWeatherUseCase()
         )
     }
 
     // MARK: - ToDoModalViewController
 
-    func makeToDoModalViewController(toDoItem: ToDoItem) -> TODOModalViewController {
+    func makeToDoModalViewController(toDoItem: ToDoItem?) -> TODOModalViewController {
         return TODOModalViewController()
     }
 
-
     // MARK: Flow Coordinators
-//    func makeHomeSceneFlowCoordinator(navigationController: UINavigationController)
     func makeGoodMorningFlowCoordinator(
         navigationController: UINavigationController
     ) -> GoodMorningFlowCoordinator {
