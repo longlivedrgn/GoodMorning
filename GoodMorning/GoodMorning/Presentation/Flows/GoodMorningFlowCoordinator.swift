@@ -7,21 +7,14 @@
 
 import UIKit
 
-protocol GoodMorningFlowCoordinatorDependencies {
-    func makeHomeSceneViewController(actions: HomeSceneViewModelActions) -> HomeViewController
-    func makeToDoModalViewController(toDoItem: ToDoItem) -> TODOModalViewController
-//    func makeWeatherViewController() -> 날씨 ViewController 생성
-    // 운세 ViewController 생성
-}
-
 final class GoodMorningFlowCoordinator {
 
     private weak var navigationController: UINavigationController?
-    private let dependencies: GoodMorningFlowCoordinatorDependencies
+    private let dependencies: GoodMorningDIContainer
 
     init(
         navigationController: UINavigationController,
-        dependencies: GoodMorningFlowCoordinatorDependencies) {
+        dependencies: GoodMorningDIContainer) {
         self.navigationController = navigationController
         self.dependencies = dependencies
     }
