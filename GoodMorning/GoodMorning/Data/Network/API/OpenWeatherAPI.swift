@@ -9,7 +9,7 @@ import Foundation
 
 // 아래는 apiKey가 정의되었다고 가정
 extension Bundle {
-    static var openWeatherAPIKey = "key"
+    static var openWeatherAPIKey = ""
 }
 
 enum OpenWeatherAPI {

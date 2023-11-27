@@ -9,7 +9,11 @@ import Foundation
 
 class DefaultCurrentLocationRepository {
 
-    private let locationManager = LocationManager()
+    private let locationManager: LocationManager
+
+    init(locationManager: LocationManager) {
+        self.locationManager = locationManager
+    }
 
 }
 

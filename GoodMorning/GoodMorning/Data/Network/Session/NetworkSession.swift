@@ -17,7 +17,6 @@ final class NetworkSession: NetworkSessionProvidable {
 
     func data(from urlRequest: URLRequest) async throws -> NetworkResult {
         let (data, response) = try await session.data(for: urlRequest, delegate: nil)
-
         guard response.checkResponse else {
             return .failure(.outOfResponseCode)
         }

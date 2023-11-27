@@ -1,0 +1,8 @@
+//
+//  APIKeys.swift
+//  GoodMorning
+//
+//  Created by Miro on 11/27/23.
+//
+
+OPEN_WEATHER_API_KEY = "4f3dd2b18f5cbe2193fdace58393160c"

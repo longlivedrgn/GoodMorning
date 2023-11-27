@@ -10,9 +10,20 @@ import SnapKit
 
 final class HomeViewController: UIViewController {
 
+    // MARK: Actions
+    struct Actions {
+        let showToDoModal: (ToDoItem?) -> Void
+        let showWeatherDetailView: (CurrentWeather?) -> Void
+    }
+
+    var actions: Actions?
+
+    // MARK: Properties(Datasource, CoreData, ViewModel)
     private var backingStore: [ToDoItem] = ToDoItem.allItems
     private var datasource: DataSource?
+    private var viewModel: HomeSceneViewModel
 
+    // MARK: Properties(Views)
     private let scrollView = UIScrollView()
     private let contentView = UIStackView()
 
@@ -31,7 +42,7 @@ final class HomeViewController: UIViewController {
         return collectionview
     }()
 
-    private let weatherStackView = WeatherStackView(weather: .drizzle, temperature: 27)
+    private let weatherStackView = WeatherStackView(currentWeather: nil)
 
     let emptyView: UIView = {
         let view = UIView()
@@ -50,15 +61,28 @@ final class HomeViewController: UIViewController {
 
     private let todayLuckStackView = TodayLuckStackView()
 
+    // MARK: TapGesture
+    lazy var weatherViewTapGesture = UITapGestureRecognizer(
+        target: self,
+        action: #selector(weatherViewDidTapped)
+    )
+
+    init(viewModel: HomeSceneViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureViewModel()
         configureViews()
-
         configureDataSource()
         configureSupplementaryView()
         configureReorderingAccessory()
-
         applySnapShot()
     }
 
@@ -66,12 +90,24 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController {
 
+    private func configureViewModel() {
+        self.bind(to: viewModel)
+    }
+
     private func configureViews() {
         configureContentViewMargins()
-
         configureView()
-        setupView()
+        configureContentView()
+        setupScrollView()
         setupContentView()
+    }
+
+    private func bind(to viewModel: HomeSceneViewModel) {
+        viewModel.currentWeather.observe(on: self) { [weak self] currentWeather in
+            DispatchQueue.main.async {
+                self?.weatherStackView.setupWeatherView(currentWeather)
+            }
+        }
     }
 
     private func configureContentViewMargins() {
@@ -87,13 +123,16 @@ extension HomeViewController {
     }
 
     private func configureView() {
-        self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = .design(.mainBackground)
+        self.weatherStackView.addGestureRecognizer(weatherViewTapGesture)
+    }
+
+    private func configureContentView() {
         self.contentView.axis = .vertical
         self.contentView.spacing = 15
     }
 
-    private func setupView() {
+    private func setupScrollView() {
         self.view.addSubview(scrollView)
         self.scrollView.snp.makeConstraints { scrollView in
             scrollView.top.bottom.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
@@ -228,6 +267,15 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = backingStore[indexPath.item]
         self.presentToDoModal(item)
+    }
+
+}
+
+// MARK: @objc functions
+extension HomeViewController {
+
+    @objc private func weatherViewDidTapped() {
+        self.actions?.showWeatherDetailView(viewModel.currentWeather.value)
     }
 
 }

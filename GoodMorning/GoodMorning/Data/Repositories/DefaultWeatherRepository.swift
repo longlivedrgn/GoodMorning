@@ -26,7 +26,6 @@ extension DefaultWeatherRepository: WeatherRepository {
 
         let currentWeatherEndPoint = CurrentWeatherEndPoint(coordinate: coordinate)
         let networkResult = try await networkService.request(currentWeatherEndPoint)
-
         switch networkResult {
         case .success(let currentWeatherDTO):
             let currentWeather = currentWeatherDTO.toDomain()
